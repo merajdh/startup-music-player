@@ -1,18 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@color/dark_bule"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/anim_login"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/anim_music_login"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"/>
+    <com.google.android.material.card.MaterialCardView
+        android:backgroundTint="#252a34"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+        <EditText
+            android:textColor="@color/white"
+            android:textColorHint="#7A7C87"
+            android:hint="نام کاربری"
+            android:background="#252a34"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:backgroundTint="#252a34"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+        <EditText
+            android:textColor="@color/white"
+            android:textColorHint="#7A7C87"
+            android:hint="رمز عبور"
+            android:background="#252a34"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.card.MaterialCardView>
+    <TextView
+        android:textStyle="bold"
+        android:text="رمز عبور را فراموش کردید؟"
+        android:layout_marginStart="12dp"
+        android:textSize="13sp"
+        android:textColor="@color/Gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="48dp"
+        android:clickable="true"
+        app:cardCornerRadius="25dp"
+        android:backgroundTint="@color/bule"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:focusable="true">
+        <TextView
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text="ورود"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:clickable="true"
+        app:cardCornerRadius="25dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="11dp"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:focusable="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginEnd="8dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/google"
+                app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="ورود با اکانت گوگل"
+                android:textColor="@color/dark_bule"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.46" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="96dp"
+            android:text="حساب کاربری ندارید؟"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="4dp"
+            android:text="ثبت نام!"
+            android:textColor="@color/bule"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
