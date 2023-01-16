@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@color/dark_bule"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <LinearLayout
+        android:layout_marginTop="65dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:padding="4dp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:textSize="24sp"
+            android:textColor="@color/light_gray"
+            android:text="ایجاد حساب کاربری جدید"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:padding="2dp"
+            android:layout_marginTop="4dp"
+            android:textSize="14sp"
+            android:textColor="#7A7C87"
+            android:layout_gravity="center_horizontal"
+            android:text="لطفا فرم را پر کنید سپس ادامه دهید"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+        app:cardElevation="7dp"
+        app:strokeColor="?attr/colorPrimary"
+        app:strokeWidth="1.5dp"
+        android:backgroundTint="#252a34"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
+        app:cardCornerRadius="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+
+        <EditText
+            android:textColor="@color/white"
+            android:textColorHint="#7A7C87"
+            android:hint="نام کاربری"
+            android:textSize="16sp"
+            android:background="#252a34"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        app:cardElevation="7dp"
+        app:strokeColor="?attr/colorPrimary"
+        app:strokeWidth="1.5dp"
+        android:backgroundTint="#252a34"
+        app:cardCornerRadius="20dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+        <EditText
+            android:textColor="@color/white"
+            android:textColorHint="#7A7C87"
+            android:hint="ایمیل"
+            android:background="#252a34"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        app:cardElevation="7dp"
+        app:strokeColor="?attr/colorPrimary"
+        app:strokeWidth="1.5dp"
+        android:backgroundTint="#252a34"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"        android:layout_width="match_parent"
+        android:layout_height="75dp">
+        <EditText
+            android:textColor="@color/white"
+            android:textColorHint="#7A7C87"
+            android:hint="شماره تلفن"
+            android:background="#252a34"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        app:cardElevation="7dp"
+        app:strokeColor="?attr/colorPrimary"
+        app:strokeWidth="3dp"
+        android:backgroundTint="#252a34"
+        app:cardCornerRadius="20dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"        android:layout_marginTop="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+        <EditText
+            android:textColor="@color/white"
+            android:textColorHint="#7A7C87"
+            android:hint="رمز عبور"
+            android:background="#252a34"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:layout_marginStart="20dp"
+        app:cardElevation="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="60dp"
+        android:clickable="true"
+        app:cardCornerRadius="24dp"
+        android:backgroundTint="@color/bule"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:focusable="true">
+        <TextView
+            android:textStyle="bold"
+            android:fontFamily="@font/shabnam_medium"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:text="ثبت نام"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:padding="2dp"
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="96dp"
+            android:textColor="@color/light_gray"
+            android:text="حساب کاربری دارید ؟"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:padding="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="4dp"
+            android:text="ورود!"
+            android:textColor="@color/bule"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

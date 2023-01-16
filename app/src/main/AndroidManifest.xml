@@ -17,10 +17,10 @@
         android:theme="@style/Theme.Startupmusicplayer"
         tools:targetApi="31">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.ActivityRegister"
             android:exported="false" />
         <activity
-            android:name=".ui.ActivityRegister"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
