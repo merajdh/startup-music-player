@@ -51,14 +51,17 @@
         android:layout_height="75dp">
 
         <EditText
-            android:textColor="@color/white"
-            android:textColorHint="#7A7C87"
-            android:hint="نام کاربری"
-            android:textSize="16sp"
-            android:background="#252a34"
-            android:layout_margin="16dp"
+            android:id="@+id/Edt_user"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:background="#252a34"
+            android:hint="نام کاربری"
+            android:textColor="@color/white"
+            android:inputType="text"
+            android:textColorHint="#7A7C87"
+            android:textSize="16sp"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -73,14 +76,18 @@
         android:layout_marginTop="14dp"
         android:layout_width="match_parent"
         android:layout_height="75dp">
+
         <EditText
+            android:id="@+id/Edt_gmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:inputType="text"
+            android:background="#252a34"
+            android:hint="ایمیل"
             android:textColor="@color/white"
             android:textColorHint="#7A7C87"
-            android:hint="ایمیل"
-            android:background="#252a34"
-            android:layout_margin="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -92,16 +99,21 @@
         app:cardCornerRadius="20dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginStart="25dp"        android:layout_width="match_parent"
+        android:layout_marginStart="25dp"
+        android:layout_width="match_parent"
         android:layout_height="75dp">
+
         <EditText
+            android:id="@+id/Edt_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:background="#252a34"
+            android:inputType="text"
+            android:hint="شماره تلفن"
             android:textColor="@color/white"
             android:textColorHint="#7A7C87"
-            android:hint="شماره تلفن"
-            android:background="#252a34"
-            android:layout_margin="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            tools:ignore="TextContrastCheck,TextFields,TouchTargetSizeCheck" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -112,22 +124,28 @@
         android:backgroundTint="#252a34"
         app:cardCornerRadius="20dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginStart="25dp"        android:layout_marginTop="14dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="14dp"
         android:layout_width="match_parent"
         android:layout_height="75dp">
+
         <EditText
+            android:id="@+id/Edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:background="#252a34"
+            android:inputType="text"
+            android:hint="رمز عبور"
             android:textColor="@color/white"
             android:textColorHint="#7A7C87"
-            android:hint="رمز عبور"
-            android:background="#252a34"
-            android:layout_margin="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            tools:ignore="TextContrastCheck,TextFields,TouchTargetSizeCheck" />
 
     </com.google.android.material.card.MaterialCardView>
 
 
     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:id="@+id/btn_register"
         android:layout_marginStart="20dp"
         app:cardElevation="10dp"
         android:layout_marginEnd="20dp"
