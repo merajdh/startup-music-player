@@ -20,10 +20,10 @@
             android:name=".ui.ActivityHome"
             android:exported="false" />
         <activity
-            android:name=".ui.ActivityRegister"
+            android:name=".ui.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.ActivityRegister"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

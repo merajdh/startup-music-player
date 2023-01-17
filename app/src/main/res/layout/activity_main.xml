@@ -20,7 +20,7 @@
     <com.google.android.material.card.MaterialCardView
         app:cardElevation="8dp"
         app:strokeColor="?attr/colorPrimary"
-        app:strokeWidth="1.5dp"
+        app:strokeWidth="1dp"
         android:backgroundTint="#252a34"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp"
@@ -47,7 +47,7 @@
     <com.google.android.material.card.MaterialCardView
         app:cardElevation="7dp"
         app:strokeColor="?attr/colorPrimary"
-        app:strokeWidth="1.5dp"
+        app:strokeWidth="1dp"
         android:backgroundTint="#252a34"
         app:cardCornerRadius="20dp"
         android:layout_marginEnd="25dp"
@@ -93,14 +93,15 @@
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:focusable="true">
+
         <TextView
-            android:fontFamily="@font/shabnam_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="ورود"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:text="ورود"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:textStyle="bold" />
 
     </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
@@ -141,7 +142,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:fontFamily="@font/shabnam_medium"
                     android:text="ورود با اکانت گوگل"
                     android:textColor="@color/dark_bule"
                     android:textSize="18sp"

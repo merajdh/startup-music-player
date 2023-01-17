@@ -10,7 +10,7 @@
     tools:context=".ui.MainActivity">
 
     <LinearLayout
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="55dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -41,9 +41,9 @@
     <com.google.android.material.card.MaterialCardView
         app:cardElevation="7dp"
         app:strokeColor="?attr/colorPrimary"
-        app:strokeWidth="1.5dp"
+        app:strokeWidth="1dp"
         android:backgroundTint="#252a34"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="45dp"
         android:layout_marginEnd="25dp"
         android:layout_marginStart="25dp"
         app:cardCornerRadius="20dp"
@@ -51,16 +51,18 @@
         android:layout_height="75dp">
 
         <EditText
+            android:textSize="15sp"
             android:id="@+id/Edt_user"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="16dp"
-            android:background="#252a34"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="18dp"            android:background="#252a34"
             android:hint="نام کاربری"
             android:textColor="@color/white"
             android:inputType="text"
             android:textColorHint="#7A7C87"
-            android:textSize="16sp"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     </com.google.android.material.card.MaterialCardView>
@@ -68,7 +70,7 @@
     <com.google.android.material.card.MaterialCardView
         app:cardElevation="7dp"
         app:strokeColor="?attr/colorPrimary"
-        app:strokeWidth="1.5dp"
+        app:strokeWidth="1dp"
         android:backgroundTint="#252a34"
         app:cardCornerRadius="20dp"
         android:layout_marginEnd="25dp"
@@ -78,11 +80,14 @@
         android:layout_height="75dp">
 
         <EditText
+            android:textSize="15sp"
             android:id="@+id/Edt_gmail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="16dp"
-            android:inputType="text"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="18dp"            android:inputType="text"
             android:background="#252a34"
             android:hint="ایمیل"
             android:textColor="@color/white"
@@ -94,7 +99,7 @@
     <com.google.android.material.card.MaterialCardView
         app:cardElevation="7dp"
         app:strokeColor="?attr/colorPrimary"
-        app:strokeWidth="1.5dp"
+        app:strokeWidth="1dp"
         android:backgroundTint="#252a34"
         app:cardCornerRadius="20dp"
         android:layout_marginTop="14dp"
@@ -104,11 +109,14 @@
         android:layout_height="75dp">
 
         <EditText
+            android:textSize="15sp"
             android:id="@+id/Edt_number"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="16dp"
-            android:background="#252a34"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="18dp"            android:background="#252a34"
             android:inputType="text"
             android:hint="شماره تلفن"
             android:textColor="@color/white"
@@ -120,7 +128,7 @@
     <com.google.android.material.card.MaterialCardView
         app:cardElevation="7dp"
         app:strokeColor="?attr/colorPrimary"
-        app:strokeWidth="3dp"
+        app:strokeWidth="1dp"
         android:backgroundTint="#252a34"
         app:cardCornerRadius="20dp"
         android:layout_marginEnd="25dp"
@@ -130,10 +138,14 @@
         android:layout_height="75dp">
 
         <EditText
+            android:textSize="15sp"
             android:id="@+id/Edt_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="18dp"
             android:background="#252a34"
             android:inputType="text"
             android:hint="رمز عبور"
@@ -149,16 +161,15 @@
         android:layout_marginStart="20dp"
         app:cardElevation="10dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="65dp"
         android:clickable="true"
-        app:cardCornerRadius="24dp"
+        app:cardCornerRadius="22dp"
         android:backgroundTint="@color/bule"
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:focusable="true">
         <TextView
             android:textStyle="bold"
-            android:fontFamily="@font/shabnam_medium"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:text="ثبت نام"
@@ -182,7 +193,7 @@
             android:layout_marginEnd="96dp"
             android:textColor="@color/light_gray"
             android:text="حساب کاربری دارید ؟"
-            android:textSize="18sp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -193,10 +204,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginEnd="4dp"
+            android:layout_marginEnd="2dp"
             android:text="ورود!"
             android:textColor="@color/bule"
-            android:textSize="18sp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView"
             app:layout_constraintTop_toTopOf="@+id/textView"
