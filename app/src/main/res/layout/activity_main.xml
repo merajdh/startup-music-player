@@ -8,76 +8,27 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:id="@+id/butennavigetion"
+        android:backgroundTint="@color/light_blue"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom">
+        android:layout_height="65dp"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:cnb_menuResource="@menu/meno_btnmnavigation_main" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/materialCardView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints">
 
-            <View
-                android:id="@+id/selected_category"
-                android:layout_width="50dp"
-                android:layout_height="2dp"
-                android:layout_marginStart="48dp"
-                android:background="@color/bule"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toTopOf="@+id/materialCardView"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <View
-                android:id="@+id/selected_home"
-                android:layout_width="50dp"
-                android:layout_height="2dp"
-                android:layout_marginStart="70dp"
-                android:background="@color/bule"
-                app:layout_constraintBottom_toTopOf="@+id/materialCardView"
-                app:layout_constraintStart_toEndOf="@+id/selected_category" />
-
-            <View
-                android:id="@+id/selected_profile"
-                android:layout_width="50dp"
-                android:layout_height="2dp"
-                android:layout_marginStart="75dp"
-                android:background="@color/bule"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/selected_home"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/selected_home" />
-
-        </LinearLayout>
-
-        <com.google.android.material.card.MaterialCardView
-
-            android:id="@+id/materialCardView"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="bottom"
-            android:layout_margin="16dp"
-            android:backgroundTint="@color/light_blue"
-            app:cardCornerRadius="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/btnNavigeyshen"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="bottom"
-                android:background="@color/light_blue"
-                app:itemRippleColor="@color/Gray"
-                app:itemTextColor="@color/Gray"
-                app:menu="@menu/meno_btnmnavigation_main" />
-        </com.google.android.material.card.MaterialCardView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:iss_auto_cycle="true"
+        app:iss_delay="0"
+        app:iss_period="3000"
+        app:iss_placeholder="@color/bule"
+        app:iss_error_image="@color/white"
+        android:layout_margin="8dp"
+        app:iss_corner_radius="20"/>
 
 
 
