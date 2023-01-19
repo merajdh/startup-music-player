@@ -1,4 +1,4 @@
-package com.example.startup_music_player.ui
+package com.example.startup_music_player.ui.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,9 +8,13 @@ import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.toColor
+import androidx.fragment.app.Fragment
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.ActivityMainBinding
+import com.example.startup_music_player.ui.Fragment.CategoryFragment
+import com.example.startup_music_player.ui.Fragment.HomeFragment
+import com.example.startup_music_player.ui.Fragment.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -19,36 +23,37 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         SelectedbtnNavigeyshen() // BtnNavigeyshen
-        AddsliderCod() // slider
+        Run() // run
     }
 
 
     private fun SelectedbtnNavigeyshen() {
-        binding.butennavigetion.setItemSelected( R.id.item1)
         binding.butennavigetion.setOnItemSelectedListener {
             when(it){
-                R.id.item0 -> {
-
+                R.id.Profile -> {
+                    transform(ProfileFragment())
                 }
-                R.id.item1 -> {
-
+                R.id.home -> {
+                    transform(HomeFragment())
                 }
-                R.id.item2 -> {
-
+                R.id.category -> {
+                    transform(CategoryFragment())
                 }
             }
 
         }
     }
-
-
-    private fun AddsliderCod() {
-        val ItemSlider = ArrayList<SlideModel>()
-        ItemSlider.add(SlideModel("https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg"))
-        ItemSlider.add(SlideModel("https://images4.alphacoders.com/193/193108.jpg"))
-        ItemSlider.add(SlideModel("https://wallpaper.dog/large/17006205.jpg"))
-        binding.slider.setImageList(ItemSlider)
-
+    private fun transform(fragment : Fragment){
+        val transform = supportFragmentManager.beginTransaction()
+        transform.replace(R.id.FrameLayout,fragment)
+        transform.commit()
     }
+    private fun Run(){
+        transform(HomeFragment()) // Added run time Fragment
+        binding.butennavigetion.setItemSelected( R.id.home) // Select the executed item
+    }
+
+
+
 
 }

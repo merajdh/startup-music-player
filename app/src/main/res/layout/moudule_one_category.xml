@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/dark_bule"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+    <com.google.android.material.card.MaterialCardView
+        android:backgroundTint="@color/black"
+        android:layout_margin="12dp"
+        app:cardElevation="12dp"
+        app:cardCornerRadius="22dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:src="@drawable/ic_play"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:padding="2dp"
+            android:fontFamily="@font/shabnam_bold"
+            android:textStyle="bold"
+            android:textColor="@color/light_gray"
+            android:text="بهترین در هر سبک"
+            android:textSize="26sp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </com.google.android.material.card.MaterialCardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="12dp"
+                android:textColor="@color/white"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:layout_gravity="end"
+                android:text="سبک موزیک"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_marginBottom="6dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/light_blue"
+                android:layout_gravity="end"
+                android:layout_marginEnd="12dp"
+                android:layout_marginStart="26dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:padding="4dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_recycler_musictype_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/light_blue"
+                android:layout_gravity="end"
+                android:layout_marginEnd="12dp"
+                android:layout_marginStart="26dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

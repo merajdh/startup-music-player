@@ -6,8 +6,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.Activity.MainActivity">
+    <FrameLayout
+        android:id="@+id/FrameLayout"
 
+        android:layout_marginBottom="65dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:id="@+id/butennavigetion"
         android:backgroundTint="@color/light_blue"
@@ -16,19 +21,6 @@
         android:layout_gravity="bottom"
         android:background="@color/white"
         app:cnb_menuResource="@menu/meno_btnmnavigation_main" />
-
-
-    <com.denzcoskun.imageslider.ImageSlider
-        android:id="@+id/slider"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:iss_auto_cycle="true"
-        app:iss_delay="0"
-        app:iss_period="3000"
-        app:iss_placeholder="@color/bule"
-        app:iss_error_image="@color/white"
-        android:layout_margin="8dp"
-        app:iss_corner_radius="20"/>
 
 
 
