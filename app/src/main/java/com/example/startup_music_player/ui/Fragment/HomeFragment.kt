@@ -1,12 +1,15 @@
 package com.example.startup_music_player.ui.Fragment
 
+import android.R
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.startup_music_player.databinding.FragmentHomeBinding
+import com.github.furkankaplan.fkblurview.FKBlurView
+
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
@@ -17,6 +20,7 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
         AddsliderCod() // slider
+
         return binding.root
     }
 

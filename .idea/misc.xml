@@ -27,6 +27,7 @@
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/recycler_musictype.xml" value="0.1791518034086405" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/drawable/ic_profile.xml" value="0.246" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/drawable/ic_profileuser.xml" value="0.3475" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/drawable/shape_baner_home.xml" value="0.2775" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/drawable/shape_bottomnavigation_main.xml" value="0.246" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/drawable/shape_edittext_login.xml" value="0.2455" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/drawable/test.xml" value="0.246" />
@@ -50,7 +51,8 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_recycler_banner_category.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_recycler_music_type_category.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_recycler_top_music_home.xml" value="0.3692708333333333" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_two_home.xml" value="0.36822916666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_two_home.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/tt.xml" value="0.36822916666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/menu/meno_bottomnavigation_main.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/menu/meno_bten.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/menu/meno_btnmnavigation_main.xml" value="0.3692708333333333" />

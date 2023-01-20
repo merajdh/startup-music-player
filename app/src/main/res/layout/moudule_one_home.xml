@@ -17,6 +17,7 @@
         app:iss_error_image="@color/white"
         android:layout_margin="8dp"
         app:iss_corner_radius="20"/>
+
     <TextView
         android:layout_margin="14dp"
         android:text="موزیک های شاد در این ماه"
