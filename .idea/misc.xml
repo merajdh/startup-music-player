@@ -35,15 +35,17 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/activity_register.xml" value="0.6279357231149567" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/fragment_category.xml" value="0.33" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/fragment_home.xml" value="0.36822916666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/fragment_home2.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/fragment_profile.xml" value="0.36822916666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/item_recycler_banner_category.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/item_recycler_happy_home.xml" value="0.36822916666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/item_recycler_international_music_category.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/item_recycler_musictype_category.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/item_recycler_top_music_home.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_banner_category.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_home.xml" value="0.3692708333333333" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_one_category.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_one_home.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_recycler_banner_category.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_recycler_music_type_category.xml" value="0.3692708333333333" />

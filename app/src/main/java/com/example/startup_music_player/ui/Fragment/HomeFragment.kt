@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.denzcoskun.imageslider.models.SlideModel
-import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary">
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:iss_auto_cycle="true"
+        app:iss_delay="0"
+        app:iss_period="3000"
+        app:iss_placeholder="@color/bule"
+        app:iss_error_image="@color/white"
+        android:layout_margin="8dp"
+        app:iss_corner_radius="20"/>
+    <TextView
+        android:layout_margin="14dp"
+        android:text="موزیک های شاد در این ماه"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.recyclerview.widget.RecyclerView
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:listitem="@layout/item_recycler_happy_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_margin="8dp"
+        android:background="@color/light_blue"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"/>
+</LinearLayout>
