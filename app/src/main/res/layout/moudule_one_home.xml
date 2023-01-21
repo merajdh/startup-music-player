@@ -6,17 +6,27 @@
     android:orientation="vertical"
     android:layout_height="wrap_content"
     android:background="?attr/colorPrimary">
-    <com.denzcoskun.imageslider.ImageSlider
-        android:id="@+id/slider"
+
+    <com.google.android.material.card.MaterialCardView
+        android:backgroundTint="@color/red_btn_bg_color"
+        app:cardElevation="8dp"
+        android:layout_margin="18dp"
+        app:cardCornerRadius="12dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:iss_auto_cycle="true"
-        app:iss_delay="0"
-        app:iss_period="3000"
-        app:iss_placeholder="@color/bule"
-        app:iss_error_image="@color/white"
-        android:layout_margin="8dp"
-        app:iss_corner_radius="20"/>
+        android:layout_height="200dp">
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:iss_auto_cycle="true"
+            app:iss_delay="0"
+            app:iss_period="3000"
+            app:iss_placeholder="@color/bule"
+            app:iss_error_image="@color/white" />
+
+    </com.google.android.material.card.MaterialCardView>
+
     <TextView
         android:layout_margin="14dp"
         android:text="موزیک های شاد در این ماه"

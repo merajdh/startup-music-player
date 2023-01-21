@@ -19,7 +19,6 @@ class RegisterActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
-
     }
 
     private fun IschektRegister() {
@@ -40,7 +39,6 @@ class RegisterActivity : AppCompatActivity() {
         }
 
     }
-
     private fun SnackbarEmpty() {
         Snackbar
             .make(binding.root, "لطفا تمام فیلد ها را تکمیل کنید !", Snackbar.LENGTH_LONG)

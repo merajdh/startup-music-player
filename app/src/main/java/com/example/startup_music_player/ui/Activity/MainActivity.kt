@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        SelectedbtnNavigeyshen() // BtnNavigeyshen
+        SelectedbtnNavigeyshen() // BtnNavigation
         Run() // run
     }
 
