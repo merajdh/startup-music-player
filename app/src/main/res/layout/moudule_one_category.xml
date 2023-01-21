@@ -9,11 +9,13 @@
     android:layout_height="wrap_content">
     <com.google.android.material.card.MaterialCardView
         android:backgroundTint="@color/black"
-        android:layout_margin="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         app:cardElevation="12dp"
         app:cardCornerRadius="22dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="180dp">
 
         <ImageView
             android:src="@drawable/ic_play"

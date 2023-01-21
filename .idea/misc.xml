@@ -6,28 +6,38 @@
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/drawable/a.xml" value="0.185" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/drawable/ic_aye.xml" value="0.1885" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/drawable/ic_gmail.xml" value="0.2425" />
+        <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/drawable/ic_heart.xml" value="0.1905" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/drawable/ic_ic_password.xml" value="0.2425" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/drawable/ic_phone.xml" value="0.1885" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/drawable/ic_user.xml" value="0.1885" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/drawable/shape_back_image.xml" value="0.185" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/activity_register.xml" value="0.18771929824561404" />
-        <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/fragment_category.xml" value="0.19912280701754387" />
+        <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/fragment_category.xml" value="0.19410004275331338" />
+        <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/fragment_home.xml" value="0.19912280701754387" />
+        <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/fragment_profile.xml" value="0.11822916666666666" />
+        <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/item_recycler_artist.xml" value="0.5" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/item_recycler_banner_category.xml" value="0.25" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/item_recycler_categoty_musictype.xml" value="0.17994451050336902" />
+        <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/item_recycler_happy_home.xml" value="0.1" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/item_recycler_international_music_category.xml" value="0.25" />
+        <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/item_recycler_musictype_category.xml" value="0.19410004275331338" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/item_recycler_top_music.xml" value="0.25" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/item_recycler_top_music_category.xml" value="0.33" />
+        <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/item_recycler_top_music_home.xml" value="0.19912280701754387" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/module_categoty_musictype.xml" value="0.33" />
+        <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/moudule_one_category.xml" value="0.19410004275331338" />
+        <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/moudule_one_home.xml" value="0.17994451050336902" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/moudule_recycler_banner_category.xml" value="0.25" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/moudule_recycler_music_type.xml" value="0.33" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/moudule_recycler_top_music.xml" value="0.14" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/moudule_recycler_top_music_category.xml" value="0.11822916666666666" />
+        <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/moudule_two_category.xml" value="0.19410004275331338" />
+        <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/moudule_two_home.xml" value="0.25" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/recycler_music_type.xml" value="0.5" />
         <entry key="..\:/Users/Meraj/Desktop/prozheh/new apps/startup-music-player/app/src/main/res/layout/recycler_musictype.xml" value="0.1791518034086405" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/drawable/ic_profile.xml" value="0.246" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/drawable/ic_profileuser.xml" value="0.3475" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/drawable/shape_baner_home.xml" value="0.2775" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/drawable/shape_bottomnavigation_main.xml" value="0.246" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/drawable/shape_edittext_login.xml" value="0.2455" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/drawable/test.xml" value="0.246" />
@@ -36,23 +46,20 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/activity_register.xml" value="0.6279357231149567" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/fragment_category.xml" value="0.33" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/fragment_home.xml" value="0.36822916666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/fragment_home2.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/fragment_profile.xml" value="0.36822916666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/item_recycler_banner_category.xml" value="0.3692708333333333" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/item_recycler_happy_home.xml" value="0.36822916666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/item_recycler_international_music_category.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/item_recycler_musictype_category.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/item_recycler_top_music_home.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_banner_category.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_home.xml" value="0.3692708333333333" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_one_category.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_one_home.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_recycler_banner_category.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_recycler_music_type_category.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_recycler_top_music_home.xml" value="0.3692708333333333" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_two_home.xml" value="0.33" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/tt.xml" value="0.36822916666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/layout/moudule_two_home.xml" value="0.36822916666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/menu/meno_bottomnavigation_main.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/menu/meno_bten.xml" value="0.3692708333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupmusicplayer/startup-music-player/app/src/main/res/menu/meno_btnmnavigation_main.xml" value="0.3692708333333333" />

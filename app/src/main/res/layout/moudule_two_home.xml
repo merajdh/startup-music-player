@@ -28,7 +28,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
     </LinearLayout>
 
     <com.google.android.material.card.MaterialCardView
@@ -36,6 +39,7 @@
         android:layout_margin="12sp"
         android:layout_width="match_parent"
         android:layout_height="200dp">
+<<<<<<< HEAD
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -107,6 +111,14 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+=======
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+>>>>>>> origin/main
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
