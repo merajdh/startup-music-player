@@ -15,6 +15,9 @@
         <include
             android:id="@+id/moudule_two_home"
             layout="@layout/moudule_two_home"/>
+        <include
+            android:id="@+id/moudule_three_home"
+            layout="@layout/moudule_three_home"/>
     </LinearLayout>
 
 
