@@ -20,6 +20,4 @@
             layout="@layout/moudule_three_home"/>
     </LinearLayout>
 
-
-
 </androidx.core.widget.NestedScrollView>

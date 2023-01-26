@@ -6,28 +6,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <TextView
-        android:textSize="17sp"
-        android:textColor="@color/white"
-        android:layout_margin="8dp"
-        android:layout_gravity="end"
-        android:text="پر شنونده ترین آرتیست هفته"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="8dp"
+        android:text="پر شنونده ترین آرتیست هفته"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
     <androidx.recyclerview.widget.RecyclerView
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="horizontal"
         tools:listitem="@layout/item_recycler_artisttop_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <TextView
-        android:textSize="17sp"
-        android:textColor="@color/white"
-        android:layout_margin="8dp"
-        android:layout_gravity="end"
-        android:text="گروه های موسیقی"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="8dp"
+        android:text="گروه های موسیقی"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
     <androidx.recyclerview.widget.RecyclerView
         tools:itemCount="4"
         android:id="@+id/recycler_group_home"

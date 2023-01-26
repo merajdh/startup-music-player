@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.ActivityRegisterBinding
 import com.google.android.material.snackbar.Snackbar
@@ -22,11 +23,16 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun IschektRegister() {
+        if (binding.EdtPassword.text.toString() != binding.EdtPasswordRepeat.text.toString()){
+            SnackbarError("رمزی که وارد کردید با رمز اول مطابق نیست ")
+        }
         if (binding.EdtUser.text.isNotEmpty()
             && binding.EdtGmail.text.isNotEmpty()
             && binding.EdtPassword.text.isNotEmpty()
             && binding.EdtPasswordRepeat.text.isNotEmpty()
             && binding.EdtPassword.text.isNotEmpty()
+            && binding.EdtPassword == binding.EdtPasswordRepeat
+
         ) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -35,13 +41,13 @@ class RegisterActivity : AppCompatActivity() {
             binding.EdtPassword.text.isEmpty() or
             binding.EdtPasswordRepeat.text.isEmpty()
         ) {
-            SnackbarEmpty()
+            SnackbarError("لطفا تمام فیلد ها را تکمیل کنید !")
         }
 
     }
-    private fun SnackbarEmpty() {
+    private fun SnackbarError(text : String) {
         Snackbar
-            .make(binding.root, "لطفا تمام فیلد ها را تکمیل کنید !", Snackbar.LENGTH_LONG)
+            .make(binding.root, text , Snackbar.LENGTH_LONG)
             .setBackgroundTint(ContextCompat.getColor(this, R.color.light_blue))
             .setTextColor(ContextCompat.getColor(this, R.color.white))
             .show()

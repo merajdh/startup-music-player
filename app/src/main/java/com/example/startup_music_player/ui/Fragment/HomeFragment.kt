@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.startup_music_player.databinding.FragmentHomeBinding
 import com.google.android.material.transition.MaterialContainerTransform
+
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding

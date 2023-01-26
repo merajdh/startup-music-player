@@ -16,9 +16,9 @@
             android:padding="8dp"
             android:layout_gravity="end"
             android:textColor="@color/white"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:text="پرطرفدار ها"
+            android:text="پرطرفدار ها "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -26,19 +26,20 @@
             tools:listitem="@layout/item_recycler_top_music_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
-
     </LinearLayout>
 
     <com.google.android.material.card.MaterialCardView
         app:cardCornerRadius="16dp"
-        android:layout_margin="12sp"
+        android:layout_margin="12dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="220dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
@@ -53,6 +54,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="110dp"
                 android:layout_height="75dp"
+                android:layout_gravity="bottom|end"
                 android:background="@drawable/shape_baner_home"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -72,6 +74,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:padding="4dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -84,6 +87,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
                 <TextView
+                    android:padding="4dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
@@ -104,25 +108,7 @@
                     app:layout_constraintStart_toStartOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
 

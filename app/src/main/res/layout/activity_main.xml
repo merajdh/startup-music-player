@@ -9,10 +9,10 @@
     tools:context=".ui.Activity.MainActivity">
     <FrameLayout
         android:id="@+id/FrameLayout"
-
         android:layout_marginBottom="65dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:id="@+id/butennavigetion"
         android:backgroundTint="@color/light_blue"
