@@ -25,6 +25,9 @@ class RegisterActivity : AppCompatActivity() {
     private fun IschektRegister() {
         if (binding.EdtPassword.text.toString() != binding.EdtPasswordRepeat.text.toString()){
             SnackbarError("رمزی که وارد کردید با رمز اول مطابق نیست ")
+        }else{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
         if (binding.EdtUser.text.isNotEmpty()
             && binding.EdtGmail.text.isNotEmpty()

@@ -1,27 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    android:background="@color/dark_bule"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_bule"
     tools:context=".ui.Activity.MainActivity">
-    <FrameLayout
-        android:id="@+id/FrameLayout"
-        android:layout_marginBottom="65dp"
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
 
-    <com.ismaeldivita.chipnavigation.ChipNavigationBar
-        android:id="@+id/butennavigetion"
-        android:backgroundTint="@color/light_blue"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_gravity="bottom"
-        android:background="@color/white"
-        app:cnb_menuResource="@menu/meno_btnmnavigation_main" />
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbarmain"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
 
+            <androidx.appcompat.widget.Toolbar
+                app:titleMarginStart="150dp"
+                app:titleTextColor="@color/white"
+                app:title="موزیک پلیر"
+                android:id="@+id/toolbarmain"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </com.google.android.material.appbar.AppBarLayout>
 
+        <FrameLayout
+            android:id="@+id/FrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="65dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 
-</FrameLayout>
+        <com.ismaeldivita.chipnavigation.ChipNavigationBar
+            android:id="@+id/butennavigetion"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            android:backgroundTint="@color/light_blue"
+            app:cnb_menuResource="@menu/meno_btnmnavigation_main" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

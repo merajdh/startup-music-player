@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         SelectedbtnNavigeyshen() // BtnNavigation
         Run() // run
+        setSupportActionBar(binding.toolbarmain)
     }
 
 
@@ -53,7 +54,19 @@ class MainActivity : AppCompatActivity() {
         binding.butennavigetion.setItemSelected( R.id.home) // Select the executed item
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.meno_search_main,menu)
+        return true
 
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.search ->{
+                Toast.makeText(this, "test", Toast.LENGTH_SHORT).show()
+            }
+        }
+        return true
+    }
 
 
 }
