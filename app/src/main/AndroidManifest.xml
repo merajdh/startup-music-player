@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Startupmusicplayer"
         tools:targetApi="31">
         <activity
+            android:name=".ui.Activity.SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.Activity.MainActivity"
             android:exported="false" />
         <activity

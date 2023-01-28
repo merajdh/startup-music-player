@@ -1,5 +1,6 @@
 package com.example.startup_music_player.ui.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -24,9 +25,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         SelectedbtnNavigeyshen() // BtnNavigation
         Run() // run
-        setSupportActionBar(binding.toolbarmain)
-    }
+        setSupportActionBar(binding.toolbarmain) // set tolbar
 
+    }
 
     private fun SelectedbtnNavigeyshen() {
         binding.butennavigetion.setOnItemSelectedListener {
@@ -43,30 +44,34 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
-    }
+    } // the transfer fragment
+
     private fun transform(fragment : Fragment){
         val transform = supportFragmentManager.beginTransaction()
         transform.replace(R.id.FrameLayout,fragment)
         transform.commit()
-    }
+    } // transform btn navigeshen
+
     private fun Run(){
         transform(HomeFragment()) // Added run time Fragment
         binding.butennavigetion.setItemSelected( R.id.home) // Select the executed item
-    }
+    } // Run every time
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.meno_search_main,menu)
         return true
 
-    }
+    } // ->
+                                                                          //set Meno srech
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.search ->{
-                Toast.makeText(this, "test", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this,SearchActivity::class.java)
+                startActivity(intent)
             }
         }
         return true
-    }
+    }// ->
 
 
 }

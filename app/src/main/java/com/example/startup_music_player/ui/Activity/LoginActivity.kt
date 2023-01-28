@@ -11,15 +11,15 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.animLogin.playAnimation()
+
+        binding.animLogin.playAnimation() // Ply Anim lotti
         binding.txtRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
-        }
-        binding.btnLogin.setOnClickListener { IschektLogin() }
+        } // intent to Activity Register
+        binding.btnLogin.setOnClickListener { IschektLogin() } //intent to Activity home
 
     }
-
     private fun IschektLogin() {
         // Chekt isNotEmpty  EDT
         if (binding.EdtUserLogin.text.isNotEmpty() &&

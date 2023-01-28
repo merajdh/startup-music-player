@@ -19,7 +19,7 @@ class RegisterActivity : AppCompatActivity() {
         binding.txtRegister.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-        }
+        } // intent to Activity Login
     }
 
     private fun IschektRegister() {
@@ -47,13 +47,13 @@ class RegisterActivity : AppCompatActivity() {
             SnackbarError("لطفا تمام فیلد ها را تکمیل کنید !")
         }
 
-    }
+    } // Chek data user
     private fun SnackbarError(text : String) {
         Snackbar
             .make(binding.root, text , Snackbar.LENGTH_LONG)
             .setBackgroundTint(ContextCompat.getColor(this, R.color.light_blue))
             .setTextColor(ContextCompat.getColor(this, R.color.white))
             .show()
-    }
+    } // SnakBar
 }
 
