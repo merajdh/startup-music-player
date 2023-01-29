@@ -1,6 +1,9 @@
 package com.example.startup_music_player.ui.Activity
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -16,9 +19,11 @@ import com.example.startup_music_player.databinding.ActivityMainBinding
 import com.example.startup_music_player.ui.Fragment.CategoryFragment
 import com.example.startup_music_player.ui.Fragment.HomeFragment
 import com.example.startup_music_player.ui.Fragment.ProfileFragment
+import com.example.startup_music_player.util.NetworkChecker
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    lateinit var broadcastReceiver: BroadcastReceiver
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -26,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         SelectedbtnNavigeyshen() // BtnNavigation
         Run() // run
         setSupportActionBar(binding.toolbarmain) // set tolbar
-
+        chekinternet() //chekinternet
     }
 
     private fun SelectedbtnNavigeyshen() {
@@ -56,6 +61,22 @@ class MainActivity : AppCompatActivity() {
         transform(HomeFragment()) // Added run time Fragment
         binding.butennavigetion.setItemSelected( R.id.home) // Select the executed item
     } // Run every time
+
+    private fun chekinternet(){
+        val internet: Boolean = NetworkChecker(this).isInternetConnected
+        // broadcastReceiver ->
+        broadcastReceiver = object : BroadcastReceiver() {
+            override fun onReceive(p0: Context?, p1: Intent?) {
+                if (!internet) {
+                    //snalbar
+                }
+            }
+        }
+        val intentfilter = IntentFilter("android.net.conn.CONNECTIVITY_CHANGE")
+        registerReceiver(broadcastReceiver, intentfilter)
+
+    }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.meno_search_main,menu)
