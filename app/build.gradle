@@ -79,5 +79,7 @@ dependencies {
     //lifecycle
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
 
+    // koin
+    implementation "io.insert-koin:koin-android:3.2.0-beta-1"
 
 }
