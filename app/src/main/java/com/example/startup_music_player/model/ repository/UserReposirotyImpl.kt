@@ -45,26 +45,27 @@ class UserReposirotyImpl(
     }
 
     override fun singout() {
-
+        TokenInMemory.refreshToken(null,null)
+        sharedPref.edit().clear().apply()
     }
 
     override fun loadtoken() {
-
+        TokenInMemory.refreshToken(getusername(),getToken())
     }
 
     override fun saveToken(newToken: String) {
-
+        sharedPref.edit().putString("token",newToken).apply()
     }
 
     override fun getToken(): String {
-        return ""
+        return sharedPref.getString("token","")!!
     }
 
     override fun saveusername(username: String) {
-
+        sharedPref.edit().putString("username",username).apply()
     }
 
     override fun getusername(): String {
-        return ""
+        return sharedPref.getString("username","")!!
     }
 }
