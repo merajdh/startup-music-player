@@ -3,6 +3,7 @@ package com.example.startup_music_player.model.repository
 import android.content.SharedPreferences
 import com.example.startup_music_player.model.net.Apiservice
 import com.google.gson.JsonObject
+import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 
 class UserReposirotyImpl(
     private val apiservice: Apiservice,
@@ -22,7 +23,7 @@ class UserReposirotyImpl(
             TokenInMemory.refreshToken(username, result.token)
             saveToken(result.token)
             saveusername(username)
-            return "success"
+            return VALUE_SUCCESS
         } else {
             return result.mesage
         }
@@ -38,7 +39,7 @@ class UserReposirotyImpl(
             TokenInMemory.refreshToken(username, result.token)
             saveToken(result.token)
             saveusername(username)
-            return "success"
+            return VALUE_SUCCESS
         } else {
             return result.mesage
         }

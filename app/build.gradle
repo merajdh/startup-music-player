@@ -82,4 +82,6 @@ dependencies {
     // koin
     implementation "io.insert-koin:koin-android:3.2.0-beta-1"
 
+    implementation("com.squareup.okhttp3:4.9.1")
+
 }
