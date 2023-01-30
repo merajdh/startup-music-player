@@ -21,7 +21,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
     private fun IschektLogin() {
-        // Chekt isNotEmpty  EDT
+        // Chekt isNotEmpty EDT
         if (binding.EdtUserLogin.text.isNotEmpty() &&
             binding.EdtPasswordLogin.text.isNotEmpty()
         ){

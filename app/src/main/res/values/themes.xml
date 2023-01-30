@@ -18,4 +18,11 @@
         <item name="colorAccent">@color/dark_bule</item>
         <item name="colorControlActivated">@color/white</item>
     </style>
+
+    <style name="tiltle" parent="Theme.MaterialComponents" >
+        <item name="fontFamily">@font/shabnam_bold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+
 </resources>

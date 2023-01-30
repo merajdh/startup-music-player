@@ -14,15 +14,27 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbarmain"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="56dp">
 
             <androidx.appcompat.widget.Toolbar
-                app:titleMarginStart="150dp"
-                app:titleTextColor="@color/white"
-                app:title="موزیک پلیر"
+                app:titleEnabled="false"
                 android:id="@+id/toolbarmain"
                 android:layout_width="match_parent"
-                android:layout_height="50dp" />
+                android:layout_height="56dp" >
+
+                <TextView
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="موزیک پلیر"
+                    android:id="@+id/toolbar_title"/>
+
+            </androidx.appcompat.widget.Toolbar>
+
+
         </com.google.android.material.appbar.AppBarLayout>
 
         <FrameLayout
