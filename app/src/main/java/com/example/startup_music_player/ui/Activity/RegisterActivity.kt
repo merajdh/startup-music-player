@@ -30,7 +30,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun IschektRegister() {
-        val viewmodel = ViewModelProvider(this)[RegisterViewModel::class.java]
+//        val viewmodel = ViewModelProvider(this)[RegisterViewModel::class.java]
         if (binding.EdtPassword.text.toString() != binding.EdtPasswordRepeat.text.toString()) {
             SnackbarError("رمزی که وارد کردید با رمز اول مطابق نیست ")
         } else {
@@ -44,15 +44,17 @@ class RegisterActivity : AppCompatActivity() {
             && binding.EdtPassword.text.isNotEmpty()
             && binding.EdtPassword == binding.EdtPasswordRepeat
         ) {
-            viewmodel.RegisterUser {
-                if (it == VALUE_SUCCESS) {
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-
-                } else {
-                    // Snakbar
-                }
-            }
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+//            viewmodel.RegisterUser {
+//                if (it == VALUE_SUCCESS) {
+//                    val intent = Intent(this, MainActivity::class.java)
+//                    startActivity(intent)
+//
+//                } else {
+//                    // Snakbar
+//                }
+//            }
 
         } else if (binding.EdtUser.text.isEmpty() or
             binding.EdtGmail.text.isEmpty() or
