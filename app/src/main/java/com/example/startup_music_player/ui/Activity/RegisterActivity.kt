@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
-
 import androidx.lifecycle.ViewModelProvider
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.ActivityRegisterBinding
@@ -17,12 +16,10 @@ import org.koin.android.ext.android.get
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var binding: ActivityRegisterBinding
-    val userReposiroty : UserReposiroty= get()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        userReposiroty.loadtoken()
         binding.btnRegister.setOnClickListener { IschektRegister() } //onclick_btnRegister
         binding.txtRegister.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
