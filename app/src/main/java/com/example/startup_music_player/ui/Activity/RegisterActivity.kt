@@ -21,9 +21,8 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
-        userReposiroty.loadtoken()
         setContentView(binding.root)
-
+        userReposiroty.loadtoken()
         binding.btnRegister.setOnClickListener { IschektRegister() } //onclick_btnRegister
         binding.txtRegister.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
