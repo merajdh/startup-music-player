@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/shabnam_bold"
-            android:text="تغییر نام کاربری"
+            android:text="تغییر"
             android:textColor="@color/light_gray"
             android:textSize="14sp" />
     </com.google.android.material.card.MaterialCardView>

@@ -20,6 +20,8 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+//        val userReposiroty: UserReposiroty = get()
+//        userReposiroty.loadtoken()
         binding.btnRegister.setOnClickListener { IschektRegister() } //onclick_btnRegister
         binding.txtRegister.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
@@ -28,7 +30,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun IschektRegister() {
-        val viewmodel = ViewModelProvider(this).get(RegisterViewModel::class.java)
+        val viewmodel = ViewModelProvider(this)[RegisterViewModel::class.java]
         if (binding.EdtPassword.text.toString() != binding.EdtPasswordRepeat.text.toString()) {
             SnackbarError("رمزی که وارد کردید با رمز اول مطابق نیست ")
         } else {
@@ -42,13 +44,13 @@ class RegisterActivity : AppCompatActivity() {
             && binding.EdtPassword.text.isNotEmpty()
             && binding.EdtPassword == binding.EdtPasswordRepeat
         ) {
-            viewmodel.RegisterUser{
-                if (it== VALUE_SUCCESS){
+            viewmodel.RegisterUser {
+                if (it == VALUE_SUCCESS) {
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
 
-                }else{
-                    // Snacbar
+                } else {
+                    // Snakbar
                 }
             }
 
