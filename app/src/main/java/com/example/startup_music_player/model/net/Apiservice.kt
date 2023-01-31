@@ -16,13 +16,13 @@ import retrofit2.http.POST
 
 interface Apiservice {
 
-    @POST("")
+    @POST("Login")
    suspend fun Login(@Body jsonObject: JsonObject) : LoginRespomse
 
-    @POST("")
+    @POST("Register")
     suspend fun Register(@Body jsonObject: JsonObject) : LoginRespomse
 
-    @GET("")
+    @GET("refreshToken")
     fun refreshToken(): Call<LoginRespomse>
 
 }

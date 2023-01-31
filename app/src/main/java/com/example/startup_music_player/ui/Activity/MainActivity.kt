@@ -20,6 +20,8 @@ import com.example.startup_music_player.ui.Fragment.CategoryFragment
 import com.example.startup_music_player.ui.Fragment.HomeFragment
 import com.example.startup_music_player.ui.Fragment.ProfileFragment
 import com.example.startup_music_player.util.NetworkChecker
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.logger.KOIN_TAG
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -32,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         Run() // run
         setSupportActionBar(binding.toolbarmain) // set tolbar
         chekinternet() //chekinternet
+
     }
 
     private fun SelectedbtnNavigeyshen() {

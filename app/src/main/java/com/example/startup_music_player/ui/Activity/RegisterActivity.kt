@@ -4,17 +4,26 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
-import androidx.core.os.bundleOf
+
+import androidx.lifecycle.ViewModelProvider
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.ActivityRegisterBinding
+import com.example.startup_music_player.model.repository.UserReposiroty
+import com.example.startup_music_player.ui.features.RegisterViewModel
 import com.google.android.material.snackbar.Snackbar
+import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
+import org.koin.android.ext.android.get
+
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var binding: ActivityRegisterBinding
+    val userReposiroty : UserReposiroty= get()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
+        userReposiroty.loadtoken()
         setContentView(binding.root)
+
         binding.btnRegister.setOnClickListener { IschektRegister() } //onclick_btnRegister
         binding.txtRegister.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
@@ -23,9 +32,10 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun IschektRegister() {
-        if (binding.EdtPassword.text.toString() != binding.EdtPasswordRepeat.text.toString()){
+        val viewmodel = ViewModelProvider(this).get(RegisterViewModel::class.java)
+        if (binding.EdtPassword.text.toString() != binding.EdtPasswordRepeat.text.toString()) {
             SnackbarError("رمزی که وارد کردید با رمز اول مطابق نیست ")
-        }else{
+        } else {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -35,10 +45,17 @@ class RegisterActivity : AppCompatActivity() {
             && binding.EdtPasswordRepeat.text.isNotEmpty()
             && binding.EdtPassword.text.isNotEmpty()
             && binding.EdtPassword == binding.EdtPasswordRepeat
-
         ) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            viewmodel.RegisterUser{
+                if (it== VALUE_SUCCESS){
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+
+                }else{
+                    // Snacbar
+                }
+            }
+
         } else if (binding.EdtUser.text.isEmpty() or
             binding.EdtGmail.text.isEmpty() or
             binding.EdtPassword.text.isEmpty() or
@@ -48,9 +65,10 @@ class RegisterActivity : AppCompatActivity() {
         }
 
     } // Chek data user
-    private fun SnackbarError(text : String) {
+
+    private fun SnackbarError(text: String) {
         Snackbar
-            .make(binding.root, text , Snackbar.LENGTH_LONG)
+            .make(binding.root, text, Snackbar.LENGTH_LONG)
             .setBackgroundTint(ContextCompat.getColor(this, R.color.light_blue))
             .setTextColor(ContextCompat.getColor(this, R.color.white))
             .show()
