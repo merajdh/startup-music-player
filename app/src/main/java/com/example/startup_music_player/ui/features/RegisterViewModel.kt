@@ -14,7 +14,6 @@ class RegisterViewModel(private val userReposiroty: UserReposiroty) : ViewModel(
 
 
     fun RegisterUser(LoggingEvent: (String) -> Unit) {
-
         viewModelScope.launch() {
           val result =   userReposiroty.Register(username.value!!, gmaile.value!!, password.value!!)
             LoggingEvent(result)
