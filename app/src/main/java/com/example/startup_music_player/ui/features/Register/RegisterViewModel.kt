@@ -1,4 +1,4 @@
-package com.example.startup_music_player.ui.features
+package com.example.startup_music_player.ui.features.Register
 
 import android.util.Log
 import android.widget.Toast

@@ -19,7 +19,7 @@ interface Apiservice {
     @POST("singIn")
    suspend fun Login(@Body jsonObject: JsonObject) : LoginRespomse
 
-    @POST("signIn")
+    @POST("signUp")
     suspend fun Register(@Body jsonObject: JsonObject) : LoginRespomse
 
     @GET("refreshToken")

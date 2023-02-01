@@ -1,21 +1,19 @@
-package com.example.startup_music_player.ui.Activity
+package com.example.startup_music_player.ui.features.Register
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.ViewModelProvider
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.ActivityRegisterBinding
 import com.example.startup_music_player.model.repository.UserReposiroty
-import com.example.startup_music_player.ui.features.RegisterViewModel
+import com.example.startup_music_player.ui.features.Login.LoginActivity
 import com.google.android.material.snackbar.Snackbar
 import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.util.regex.Pattern
+
 class RegisterActivity : AppCompatActivity() {
     lateinit var binding: ActivityRegisterBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +30,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun IschektRegister() {
-        val viewmodel :  RegisterViewModel by viewModel()
+        val viewmodel : RegisterViewModel by viewModel()
         if (binding.EdtUser.text.isNotEmpty() && binding.EdtGmail.text.isNotEmpty() && binding.EdtPassword.text.isNotEmpty() && binding.EdtPasswordRepeat.text.isNotEmpty()) {
             if (binding.EdtPassword.text.toString() == binding.EdtPasswordRepeat.text.toString()) {
                 if (binding.EdtPassword.text.length >= 8) {
@@ -43,7 +41,7 @@ class RegisterActivity : AppCompatActivity() {
                         viewmodel.confirmPassword.value = binding.EdtPasswordRepeat.text.toString()
                         viewmodel.signUpUser {
                             if (it == VALUE_SUCCESS){
-                                Log.v("TagA","ok")
+
                             }else{
                                 Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
                             }

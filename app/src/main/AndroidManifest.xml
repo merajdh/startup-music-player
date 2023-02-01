@@ -21,13 +21,13 @@
             android:name=".ui.Activity.SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.Activity.MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.Activity.LoginActivity"
+            android:name=".ui.features.Login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.Activity.RegisterActivity"
+            android:name=".ui.features.Register.RegisterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

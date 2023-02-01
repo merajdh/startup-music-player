@@ -1,4 +1,4 @@
-package com.example.startup_music_player.ui.Activity
+package com.example.startup_music_player.ui
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -8,20 +8,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.Toast
-import androidx.core.content.ContextCompat
-import androidx.core.graphics.toColor
 import androidx.fragment.app.Fragment
-import com.denzcoskun.imageslider.models.SlideModel
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.ActivityMainBinding
+import com.example.startup_music_player.ui.Activity.SearchActivity
 import com.example.startup_music_player.ui.Fragment.CategoryFragment
 import com.example.startup_music_player.ui.Fragment.HomeFragment
 import com.example.startup_music_player.ui.Fragment.ProfileFragment
 import com.example.startup_music_player.util.NetworkChecker
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.logger.KOIN_TAG
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -90,7 +84,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.search ->{
-                val intent = Intent(this,SearchActivity::class.java)
+                val intent = Intent(this, SearchActivity::class.java)
                 startActivity(intent)
             }
         }

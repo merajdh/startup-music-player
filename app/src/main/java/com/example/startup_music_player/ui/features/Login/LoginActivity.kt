@@ -1,15 +1,10 @@
-package com.example.startup_music_player.ui.Activity
+package com.example.startup_music_player.ui.features.Login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Patterns
-import androidx.lifecycle.ViewModelProvider
 import com.example.startup_music_player.databinding.ActivityLoginBinding
-import com.example.startup_music_player.model.repository.UserReposiroty
-import com.example.startup_music_player.ui.features.LoginViewModel
-import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
-import org.koin.android.ext.android.get
+import com.example.startup_music_player.ui.features.Register.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding

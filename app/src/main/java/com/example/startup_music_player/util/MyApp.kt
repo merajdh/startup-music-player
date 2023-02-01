@@ -5,8 +5,8 @@ import android.content.Context
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.repository.UserReposiroty
 import com.example.startup_music_player.model.repository.UserReposirotyImpl
-import com.example.startup_music_player.ui.features.LoginViewModel
-import com.example.startup_music_player.ui.features.RegisterViewModel
+import com.example.startup_music_player.ui.features.Login.LoginViewModel
+import com.example.startup_music_player.ui.features.Register.RegisterViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
