@@ -15,6 +15,7 @@ import com.example.startup_music_player.ui.features.RegisterViewModel
 import com.google.android.material.snackbar.Snackbar
 import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 import org.koin.android.ext.android.get
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.regex.Pattern
 
 
@@ -34,28 +35,36 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun IschektRegister() {
+        val viewmodel :  RegisterViewModel by viewModel()
         if (binding.EdtUser.text.isNotEmpty() && binding.EdtGmail.text.isNotEmpty() && binding.EdtPassword.text.isNotEmpty() && binding.EdtPasswordRepeat.text.isNotEmpty()) {
             if (binding.EdtPassword.text.toString() == binding.EdtPasswordRepeat.text.toString()) {
                 if (binding.EdtPassword.text.length >= 8) {
                     if (Patterns.EMAIL_ADDRESS.matcher(binding.EdtGmail.text).matches()){
+                        viewmodel.RegisterUser {
+                            if (it == VALUE_SUCCESS){
+
+                            }else{
+                                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+                            }
+                        }
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
 
                     }else{
                         // فرمت ایمل اشتباه است
-                        Log.v("tagx","gmail")
+
                     }
                 } else {
                     //snakbar -> کمتر از 8 تا password
-                    Log.v("tagx","pas")
+
                 }
             } else {
                 // snakbar -> یکی نبودن پسورد
-                Log.v("tagx","یکی نبودن پسورد")
+
             }
         } else {
             // snakbar -> پر کردن مقادیر
-            Log.v("tagx","emty")
+
         }
     }
 

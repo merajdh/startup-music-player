@@ -24,9 +24,7 @@ class MyApp : Application() {
             single { createApiService() }
             single<UserReposiroty> { UserReposirotyImpl(get(), get()) }
             viewModel { LoginViewModel(get()) }
-            viewModel {
-                RegisterViewModel(get())
-            }
+            viewModel { RegisterViewModel(get()) }
         }
         startKoin {
             androidContext(this@MyApp)
