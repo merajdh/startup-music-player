@@ -16,10 +16,10 @@ import retrofit2.http.POST
 
 interface Apiservice {
 
-    @POST("Login")
+    @POST("singIn")
    suspend fun Login(@Body jsonObject: JsonObject) : LoginRespomse
 
-    @POST("Register")
+    @POST("signIn")
     suspend fun Register(@Body jsonObject: JsonObject) : LoginRespomse
 
     @GET("refreshToken")
@@ -30,12 +30,14 @@ fun createApiService(): Apiservice{
     val okHttpClient =  OkHttpClient.Builder()
         .addInterceptor {
             val  oldRetrofit = it.request()
-            val newRetrofit = oldRetrofit.newBuilder()
+            val newRequest = oldRetrofit.newBuilder()
             if (TokenInMemory.Token != null)
-                newRetrofit.addHeader("",TokenInMemory.Token!!)
+                newRequest.addHeader("Authorization",TokenInMemory.Token!!)
 
-            newRetrofit.method(oldRetrofit.method(),oldRetrofit.body())
-            return@addInterceptor it.proceed(newRetrofit.build())
+            newRequest.addHeader("Accept", "application/json")
+            newRequest.method(oldRetrofit.method(),oldRetrofit.body())
+
+            return@addInterceptor it.proceed(newRequest.build())
         }.build()
 
     val retrofit = Retrofit.Builder()

@@ -1,5 +1,4 @@
 package com.example.startup_music_player.ui.Activity
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,8 +16,6 @@ import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.regex.Pattern
-
-
 class RegisterActivity : AppCompatActivity() {
     lateinit var binding: ActivityRegisterBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,15 +37,17 @@ class RegisterActivity : AppCompatActivity() {
             if (binding.EdtPassword.text.toString() == binding.EdtPasswordRepeat.text.toString()) {
                 if (binding.EdtPassword.text.length >= 8) {
                     if (Patterns.EMAIL_ADDRESS.matcher(binding.EdtGmail.text).matches()){
-                        viewmodel.RegisterUser {
+                        viewmodel.name.value = binding.EdtUser.text.toString()
+                        viewmodel.email.value= binding.EdtGmail.text.toString()
+                        viewmodel.password.value = binding.EdtPassword.text.toString()
+                        viewmodel.confirmPassword.value = binding.EdtPasswordRepeat.text.toString()
+                        viewmodel.signUpUser {
                             if (it == VALUE_SUCCESS){
-
+                                Log.v("TagA","ok")
                             }else{
                                 Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
                             }
                         }
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
 
                     }else{
                         // فرمت ایمل اشتباه است
