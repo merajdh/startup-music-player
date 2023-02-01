@@ -24,5 +24,16 @@
         <item name="android:textSize">24sp</item>
     </style>
 
+    <style name="RoundedCornersDialog" parent="@style/Theme.MaterialComponents.Dialog">
+        <item name="colorPrimary">@color/dark_bule</item>
+        <item name="dialogCornerRadius">22dp</item>
+    </style>
+
+    <style name="DialogCorners">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">22dp</item>
+    </style>
+
+
 
 </resources>
