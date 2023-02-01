@@ -3,6 +3,8 @@ package com.example.startup_music_player.ui.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.util.Patterns
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
@@ -13,6 +15,7 @@ import com.example.startup_music_player.ui.features.RegisterViewModel
 import com.google.android.material.snackbar.Snackbar
 import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 import org.koin.android.ext.android.get
+import java.util.regex.Pattern
 
 
 class RegisterActivity : AppCompatActivity() {
@@ -31,7 +34,29 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun IschektRegister() {
+        if (binding.EdtUser.text.isNotEmpty() && binding.EdtGmail.text.isNotEmpty() && binding.EdtPassword.text.isNotEmpty() && binding.EdtPasswordRepeat.text.isNotEmpty()) {
+            if (binding.EdtPassword.text == binding.EdtPasswordRepeat.text) {
+                if (binding.EdtPassword.text.length >= 8) {
+                    if (Patterns.EMAIL_ADDRESS.matcher(binding.EdtGmail.text).matches()){
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
 
+                    }else{
+                        // فرمت ایمل اشتباه است
+                        Log.v("tagx","gmail")
+                    }
+                } else {
+                    //snakbar -> کمتر از 8 تا password
+                    Log.v("tagx","pas")
+                }
+            } else {
+                // snakbar -> یکی نبودن پسورد
+                Log.v("tagx","یکی نبودن پسورد")
+            }
+        } else {
+            // snakbar -> پر کردن مقادیر
+            Log.v("tagx","emty")
+        }
     }
 
     private fun SnackbarError(text: String) {
