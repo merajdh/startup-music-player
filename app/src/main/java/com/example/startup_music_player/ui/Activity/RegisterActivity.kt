@@ -35,7 +35,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun IschektRegister() {
         if (binding.EdtUser.text.isNotEmpty() && binding.EdtGmail.text.isNotEmpty() && binding.EdtPassword.text.isNotEmpty() && binding.EdtPasswordRepeat.text.isNotEmpty()) {
-            if (binding.EdtPassword.text == binding.EdtPasswordRepeat.text) {
+            if (binding.EdtPassword.text.toString() == binding.EdtPasswordRepeat.text.toString()) {
                 if (binding.EdtPassword.text.length >= 8) {
                     if (Patterns.EMAIL_ADDRESS.matcher(binding.EdtGmail.text).matches()){
                         val intent = Intent(this, MainActivity::class.java)
