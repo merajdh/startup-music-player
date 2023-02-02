@@ -6,16 +6,15 @@ import android.content.Intent
 import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.ActivityMainBinding
-import com.example.startup_music_player.ui.Activity.SearchActivity
-import com.example.startup_music_player.ui.Fragment.CategoryFragment
-import com.example.startup_music_player.ui.Fragment.HomeFragment
-import com.example.startup_music_player.ui.Fragment.ProfileFragment
+import com.example.startup_music_player.model.repository.TokenInMemory
+import com.example.startup_music_player.model.repository.UserReposiroty
+import com.example.startup_music_player.ui.features.Main.MainFragment
+import com.example.startup_music_player.ui.features.Register.RegisterFragment
 import com.example.startup_music_player.util.NetworkChecker
+import org.koin.android.ext.android.get
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -24,41 +23,20 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        SelectedbtnNavigeyshen() // BtnNavigation
-        Run() // run
-        setSupportActionBar(binding.toolbarmain) // set tolbar
+        val userReposiroty: UserReposiroty = get()
+        userReposiroty.loadtoken()
+//        setSupportActionBar(binding.toolbarmain) // set tolbar
         chekinternet() //chekinternet
-
-    }
-
-    private fun SelectedbtnNavigeyshen() {
-        binding.butennavigetion.setOnItemSelectedListener {
-            when(it){
-                R.id.Profile -> {
-                    transform(ProfileFragment())
-                }
-                R.id.home -> {
-                    transform(HomeFragment())
-                }
-                R.id.category -> {
-                    transform(CategoryFragment())
-                }
-            }
-
+        transform(RegisterFragment())
+        if (TokenInMemory.Token != null){
+            transform(MainFragment())
         }
-    } // the transfer fragment
-
+    }
     private fun transform(fragment : Fragment){
         val transform = supportFragmentManager.beginTransaction()
-        transform.replace(R.id.FrameLayout,fragment)
+        transform.replace(R.id.FrameLayoutMain,fragment)
         transform.commit()
     } // transform btn navigeshen
-
-    private fun Run(){
-        transform(HomeFragment()) // Added run time Fragment
-        binding.butennavigetion.setItemSelected( R.id.home) // Select the executed item
-    } // Run every time
-
     private fun chekinternet(){
         val internet: Boolean = NetworkChecker(this).isInternetConnected
         // broadcastReceiver ->
@@ -73,23 +51,6 @@ class MainActivity : AppCompatActivity() {
         registerReceiver(broadcastReceiver, intentfilter)
 
     }
-
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.meno_search_main,menu)
-        return true
-
-    } // ->
-                                                                          //set Meno srech
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.search ->{
-                val intent = Intent(this, SearchActivity::class.java)
-                startActivity(intent)
-            }
-        }
-        return true
-    }// ->
 
 
 }

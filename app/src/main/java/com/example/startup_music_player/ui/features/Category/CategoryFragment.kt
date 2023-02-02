@@ -1,4 +1,4 @@
-package com.example.startup_music_player.ui.Fragment
+package com.example.startup_music_player.ui.features.Category
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,32 +1,37 @@
 package com.example.startup_music_player.ui.features.Register
+
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.startup_music_player.R
-import com.example.startup_music_player.databinding.ActivityRegisterBinding
+import com.example.startup_music_player.databinding.FragmentRegisterBinding
 import com.example.startup_music_player.model.repository.UserReposiroty
-import com.example.startup_music_player.ui.features.Login.LoginActivity
+import com.example.startup_music_player.ui.features.Login.LoginFragment
 import com.google.android.material.snackbar.Snackbar
 import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class RegisterActivity : AppCompatActivity() {
-    lateinit var binding: ActivityRegisterBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityRegisterBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        val userReposiroty: UserReposiroty = get()
-        userReposiroty.loadtoken()
+
+class RegisterFragment : Fragment() {
+    lateinit var binding : FragmentRegisterBinding
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        // Inflate the layout for this fragment
+        binding = FragmentRegisterBinding.inflate(layoutInflater,container,false)
         binding.btnRegister.setOnClickListener { IschektRegister() } //onclick_btnRegister
         binding.txtRegister.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        } // intent to Activity Login
+            transform(LoginFragment())
+        } // intent to Fragment Login
+        return binding.root
     }
 
     private fun IschektRegister() {
@@ -43,7 +48,7 @@ class RegisterActivity : AppCompatActivity() {
                             if (it == VALUE_SUCCESS){
 
                             }else{
-                                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+                                Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
                             }
                         }
 
@@ -64,13 +69,16 @@ class RegisterActivity : AppCompatActivity() {
 
         }
     }
-
+    private fun transform(fragment : Fragment){
+        val transform = parentFragmentManager.beginTransaction()
+        transform.replace(R.id.FrameLayoutMain,fragment)
+        transform.commit()
+    } // transform
     private fun SnackbarError(text: String) {
         Snackbar
             .make(binding.root, text, Snackbar.LENGTH_LONG)
-            .setBackgroundTint(ContextCompat.getColor(this, R.color.light_blue))
-            .setTextColor(ContextCompat.getColor(this, R.color.white))
+            .setBackgroundTint(ContextCompat.getColor(binding.root.context, R.color.light_blue))
+            .setTextColor(ContextCompat.getColor(binding.root.context, R.color.white))
             .show()
     } // SnakBar
 }
-
