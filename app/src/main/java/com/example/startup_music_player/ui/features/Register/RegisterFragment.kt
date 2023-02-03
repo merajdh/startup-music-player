@@ -2,6 +2,7 @@ package com.example.startup_music_player.ui.features.Register
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentRegisterBinding
 import com.example.startup_music_player.model.repository.UserReposiroty
 import com.example.startup_music_player.ui.features.Login.LoginFragment
+import com.example.startup_music_player.ui.features.Main.MainFragment
 import com.google.android.material.snackbar.Snackbar
 import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 import org.koin.android.ext.android.get
@@ -46,7 +48,7 @@ class RegisterFragment : Fragment() {
                         viewmodel.confirmPassword.value = binding.EdtPasswordRepeat.text.toString()
                         viewmodel.signUpUser {
                             if (it == VALUE_SUCCESS){
-
+                                transform(MainFragment())
                             }else{
                                 Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
                             }

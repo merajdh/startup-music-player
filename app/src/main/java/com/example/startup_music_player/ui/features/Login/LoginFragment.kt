@@ -1,7 +1,8 @@
 package com.example.startup_music_player.ui.features.Login
 
-import android.content.Intent
+
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +10,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentLoginBinding
-import com.example.startup_music_player.databinding.FragmentRegisterBinding
+import com.example.startup_music_player.ui.features.Main.MainFragment
 import com.example.startup_music_player.ui.features.Register.RegisterFragment
-import com.example.startup_music_player.ui.features.Register.RegisterViewModel
 import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -33,12 +33,12 @@ class LoginFragment : Fragment() {
 
     private fun IschektLogin() {
         val viewmodel : LoginViewModel by viewModel()
-        if (binding.EdtUserLogin.text.isNotEmpty() && binding.EdtPasswordLogin.text.isNotEmpty()) {
-            viewmodel.username.value = binding.EdtUserLogin.text.toString()
+        if (binding.EdtEmailLogin.text.isNotEmpty() && binding.EdtPasswordLogin.text.isNotEmpty()) {
+            viewmodel.username.value = binding.EdtEmailLogin.text.toString()
             viewmodel.password.value = binding.EdtPasswordLogin.text.toString()
             viewmodel.LoginUser {
                 if (it == VALUE_SUCCESS){
-
+                    transform(MainFragment())
                 }else{
                     Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
                 }

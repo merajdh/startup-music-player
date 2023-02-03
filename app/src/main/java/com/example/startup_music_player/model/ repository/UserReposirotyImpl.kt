@@ -31,14 +31,18 @@ class UserReposirotyImpl(
 
     override suspend fun Login(username: String, password: String): String {
         val jsonObject = JsonObject().apply {
-            addProperty("name", username)
+
+            addProperty("email", username)
             addProperty("password", password)
         }
+
         val result = apiservice.Login(jsonObject)
         if (result.success) {
             TokenInMemory.refreshToken(username, result.token)
             saveToken(result.token)
+
             saveusername(username)
+
             return VALUE_SUCCESS
         } else {
             return result.mesage

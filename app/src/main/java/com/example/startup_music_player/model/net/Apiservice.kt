@@ -16,8 +16,8 @@ import retrofit2.http.POST
 
 interface Apiservice {
 
-    @POST("singIn")
-   suspend fun Login(@Body jsonObject: JsonObject) : LoginRespomse
+    @POST("signIn")
+    suspend fun Login(@Body jsonObject: JsonObject) : LoginRespomse
 
     @POST("signUp")
     suspend fun Register(@Body jsonObject: JsonObject) : LoginRespomse
