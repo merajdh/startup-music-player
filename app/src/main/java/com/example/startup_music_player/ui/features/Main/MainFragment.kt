@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentMainBinding
+import com.example.startup_music_player.ui.Fragment.ProfileFragment
 import com.example.startup_music_player.ui.features.Category.CategoryFragment
 import com.example.startup_music_player.ui.features.Home.HomeFragment
-import com.example.startup_music_player.ui.features.Profile.ProfileFragment
 import com.example.startup_music_player.ui.features.Serach.SearchFragment
 
 class MainFragment : Fragment() {

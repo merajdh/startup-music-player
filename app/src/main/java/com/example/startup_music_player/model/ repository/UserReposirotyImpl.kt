@@ -20,8 +20,8 @@ class UserReposirotyImpl(
 
         val result = apiservice.Register(jsonObject)
         if (result.success) {
-            TokenInMemory.refreshToken(name, result.token)
-            saveToken(result.token)
+            TokenInMemory.refreshToken(name, result.access)
+            saveToken(result.access)
             saveusername(name)
             return VALUE_SUCCESS
         } else {
@@ -38,8 +38,8 @@ class UserReposirotyImpl(
 
         val result = apiservice.Login(jsonObject)
         if (result.success) {
-            TokenInMemory.refreshToken(username, result.token)
-            saveToken(result.token)
+            TokenInMemory.refreshToken(username, result.access)
+            saveToken(result.access)
 
             saveusername(username)
 

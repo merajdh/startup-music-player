@@ -16,13 +16,13 @@ import retrofit2.http.POST
 
 interface Apiservice {
 
-    @POST("signIn")
+    @POST("login")
     suspend fun Login(@Body jsonObject: JsonObject) : LoginRespomse
 
     @POST("signUp")
     suspend fun Register(@Body jsonObject: JsonObject) : LoginRespomse
 
-    @GET("refreshToken")
+    @GET("token/refresh/")
     fun refreshToken(): Call<LoginRespomse>
 
 }
@@ -34,7 +34,6 @@ fun createApiService(): Apiservice{
             if (TokenInMemory.Token != null)
                 newRequest.addHeader("Authorization",TokenInMemory.Token!!)
 
-            newRequest.addHeader("Accept", "application/json")
             newRequest.method(oldRetrofit.method(),oldRetrofit.body())
 
             return@addInterceptor it.proceed(newRequest.build())

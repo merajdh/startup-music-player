@@ -28,9 +28,9 @@ class MainActivity : AppCompatActivity() {
 //        setSupportActionBar(binding.toolbarmain) // set tolbar
         chekinternet() //chekinternet
         transform(RegisterFragment())
-//        if (TokenInMemory.Token != null){
-//            transform(MainFragment())
-//        }
+        if (TokenInMemory.Token != null){
+            transform(MainFragment())
+        }
     }
     private fun transform(fragment : Fragment){
         val transform = supportFragmentManager.beginTransaction()
