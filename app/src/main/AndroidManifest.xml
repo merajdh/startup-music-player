@@ -18,23 +18,18 @@
         android:theme="@style/Theme.Startupmusicplayer"
         tools:targetApi="31">
         <activity
-            android:name=".ui.Activity.SearchActivity"
+            android:name=".ui.features.Serach.SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.Activity.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.Activity.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.Activity.RegisterActivity"
-            android:exported="true">
+            android:name=".ui.MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
