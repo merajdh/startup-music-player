@@ -16,10 +16,17 @@ class LoginViewModel(private val userReposiroty: UserReposiroty): ViewModel() {
     fun LoginUser(LoggingEvent: (String) -> Unit){
         val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
             Log.v("error", "Error -> " + throwable.message)
+
         } // view error
         viewModelScope.launch(coroutineExceptionHandler) {
             val result =  userReposiroty.Login(username.value!!, password.value!!) // Answer server
             LoggingEvent(result) // Event Login to FragmentLogin
+
+        }
+        viewModelScope.launch(coroutineExceptionHandler) {
+            val result =  userReposiroty.Login(username.value!!, password.value!!)
+            LoggingEvent(result)
+
         }
     }
 }
