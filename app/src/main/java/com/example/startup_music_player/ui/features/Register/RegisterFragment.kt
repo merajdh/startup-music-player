@@ -42,10 +42,12 @@ class RegisterFragment : Fragment() {
             if (binding.EdtPassword.text.toString() == binding.EdtPasswordRepeat.text.toString()) {
                 if (binding.EdtPassword.text.length >= 8) {
                     if (Patterns.EMAIL_ADDRESS.matcher(binding.EdtGmail.text).matches()){
+                        // Input user
                         viewmodel.name.value = binding.EdtUser.text.toString()
                         viewmodel.email.value= binding.EdtGmail.text.toString()
                         viewmodel.password.value = binding.EdtPassword.text.toString()
                         viewmodel.confirmPassword.value = binding.EdtPasswordRepeat.text.toString()
+                        // ischekt Answer server
                         viewmodel.signUpUser {
                             if (it == VALUE_SUCCESS){
                                 transform(MainFragment())

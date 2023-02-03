@@ -12,6 +12,7 @@ import org.koin.core.component.inject
 class AuthChecker : Authenticator, KoinComponent {
     private val apiservice: Apiservice by inject()
     override fun authenticate(route: Route?, response: Response): Request? {
+        // is Chekt error 405
         if (TokenInMemory.Token != null && !response.request().url().pathSegments().last().equals("token/refresh/", false)) {
             val result = refreshToken()
             if (result) {

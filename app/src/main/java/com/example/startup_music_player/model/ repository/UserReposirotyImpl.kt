@@ -17,7 +17,6 @@ class UserReposirotyImpl(
             addProperty("email", gmail)
             addProperty("password", password)
         }
-
         val result = apiservice.Register(jsonObject)
         if (result.success) {
             TokenInMemory.refreshToken(name, result.access)
