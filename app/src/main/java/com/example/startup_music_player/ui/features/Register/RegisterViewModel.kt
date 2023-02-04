@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 import kotlin.math.log
 
 class RegisterViewModel(private val userReposiroty: UserReposiroty) : ViewModel() {
+    // Input User
     val name = MutableLiveData("")
     val email = MutableLiveData("")
     val password = MutableLiveData("")
@@ -22,8 +23,9 @@ class RegisterViewModel(private val userReposiroty: UserReposiroty) : ViewModel(
             Log.v("error", "Error -> " + throwable.message)
         }
         viewModelScope.launch(coroutineExceptionHandler) {
-            val result = userReposiroty.Register(name.value!!, email.value!!, password.value!!)
-            LoggingEvent(result)
+            val result = userReposiroty.Register(name.value!!, email.value!!, password.value!!) // Answer server
+            LoggingEvent(result) // Event Login to FragmentLogin
+
         }
 
     }

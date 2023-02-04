@@ -34,6 +34,10 @@ class LoginFragment : Fragment() {
     private fun IschektLogin() {
         val viewmodel : LoginViewModel by viewModel()
         if (binding.EdtEmailLogin.text.isNotEmpty() && binding.EdtPasswordLogin.text.isNotEmpty()) {
+            // Input user
+            viewmodel.username.value = binding.EdtEmailLogin.text.toString()
+            viewmodel.password.value = binding.EdtPasswordLogin.text.toString()
+            // ischekt Answer server
             viewmodel.username.value = binding.EdtEmailLogin.text.toString()
             viewmodel.password.value = binding.EdtPasswordLogin.text.toString()
             viewmodel.LoginUser {

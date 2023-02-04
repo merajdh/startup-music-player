@@ -11,18 +11,18 @@ class UserReposirotyImpl(
 ) : UserReposiroty {
 
 
-    override suspend fun Register(name: String, gmail: String, password: String): String {
+    override suspend fun Register(username: String, gmail: String, password: String): String {
         val jsonObject = JsonObject().apply {
-            addProperty("name", name)
-            addProperty("email", gmail)
+            addProperty("name", username)
+            addProperty("gmail", gmail)
             addProperty("password", password)
         }
 
         val result = apiservice.Register(jsonObject)
         if (result.success) {
-            TokenInMemory.refreshToken(name, result.token)
+            TokenInMemory.refreshToken(username, result.token)
             saveToken(result.token)
-            saveusername(name)
+            saveusername(username)
             return VALUE_SUCCESS
         } else {
             return result.mesage
@@ -31,18 +31,14 @@ class UserReposirotyImpl(
 
     override suspend fun Login(username: String, password: String): String {
         val jsonObject = JsonObject().apply {
-
-            addProperty("email", username)
+            addProperty("name", username)
             addProperty("password", password)
         }
-
         val result = apiservice.Login(jsonObject)
         if (result.success) {
             TokenInMemory.refreshToken(username, result.token)
             saveToken(result.token)
-
             saveusername(username)
-
             return VALUE_SUCCESS
         } else {
             return result.mesage
