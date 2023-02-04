@@ -11,7 +11,7 @@ interface ContractHome {
     }
     interface View {
         fun ShowPartiMusik(data: List<MusicRespomse>)
-        fun ShowTopMusik(data:String)
+        fun ShowTopMusik(data: List<MusicRespomse>)
         fun ShowTopViewMusik(data: List<MusicRespomse>)
         fun ShowGuropMusik(data: List<MusicRespomse>)
     }

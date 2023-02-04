@@ -6,19 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.startup_music_player.databinding.FragmentHomeBinding
 import com.example.startup_music_player.model.Contract.ContractHome
 import com.example.startup_music_player.model.data.MusicRespomse
-import com.example.startup_music_player.model.net.Apiservice
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterHome
-import com.google.android.material.transition.MaterialContainerTransform
-import retrofit2.Retrofit
-import retrofit2.create
+import com.example.startup_music_player.util.NetworkChecker
 
 
 class HomeFragment : Fragment() , ContractHome.View {
@@ -31,7 +27,7 @@ class HomeFragment : Fragment() , ContractHome.View {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
         AddsliderCod() // slider
-        presenter = PresenterHome(createApiService())
+        presenter = PresenterHome(createApiService(), NetworkChecker(binding.root.context).isInternetConnected)
          lifecycleScope.launchWhenCreated {
              presenter.OnAttach(this@HomeFragment)
          }
@@ -52,9 +48,8 @@ class HomeFragment : Fragment() , ContractHome.View {
 
     }
 
-    override fun ShowTopMusik(data: String) {
-
-        Log.v("TAgw",data)
+    override fun ShowTopMusik(data: List<MusicRespomse>) {
+        Log.v("TAgw",data.toString())
     }
 
     override fun ShowTopViewMusik(data: List<MusicRespomse>) {

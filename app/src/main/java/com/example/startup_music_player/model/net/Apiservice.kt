@@ -21,8 +21,8 @@ interface Apiservice {
     @POST("Register")
     suspend fun Register(@Body jsonObject: JsonObject): LoginRespomse
 
-    @POST("Topmusic")
-    suspend fun TopMusic(): List<MusicRespomse>
+    @GET("Music")
+    suspend fun Music(): List<MusicRespomse>
 
     @GET("refreshToken")
     fun refreshToken(): Call<LoginRespomse>
@@ -35,7 +35,7 @@ fun createApiService(): Apiservice {
             val oldRetrofit = it.request()
             val newRetrofit = oldRetrofit.newBuilder()
             if (TokenInMemory.Token != null)
-                newRetrofit.addHeader("", TokenInMemory.Token!!)
+                newRetrofit.addHeader("Authorization", TokenInMemory.Token!!)
 
             newRetrofit.method(oldRetrofit.method(), oldRetrofit.body())
             return@addInterceptor it.proceed(newRetrofit.build())
