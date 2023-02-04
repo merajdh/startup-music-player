@@ -1,4 +1,4 @@
-package com.example.startup_music_player.ui.Fragment
+package com.example.startup_music_player.ui.features.changePassword
 
 import android.annotation.SuppressLint
 import android.os.Bundle

@@ -37,6 +37,8 @@
         android:background="@color/light_blue"/>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_myplaylist"
+        android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
@@ -44,7 +46,8 @@
         android:layout_marginEnd="20dp"
         android:backgroundTint="@color/light_blue"
         app:cardCornerRadius="36dp"
-        app:cardElevation="4dp">
+        app:cardElevation="4dp"
+        android:focusable="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -57,6 +60,8 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:clickable="true"
+        android:id="@+id/btn_liked"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="8dp"
@@ -65,7 +70,8 @@
         android:layout_marginEnd="20dp"
         android:backgroundTint="@color/light_blue"
         app:cardCornerRadius="36dp"
-        app:cardElevation="4dp">
+        app:cardElevation="4dp"
+        android:focusable="true">
 
         <TextView
             android:layout_width="wrap_content"
