@@ -4,5 +4,5 @@ data class LoginRespomse(
     val expiresAt : Int,
     val mesage : String,
     val success :Boolean,
-    val access : String,
+    val token : String,
 )
