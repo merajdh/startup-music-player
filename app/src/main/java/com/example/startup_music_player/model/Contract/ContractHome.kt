@@ -1,18 +1,18 @@
 package com.example.startup_music_player.model.Contract
 
-import com.example.startup_music_player.ui.features.Home.HomeFragment
+import com.example.startup_music_player.model.data.MusicRespomse
 
 interface ContractHome {
 
     interface Presenter{
-        fun OnAttach(view:HomeFragment)
-        fun OnDetavh()
-        fun OnClikt()
+       suspend fun OnAttach(view:View)
+       fun OnDetavh()
+       suspend fun OnClikt()
     }
     interface View {
-        fun ShowPartiMusik()
-        fun ShowTopMusik()
-        fun ShowTopViewMusik()
-        fun ShowGuropMusik()
+        fun ShowPartiMusik(data: List<MusicRespomse>)
+        fun ShowTopMusik(data:String)
+        fun ShowTopViewMusik(data: List<MusicRespomse>)
+        fun ShowGuropMusik(data: List<MusicRespomse>)
     }
 }

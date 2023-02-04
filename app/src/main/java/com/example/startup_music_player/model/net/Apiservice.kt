@@ -22,7 +22,7 @@ interface Apiservice {
     suspend fun Register(@Body jsonObject: JsonObject): LoginRespomse
 
     @POST("Topmusic")
-    suspend fun TopMusic(): MusicRespomse
+    suspend fun TopMusic(): List<MusicRespomse>
 
     @GET("refreshToken")
     fun refreshToken(): Call<LoginRespomse>
