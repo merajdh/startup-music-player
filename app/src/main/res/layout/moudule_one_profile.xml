@@ -44,7 +44,7 @@
                 android:layout_marginTop="2dp"
                 android:text="test.test@gmail.com"
                 android:textColor="@color/Gray"
-                android:textSize="14sp" />
+                android:textSize="13sp" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_marginBottom="12dp"
