@@ -1,14 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout android:orientation="vertical"
+    android:background="@color/dark_bule"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.features.verify.VerifyEmailFragment">
+    tools:context=".ui.features.verify.VerifyEmailFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="200dp"/>
+    <TextView
+        android:layout_marginTop="16dp"
+        android:text="لطفا کد تایید که به ایمیل شما ارسال شده است را وارد فرمایید !"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-</FrameLayout>
+    <com.google.android.material.card.MaterialCardView
+        app:cardElevation="7dp"
+        app:strokeColor="?attr/colorPrimary"
+        app:strokeWidth="1dp"
+        android:backgroundTint="#252a34"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
+        app:cardCornerRadius="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+
+        <EditText
+            android:drawablePadding="18dp"
+            android:textSize="15sp"
+            android:id="@+id/Edt_Code"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="18dp"
+            android:background="#252a34"
+            android:hint="کد تایید"
+            android:textColor="@color/white"
+            android:inputType="text"
+            android:textColorHint="#7A7C87"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:layout_gravity="center"
+        android:id="@+id/btn_Verify"
+        android:layout_marginStart="20dp"
+        app:cardElevation="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="65dp"
+        android:clickable="true"
+        app:cardCornerRadius="22dp"
+        android:backgroundTint="@color/bule"
+        android:layout_width="200dp"
+        android:layout_height="72dp"
+        android:focusable="true">
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:text="تایید"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+</LinearLayout>

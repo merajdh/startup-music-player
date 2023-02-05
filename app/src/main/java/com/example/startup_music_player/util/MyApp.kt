@@ -6,6 +6,7 @@ import com.example.startup_music_player.model.repository.UserReposiroty
 import com.example.startup_music_player.model.repository.UserReposirotyImpl
 import com.example.startup_music_player.ui.features.Login.LoginViewModel
 import com.example.startup_music_player.ui.features.Register.RegisterViewModel
+import com.example.startup_music_player.ui.features.verify.VerifyViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
@@ -24,6 +25,7 @@ class MyApp : Application() {
             single<UserReposiroty> { UserReposirotyImpl(get(), get()) }
             viewModel { LoginViewModel(get()) }
             viewModel { RegisterViewModel(get()) }
+            viewModel { VerifyViewModel(get()) }
         }
         startKoin {
             androidContext(this@MyApp)
