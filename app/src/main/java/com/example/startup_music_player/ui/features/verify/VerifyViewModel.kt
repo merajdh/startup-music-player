@@ -1,4 +1,4 @@
-package com.example.startup_music_player.ui.features.Login
+package com.example.startup_music_player.ui.features.verify
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -8,18 +8,18 @@ import com.example.startup_music_player.model.repository.UserReposiroty
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 
-class LoginViewModel(private val userReposiroty: UserReposiroty): ViewModel() {
+class VerifyViewModel(private val userReposiroty: UserReposiroty): ViewModel() {
     // Input User
-    val username = MutableLiveData("")
-    val password = MutableLiveData("")
+    val Code = MutableLiveData("")
 
-    fun LoginUser(LoggingEvent: (String) -> Unit){
+    fun VerifyEmail(VerifyEvent: (String) -> Unit){
         val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
             Log.v("error", "Error -> " + throwable.message)
+
         } // view error
         viewModelScope.launch(coroutineExceptionHandler) {
-            val result =  userReposiroty.Login(username.value!!, password.value!!) // Answer server
-            LoggingEvent(result) // Event Login to FragmentLogin
+            val result =  userReposiroty.Verify(Code.value!!) // Answer server
+            VerifyEvent(result) // Event Login to FragmentLogin
 
         }
     }

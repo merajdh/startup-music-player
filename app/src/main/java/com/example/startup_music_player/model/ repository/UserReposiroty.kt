@@ -4,6 +4,7 @@ interface UserReposiroty {
     //Online
     suspend fun Login(username: String, password: String): String
     suspend fun Register(username: String, gmail: String, password: String): String
+    suspend fun Verify(Verify_Code: String): String
 
     //Ofline
     fun singout()

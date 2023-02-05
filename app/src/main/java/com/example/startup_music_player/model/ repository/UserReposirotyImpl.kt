@@ -29,6 +29,19 @@ class UserReposirotyImpl(
         }
     }
 
+    override suspend fun Verify(Verify_Code: String): String {
+        val jsonObject = JsonObject().apply {
+            addProperty("Code", Verify_Code)
+        }
+
+        val result = apiservice.Verify(jsonObject)
+        if (result.success) {
+            return VALUE_SUCCESS
+        } else {
+            return result.mesage
+        }
+    }
+
     override suspend fun Login(username: String, password: String): String {
         val jsonObject = JsonObject().apply {
             addProperty("name", username)
