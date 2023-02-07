@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:paddingTop="12dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/colorPrimary">
+
+    <com.google.android.material.card.MaterialCardView
+        android:padding="8dp"
+        android:backgroundTint="@color/Gray"
+        app:cardCornerRadius="2dp"
+        android:layout_width="30dp"
+        android:layout_height="12dp"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView3"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:text="اسم خواننده"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/materialCardView3"
+        app:layout_constraintTop_toTopOf="@+id/materialCardView3" />
+
+    <TextView
+        android:textSize="15sp"
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="اسم آهنگ"
+        android:textColor="@color/Gray"
+        app:layout_constraintEnd_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="تعداد لایک ها :"
+        android:textColor="@color/Gray"
+        android:layout_marginTop="14dp"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+</androidx.constraintlayout.widget.ConstraintLayout>
