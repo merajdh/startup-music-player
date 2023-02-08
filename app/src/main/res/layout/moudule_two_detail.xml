@@ -1,130 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="?attr/colorPrimary"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="400dp">
+    android:layout_height="340dp"
+    android:background="?attr/colorPrimary"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="#8053565C" />
 
     <LinearLayout
-        android:layout_marginTop="30dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:orientation="horizontal"
+        android:id="@+id/btn_add_to_playlist"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical|end"
+        android:orientation="horizontal"
+        android:padding="14dp">
 
         <TextView
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="20dp"
-            android:textSize="14sp"
-            android:textColor="@color/white"
-            android:text="اضافه کردن به پلی لیست"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="4dp"
+            android:text="افزودن به پلی لیست"
+            android:textColor="@color/light_gray"
+            android:textSize="17sp" />
 
         <ImageView
+            android:foregroundGravity="center"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_aye"
-            android:layout_width="20dp"
-            android:layout_height="20dp"/>
+            android:layout_marginEnd="9dp"
+            android:src="@drawable/ic_add_to_playlist"
+            app:tint="@color/light_gray" />
 
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_add_to_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:gravity="center_horizontal|center_vertical|end"
+        android:orientation="horizontal"
+        android:padding="14dp"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="4dp"
+            android:text="افزودن به علاقه مندی ها"
+            android:textColor="@color/light_gray"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_add_to_favorites"
+            app:tint="@color/light_gray" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_artist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:gravity="center_horizontal|center_vertical|end"
+        android:orientation="horizontal"
+        android:padding="14dp"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="4dp"
+            android:text="آرتیست"
+            android:textColor="@color/light_gray"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="9dp"
+            android:src="@drawable/ic_artist"
+            app:tint="@color/light_gray" />
 
 
     </LinearLayout>
 
     <View
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:background="@color/light_blue"
         android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-
+        android:layout_height="2dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="35dp"
+        android:background="#8053565C" />
 
     <LinearLayout
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:orientation="horizontal"
+        android:id="@+id/btn_share"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:gravity="center_horizontal|center_vertical|end"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:focusable="true">
 
         <TextView
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="20dp"
-            android:textSize="14sp"
-            android:textColor="@color/white"
-            android:text="اضافه کردن به پلی لیست"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="21dp"
+            android:layout_marginBottom="4dp"
+            android:text="اشتراک گذاری"
+            android:textColor="@color/light_gray"
+            android:textSize="17sp" />
 
         <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_aye"
-            android:layout_width="20dp"
-            android:layout_height="20dp"/>
-
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_share"
+            app:tint="@color/light_gray" />
 
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="20dp"
-            android:textSize="14sp"
-            android:textColor="@color/white"
-            android:text="اضافه کردن به پلی لیست"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <ImageView
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_aye"
-            android:layout_width="20dp"
-            android:layout_height="20dp"/>
-
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="20dp"
-            android:textSize="14sp"
-            android:textColor="@color/white"
-            android:text="اضافه کردن به پلی لیست"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <ImageView
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_aye"
-            android:layout_width="20dp"
-            android:layout_height="20dp"/>
-
-
-
-    </LinearLayout>
-
-    <View
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:background="@color/light_blue"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
 
 </LinearLayout>

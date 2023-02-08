@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/dark_bule"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="290dp">
 
     <LinearLayout
-        android:elevation="8dp"
         android:layout_width="match_parent"
-        android:layout_height="310dp"
+        android:layout_height="290dp"
         android:backgroundTint="@color/light_blue">
 
         <LinearLayout
@@ -41,17 +40,17 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="4dp"
                 android:text="test.test@gmail.com"
                 android:textColor="@color/Gray"
                 android:textSize="13sp" />
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_marginBottom="12dp"
                 android:id="@+id/btn_change_username"
                 android:clickable="true"
+                app:cardElevation="8dp"
                 android:backgroundTint="?attr/colorSecondary"
-                android:layout_marginTop="10sp"
+                android:layout_marginTop="16dp"
                 android:layout_width="130dp"
                 android:layout_height="50dp"
                 app:cardCornerRadius="22dp"

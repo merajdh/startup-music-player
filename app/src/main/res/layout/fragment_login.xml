@@ -85,7 +85,7 @@
 
     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
         android:id="@+id/btn_Login"
-        app:cardElevation="4dp"
+        app:cardElevation="8dp"
         android:layout_marginEnd="25dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="90dp"
@@ -108,9 +108,11 @@
     </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
         android:clickable="true"
-        app:cardElevation="6dp"
+        app:cardElevation="10dp"
         app:cardCornerRadius="22dp"
         android:backgroundTint="@color/white"
+        app:strokeColor="@color/Gray"
+        app:strokeWidth="0.5dp"
         android:layout_marginEnd="25dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="8dp"
