@@ -3,22 +3,25 @@
 
 
     <item
-        android:id="@+id/search"
-        android:title="جست و جو"
-        android:icon="@drawable/ic_search"/>
-        <item
-            android:id="@+id/home"
-            android:title="صفحه اصلی"
-            android:icon="@drawable/ic_home"/>
-
-        <item
-            android:id="@+id/category"
-            android:title="دسته بندی"
-            android:icon="@drawable/ic_category"/>
-    <item
         android:id="@+id/Profile"
         android:title="پروفایل"
         android:icon="@drawable/ic_profile"/>
+
+    <item
+        android:id="@+id/category"
+        android:title="دسته بندی"
+        android:icon="@drawable/ic_category"/>
+
+    <item
+        android:id="@+id/search"
+        android:title="جست و جو"
+        android:icon="@drawable/ic_search"/>
+
+
+    <item
+        android:id="@+id/home"
+        android:title="صفحه اصلی"
+        android:icon="@drawable/ic_home"/>
 
 
     </menu>

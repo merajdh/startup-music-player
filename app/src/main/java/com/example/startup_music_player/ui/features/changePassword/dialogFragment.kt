@@ -14,6 +14,7 @@ lateinit var binding : FragmentDialogChangeBinding
 class fragmentDialog : DialogFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentDialogChangeBinding.inflate(layoutInflater , container , false)
+        isCancelable = true
         return binding.root
     }
     override fun getTheme() = R.style.RoundedCornersDialog

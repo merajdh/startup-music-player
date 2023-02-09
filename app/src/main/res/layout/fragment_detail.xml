@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="530dp"
+    android:orientation="vertical"
+    android:layout_gravity="bottom">
+
+
+    <include layout="@layout/moudule_one_detail"
+        android:id="@+id/moudule_one_detail"/>
+
+    <include layout="@layout/moudule_two_detail"
+        android:id="@+id/moudule_two_detail"/>
+
+</LinearLayout>
