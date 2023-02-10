@@ -21,7 +21,7 @@ interface Apiservice {
     @POST("Register")
     suspend fun Register(@Body jsonObject: JsonObject): LoginRespomse
 
-    @POST("Register")
+    @POST("Verify")
     suspend fun Verify(@Body jsonObject: JsonObject): LoginRespomse
 
     @GET("Music")

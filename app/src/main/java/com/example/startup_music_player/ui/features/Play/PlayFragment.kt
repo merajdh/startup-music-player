@@ -6,15 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.startup_music_player.R
+import com.example.startup_music_player.databinding.FragmentPlayBinding
 
 class PlayFragment : Fragment() {
-
+    lateinit var binding: FragmentPlayBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_play, container, false)
+        binding = FragmentPlayBinding.inflate(layoutInflater, container, false)
+
+        return binding.root
+
     }
 
 
