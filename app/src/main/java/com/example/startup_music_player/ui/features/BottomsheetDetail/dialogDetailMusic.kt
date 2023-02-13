@@ -1,12 +1,18 @@
 package com.example.startup_music_player.ui.features.BottomsheetDetail
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentDetailBinding
+import com.example.startup_music_player.ui.features.Artist.ArtistFragment
+import com.example.startup_music_player.ui.features.ReportFragment.ReportFragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+@SuppressLint("StaticFieldLeak")
 lateinit var binding: FragmentDetailBinding
 class DetaiMusiclFragment : BottomSheetDialogFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -23,11 +29,25 @@ class DetaiMusiclFragment : BottomSheetDialogFragment() {
         }
 
         binding.mouduleTwoDetail.btnArtist.setOnClickListener {
+            dialog?.dismiss()
+            transform(ArtistFragment())
         }
 
         binding.mouduleTwoDetail.btnShare.setOnClickListener {
         }
-    }
 
+        binding.mouduleTwoDetail.btnReport.setOnClickListener {
+            dialog?.dismiss()
+            val transform = (ReportFragment())
+            transform.show(parentFragmentManager , null)
+        }
+    }
     override fun getTheme() = R.style.RoundedCornersBottomSheetDialog
+
+        private fun transform (fragment: Fragment) {
+            val transform = parentFragmentManager.beginTransaction()
+            transform.replace(R.id.fragment_container_profile, fragment)
+            transform.commit()
+        }
+
 }
