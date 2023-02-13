@@ -9,6 +9,7 @@ import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentProfileBinding
 import com.example.startup_music_player.ui.features.BottomsheetDetail.DetaiMusiclFragment
 import com.example.startup_music_player.ui.features.LikedMusic.LikedMusicFragment
+import com.example.startup_music_player.ui.features.Logout.DialogLogout
 import com.example.startup_music_player.ui.features.Myplaylist.MyplaylistFragment
 import com.example.startup_music_player.ui.features.Myplaylist.binding
 import com.example.startup_music_player.ui.features.changePassword.fragmentDialog
@@ -60,7 +61,9 @@ class ProfileFragment : Fragment() {
 
         }
         binding.mouduleThree.btnLogout.setOnClickListener {
-
+            val transform = DialogLogout()
+            transform.isCancelable = true
+            transform.show(childFragmentManager , null)
         }
 
 

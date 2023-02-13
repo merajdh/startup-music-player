@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
+    android:id="@+id/parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/moudule_one_artist"/>
+    <LinearLayout
+        android:background="?attr/colorPrimary"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <include layout="@layout/moudule_two_artist" />
-</LinearLayout>
+        <include layout="@layout/moudule_one_artist"/>
+
+        <include layout="@layout/moudule_two_artist" />
+
+        <include layout="@layout/moudule_three_artist" />
+
+        <include layout="@layout/moudule_four_artist"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

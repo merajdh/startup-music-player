@@ -5,11 +5,9 @@
     app:cardCornerRadius="24dp"
     app:cardElevation="14dp"
     android:layout_width="match_parent"
-    android:padding="12dp"
     android:layout_margin="12dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

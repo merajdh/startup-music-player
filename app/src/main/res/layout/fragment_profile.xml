@@ -11,8 +11,11 @@
         android:layout_height="match_parent">
 
         <include
+            android:layout_marginTop="4dp"
             android:id="@+id/moudule_one"
-            layout="@layout/moudule_one_profile"/>
+            layout="@layout/moudule_one_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <include
             android:id="@+id/moudule_two"

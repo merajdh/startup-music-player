@@ -17,7 +17,10 @@ class MyplaylistFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentMyplaylistBinding.inflate(layoutInflater, container, false)
+
+        binding.btnBack.setOnClickListener {
+
+        }
         return binding.root
     }
-
 }

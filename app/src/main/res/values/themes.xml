@@ -26,7 +26,7 @@
 
     <style name="RoundedCornersDialog" parent="@style/Theme.MaterialComponents.Dialog">
         <item name="colorPrimary">@color/dark_bule</item>
-        <item name="dialogCornerRadius">22dp</item>
+        <item name="dialogCornerRadius">20dp</item>
     </style>
 
     <style name="RoundedCornersBottomSheetDialog" parent="@style/Theme.MaterialComponents.BottomSheetDialog">
@@ -41,6 +41,10 @@
     </style>
 
 
+    <style name="RoundedCornersDialog2" parent="@style/Theme.MaterialComponents.Dialog">
+        <item name="colorPrimary">@color/dark_bule</item>
+        <item name="dialogCornerRadius">20dp</item>
+    </style>
 
 
 </resources>

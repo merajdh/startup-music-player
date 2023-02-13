@@ -15,7 +15,8 @@
             android:layout_height="120dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
-            app:cardCornerRadius="22dp">
+            app:cardElevation="20dp"
+            app:cardCornerRadius="40dp">
 
             <ImageView
 
@@ -39,7 +40,7 @@
                 android:layout_marginEnd="20dp"
                 android:text="نام خواننده"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
 
                 app:layout_constraintTop_toTopOf="parent" />
@@ -52,14 +53,14 @@
                 android:layout_marginTop="2dp"
                 android:text="تعداد موزیک‌:"
                 android:textColor="@color/Gray"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/textView13"
                 app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
             <View
                 android:paddingBottom="6dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
