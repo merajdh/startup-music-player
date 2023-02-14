@@ -1,78 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:backgroundTint="?attr/colorPrimary"
+    app:cardCornerRadius="20dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/shape_dialog"
+    android:layout_height="wrap_content">
+
+<LinearLayout
+    android:padding="10dp"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="420dp"
-    android:layout_gravity="bottom"
-    android:background="@drawable/shape_back_bottom_sheet"
-    android:orientation="vertical">
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="30dp"
-        android:layout_height="2dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5dp"
-        android:backgroundTint="@color/Gray"
-        android:padding="8dp" />
+    android:layout_height="match_parent">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:text="گزارش"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:letterSpacing="0.1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
-        android:text="لطفا توضیحات مناسب در ارتباط با گزارش خود بنویسید ..."
-        android:textColor="@color/Gray" />
-
+        android:layout_width="match_parent"
+        android:textSize="17sp"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="تغییر نام کاربری"
+        android:layout_height="wrap_content"/>
 
     <com.google.android.material.card.MaterialCardView
+        android:paddingTop="12dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="@color/light_blue"
         app:cardCornerRadius="14dp"
         app:strokeWidth="1.5dp"
         app:strokeColor="#54575E">
 
         <EditText
+            android:id="@+id/Edt_email_Login"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="16dp"
             android:background="#252a34"
             android:gravity="top|start"
             android:inputType="textMultiLine"
-            android:maxLines="10"
             android:letterSpacing="0.1"
-            android:imeOptions="actionDone"
-            android:singleLine="false"
-            android:hint="گزارش خود را بنویسید ..."
+            android:singleLine="true"
+            android:maxLength="16"
+            android:hint="نام کاربری جدید خود را وارد کنید ..."
             android:textColor="@color/white"
             android:textColorHint="#7A7C87"
-            android:textSize="12sp"
+            android:textSize="11sp"
             tools:ignore="TextContrastCheck,TextFields,TouchTargetSizeCheck" />
     </com.google.android.material.card.MaterialCardView>
 
 
     <LinearLayout
+        android:paddingBottom="10dp"
         android:layout_marginBottom="10dp"
+        android:layout_marginTop="30dp"
         android:weightSum="2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
             android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:padding="6dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
             android:layout_marginEnd="35dp"
@@ -81,13 +77,13 @@
             android:text="لغو"
             android:textColor="@color/light_gray"
             android:textSize="14sp"
-            app:cornerRadius="18dp" />
+            app:cornerRadius="16dp" />
 
 
         <com.google.android.material.button.MaterialButton
+            android:padding="6dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_accept"
             android:layout_marginStart="35dp"
             android:layout_marginEnd="35dp"
             android:layout_weight="1"
@@ -95,8 +91,12 @@
             android:text="تایید"
             android:textColor="@color/light_gray"
             android:textSize="14sp"
-            app:cornerRadius="18dp" />
+            app:cornerRadius="16dp" />
 
     </LinearLayout>
 
+
 </LinearLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

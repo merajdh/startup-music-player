@@ -14,9 +14,12 @@ lateinit var binding: DiaogLogoutBinding
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
            binding = DiaogLogoutBinding.inflate(layoutInflater , container , false)
             isCancelable = true
+            binding.btnCancel.setOnClickListener {
+                dismiss()
+            }
             return binding.root
         }
 
-        override fun getTheme() = R.style.RoundedCornersDialog2
+        override fun getTheme() = R.style.RoundedCornersDialog
 
     }

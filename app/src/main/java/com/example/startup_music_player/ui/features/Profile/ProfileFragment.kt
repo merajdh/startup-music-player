@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.startup_music_player.R
+import com.example.startup_music_player.databinding.DialogChangeUsernameBinding
 import com.example.startup_music_player.databinding.FragmentProfileBinding
 import com.example.startup_music_player.ui.features.BottomsheetDetail.DetaiMusiclFragment
+import com.example.startup_music_player.ui.features.ChangeUsername.ChangeUsernameFragment
+import com.example.startup_music_player.ui.features.ContactUs.ContactUsFragment
 import com.example.startup_music_player.ui.features.LikedMusic.LikedMusicFragment
 import com.example.startup_music_player.ui.features.Logout.DialogLogout
 import com.example.startup_music_player.ui.features.Myplaylist.MyplaylistFragment
-import com.example.startup_music_player.ui.features.Myplaylist.binding
 import com.example.startup_music_player.ui.features.changePassword.fragmentDialog
 
 class ProfileFragment : Fragment() {
@@ -29,6 +31,7 @@ class ProfileFragment : Fragment() {
 
     private fun transform (fragment: Fragment) {
         val transform = parentFragmentManager.beginTransaction()
+        transform.addToBackStack(null)
         transform.replace(R.id.FrameLayoutMain, fragment)
         transform.commit()
     }
@@ -36,8 +39,8 @@ class ProfileFragment : Fragment() {
     private fun setOnClickListeners(){
         // mouduleOne ->
         binding.mouduleOne.btnChangeUsername.setOnClickListener {
-
-            val transform = (DetaiMusiclFragment())
+            val transform = ChangeUsernameFragment()
+            transform.isCancelable = true
             transform.show(parentFragmentManager , null)
         }
         // mouduleTwo ->
@@ -55,7 +58,9 @@ class ProfileFragment : Fragment() {
         }
         // mouduleThree ->
         binding.mouduleThree.btnComment.setOnClickListener {
-
+            val transform = ContactUsFragment()
+            transform.isCancelable = true
+            transform.show(parentFragmentManager , null)
         }
         binding.mouduleThree.btnAbout.setOnClickListener {
 

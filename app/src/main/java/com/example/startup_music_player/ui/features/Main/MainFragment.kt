@@ -20,8 +20,8 @@ class MainFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentMainBinding.inflate(layoutInflater,container,false)
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbarmain) // set tolbar
-        SelectedbtnNavigeyshen()
         Run()
+        SelectedbtnNavigeyshen()
         return binding.root
     }
 
@@ -55,4 +55,4 @@ class MainFragment : Fragment() {
         binding.butennavigetion.setItemSelected( R.id.home) // Select the executed item
     } // Run every time
 
-}
+    }

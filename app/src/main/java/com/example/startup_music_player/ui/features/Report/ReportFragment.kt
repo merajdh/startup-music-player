@@ -1,4 +1,4 @@
-package com.example.startup_music_player.ui.features.ReportFragment
+package com.example.startup_music_player.ui.features.Report
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,4 +23,10 @@ class ReportFragment : BottomSheetDialogFragment() {
 
     override fun getTheme() = R.style.RoundedCornersBottomSheetDialog
 
+    private fun setOnClickListeners(){
+        binding.btnCancel.setOnClickListener { dismiss() }
+
+        binding.btnAccept.setOnClickListener {  }
+
+    }
 }
