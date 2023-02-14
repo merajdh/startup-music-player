@@ -39,7 +39,6 @@
         app:strokeColor="#54575E">
 
         <EditText
-            android:id="@+id/Edt_email_Login"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="16dp"
@@ -68,10 +67,10 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_cancel"
             android:layout_width="wrap_content"
-            android:padding="6dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginEnd="35dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
             android:layout_weight="1"
             android:backgroundTint="@color/light_blue"
             android:text="لغو"
@@ -81,11 +80,12 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:padding="6dp"
-            android:layout_width="wrap_content"
+            android:id="@+id/btn_accept"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginEnd="35dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
             android:layout_weight="1"
             android:backgroundTint="@color/bule"
             android:text="تایید"

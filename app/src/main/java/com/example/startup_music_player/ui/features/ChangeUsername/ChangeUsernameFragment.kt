@@ -25,5 +25,9 @@ class ChangeUsernameFragment : DialogFragment() {
     private fun setOnClickListeners(){
         binding.btnCancel.setOnClickListener { dismiss() }
 
+        binding.btnAccept.setOnClickListener {
+
+        }
+
     }
 }

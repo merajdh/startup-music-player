@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
+        android:weightSum="3"
         android:id="@+id/fragment_container_profile"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <include
+            android:layout_weight="1"
             android:layout_marginTop="4dp"
             android:id="@+id/moudule_one"
             layout="@layout/moudule_one_profile"
@@ -18,10 +20,14 @@
             android:layout_height="match_parent" />
 
         <include
+            android:layout_weight="1"
             android:id="@+id/moudule_two"
-            layout="@layout/moudule_two_profile" />
+            layout="@layout/moudule_two_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <include
+            android:layout_weight="1"
             android:id="@+id/moudule_three"
             layout="@layout/moudule_three_profile"
             android:layout_width="match_parent"

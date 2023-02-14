@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.DialogChangeUsernameBinding
 import com.example.startup_music_player.databinding.FragmentProfileBinding
+import com.example.startup_music_player.ui.features.About.AboutFragment
 import com.example.startup_music_player.ui.features.BottomsheetDetail.DetaiMusiclFragment
 import com.example.startup_music_player.ui.features.ChangeUsername.ChangeUsernameFragment
 import com.example.startup_music_player.ui.features.ContactUs.ContactUsFragment
@@ -60,10 +61,10 @@ class ProfileFragment : Fragment() {
         binding.mouduleThree.btnComment.setOnClickListener {
             val transform = ContactUsFragment()
             transform.isCancelable = true
-            transform.show(parentFragmentManager , null)
+            transform.show(childFragmentManager , null)
         }
         binding.mouduleThree.btnAbout.setOnClickListener {
-
+            transform(AboutFragment())
         }
         binding.mouduleThree.btnLogout.setOnClickListener {
             val transform = DialogLogout()
