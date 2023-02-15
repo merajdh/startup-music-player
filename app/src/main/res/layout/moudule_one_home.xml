@@ -28,6 +28,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
+        android:textStyle="bold"
         android:layout_margin="14dp"
         android:text="موزیک های شاد"
         android:textColor="@color/white"
@@ -41,9 +42,11 @@
         tools:listitem="@layout/item_recycler_happy_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-    <View
-        android:layout_margin="8dp"
-        android:background="@color/light_blue"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/light_blue"
         android:layout_width="match_parent"
         android:layout_height="8dp"/>
+
+
 </LinearLayout>

@@ -23,6 +23,8 @@
             android:layout_height="wrap_content"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec_top_music"
+            android:layout_margin="8dp"
             tools:listitem="@layout/item_recycler_top_music_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

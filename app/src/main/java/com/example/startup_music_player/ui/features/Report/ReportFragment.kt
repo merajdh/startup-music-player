@@ -17,7 +17,7 @@ class ReportFragment : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentReportBinding.inflate(layoutInflater , container , false)
-
+        setOnClickListeners()
         return binding.root
     }
 

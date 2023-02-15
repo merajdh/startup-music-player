@@ -22,23 +22,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_margin="8dp"
-        android:text="گروه های موسیقی"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="14dp"
+        android:text="جدید ترین ها"
         android:textColor="@color/white"
-        android:textSize="18sp" />
-    <androidx.recyclerview.widget.RecyclerView
-        tools:itemCount="2"
-        android:id="@+id/recycler_group_home"
-        android:padding="4dp"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:listitem="@layout/item_recycler_group_home"
-        android:layout_width="match_parent"
+        android:textSize="18sp"
+        android:layout_gravity="end"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_new_music"
+        tools:itemCount="2"
+        android:layout_margin="8dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:orientation="horizontal"
+        tools:listitem="@layout/item_recycler_top_music_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 
 </LinearLayout>

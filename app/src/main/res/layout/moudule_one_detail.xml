@@ -6,15 +6,16 @@
     android:background="@drawable/shape_back_bottom_sheet"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.card.MaterialCardView
-        android:padding="8dp"
-        android:backgroundTint="@color/Gray"
-        app:cardCornerRadius="2dp"
-        android:layout_width="30dp"
-        android:layout_height="12dp"
+    <View
+        android:layout_width="32dp"
+        android:layout_height="3dp"
+        android:background="@color/light_blue"
+        app:cardCornerRadius="8dp"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView3"
         android:layout_width="90dp"

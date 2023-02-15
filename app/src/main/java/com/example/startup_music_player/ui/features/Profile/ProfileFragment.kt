@@ -6,12 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.startup_music_player.R
-import com.example.startup_music_player.databinding.DialogChangeUsernameBinding
 import com.example.startup_music_player.databinding.FragmentProfileBinding
 import com.example.startup_music_player.ui.features.About.AboutFragment
-import com.example.startup_music_player.ui.features.BottomsheetDetail.DetaiMusiclFragment
 import com.example.startup_music_player.ui.features.ChangeUsername.ChangeUsernameFragment
 import com.example.startup_music_player.ui.features.ContactUs.ContactUsFragment
+import com.example.startup_music_player.ui.features.Detail.DetaiMusiclFragment
 import com.example.startup_music_player.ui.features.LikedMusic.LikedMusicFragment
 import com.example.startup_music_player.ui.features.Logout.DialogLogout
 import com.example.startup_music_player.ui.features.Myplaylist.MyplaylistFragment
@@ -39,6 +38,12 @@ class ProfileFragment : Fragment() {
 
     private fun setOnClickListeners(){
         // mouduleOne ->
+        binding.mouduleOne.imgProfile.setOnClickListener{
+            val transform = DetaiMusiclFragment()
+            transform.isCancelable = true
+            transform.show(parentFragmentManager , null)
+        }
+
         binding.mouduleOne.btnChangeUsername.setOnClickListener {
             val transform = ChangeUsernameFragment()
             transform.isCancelable = true

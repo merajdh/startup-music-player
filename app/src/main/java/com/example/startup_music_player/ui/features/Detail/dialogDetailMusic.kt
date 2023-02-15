@@ -1,4 +1,4 @@
-package com.example.startup_music_player.ui.features.BottomsheetDetail
+package com.example.startup_music_player.ui.features.Detail
 
 import android.annotation.SuppressLint
 import android.os.Bundle
