@@ -11,7 +11,6 @@ import com.example.startup_music_player.ui.features.BottomsheetDetail.DetaiMusic
 import com.example.startup_music_player.ui.features.LikedMusic.LikedMusicFragment
 import com.example.startup_music_player.ui.features.Logout.DialogLogout
 import com.example.startup_music_player.ui.features.Myplaylist.MyplaylistFragment
-import com.example.startup_music_player.ui.features.Myplaylist.binding
 import com.example.startup_music_player.ui.features.changePassword.fragmentDialog
 
 class ProfileFragment : Fragment() {
@@ -68,4 +67,5 @@ class ProfileFragment : Fragment() {
 
 
     }
+
 }

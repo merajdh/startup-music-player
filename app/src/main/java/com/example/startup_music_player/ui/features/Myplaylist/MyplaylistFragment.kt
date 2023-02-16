@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentMyplaylistBinding
 
-lateinit var binding : FragmentMyplaylistBinding
-class MyplaylistFragment : Fragment() {
 
+class MyplaylistFragment : Fragment() {
+    lateinit var binding : FragmentMyplaylistBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
