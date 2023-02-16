@@ -21,18 +21,19 @@
         <ImageView
             android:src="@drawable/ic_play"
             android:layout_width="match_parent"
+            android:padding="40dp"
             android:layout_height="match_parent"/>
 
         <TextView
-            android:padding="2dp"
-            android:fontFamily="@font/shabnam_bold"
-            android:textStyle="bold"
-            android:textColor="@color/light_gray"
-            android:text="بهترین در هر سبک"
-            android:textSize="26sp"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/shabnam_bold"
+            android:padding="2dp"
+            android:text="بهترین در هر سبک"
+            android:textColor="@color/light_gray"
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
 
     </com.google.android.material.card.MaterialCardView>

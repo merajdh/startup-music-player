@@ -1,17 +1,19 @@
-package com.example.startup_music_player.ui.features.BottomsheetDetail
+package com.example.startup_music_player.ui.features.Detail
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentDetailBinding
 import com.example.startup_music_player.ui.features.Artist.ArtistFragment
-import com.example.startup_music_player.ui.features.ReportFragment.ReportFragment
+import com.example.startup_music_player.ui.features.Report.ReportFragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.android.material.snackbar.Snackbar
+
 @SuppressLint("StaticFieldLeak")
 lateinit var binding: FragmentDetailBinding
 class DetaiMusiclFragment : BottomSheetDialogFragment() {
@@ -26,6 +28,7 @@ class DetaiMusiclFragment : BottomSheetDialogFragment() {
         }
 
         binding.mouduleTwoDetail.btnAddToFavorite.setOnClickListener {
+            Snackbar("موزیک مورد نظر به مورد علاقه های شما اضافه شد")
         }
 
         binding.mouduleTwoDetail.btnArtist.setOnClickListener {
@@ -46,8 +49,16 @@ class DetaiMusiclFragment : BottomSheetDialogFragment() {
 
         private fun transform (fragment: Fragment) {
             val transform = parentFragmentManager.beginTransaction()
-            transform.replace(R.id.fragment_container_profile, fragment)
+            transform.replace(R.id.FrameLayoutMain, fragment)
+            transform.addToBackStack(null)
             transform.commit()
         }
 
+    private fun Snackbar(text: String) {
+        Snackbar
+            .make(binding.root, text, Snackbar.LENGTH_LONG)
+            .setBackgroundTint(ContextCompat.getColor(binding.root.context, R.color.light_blue))
+            .setTextColor(ContextCompat.getColor(binding.root.context, R.color.white))
+            .show()
+    }
 }

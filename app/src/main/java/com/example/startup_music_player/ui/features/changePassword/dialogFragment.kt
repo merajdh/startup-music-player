@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.startup_music_player.R
-import com.example.startup_music_player.databinding.FragmentDialogChangeBinding
+import com.example.startup_music_player.databinding.DialogChangePasswordBinding
 
 @SuppressLint("StaticFieldLeak")
-lateinit var binding : FragmentDialogChangeBinding
+lateinit var binding : DialogChangePasswordBinding
 class fragmentDialog : DialogFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentDialogChangeBinding.inflate(layoutInflater , container , false)
+        binding = DialogChangePasswordBinding.inflate(layoutInflater , container , false)
         isCancelable = true
         return binding.root
     }

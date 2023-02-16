@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    android:background="@drawable/shape_back_bottom_sheet"
+    android:orientation="vertical"
+    android:layout_gravity="bottom"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="420dp"
-    android:layout_gravity="bottom"
-    android:background="@drawable/shape_back_bottom_sheet"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="30dp"
@@ -21,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        android:text="گزارش"
+        android:text="انتقاد و پیشنهادات"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -32,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
-        android:text="لطفا توضیحات مناسب در ارتباط با گزارش خود بنویسید ..."
+        android:text="هر انتقاد یا پیشنهادی دارید بنویسید ..."
         android:textColor="@color/Gray" />
 
 
@@ -56,7 +58,7 @@
             android:letterSpacing="0.1"
             android:imeOptions="actionDone"
             android:singleLine="false"
-            android:hint="گزارش خود را بنویسید ..."
+            android:hint="انتقاد یا پیشنهاد خود را بنویسید ..."
             android:textColor="@color/white"
             android:textColorHint="#7A7C87"
             android:textSize="13sp"
@@ -74,12 +76,12 @@
             android:id="@+id/btn_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
             android:layout_weight="1"
             android:backgroundTint="@color/light_blue"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:text="لغو"
             android:textColor="@color/light_gray"
             android:textSize="15sp"
@@ -89,18 +91,20 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_accept"
             android:layout_width="wrap_content"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
             android:layout_weight="1"
             android:backgroundTint="@color/bule"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:text="تایید"
             android:textColor="@color/light_gray"
             android:textSize="15sp"
             app:cornerRadius="18dp" />
 
     </LinearLayout>
+
+
 
 </LinearLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_margin="12dp"
+        android:id="@+id/btn_back"
+        android:src="@drawable/ic_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="?attr/colorPrimary"
+            android:layout_width="100dp"
+            android:layout_height="100dp">
+
+            <ImageView
+                android:src="@drawable/google"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/light_blue"
+            app:cardCornerRadius="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal"
+            app:cardElevation="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:paddingStart="25dp"
+                android:paddingEnd="25dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_marginEnd="35dp"
+            app:cardElevation="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="35dp"
+            android:backgroundTint="@color/light_blue"
+            app:cardCornerRadius="20dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_gravity="center_horizontal"
+            android:text="نسخه ۱.۰.۰ "
+            android:textColor="@color/gray_btn_bg_color"
+            android:textSize="18sp"
+            android:letterSpacing="0.3"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+        <View
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:background="#9C404449"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"/>
+
+
+        <com.google.android.material.card.MaterialCardView
+            app:cardElevation="8dp"
+            android:backgroundTint="@color/light_blue"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="22dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:paddingBottom="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:lineSpacingExtra="2dp"
+                android:layout_margin="8dp"
+                android:textSize="15sp"
+                android:textColor="@color/Gray"
+                android:text="می خوای برای کنکور درس بخونی و اول راه هستی؟ نمی دونی باید تستی بخونی یا تشریحی؟ این مقاله رو بخون تا پاسخ سوالت رو پیدا کنی.
+1- شما با مطالعه دروس به صورت دقیق و با شرح و بسط (مطالعه تشریحی) و حل تمرین های متعدد (مطالعه تستی و تمرینی) می توانید به تسلط مورد نیاز هم در امتحانات و در نهایت در آزمون سراسری دست پيدا كنيد. در این حالت شما باید دروس را با شرح و بسط مطالعه کنید (این عمل سبب عمیق شدن مطالعه شما شده) و سپس تست بزنید تا بتوانید با تکرار به تسلط بالایی دست پیدا کنید.
+2- ابتدا جزوه خود را به صورت موشكافانه و دقيق مطالعه كنيد. كتاب درسي را فراموش نكنيد زيرا اصلي ترين منبع طراحان آزمون سراسري است. سپس به حل تست و تكميل خلاصه نويسي ها خود بپردازيد.
+3- در دروس تمرینی اثبات ها و روش های حل را نیز یادبگیرید و با فرض اینکه اثبات ها در آزمون سراسری تست مجزا ندارند این مطالب را رها نکیند زیرا با یادگیری دقیق اثبات ها از سال های پایه به راحتی می توانید به بسیاری از سوالات مفهومی در امتحانات و در نهایت در آزمون سراسری پاسخ دهید."
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
+
+
+
+</FrameLayout>

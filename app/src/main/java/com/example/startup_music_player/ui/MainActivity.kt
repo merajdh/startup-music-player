@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.startup_music_player.R
@@ -14,8 +15,11 @@ import com.example.startup_music_player.model.repository.TokenInMemory
 import com.example.startup_music_player.model.repository.UserReposiroty
 import com.example.startup_music_player.ui.features.Main.MainFragment
 import com.example.startup_music_player.ui.features.Register.RegisterFragment
+import com.example.startup_music_player.ui.features.intro.IntroFragment
 import com.example.startup_music_player.util.NetworkChecker
 import org.koin.android.ext.android.get
+import java.util.*
+import kotlin.concurrent.schedule
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -24,20 +28,19 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        chekinternet() //chekinternet
         val userReposiroty: UserReposiroty = get()
         userReposiroty.loadtoken()
-        chekinternet() //chekinternet
-        transform(RegisterFragment())
-        if (TokenInMemory.Token != null){
-            transform(MainFragment())
-        }
+        transform(IntroFragment())
     }
-    private fun transform(fragment : Fragment){
+
+    private fun transform(fragment: Fragment) {
         val transform = supportFragmentManager.beginTransaction()
-        transform.replace(R.id.FrameLayoutMain,fragment)
+        transform.replace(R.id.FrameLayoutMain, fragment)
         transform.commit()
     } // transform btn navigeshen
-    private fun chekinternet(){
+
+    private fun chekinternet() {
         val internet: Boolean = NetworkChecker(this).isInternetConnected
         // broadcastReceiver ->
         broadcastReceiver = object : BroadcastReceiver() {
@@ -51,7 +54,6 @@ class MainActivity : AppCompatActivity() {
         registerReceiver(broadcastReceiver, intentfilter)
 
     }
-
-
+// Run every time
 
 }

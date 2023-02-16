@@ -5,11 +5,15 @@ import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.startup_music_player.R
+import com.example.startup_music_player.databinding.FragmentIntroBinding
 import com.example.startup_music_player.databinding.FragmentMainBinding
 import com.example.startup_music_player.ui.Fragment.ProfileFragment
 import com.example.startup_music_player.ui.features.Category.CategoryFragment
 import com.example.startup_music_player.ui.features.Home.HomeFragment
 import com.example.startup_music_player.ui.features.Serach.SearchFragment
+import com.example.startup_music_player.ui.features.intro.IntroFragment
+import java.util.*
+import kotlin.concurrent.schedule
 
 class MainFragment : Fragment() {
     lateinit var binding : FragmentMainBinding
@@ -20,8 +24,8 @@ class MainFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentMainBinding.inflate(layoutInflater,container,false)
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbarmain) // set tolbar
-        SelectedbtnNavigeyshen()
         Run()
+        SelectedbtnNavigeyshen()
         return binding.root
     }
 
@@ -51,8 +55,10 @@ class MainFragment : Fragment() {
         transform.commit()
     } // transform btn navigeshen
     private fun Run(){
-        transform(HomeFragment()) // Added run time Fragment
+        transform(HomeFragment())
         binding.butennavigetion.setItemSelected( R.id.home) // Select the executed item
+
+
     } // Run every time
 
-}
+    }
