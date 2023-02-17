@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.startup_music_player.databinding.ItemRecyclerTopMusicHomeBinding
 import com.example.startup_music_player.model.data.MusicRespomse
+import com.squareup.picasso.Picasso
 
 class HomeAdapter(private val data : ArrayList<MusicRespomse>) :RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
     lateinit var binding:ItemRecyclerTopMusicHomeBinding
@@ -15,6 +16,10 @@ class HomeAdapter(private val data : ArrayList<MusicRespomse>) :RecyclerView.Ada
                 binding.txtNameMusic.text = dataHome.name
                 binding.txtNameSinger.text = dataHome.nemeArtist
                 binding.txtTimeMusic.text = dataHome.time
+                Picasso
+                    .get()
+                    .load(dataHome.Cover)
+                    .into(binding.imgCover)
 
             }
         }

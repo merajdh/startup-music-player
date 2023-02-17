@@ -14,6 +14,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
+import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentHomeBinding
 import com.example.startup_music_player.model.Adapter.HomeAdapter
 import com.example.startup_music_player.model.Contract.ContractHome
@@ -67,34 +68,31 @@ class HomeFragment : Fragment() , ContractHome.View {
 
     }
 
-    override fun ShowPartiMusik(data: List<MusicRespomse>) {
+    override fun ShowPartiMusik(data: String) {
 
     }
 
+    override fun ShowTopMusik(data: String) {
+    }
 
-    override fun ShowTopMusik(data: List<MusicRespomse>) {
+
+    override fun ShowTopViewMusik(data: String) {
+    }
+
+    override fun ShowGuropMusik(data: String) {
 
         val dataMusic = arrayListOf<MusicRespomse>(
-            MusicRespomse("f" ,"f", true , "gg"),
-            MusicRespomse("f" ,"f", true , "gg"),
-            MusicRespomse("f" ,"f", true , "gg"),
+            MusicRespomse("تست" ,"3:00", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "خواننده تست"),
+            MusicRespomse("f" ,"f", "true" , "gg"),
+            MusicRespomse("f" ,"f", "true" , "gg"),
+            MusicRespomse("f" ,"f", "true" , "gg"),
+            MusicRespomse("f" ,"f", "true" , "gg"),
         )
 
 
         val adapter = HomeAdapter(dataMusic)
-        binding.mouduleTwoHome.recTopMusic.layoutManager = GridLayoutManager(context ,2, RecyclerView.HORIZONTAL, false)
+        binding.mouduleTwoHome.recTopMusic.layoutManager = GridLayoutManager(context ,2, RecyclerView.HORIZONTAL, true)
         binding.mouduleTwoHome.recTopMusic.adapter = adapter
-        Log.v("TAgw",data.toString())
-        Log.v("testii" , dataMusic.toString())
 
-
-
-    }
-
-    override fun ShowTopViewMusik(data: List<MusicRespomse>) {
-
-    }
-
-    override fun ShowGuropMusik(data: List<MusicRespomse>) {
     }
 }

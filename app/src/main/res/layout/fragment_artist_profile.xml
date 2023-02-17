@@ -24,10 +24,6 @@
         <include layout="@layout/moudule_four_artist"
             android:id="@+id/moudule_four_artist"/>
 
-        <View
-            android:background="@color/Gray"
-            android:layout_width="match_parent"
-            android:layout_height="400dp"/>
 
     </LinearLayout>
 
