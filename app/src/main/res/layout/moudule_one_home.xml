@@ -36,12 +36,15 @@
         android:layout_gravity="end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
     <androidx.recyclerview.widget.RecyclerView
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="horizontal"
-        tools:listitem="@layout/item_recycler_happy_home"
+        android:id="@+id/rec_happy_music"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_recycler_happy_home" />
+
     <com.google.android.material.card.MaterialCardView
         android:layout_margin="10dp"
         android:backgroundTint="@color/light_blue"

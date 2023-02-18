@@ -21,13 +21,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="کی مثل من"
+                android:letterSpacing="0.07"
+                android:text="@string/app_name"
                 android:textColor="@color/white"
-                android:textSize="19sp"
+                android:textStyle="bold"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black" />
+
 
             <ImageView
                 android:layout_width="25dp"
@@ -41,33 +45,65 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="220dp"
-            android:layout_height="220dp"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="270dp"
+            android:layout_height="270dp"
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
-            android:src="@drawable/img_test" />
+            app:cardElevation="14dp"
+            app:strokeWidth="0.8dp"
+            app:strokeColor="@color/light_blue"
+            style="@style/Widget.Material3.CardView.Elevated"
+            app:cardMaxElevation="16dp"
+            app:cardCornerRadius="30dp">
 
-        <FrameLayout
+            <ImageView
+                android:scaleType="fitXY"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/img_test" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/liner2">
 
             <TextView
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:letterSpacing="0.1"
                 android:id="@+id/Pliy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:padding="16dp"
-                android:text="amir tataloo"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:text="امیر تتلو"
                 android:textColor="@color/white"
-                android:textSize="19sp"
+                android:textSize="23sp"
                 app:tint="@color/black" />
 
-        </FrameLayout>
+            <TextView
+                android:layout_marginTop="3dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="کی مثل من"
+                android:textColor="@color/Gray"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </LinearLayout>
 
         <com.google.android.material.slider.Slider
             android:id="@+id/slider"
@@ -80,15 +116,19 @@
             android:valueFrom="0"
             android:valueTo="100"
             app:labelBehavior="gone"
-            app:thumbColor="@color/Gray"
-            app:trackColor="@color/Gray"
+            app:thumbColor="@color/bule"
+            app:haloColor="@color/dark_bule2"
+            app:trackColor="#8F959C"
+            app:tickColor="@color/dark_bule2"
+            app:tickColorActive="@color/dark_bule2"
+            app:tickColorInactive="@color/Gray"
             app:trackHeight="6dp" />
 
         <FrameLayout
+            android:padding="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
             android:layout_marginEnd="30dp">
 
             <TextView
@@ -98,7 +138,7 @@
                 android:layout_gravity="start"
                 android:layout_marginStart="8dp"
                 android:text="00:00"
-                android:textColor="@color/white" />
+                android:textColor="@color/Gray" />
 
             <TextView
                 android:id="@+id/taim"
@@ -107,15 +147,16 @@
                 android:layout_gravity="end"
                 android:layout_marginEnd="8dp"
                 android:text="00:00"
-                android:textColor="@color/white" />
+                android:textColor="@color/Gray" />
 
 
         </FrameLayout>
 
         <LinearLayout
+            android:padding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="50dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:paddingEnd="4dp"
@@ -123,29 +164,71 @@
             app:layout_constraintTop_toBottomOf="@+id/liner2">
 
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                app:strokeColor="@color/light_blue"
+                app:cardElevation="2dp"
+                app:strokeWidth="0.5dp"
                 android:layout_marginEnd="35dp"
-                android:src="@drawable/ic_skip"
-                app:tint="@color/white" />
-
-            <ImageView
-                android:layout_width="55dp"
-                android:layout_height="55dp"
+                app:cardCornerRadius="12dp"
                 android:layout_gravity="center"
+                android:backgroundTint="?attr/colorPrimary"
+                android:layout_height="wrap_content">
 
-                android:src="@drawable/ic_play" />
+                <ImageView
+                    android:layout_margin="2dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_skip"
+                    app:tint="@color/Gray" />
 
-            <ImageView
-                android:id="@+id/jolo"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                app:strokeColor="@color/light_blue"
+                app:strokeWidth="1dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="4dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="4dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_play"
+                    app:tint="@color/light_gray" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                app:strokeColor="@color/light_blue"
                 android:layout_marginStart="35dp"
-                android:src="@drawable/ic_skip_forward"
-                app:tint="@color/white" />
+                app:strokeWidth="0.7dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/jolo"
+                    android:layout_width="40dp"
+                    android:layout_height="44dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:src="@drawable/ic_skip_forward"
+                    app:tint="@color/Gray" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
 
 
         </LinearLayout>
@@ -153,7 +236,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20sp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:padding="8dp">
@@ -179,16 +262,17 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="2.5dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="#8053565C" />
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="#6A3B3C3E" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:itemCount="2"
+            android:layout_marginTop="10dp"
             tools:listitem="@layout/item_recycler_top_music_home" />
 
     </LinearLayout>

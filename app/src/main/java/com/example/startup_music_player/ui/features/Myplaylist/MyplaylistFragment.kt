@@ -13,14 +13,10 @@ import com.example.startup_music_player.ui.Fragment.ProfileFragment
 @SuppressLint("StaticFieldLeak")
 lateinit var binding: FragmentMyplaylistBinding
 
-class MyplaylistFragment : Fragment() {
 
     class MyplaylistFragment : Fragment() {
         lateinit var binding: FragmentMyplaylistBinding
-        override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View {
+        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
             binding = FragmentMyplaylistBinding.inflate(layoutInflater, container, false)
             setOnClickListener()
             return binding.root
@@ -30,7 +26,6 @@ class MyplaylistFragment : Fragment() {
             binding.btnBack.setOnClickListener {
                 parentFragmentManager.popBackStack()
             }
-
         }
 
         override fun onDestroy() {
@@ -42,4 +37,4 @@ class MyplaylistFragment : Fragment() {
         }
 
     }
-}
+

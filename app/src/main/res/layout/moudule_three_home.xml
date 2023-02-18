@@ -36,13 +36,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_new_music"
-        tools:itemCount="2"
-        android:layout_margin="8dp"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        android:orientation="horizontal"
-        tools:listitem="@layout/item_recycler_top_music_home"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_recycler_top_music_home" />
 
 
 </LinearLayout>

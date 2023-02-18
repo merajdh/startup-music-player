@@ -56,12 +56,12 @@ class ProfileFragment : Fragment() {
             transform.show(parentFragmentManager , null)
         }
         binding.mouduleTwo.btnMyplaylist.setOnClickListener {
-            transform(MyplaylistFragment())
+            transform(  MyplaylistFragment())
         }
         binding.mouduleTwo.btnLiked.setOnClickListener {
             transform(LikedMusicFragment())
-
         }
+
         // mouduleThree ->
         binding.mouduleThree.btnComment.setOnClickListener {
             val transform = ContactUsFragment()

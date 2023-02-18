@@ -3,9 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:backgroundTint="@color/light_blue"
     app:cardCornerRadius="24dp"
-    app:cardElevation="14dp"
+    app:cardElevation="6dp"
     android:layout_width="match_parent"
-    android:layout_margin="12dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    android:layout_marginStart="10dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -14,29 +17,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <com.google.android.material.card.MaterialCardView
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
-            android:layout_marginEnd="18dp"
-            app:cardElevation="4dp"
             android:id="@+id/materialCardView"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
             android:backgroundTint="@color/black"
             app:cardCornerRadius="28dp"
+            app:cardElevation="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <ImageView
                     android:id="@+id/img_cover"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img_test"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_test" />
 
 
             </LinearLayout>
@@ -66,7 +71,6 @@
             android:text="اسم خواننده"
             android:textColor="@color/Gray"
             app:layout_constraintEnd_toEndOf="@+id/txt_name_music"
-            app:layout_constraintStart_toStartOf="@+id/txt_name_music"
             app:layout_constraintTop_toBottomOf="@+id/txt_name_music" />
 
 

@@ -3,9 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="horizontal"
-    android:layout_marginEnd="20dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginStart="20dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    android:layout_marginStart="10dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -13,7 +14,7 @@
     <com.google.android.material.card.MaterialCardView
         android:backgroundTint="@color/light_blue"
         app:cardCornerRadius="24dp"
-        app:cardElevation="0dp"
+        app:cardElevation="4dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -43,7 +44,7 @@
                 android:layout_height="70dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="12dp"
-                android:layout_marginEnd="12sp"
+                android:layout_marginEnd="12dp"
                 android:backgroundTint="@color/black"
                 app:cardCornerRadius="24dp"
                 app:cardElevation="4dp"
@@ -89,7 +90,6 @@
                 android:text="اسم خواننده"
                 android:textColor="@color/Gray"
                 app:layout_constraintEnd_toEndOf="@+id/txt_name_music"
-                app:layout_constraintStart_toStartOf="@+id/txt_name_music"
                 app:layout_constraintTop_toBottomOf="@+id/txt_name_music" />
 
 
