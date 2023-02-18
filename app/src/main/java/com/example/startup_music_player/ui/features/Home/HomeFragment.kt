@@ -23,7 +23,6 @@ import com.example.startup_music_player.model.presenter.PresenterHome
 import com.example.startup_music_player.util.NetworkChecker
 import com.squareup.picasso.Picasso
 
-
 class HomeFragment : Fragment() , ContractHome.View {
     lateinit var binding: FragmentHomeBinding
     lateinit var presenter: ContractHome.Presenter
@@ -72,20 +71,17 @@ class HomeFragment : Fragment() , ContractHome.View {
     }
 
 
-    override fun ShowTopMusik(data: List<MusicRespomse>) {
-
+    override fun ShowTopMusik(data: String) {
         val dataMusic = arrayListOf<MusicRespomse>(
-            MusicRespomse("f" ,"f", true , "gg"),
-            MusicRespomse("f" ,"f", true , "gg"),
-            MusicRespomse("f" ,"f", true , "gg"),
+            MusicRespomse("f" ,"f", "" , "gg",""),
+            MusicRespomse("f" ,"f", "" , "gg",""),
+            MusicRespomse("f" ,"f", "" , "gg",""),
         )
 
 
         val adapter = HomeAdapter(dataMusic)
-        binding.mouduleTwoHome.recTopMusic.layoutManager = GridLayoutManager(context ,2, RecyclerView.HORIZONTAL, false)
+        binding.mouduleTwoHome.recTopMusic.layoutManager = GridLayoutManager(context ,2, RecyclerView.HORIZONTAL, true)
         binding.mouduleTwoHome.recTopMusic.adapter = adapter
-        Log.v("TAgw",data.toString())
-        Log.v("testii" , dataMusic.toString())
 
 
 
