@@ -42,7 +42,6 @@ class IntroFragment : Fragment() {
         val anim = AlphaAnimation(0f , 2f)
         anim.duration = 2000L
         anim.fillAfter = true
-
         val anim2 = RotateAnimation(0f , 360f , Animation.RELATIVE_TO_SELF, 0.5f , Animation.RELATIVE_TO_SELF, 0.5f)
         anim2.duration = 1000L
         anim2.fillAfter = true

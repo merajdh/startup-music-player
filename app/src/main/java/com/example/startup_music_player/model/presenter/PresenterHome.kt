@@ -1,6 +1,7 @@
 package com.example.startup_music_player.model.presenter
 
 import com.example.startup_music_player.model.Contract.ContractHome
+import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.net.Apiservice
 
 class PresenterHome(
@@ -24,7 +25,4 @@ class PresenterHome(
         fragmentview = null
     }
 
-    override suspend fun OnClikt() {
-
-    }
 }

@@ -7,7 +7,6 @@ interface ContractHome {
     interface Presenter{
        suspend fun OnAttach(view:View)
        fun OnDetavh()
-       suspend fun OnClikt()
     }
     interface View {
         fun ShowPartiMusik(data: List<MusicRespomse>)

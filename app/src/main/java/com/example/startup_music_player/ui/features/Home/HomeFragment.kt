@@ -24,7 +24,7 @@ import com.example.startup_music_player.util.NetworkChecker
 import com.squareup.picasso.Picasso
 
 
-class HomeFragment : Fragment() , ContractHome.View {
+class HomeFragment : Fragment() , ContractHome.View,HomeAdapter.OnClick {
     lateinit var binding: FragmentHomeBinding
     lateinit var presenter: ContractHome.Presenter
     override fun onCreateView(
@@ -75,13 +75,13 @@ class HomeFragment : Fragment() , ContractHome.View {
     override fun ShowTopMusik(data: List<MusicRespomse>) {
 
         val dataMusic = arrayListOf<MusicRespomse>(
-            MusicRespomse("f" ,"f", true , "gg"),
-            MusicRespomse("f" ,"f", true , "gg"),
-            MusicRespomse("f" ,"f", true , "gg"),
+            MusicRespomse("f" ,"f", "" , "gg"),
+            MusicRespomse("f" ,"f", "" , "gg"),
+            MusicRespomse("f" ,"f", "" , "gg"),
         )
 
 
-        val adapter = HomeAdapter(dataMusic)
+        val adapter = HomeAdapter(dataMusic,this)
         binding.mouduleTwoHome.recTopMusic.layoutManager = GridLayoutManager(context ,2, RecyclerView.HORIZONTAL, false)
         binding.mouduleTwoHome.recTopMusic.adapter = adapter
         Log.v("TAgw",data.toString())
@@ -96,5 +96,9 @@ class HomeFragment : Fragment() , ContractHome.View {
     }
 
     override fun ShowGuropMusik(data: List<MusicRespomse>) {
+    }
+
+    override fun Click(data: MusicRespomse) {
+
     }
 }
