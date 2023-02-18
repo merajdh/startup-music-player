@@ -17,7 +17,7 @@ class HomeAdapterHappyMusic(private val data: ArrayList<MusicRespomse>) : Recycl
             binding.txtNameSinger.text = dataHome.nemeArtist
             Picasso
                 .get()
-                .load(dataHome.Cover)
+                .load(dataHome.Cover.toString())
                 .into(binding.imgCover)
 
         }

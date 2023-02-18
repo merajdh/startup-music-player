@@ -13,10 +13,7 @@ class PresenterHome(
         fragmentview = view
         if (internet){
             //   val data = apiservice.TopMusic()
-          fragmentview!!.ShowTopMusik("")
-          fragmentview!!.ShowPartiMusik("")
-          fragmentview!!.ShowTopViewMusik("")
-          fragmentview!!.ShowGuropMusik("")
+         // fragmentview!!.ShowTopMusik("")
         }else{
 
         }

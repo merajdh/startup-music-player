@@ -7,6 +7,6 @@ import kotlinx.parcelize.Parcelize
 data class MusicRespomse(
     val name : String,
     val time : String,
-    val Cover :String,
+    val Cover :Boolean,
     val nemeArtist : String,
 ) : Parcelable

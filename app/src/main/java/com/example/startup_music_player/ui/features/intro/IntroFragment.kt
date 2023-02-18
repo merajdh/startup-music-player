@@ -29,7 +29,7 @@ class IntroFragment : Fragment() {
         binding = FragmentIntroBinding.inflate(layoutInflater , container , false)
         animation ()
         if (TokenInMemory.Token != null) {
-            Timer().schedule(5000) {
+            Timer().schedule(3000) {
                 transform(MainFragment())
             }
         }else{
