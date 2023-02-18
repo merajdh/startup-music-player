@@ -24,7 +24,7 @@ import com.example.startup_music_player.util.NetworkChecker
 import com.squareup.picasso.Picasso
 
 
-class HomeFragment : Fragment() , ContractHome.View,HomeAdapter.OnClick {
+class HomeFragment : Fragment() , ContractHome.View {
     lateinit var binding: FragmentHomeBinding
     lateinit var presenter: ContractHome.Presenter
     override fun onCreateView(
@@ -97,7 +97,6 @@ class HomeFragment : Fragment() , ContractHome.View,HomeAdapter.OnClick {
 
     override fun ShowGuropMusik(data: List<MusicRespomse>) {
     }
-
     override fun Click(data: MusicRespomse) {
 
     }

@@ -43,6 +43,7 @@ class RegisterFragment : Fragment() {
             if (binding.EdtPassword.text.toString() == binding.EdtPasswordRepeat.text.toString()) {
                 if (binding.EdtPassword.text.length >= 8) {
                     if (Patterns.EMAIL_ADDRESS.matcher(binding.EdtGmail.text).matches()){
+                        if (binding.EdtUser.text.length >= 8 ){
 
                         // Input user
                         viewmodel.name.value = binding.EdtUser.text.toString()
@@ -60,20 +61,39 @@ class RegisterFragment : Fragment() {
                         }
 
                     }else{
+                        if (!isEmailValid(binding.EdtGmail.text.toString())){
+                            SnackbarError("ایمیل وارد شده اشتباه میباشد")
+                        }
                         // فرمت ایمل اشتباه است
 
                     }
                 } else {
                     //snakbar -> کمتر از 8 تا password
+                    if (binding.EdtPassword.text.length < 8
+                        && binding.EdtPasswordRepeat.text.length < 8){
+                        SnackbarError("تعداد کاراکتر های رمز عبور شما کمتر از 8 کاراکتر است")
+                    }
 
                 }
             } else {
                 // snakbar -> یکی نبودن پسورد
-
+                if (binding.EdtPassword.text != binding.EdtPasswordRepeat.text){
+                    SnackbarError("رمزعبور های شما با هم همخوانی ندارند")
+                }
             }
         } else {
             // snakbar -> پر کردن مقادیر
-
+            if (binding.EdtUser.text.isEmpty()
+                or binding.EdtGmail.text.isEmpty()
+                or binding.EdtPassword.text.isEmpty()
+                or binding.EdtPasswordRepeat.text.isEmpty()){
+                SnackbarError("لطقا تمامی مقادیر خواسته شده را پر کنید !")
+            }
+        }
+        }else{
+            if (binding.EdtUser.text.length < 6){
+                SnackbarError("کاراکتر نام کاربری وارد شده کمتر از کاراکتر مجاز میباشد")
+            }
         }
     }
     private fun transform(fragment : Fragment){
@@ -81,6 +101,8 @@ class RegisterFragment : Fragment() {
         transform.replace(R.id.FrameLayoutMain,fragment)
         transform.commit()
     } // transform
+
+
     private fun SnackbarError(text: String) {
         Snackbar
             .make(binding.root, text, Snackbar.LENGTH_LONG)
@@ -88,4 +110,8 @@ class RegisterFragment : Fragment() {
             .setTextColor(ContextCompat.getColor(binding.root.context, R.color.white))
             .show()
     } // SnakBar
+
+    fun isEmailValid(email: String): Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
 }
