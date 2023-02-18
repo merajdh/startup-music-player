@@ -27,17 +27,51 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <TextView
-        android:textStyle="bold"
-        android:layout_margin="14dp"
-        android:text="موزیک های شاد"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:layout_gravity="end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_margin="14dp"
+            android:text="موزیک های شاد"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_gravity="start|center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="14dp"
+                android:layout_gravity="start|center_vertical"
+                android:src="@drawable/ic_back"
+                android:layout_width="18dp"
+                android:layout_height="18dp"/>
+
+
+            <TextView
+
+                android:textSize="13sp"
+                android:layout_marginStart="6dp"
+                android:textColor="@color/Gray"
+                android:text="بیشتر ..."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layoutAnimation="@anim/recycler_layout_anim"
         android:id="@+id/rec_happy_music"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,7 +80,10 @@
         tools:listitem="@layout/item_recycler_happy_home" />
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_margin="10dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/light_blue"
         android:layout_width="match_parent"
         android:layout_height="8dp"/>

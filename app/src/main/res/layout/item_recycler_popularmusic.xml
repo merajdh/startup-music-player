@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="horizontal"
-    android:layout_marginEnd="10dp"
+    android:layout_marginEnd="12dp"
     android:layout_marginTop="6dp"
     android:layout_marginBottom="6dp"
-    android:layout_marginStart="10dp"
+    android:layout_marginStart="20dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -57,6 +57,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:id="@+id/img_cover"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:scaleType="fitXY"
@@ -106,7 +107,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/txt_time_music"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"

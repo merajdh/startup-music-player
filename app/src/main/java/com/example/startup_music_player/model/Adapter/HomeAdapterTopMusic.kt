@@ -4,12 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.startup_music_player.databinding.ItemRecyclerTopMusicHomeBinding
+import com.example.startup_music_player.databinding.ItemRecyclerPopularmusicBinding
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.squareup.picasso.Picasso
 
-class HomeAdapter(private val data : ArrayList<MusicRespomse>) :RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
-    lateinit var binding:ItemRecyclerTopMusicHomeBinding
+class HomeAdapterTopMusic(private val data : ArrayList<MusicRespomse>) :RecyclerView.Adapter<HomeAdapterTopMusic.HomeViewHolder>() {
+    lateinit var binding:ItemRecyclerPopularmusicBinding
 
         inner class HomeViewHolder(itemView: View, ) : RecyclerView.ViewHolder(itemView){
             fun ViewBinder (dataHome: MusicRespomse){
@@ -20,11 +20,10 @@ class HomeAdapter(private val data : ArrayList<MusicRespomse>) :RecyclerView.Ada
                     .get()
                     .load(dataHome.Cover)
                     .into(binding.imgCover)
-
             }
         }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
-        binding = ItemRecyclerTopMusicHomeBinding.inflate(LayoutInflater.from(parent.context) , parent , false)
+        binding = ItemRecyclerPopularmusicBinding.inflate(LayoutInflater.from(parent.context) , parent , false)
         return HomeViewHolder(binding.root)
     }
 

@@ -8,10 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentLoginBinding
 import com.example.startup_music_player.ui.features.Main.MainFragment
 import com.example.startup_music_player.ui.features.Register.RegisterFragment
+import com.google.android.material.snackbar.Snackbar
 import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -50,6 +52,16 @@ class LoginFragment : Fragment() {
 
         } else {
             // scakbar
+            if (binding.EdtEmailLogin.text.isEmpty() && binding.EdtPasswordLogin.text.isEmpty()){
+                SnackbarError("لطفا فیلد های مرتبط را پر کنید")
+            }
+            if (viewmodel.username.value != binding.EdtEmailLogin.text.toString()) {
+                SnackbarError("ایمیل یا رمز عبور وارد شده اشتباه است !")
+            }
+
+            if ( viewmodel.password.value != binding.EdtPasswordLogin.text.toString()){
+                SnackbarError("ایمیل یا رمز عبور وارد شده اشتباه است !")
+            }
         }
     }
     private fun transform(fragment : Fragment){
@@ -57,4 +69,12 @@ class LoginFragment : Fragment() {
         transform.replace(R.id.FrameLayoutMain,fragment)
         transform.commit()
     } // transform
+
+    private fun SnackbarError(text: String) {
+        Snackbar
+            .make(binding.root, text, Snackbar.LENGTH_LONG)
+            .setBackgroundTint(ContextCompat.getColor(binding.root.context, R.color.light_blue))
+            .setTextColor(ContextCompat.getColor(binding.root.context, R.color.white))
+            .show()
+    } // SnakBar
 }
