@@ -7,18 +7,54 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginEnd="8dp"
-        android:padding="8dp"
-        android:text="آرتیست"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"
+            android:text="آرتیست"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:clickable="true"
+            android:id="@+id/btn_more"
+            android:layout_gravity="start|center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="14dp"
+                android:layout_gravity="start|center_vertical"
+                android:src="@drawable/ic_back"
+                android:layout_width="18dp"
+                android:layout_height="18dp"/>
+
+
+            <TextView
+                android:textSize="13sp"
+                android:layout_marginStart="6dp"
+                android:textColor="@color/Gray"
+                android:text="بیشتر ..."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layoutAnimation="@anim/recycler_layout_anim"
         tools:listitem="@layout/item_recycler_artist"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="horizontal"
@@ -37,33 +73,37 @@
         android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layoutAnimation="@anim/recycler_layout_anim"
         tools:itemCount="3"
         tools:listitem="@layout/item_recycler_international_music_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <LinearLayout
-        android:layout_marginTop="5dp"
-        android:background="@drawable/shape_more_category"
-        android:layout_width="70dp"
-        android:layout_height="45dp">
+        android:clickable="true"
+        android:id="@+id/btn_more_international"
+        android:layout_gravity="start|center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="true">
 
         <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="14dp"
+            android:layout_gravity="start|center_vertical"
+            android:src="@drawable/ic_back"
+            android:layout_width="18dp"
+            android:layout_height="18dp"/>
+
 
         <TextView
-            android:layout_gravity="center"
+            android:textSize="13sp"
+            android:layout_marginStart="6dp"
+            android:textColor="@color/Gray"
+            android:text="بیشتر ..."
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="بیشتر"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+            android:layout_height="wrap_content"/>
+
     </LinearLayout>
 
 

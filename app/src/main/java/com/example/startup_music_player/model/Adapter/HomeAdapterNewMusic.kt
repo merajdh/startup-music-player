@@ -1,6 +1,5 @@
 package com.example.startup_music_player.model.Adapter
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,18 +8,21 @@ import com.example.startup_music_player.databinding.ItemRecyclerTopMusicHomeBind
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.squareup.picasso.Picasso
 
-class HomeAdapterNewMusic(private val data : ArrayList<MusicRespomse> ) :RecyclerView.Adapter<HomeAdapterNewMusic.HomeNewMusicViewHolder>() {
+class HomeAdapterNewMusic(private val data : ArrayList<MusicRespomse> , private val OnClick:OnClick) :RecyclerView.Adapter<HomeAdapterNewMusic.HomeNewMusicViewHolder>() {
     lateinit var binding:ItemRecyclerTopMusicHomeBinding
 
         inner class HomeNewMusicViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
             fun ViewBinder (dataHome: MusicRespomse){
-                binding.txtNameMusic.text = dataHome.name
-                binding.txtNameSinger.text = dataHome.nemeArtist
+                binding.txtNameMusic.text = dataHome.NameMusic
+                binding.txtNameSinger.text = dataHome.NAmeArtist
                 Picasso
                     .get()
                     .load(dataHome.Cover)
                     .into(binding.imgCover)
 
+                itemView.setOnClickListener {
+                    OnClick.Click(dataHome)
+                }
 
             }
         }
