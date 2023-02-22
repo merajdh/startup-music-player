@@ -46,16 +46,53 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_margin="12dp"
-                android:textColor="@color/white"
-                android:textSize="22dp"
-                android:textStyle="bold"
-                android:padding="2dp"
-                android:layout_gravity="end"
-                android:text="سبک موزیک"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            <FrameLayout
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_margin="12dp"
+                    android:textColor="@color/white"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:padding="2dp"
+                    android:layout_gravity="end"
+                    android:text="سبک موزیک"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:clickable="true"
+                    android:id="@+id/btn_more"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_gravity="start|center_vertical"
+                        android:src="@drawable/ic_back"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"/>
+
+
+                    <TextView
+                        android:textSize="13sp"
+                        android:layout_marginStart="6dp"
+                        android:textColor="@color/Gray"
+                        android:text="بیشتر ..."
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_marginBottom="6dp"
@@ -70,6 +107,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:padding="4dp"
+                android:layoutAnimation="@anim/recycler_layout_anim"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="10dp"

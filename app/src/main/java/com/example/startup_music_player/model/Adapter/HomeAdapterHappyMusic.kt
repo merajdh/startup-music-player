@@ -8,7 +8,7 @@ import com.example.startup_music_player.databinding.ItemRecyclerHappyHomeBinding
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.squareup.picasso.Picasso
 
-class HomeAdapterHappyMusic(private val data: ArrayList<MusicRespomse>) : RecyclerView.Adapter<HomeAdapterHappyMusic.HomeHappyMusicViewHolder>() {
+class HomeAdapterHappyMusic(private val data: ArrayList<MusicRespomse> , private val OnClick:OnClick) : RecyclerView.Adapter<HomeAdapterHappyMusic.HomeHappyMusicViewHolder>() {
     lateinit var binding: ItemRecyclerHappyHomeBinding
 
     inner class HomeHappyMusicViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -17,15 +17,17 @@ class HomeAdapterHappyMusic(private val data: ArrayList<MusicRespomse>) : Recycl
             binding.txtNameSinger.text = dataHome.NAmeArtist
             Picasso
                 .get()
-                .load(dataHome.Cover.toString())
+                .load(dataHome.Cover)
                 .into(binding.imgCover)
 
+            itemView.setOnClickListener {
+                OnClick.Click(dataHome)
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeHappyMusicViewHolder {
-        binding =
-            ItemRecyclerHappyHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        binding = ItemRecyclerHappyHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return HomeHappyMusicViewHolder(binding.root)
     }
 
