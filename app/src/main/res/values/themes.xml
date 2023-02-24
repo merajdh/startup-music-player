@@ -19,6 +19,10 @@
         <item name="colorControlActivated">@color/white</item>
     </style>
 
+    <style name="Textbody" >
+        <item name="android:thumbTextPadding">2dp</item>
+    </style>
+
     <style name="tiltle" parent="Theme.MaterialComponents" >
         <item name="fontFamily">@font/shabnam_bold</item>
         <item name="android:textSize">24sp</item>

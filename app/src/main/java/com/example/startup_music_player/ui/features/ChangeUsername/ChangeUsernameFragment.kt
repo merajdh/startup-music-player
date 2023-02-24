@@ -10,11 +10,7 @@ import com.example.startup_music_player.databinding.DialogChangeUsernameBinding
 
 class ChangeUsernameFragment : DialogFragment() {
     lateinit var binding: DialogChangeUsernameBinding
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DialogChangeUsernameBinding.inflate(layoutInflater , container , false)
         setOnClickListeners()
         return binding.root

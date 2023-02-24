@@ -55,7 +55,6 @@ class CategoryFragment : Fragment() {
 
             "international" -> {
                 Toast.makeText(context, "international", Toast.LENGTH_SHORT).show()
-
             }
 
 

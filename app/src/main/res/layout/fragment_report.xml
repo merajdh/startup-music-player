@@ -42,7 +42,7 @@
         android:layout_margin="20dp"
         android:backgroundTint="@color/light_blue"
         app:cardCornerRadius="14dp"
-        app:strokeWidth="1.5dp"
+        app:strokeWidth="1dp"
         app:strokeColor="#54575E">
 
         <EditText

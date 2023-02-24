@@ -27,7 +27,7 @@ import com.example.startup_music_player.model.presenter.PresenterHome
 import com.example.startup_music_player.util.NetworkChecker
 
 
-class HomeFragment : Fragment() , ContractHome.View , OnClick {
+class HomeFragment : Fragment() , ContractHome.View , OnClick{
     lateinit var binding: FragmentHomeBinding
     lateinit var presenter: ContractHome.Presenter
     override fun onCreateView(
@@ -35,29 +35,26 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+        binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
         AddsliderCod() // slider
         setOnClickListeners()
         MoreClickListener()
-        presenter = PresenterHome(
-            createApiService(),
-            NetworkChecker(binding.root.context).isInternetConnected
-        )
-        lifecycleScope.launchWhenCreated {
-            presenter.OnAttach(this@HomeFragment)
-        }
+        presenter = PresenterHome(createApiService(), NetworkChecker(binding.root.context).isInternetConnected)
+         lifecycleScope.launchWhenCreated {
+             presenter.OnAttach(this@HomeFragment)
+         }
 
         binding.mouduleOneHome.slider.setItemClickListener(object : ItemClickListener {
             override fun onItemSelected(position: Int) {
-                when (position) {
-                    0 -> {
-                        Log.v("test", "0")
+                when(position){
+                    0 ->{
+                        Log.v("test","0")
                     }
-                    1 -> {
-                        Log.v("test", "1")
+                    1 ->{
+                        Log.v("test","1")
                     }
-                    2 -> {
-                        Log.v("test", "3")
+                    2 ->{
+                        Log.v("test","3")
                     }
                 }
             }
@@ -66,125 +63,48 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick {
         return binding.root
     }
 
-    fun AddsliderCod() {
+  fun AddsliderCod() {
         val ItemSlider = ArrayList<SlideModel>()
-        ItemSlider.add(
-            SlideModel(
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                ScaleTypes.FIT
-            )
-        )
-        ItemSlider.add(SlideModel("https://images4.alphacoders.com/193/193108.jpg", ScaleTypes.FIT))
-        ItemSlider.add(SlideModel("https://wallpaper.dog/large/17006205.jpg", ScaleTypes.FIT))
+        ItemSlider.add(SlideModel("https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg"   , ScaleTypes.FIT))
+        ItemSlider.add(SlideModel("https://images4.alphacoders.com/193/193108.jpg"   ,ScaleTypes.FIT))
+        ItemSlider.add(SlideModel("https://wallpaper.dog/large/17006205.jpg" , ScaleTypes.FIT))
         binding.mouduleOneHome.slider.setImageList(ItemSlider)
 
     }
 
-
     override fun ShowPartiMusik(data: String) {
 
         val dataMusic = arrayListOf<MusicRespomse>(
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
         )
 
         val adapter = HomeAdapterHappyMusic(dataMusic, this)
-        binding.mouduleOneHome.recHappyMusic.layoutManager =
-            GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, true)
+        binding.mouduleOneHome.recHappyMusic.layoutManager = GridLayoutManager(context ,1, RecyclerView.HORIZONTAL, true)
         binding.mouduleOneHome.recHappyMusic.adapter = adapter
 
     }
 
+
     override fun ShowTopMusik(data: String) {
 
         val dataMusic = arrayListOf<MusicRespomse>(
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
         )
 
         val adapter = HomeAdapterTopMusic(dataMusic, this)
-        binding.mouduleTwoHome.recTopMusic.layoutManager =
-            GridLayoutManager(context, 2, RecyclerView.HORIZONTAL, true)
+        binding.mouduleTwoHome.recTopMusic.layoutManager = GridLayoutManager (context , 2 , RecyclerView.HORIZONTAL , true)
         binding.mouduleTwoHome.recTopMusic.adapter = adapter
     }
 
@@ -192,68 +112,29 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick {
 
 
     }
-
     override fun ShowGuropMusik(data: String) {
 
         val dataMusic = arrayListOf<MusicRespomse>(
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
-            MusicRespomse(
-                "کی مثل من",
-                "امیر تتلو",
-                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
-                "شاد"
-            ),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
         )
 
-        val adapter = HomeAdapterNewMusic(dataMusic, this)
-        binding.mouduleThreeHome.recNewMusic.layoutManager =
-            LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+         val adapter = HomeAdapterNewMusic(dataMusic, this)
+        binding.mouduleThreeHome.recNewMusic.layoutManager = LinearLayoutManager(context , RecyclerView.VERTICAL , false)
         binding.mouduleThreeHome.recNewMusic.adapter = adapter
     }
-
 
     override fun Click(data: MusicRespomse) {
         //test interface
         Toast.makeText(context, data.NameMusic, Toast.LENGTH_SHORT).show()
     }
 
-
-    fun setOnClickListeners() {
+    fun setOnClickListeners(){
 
         binding.mouduleOneHome.btnMore.setOnClickListener {
             myApp.ischeckd = "happy_music"
@@ -272,10 +153,11 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick {
         }
     }
 
-    private fun MoreClickListener() {
+    private fun MoreClickListener(){
 
 
-        when (myApp.ischeckd) {
+
+        when(myApp.ischeckd){
             "happy_music" -> {
                 Toast.makeText(context, "happy_music", Toast.LENGTH_SHORT).show()
             }
@@ -292,4 +174,5 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick {
 
         }
     }
+
 }

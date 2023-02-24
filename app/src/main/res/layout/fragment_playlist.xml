@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="?attr/colorPrimary"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbarmain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <include layout="@layout/moudule_one_playlist"/>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:layout_width="wrap_content"
+            android:text="پخش"
+            app:iconSize="20dp"
+            app:iconGravity="end"
+            app:iconPadding="6dp"
+            app:icon="@drawable/ic_play"
+            app:iconTint="@color/white"
+            app:layout_anchor="@id/appbarmain"
+            app:layout_anchorGravity="bottom|center_horizontal"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"/>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_marginTop="18dp"
+    android:layout_width="match_parent"
+    android:id="@+id/rec_playlist"
+    tools:listitem="@layout/item_recycler_top_music_home"
+    android:layout_height="match_parent"/>
+
+
+</LinearLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>

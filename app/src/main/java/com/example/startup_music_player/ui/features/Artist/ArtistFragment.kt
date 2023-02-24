@@ -16,12 +16,8 @@ import com.example.startup_music_player.ui.features.Home.HomeFragment
 
 class ArtistFragment : Fragment() {
 
-
     lateinit var binding : FragmentArtistProfileBinding
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = FragmentArtistProfileBinding.inflate(layoutInflater, container, false)
         setOnClickListener()
