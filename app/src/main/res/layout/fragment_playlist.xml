@@ -1,65 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView android:orientation="vertical"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:background="?attr/colorPrimary"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:background="?attr/colorPrimary"
         android:layout_height="wrap_content">
 
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbarmain"
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            app:contentScrim="@color/dark_bule"
+            android:id="@+id/colabsingmain"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:background="?attr/colorPrimary"
+                        android:paddingBottom="12dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="260dp"
+                            android:foreground="@drawable/shape_gradiant"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_test"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.8" />
 
 
-            <include layout="@layout/moudule_one_playlist"/>
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.95" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="اسم پلی لیست"
+                            android:textColor="@color/light_gray"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/textView4"
+                            app:layout_constraintEnd_toEndOf="@+id/textView4" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="(16)"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline3" />
 
 
-        </com.google.android.material.appbar.AppBarLayout>
-
-
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:layout_width="wrap_content"
-            android:text="پخش"
-            app:iconSize="20dp"
-            app:iconGravity="end"
-            app:iconPadding="6dp"
-            app:icon="@drawable/ic_play"
-            app:iconTint="@color/white"
-            app:layout_anchor="@id/appbarmain"
-            app:layout_anchorGravity="bottom|center_horizontal"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:gravity="center_vertical"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="wrap_content"/>
-
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-<androidx.recyclerview.widget.RecyclerView
-    android:layout_marginTop="18dp"
-    android:layout_width="match_parent"
-    android:id="@+id/rec_playlist"
-    tools:listitem="@layout/item_recycler_top_music_home"
-    android:layout_height="match_parent"/>
-
-
-</LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
-</androidx.core.widget.NestedScrollView>
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </FrameLayout>
+
+
+            <androidx.appcompat.widget.Toolbar
+                app:titleTextColor="@color/white"
+                app:title="اسم پلی لیست"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:id="@+id/tobaraslimolaii"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                />
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:src="@drawable/img_test"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <ImageView
+                android:src="@drawable/img_test"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <ImageView
+                android:src="@drawable/img_test"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <ImageView
+                android:src="@drawable/img_test"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
