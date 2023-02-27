@@ -43,6 +43,10 @@
         <item name="android:topLeftRadius">18dp</item>
 
     </style>
+    <style name="tolbar" parent="Theme.MaterialComponents">
+        <item name="fontFamily">@font/shabnam_bold</item>
+        <item name="android:textSize">28sp</item>
+    </style>
 
 
 </resources>
