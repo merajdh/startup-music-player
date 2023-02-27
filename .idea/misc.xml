@@ -164,6 +164,10 @@
         <entry key="..\:/prozheh/new apps/startup-music-player/app/src/main/res/layout/moudule_two_profile.xml" value="0.25" />
         <entry key="..\:/prozheh/new apps/startup-music-player/app/src/main/res/menu/meno_btnmnavigation_main.xml" value="0.16724393864423553" />
         <entry key="..\:/prozheh/new apps/startup-music-player/app/src/main/res/menu/meno_search_main.xml" value="0.16724393864423553" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/drawable/ic_heart_not_selected.xml" value="0.2425" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/drawable/ic_song_lyrics.xml" value="0.2425" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/drawable/shape_buttun_play.xml" value="0.2425" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_play.xml" value="0.25" />
       </map>
     </option>
   </component>

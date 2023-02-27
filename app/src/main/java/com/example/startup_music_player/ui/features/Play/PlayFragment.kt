@@ -1,5 +1,8 @@
 package com.example.startup_music_player.ui.features.Play
 
+import android.graphics.RenderEffect
+import android.graphics.Shader
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,6 +20,9 @@ class PlayFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentPlayBinding.inflate(layoutInflater, container, false)
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            binding.imgBackground.setRenderEffect(RenderEffect.createBlurEffect(30f, 30f , Shader.TileMode.MIRROR))
+        }
         return binding.root
 
     }
