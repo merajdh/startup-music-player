@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="bottom"
+
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+
+
+    <FrameLayout
+        android:id="@+id/sheet"
+        android:background="@drawable/shape_back_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="21dp"
+            android:layout_height="3.5dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/Gray"
+            android:padding="8dp" />
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <include layout="@layout/item_recycler_top_music_home"/>
+            <include layout="@layout/item_recycler_top_music_home"/>
+            <include layout="@layout/item_recycler_top_music_home"/>
+            <include layout="@layout/item_recycler_top_music_home"/>
+            <include layout="@layout/item_recycler_top_music_home"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                tools:listitem="@layout/item_recycler_top_music_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</LinearLayout>

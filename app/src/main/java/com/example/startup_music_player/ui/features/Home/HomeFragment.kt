@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
+import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentHomeBinding
 import com.example.startup_music_player.model.Adapter.HomeAdapterTopMusic
 import com.example.startup_music_player.model.Adapter.HomeAdapterHappyMusic
@@ -24,6 +25,7 @@ import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.myApp.myApp
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterHome
+import com.example.startup_music_player.ui.features.Play.PlayFragment
 import com.example.startup_music_player.util.NetworkChecker
 
 
@@ -130,6 +132,10 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
     }
 
     override fun Click(data: MusicRespomse) {
+        val transform = parentFragmentManager.beginTransaction()
+        transform.replace(R.id.FrameLayoutMain , PlayFragment())
+        transform.addToBackStack(null)
+        transform.commit()
         //test interface
         Toast.makeText(context, data.NameMusic, Toast.LENGTH_SHORT).show()
     }
