@@ -10,7 +10,7 @@ class PresenterHome(
 ):ContractHome.Presenter {
     var fragmentview : ContractHome.View? = null
 
-    override suspend fun OnAttach(view: ContractHome.View) {
+    override suspend fun OnAttach(view: ContractHome.View)  {
         fragmentview = view
         if (internet){
             //   val data = apiservice.TopMusic()
