@@ -164,19 +164,34 @@
         <entry key="..\:/prozheh/new apps/startup-music-player/app/src/main/res/layout/moudule_two_profile.xml" value="0.25" />
         <entry key="..\:/prozheh/new apps/startup-music-player/app/src/main/res/menu/meno_btnmnavigation_main.xml" value="0.16724393864423553" />
         <entry key="..\:/prozheh/new apps/startup-music-player/app/src/main/res/menu/meno_search_main.xml" value="0.16724393864423553" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/drawable/ic_heart_no_select.xml" value="0.115" />
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/drawable/ic_heart_not_selected.xml" value="0.2425" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/drawable/ic_heart_selected.xml" value="0.1785" />
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/drawable/ic_song_lyrics.xml" value="0.2425" />
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/drawable/ic_up.xml" value="0.208" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/drawable/like_selector.xml" value="0.1785" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/drawable/selector_like.xml" value="0.115" />
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/drawable/shape_back_bottom_sheet.xml" value="0.208" />
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/drawable/shape_buttun_play.xml" value="0.2425" />
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout-v26/fragment_play.xml" value="0.23541666666666666" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/dialog_change_password.xml" value="0.1" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_about.xml" value="0.11822916666666666" />
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_artist_profile.xml" value="0.1" />
-        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_contact_us.xml" value="0.18" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_category.xml" value="0.11822916666666666" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_contact_us.xml" value="0.22" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_detail.xml" value="0.22" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_detail_playlist.xml" value="0.1" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_home.xml" value="0.11822916666666666" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_liked_music.xml" value="0.12" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_more.xml" value="0.22" />
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_myplaylist.xml" value="0.19410004275331338" />
-        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_play.xml" value="0.25" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_play.xml" value="0.67" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_profile.xml" value="0.11822916666666666" />
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_report.xml" value="0.1" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragment_search.xml" value="0.11822916666666666" />
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragmetn_detail_play.xml" value="0.22" />
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/fragmetn_more_play.xml" value="0.33" />
+        <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/moudule_one_home.xml" value="0.11822916666666666" />
       </map>
     </option>
   </component>
