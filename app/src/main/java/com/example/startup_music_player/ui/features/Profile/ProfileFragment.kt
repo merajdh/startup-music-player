@@ -38,11 +38,7 @@ class ProfileFragment : Fragment() {
 
     private fun setOnClickListeners(){
         // mouduleOne ->
-        binding.mouduleOne.imgProfile.setOnClickListener{
-            val transform = DetaiMusiclFragment()
-            transform.isCancelable = true
-            transform.show(parentFragmentManager , null)
-        }
+
 
         binding.mouduleOne.btnChangeUsername.setOnClickListener {
             val transform = ChangeUsernameFragment()

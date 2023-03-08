@@ -16,10 +16,7 @@ import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentHomeBinding
-import com.example.startup_music_player.model.Adapter.HomeAdapterTopMusic
-import com.example.startup_music_player.model.Adapter.HomeAdapterHappyMusic
-import com.example.startup_music_player.model.Adapter.HomeAdapterNewMusic
-import com.example.startup_music_player.model.Adapter.OnClick
+import com.example.startup_music_player.model.Adapter.*
 import com.example.startup_music_player.model.Contract.ContractHome
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.myApp.myApp
@@ -112,6 +109,19 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
 
     override fun ShowTopViewMusik(data: String) {
 
+        val dataMusic = arrayListOf<MusicRespomse>(
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
+        )
+
+        val adapter = HomeAdapterTrand(dataMusic, this)
+        binding.mouduleFourHome.recTrandMusic.layoutManager = LinearLayoutManager(context ,RecyclerView.VERTICAL,false)
+        binding.mouduleFourHome.recTrandMusic.adapter = adapter
 
     }
     override fun ShowGuropMusik(data: String) {
@@ -127,7 +137,7 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
         )
 
          val adapter = HomeAdapterNewMusic(dataMusic, this)
-        binding.mouduleThreeHome.recNewMusic.layoutManager = LinearLayoutManager(context , RecyclerView.VERTICAL , false)
+        binding.mouduleThreeHome.recNewMusic.layoutManager = LinearLayoutManager(context ,RecyclerView.VERTICAL , false)
         binding.mouduleThreeHome.recNewMusic.adapter = adapter
     }
 
