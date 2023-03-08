@@ -20,8 +20,8 @@ class UserReposirotyImpl(
 
         val result = apiservice.Register(jsonObject)
         if (result.success) {
-            TokenInMemory.refreshToken(username, result.token)
-            saveToken(result.token)
+            TokenInMemory.refreshToken(username, result.access,result.refresh)
+            saveToken(result.access)
             saveusername(username)
             return VALUE_SUCCESS
         } else {
@@ -44,13 +44,13 @@ class UserReposirotyImpl(
 
     override suspend fun Login(username: String, password: String): String {
         val jsonObject = JsonObject().apply {
-            addProperty("name", username)
+            addProperty("email", username)
             addProperty("password", password)
         }
         val result = apiservice.Login(jsonObject)
         if (result.success) {
-            TokenInMemory.refreshToken(username, result.token)
-            saveToken(result.token)
+            TokenInMemory.refreshToken(username, result.access,result.refresh)
+            saveToken(result.access)
             saveusername(username)
             return VALUE_SUCCESS
         } else {
@@ -59,20 +59,28 @@ class UserReposirotyImpl(
     }
 
     override fun singout() {
-        TokenInMemory.refreshToken(null,null)
+        TokenInMemory.refreshToken(null,null,null)
         sharedPref.edit().clear().apply()
     }
 
     override fun loadtoken() {
-        TokenInMemory.refreshToken(getusername(),getToken())
+        TokenInMemory.refreshToken(getusername(),getToken(), getRefresh())
     }
 
     override fun saveToken(newToken: String) {
-        sharedPref.edit().putString("token",newToken).apply()
+        sharedPref.edit().putString("access",newToken).apply()
+    }
+
+    override fun saveRefresh(RefreshToken: String) {
+        sharedPref.edit().putString("refresh",RefreshToken).apply()
     }
 
     override fun getToken(): String {
-        return sharedPref.getString("token","")!!
+        return sharedPref.getString("access","")!!
+    }
+
+    override fun getRefresh(): String {
+        return sharedPref.getString("refresh","")!!
     }
 
     override fun saveusername(username: String) {

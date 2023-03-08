@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentLoginBinding
+
 import com.example.startup_music_player.ui.features.Main.MainFragment
 import com.example.startup_music_player.ui.features.Register.RegisterFragment
 import com.google.android.material.snackbar.Snackbar
@@ -43,8 +44,10 @@ class LoginFragment : Fragment() {
             viewmodel.username.value = binding.EdtEmailLogin.text.toString()
             viewmodel.password.value = binding.EdtPasswordLogin.text.toString()
             viewmodel.LoginUser {
+
                 if (it == VALUE_SUCCESS){
                     transform(MainFragment())
+
                 }else{
                     Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
                 }

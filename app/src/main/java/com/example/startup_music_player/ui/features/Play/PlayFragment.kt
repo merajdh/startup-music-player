@@ -40,7 +40,6 @@ class PlayFragment : Fragment() {
             transform.show(parentFragmentManager, null)
         }
 
-
     }
 
 }

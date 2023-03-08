@@ -15,7 +15,7 @@ import retrofit2.http.POST
 
 interface Apiservice {
 
-    @POST("Login")
+    @POST("accounts/login")
     suspend fun Login(@Body jsonObject: JsonObject): LoginRespomse
 
     @POST("Register")
@@ -24,30 +24,21 @@ interface Apiservice {
     @POST("Verify")
     suspend fun Verify(@Body jsonObject: JsonObject): LoginRespomse
 
+    @GET("refreshToken")
+    fun refreshToken(): Call<LoginRespomse>
+
     @GET("Music")
     suspend fun Music(): List<MusicRespomse>
 
-    @GET("refreshToken")
-    fun refreshToken(): Call<LoginRespomse>
+
 
 }
 
 fun createApiService(): Apiservice {
-    val okHttpClient = OkHttpClient.Builder()
-        .addInterceptor {
-            val oldRetrofit = it.request()
-            val newRetrofit = oldRetrofit.newBuilder()
-            if (TokenInMemory.Token != null)
-                newRetrofit.addHeader("Authorization", TokenInMemory.Token!!)
-
-            newRetrofit.method(oldRetrofit.method(), oldRetrofit.body())
-            return@addInterceptor it.proceed(newRetrofit.build())
-        }.build()
 
     val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
-        .client(okHttpClient)
         .build()
     return retrofit.create(Apiservice::class.java)
 }
