@@ -11,7 +11,9 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.startup_music_player.databinding.FragmentPlayBinding
+import com.example.startup_music_player.ui.Fragment.ProfileFragment
 import com.example.startup_music_player.ui.features.Detail.DetaiMusiclFragment
+import com.example.startup_music_player.ui.features.Home.HomeFragment
 import com.example.startup_music_player.ui.features.playDetail.playDetailFragment
 import jp.wasabeef.glide.transformations.BlurTransformation
 
@@ -85,7 +87,20 @@ class PlayFragment : Fragment() {
             transform.show(parentFragmentManager, null)
         }
 
+        // back button
+        binding.btnBack.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
 
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        val transform = parentFragmentManager.beginTransaction()
+        transform.addToBackStack(null)
+        transform.replace(com.example.startup_music_player.R.id.FrameLayout, HomeFragment())
+        transform.commit()
     }
 
 }
