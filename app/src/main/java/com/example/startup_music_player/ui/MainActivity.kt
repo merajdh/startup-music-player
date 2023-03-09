@@ -1,9 +1,6 @@
 package com.example.startup_music_player.ui
 
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
+import android.content.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -32,6 +29,13 @@ class MainActivity : AppCompatActivity() {
         val userReposiroty: UserReposiroty = get()
         userReposiroty.loadtoken()
         transform(IntroFragment())
+        if (TokenInMemory.access != null) {
+            Timer().schedule(3000) {
+                transform(MainFragment())
+            }
+        }else{
+            transform(RegisterFragment())
+        }
     }
 
     private fun transform(fragment: Fragment) {

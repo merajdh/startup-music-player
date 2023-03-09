@@ -1,7 +1,7 @@
 package com.example.startup_music_player.model.presenter
 
+import android.util.Log
 import com.example.startup_music_player.model.Contract.ContractHome
-import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.net.Apiservice
 
 class PresenterHome(
@@ -13,14 +13,13 @@ class PresenterHome(
     override suspend fun OnAttach(view: ContractHome.View)  {
         fragmentview = view
         if (internet){
-            //   val data = apiservice.TopMusic()
+        val data_MusicByCategory = apiservice.MusicByCategory()
+        val data_MoreLike = apiservice.MoreLike()
+        val data_RecentMusik = apiservice.RecentMusik()
+        val data_TrendMusik = apiservice.TrendMusik()
+         fragmentview!!.MusicByCategory(data_MusicByCategory)
 
-         fragmentview!!.ShowTopMusik("")
-         fragmentview!!.ShowTopViewMusik("")
-         fragmentview!!.ShowGuropMusik("")
-         fragmentview!!.ShowPartiMusik("")
         }else{
-
         }
 
     }

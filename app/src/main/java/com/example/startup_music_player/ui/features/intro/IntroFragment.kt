@@ -28,13 +28,7 @@ class IntroFragment : Fragment() {
     ): View {
         binding = FragmentIntroBinding.inflate(layoutInflater , container , false)
         animation ()
-        if (TokenInMemory.Token != null) {
-            Timer().schedule(3000) {
-                transform(MainFragment())
-            }
-        }else{
-            transform(RegisterFragment())
-        }
+        Log.v("test", TokenInMemory.access.toString())
         return binding.root
     }
 

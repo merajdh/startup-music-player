@@ -71,43 +71,23 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
 
     }
 
-    override fun ShowPartiMusik(data: String) {
-
-        val dataMusic = arrayListOf<MusicRespomse>(
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-        )
-
-        val adapter = HomeAdapterHappyMusic(dataMusic, this)
+    override fun MusicByCategory(data: List<MusicRespomse>) {
+        Log.v("test2","774")
+        val adapter = HomeAdapterHappyMusic(data, this)
         binding.mouduleOneHome.recHappyMusic.layoutManager = GridLayoutManager(context ,1, RecyclerView.HORIZONTAL, true)
         binding.mouduleOneHome.recHappyMusic.adapter = adapter
 
     }
 
 
-    override fun ShowTopMusik(data: String) {
-
-        val dataMusic = arrayListOf<MusicRespomse>(
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-        )
-
-        val adapter = HomeAdapterTopMusic(dataMusic, this)
+    override fun MoreLike(data: List<MusicRespomse>) {
+        Log.v("data",data.toString())
+        val adapter = HomeAdapterTopMusic(data, this)
         binding.mouduleTwoHome.recTopMusic.layoutManager = GridLayoutManager (context , 2 , RecyclerView.HORIZONTAL , true)
         binding.mouduleTwoHome.recTopMusic.adapter = adapter
     }
 
-    override fun ShowTopViewMusik(data: String) {
+    override fun RecentMusik(data: List<MusicRespomse>) {
 
         val dataMusic = arrayListOf<MusicRespomse>(
             MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
@@ -124,7 +104,8 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
         binding.mouduleFourHome.recTrandMusic.adapter = adapter
 
     }
-    override fun ShowGuropMusik(data: String) {
+
+    override fun TrendMusik(data: List<MusicRespomse>) {
 
         val dataMusic = arrayListOf<MusicRespomse>(
             MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
@@ -147,7 +128,7 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
         transform.addToBackStack(null)
         transform.commit()
         //test interface
-        Toast.makeText(context, data.NameMusic, Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, data.title, Toast.LENGTH_SHORT).show()
     }
 
     fun setOnClickListeners(){
@@ -170,7 +151,6 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
     }
 
     private fun MoreClickListener(){
-
 
 
         when(myApp.ischeckd){

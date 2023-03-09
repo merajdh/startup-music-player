@@ -2,15 +2,14 @@ package com.example.startup_music_player.model.net
 
 import com.example.startup_music_player.model.data.LoginRespomse
 import com.example.startup_music_player.model.data.MusicRespomse
-import com.example.startup_music_player.model.repository.TokenInMemory
 import com.google.gson.JsonObject
 import ir.dunijet.dunibazaar.util.BASE_URL
-import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.POST
 
 interface Apiservice {
@@ -27,11 +26,18 @@ interface Apiservice {
     @GET("refreshToken")
     fun refreshToken(): Call<LoginRespomse>
 
-    @GET("Music")
-    suspend fun Music(): List<MusicRespomse>
+    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4NDUxMTI3LCJpYXQiOjE2NzgzNjQ3MjcsImp0aSI6ImMwNjNlYWM1MTlhZDQ3NTFhMWIxYjI0MzczYzRkMWYxIiwidXNlcl9pZCI6M30.4USFe6WKLhfCFT70X6B4LqNvPe9SfEg4rrlIg-GsofM")
+    @GET("music/musicbycategory/")
+    suspend fun MusicByCategory(): List<MusicRespomse>
 
+    @GET("music/morelike/")
+    suspend fun MoreLike(): List<MusicRespomse>
 
+    @GET("music/recentmusic/")
+    suspend fun RecentMusik(): List<MusicRespomse>
 
+    @GET("music/trendmusic/")
+    suspend fun TrendMusik(): List<MusicRespomse>
 }
 
 fun createApiService(): Apiservice {

@@ -8,13 +8,13 @@ import com.example.startup_music_player.databinding.ItemRecyclerTopMusicHomeBind
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.squareup.picasso.Picasso
 
-class HomeAdapterTopMusic(private val data : ArrayList<MusicRespomse>,  private val OnClick:OnClick) :RecyclerView.Adapter<HomeAdapterTopMusic.HomeViewHolder>() {
+class HomeAdapterTopMusic(private val data : List<MusicRespomse>,  private val OnClick:OnClick) :RecyclerView.Adapter<HomeAdapterTopMusic.HomeViewHolder>() {
     lateinit var binding:ItemRecyclerTopMusicHomeBinding
 
         inner class HomeViewHolder(itemView: View, ) : RecyclerView.ViewHolder(itemView){
             fun ViewBinder (dataHome: MusicRespomse){
-                binding.txtNameMusic.text = dataHome.NameMusic
-                binding.txtNameSinger.text = dataHome.NAmeArtist
+                binding.txtNameMusic.text = dataHome.title
+                binding.txtNameSinger.text = dataHome.artist
                 Picasso
                     .get()
                     .load(dataHome.Cover)

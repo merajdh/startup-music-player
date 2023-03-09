@@ -13,8 +13,8 @@ class HomeAdapterNewMusic(private val data : ArrayList<MusicRespomse> , private 
 
         inner class HomeNewMusicViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
             fun ViewBinder (dataHome: MusicRespomse){
-                binding.txtNameMusic.text = dataHome.NameMusic
-                binding.txtNameSinger.text = dataHome.NAmeArtist
+                binding.txtNameMusic.text = dataHome.title
+                binding.txtNameSinger.text = dataHome.artist
                 Picasso
                     .get()
                     .load(dataHome.Cover)

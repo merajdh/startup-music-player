@@ -17,8 +17,8 @@ class HomeAdapterTrand (private val data : ArrayList<MusicRespomse>,  private va
     inner class HomeViewHolder(itemView: View, ) : RecyclerView.ViewHolder(itemView){
         fun ViewBinder (dataHome: MusicRespomse){
 
-            binding.txtNameMusic.text = dataHome.NameMusic
-            binding.txtNameSinger.text = dataHome.NAmeArtist
+            binding.txtNameMusic.text = dataHome.title
+            binding.txtNameSinger.text = dataHome.artist
             if (adapterPosition % 2 == 0 ){
                 binding.backRec.background = ContextCompat.getDrawable(binding.root.context , R.drawable.shape_back_rec_trand)
 

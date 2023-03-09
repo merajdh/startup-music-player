@@ -9,9 +9,9 @@ interface ContractHome {
        fun OnDetavh()
     }
     interface View {
-        fun ShowPartiMusik(data: String)
-        fun ShowTopMusik(data: String)
-        fun ShowTopViewMusik(data: String)
-        fun ShowGuropMusik(data: String)
+        fun MusicByCategory(data: List<MusicRespomse>)
+        fun MoreLike(data: List<MusicRespomse>)
+        fun RecentMusik(data: List<MusicRespomse>)
+        fun TrendMusik(data: List<MusicRespomse>)
     }
 }

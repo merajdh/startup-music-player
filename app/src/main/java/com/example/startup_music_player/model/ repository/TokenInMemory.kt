@@ -5,14 +5,14 @@ object TokenInMemory {
     private set
 
     var refresh : String? =null
-        private set
+    private set
 
-    var Token :String? =null
+    var access :String? =null
     private set
 
     fun refreshToken(Username:String? , newToken:String? , refreshToken:String?){
         this.username = Username
-        this.Token = newToken
+        this.access = newToken
         this.refresh = refreshToken
     }
 }
