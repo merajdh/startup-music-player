@@ -39,9 +39,13 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
         setOnClickListeners()
         MoreClickListener()
         presenter = PresenterHome(createApiService(), NetworkChecker(binding.root.context).isInternetConnected)
+
          lifecycleScope.launchWhenCreated {
              presenter.OnAttach(this@HomeFragment)
+
+
          }
+
 
         binding.mouduleOneHome.slider.setItemClickListener(object : ItemClickListener {
             override fun onItemSelected(position: Int) {
@@ -72,7 +76,7 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
     }
 
     override fun MusicByCategory(data: List<MusicRespomse>) {
-        Log.v("test2","774")
+
         val adapter = HomeAdapterHappyMusic(data, this)
         binding.mouduleOneHome.recHappyMusic.layoutManager = GridLayoutManager(context ,1, RecyclerView.HORIZONTAL, true)
         binding.mouduleOneHome.recHappyMusic.adapter = adapter
@@ -81,7 +85,7 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
 
 
     override fun MoreLike(data: List<MusicRespomse>) {
-        Log.v("data",data.toString())
+
         val adapter = HomeAdapterTopMusic(data, this)
         binding.mouduleTwoHome.recTopMusic.layoutManager = GridLayoutManager (context , 2 , RecyclerView.HORIZONTAL , true)
         binding.mouduleTwoHome.recTopMusic.adapter = adapter

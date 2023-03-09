@@ -51,6 +51,9 @@ class MainActivity : AppCompatActivity() {
             override fun onReceive(p0: Context?, p1: Intent?) {
                 if (!internet) {
                     //snalbar
+
+                }else{
+
                 }
             }
         }

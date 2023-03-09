@@ -29,7 +29,7 @@ class HomeAdapterTrand (private val data : ArrayList<MusicRespomse>,  private va
 
             Picasso
                 .get()
-                .load(dataHome.Cover)
+                .load(dataHome.cover)
                 .into(binding.imgCover)
 
             itemView.setOnClickListener {

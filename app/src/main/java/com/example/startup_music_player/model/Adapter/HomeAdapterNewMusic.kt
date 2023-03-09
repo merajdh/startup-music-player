@@ -17,7 +17,7 @@ class HomeAdapterNewMusic(private val data : ArrayList<MusicRespomse> , private 
                 binding.txtNameSinger.text = dataHome.artist
                 Picasso
                     .get()
-                    .load(dataHome.Cover)
+                    .load(dataHome.cover)
                     .into(binding.imgCover)
 
                 itemView.setOnClickListener {
