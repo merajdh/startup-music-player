@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    android:orientation="vertical"
-    android:background="@color/dark_bule"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:layout_width="match_parent"
+    android:id="@+id/swipe_home"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent">
+
+<androidx.core.widget.NestedScrollView
+    android:background="@color/dark_bule"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <include
-            android:id="@+id/moudule_one_home"
-            layout="@layout/moudule_one_home"/>
-        <include
-            android:id="@+id/moudule_two_home"
-            layout="@layout/moudule_two_home"/>
-        <include
-            android:id="@+id/moudule_three_home"
-            layout="@layout/moudule_three_home"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-        <include layout="@layout/moudule_four_home"
-            android:id="@+id/moudule_four_home"/>
+            <include
+                android:id="@+id/moudule_one_home"
+                layout="@layout/moudule_one_home"/>
+            <include
+                android:id="@+id/moudule_two_home"
+                layout="@layout/moudule_two_home"/>
+            <include
+                android:id="@+id/moudule_three_home"
+                layout="@layout/moudule_three_home"/>
+
+            <include layout="@layout/moudule_four_home"
+                android:id="@+id/moudule_four_home"/>
 
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

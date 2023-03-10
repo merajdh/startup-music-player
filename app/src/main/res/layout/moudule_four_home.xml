@@ -7,16 +7,53 @@
     android:orientation="vertical"
     android:layout_height="match_parent">
 
-    <TextView
+
+    <FrameLayout
         android:layout_marginTop="6dp"
-        android:layout_marginEnd="14dp"
-        android:layout_gravity="end"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:text="ترند ها"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:gravity="end|center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"
+            android:layout_gravity="end"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="ترند ها"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:clickable="true"
+            android:id="@+id/btn_more"
+            android:layout_gravity="start|center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="14dp"
+                android:layout_gravity="start|center_vertical"
+                android:src="@drawable/ic_back"
+                android:layout_width="18dp"
+                android:layout_height="18dp"/>
+
+            <TextView
+                android:textSize="13sp"
+                android:layout_marginStart="6dp"
+                android:textColor="@color/Gray"
+                android:text="بیشتر ..."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_trand_music"

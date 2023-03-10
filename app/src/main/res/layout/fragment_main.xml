@@ -19,6 +19,7 @@
 
             <androidx.appcompat.widget.Toolbar
                 app:titleEnabled="false"
+                android:backgroundTint="?attr/colorPrimary"
                 android:id="@+id/toolbarmain"
                 android:layout_width="match_parent"
                 android:layout_height="56dp" >

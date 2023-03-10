@@ -1,6 +1,8 @@
 package com.example.startup_music_player.ui.features.Home
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -150,7 +152,15 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
         binding.mouduleThreeHome.btnMore.setOnClickListener {
             myApp.ischeckd = "new_music"
             MoreClickListener()
+        }
 
+        binding.swipeHome.setOnRefreshListener {
+            // load data hare
+
+            Handler (Looper.getMainLooper()).postDelayed({
+                binding.swipeHome.isRefreshing = false
+
+            },800)
         }
     }
 

@@ -1,6 +1,8 @@
 package com.example.startup_music_player.ui.features.Category
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +23,15 @@ class CategoryFragment : Fragment() {
     }
 
     private fun setOnClickListeners(){
+
+        binding.swipeCategory.setOnRefreshListener {
+            // load data hare
+
+            Handler (Looper.getMainLooper()).postDelayed({
+                binding.swipeCategory.isRefreshing = false
+
+            },800)
+        }
 
         //moudule Two ->
 

@@ -25,6 +25,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
+            android:maxLength="20"
             android:textColor="@color/light_gray"
             android:padding="2dp"
             android:layout_marginTop="4dp"

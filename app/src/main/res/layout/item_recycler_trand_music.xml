@@ -54,6 +54,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
+            android:maxLength="25"
             android:id="@+id/txt_name_music"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -67,6 +68,7 @@
             app:layout_constraintTop_toTopOf="@+id/materialCardView5" />
 
         <TextView
+            android:maxLength="25"
             android:id="@+id/txt_name_singer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

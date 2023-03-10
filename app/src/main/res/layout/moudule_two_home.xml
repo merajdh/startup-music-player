@@ -32,7 +32,6 @@
             <LinearLayout
                 android:clickable="true"
                 android:id="@+id/btn_more"
-                android:layout_marginEnd="20dp"
                 android:layout_gravity="start|center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -1,51 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    android:background="@color/dark_bule"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_search"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layoutAnimation="@anim/anim_main_layout"
-    tools:context=".ui.features.Serach.SearchFragment">
+    android:layout_height="match_parent">
 
-    <FrameLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:background="@color/dark_bule"
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="match_parent"
+        android:layoutAnimation="@anim/anim_main_layout"
+        tools:context=".ui.features.Serach.SearchFragment">
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_margin="14dp"
-            app:cardElevation="8dp"
-            app:strokeColor="?attr/colorPrimary"
-            app:strokeWidth="1dp"
-            android:backgroundTint="@color/dark_bule2"
-            app:cardCornerRadius="20dp"
+        <FrameLayout
+            android:background="@color/dark_bule"
             android:layout_width="match_parent"
-            android:layout_height="55dp">
+            android:layout_height="80dp">
 
-            <EditText
-                android:id="@+id/Edt_search"
+            <com.google.android.material.card.MaterialCardView
+                android:layout_margin="14dp"
+                app:cardElevation="8dp"
+                app:strokeColor="?attr/colorPrimary"
+                app:strokeWidth="1dp"
+                android:backgroundTint="@color/dark_bule2"
+                app:cardCornerRadius="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="16dp"
-                android:background="@color/dark_bule2"
-                android:hint="اسم خواننده,اسم موزیک و..."
-                android:inputType="text"
-                android:maxLength="16"
-                android:textColor="@color/white"
-                android:textColorHint="#7A7C87"
-                android:textSize="16sp"
-                tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+                android:layout_height="55dp">
 
-        </com.google.android.material.card.MaterialCardView>
-    </FrameLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/Edt_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp"
+                    android:background="@color/dark_bule2"
+                    android:hint="اسم خواننده,اسم موزیک و..."
+                    android:inputType="text"
+                    android:maxLength="16"
+                    android:textColor="@color/white"
+                    android:textColorHint="#7A7C87"
+                    android:textSize="16sp"
+                    tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
 
-    </androidx.recyclerview.widget.RecyclerView>
-</LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 

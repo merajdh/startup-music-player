@@ -44,6 +44,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
+            android:maxLength="25"
             android:textSize="13sp"
             android:textStyle="bold"
             android:layout_marginEnd="22dp"
@@ -58,6 +59,7 @@
             app:layout_constraintTop_toTopOf="@+id/materialCardView" />
 
         <TextView
+            android:maxLength="25"
             android:textSize="12sp"
             android:layout_marginTop="3dp"
             android:id="@+id/txt_name_singer"

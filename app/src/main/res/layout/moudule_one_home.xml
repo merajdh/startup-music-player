@@ -86,7 +86,7 @@
         android:layout_marginBottom="10dp"
         android:backgroundTint="@color/light_blue"
         android:layout_width="match_parent"
-        android:layout_height="8dp"/>
+        android:layout_height="4dp"/>
 
 
 </LinearLayout>
