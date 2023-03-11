@@ -8,8 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.startup_music_player.databinding.FragmentPlayBinding
 import com.example.startup_music_player.ui.features.playDetail.playDetailFragment
+import jp.wasabeef.glide.transformations.BlurTransformation
 
 class PlayFragment : Fragment() {
     lateinit var binding: FragmentPlayBinding
@@ -19,18 +22,17 @@ class PlayFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentPlayBinding.inflate(layoutInflater, container, false)
-        setBlur()
+        blurImage()
         setOnClickListeners()
         return binding.root
 
     }
 
 
-    private fun setBlur(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            binding.imgBackground.setRenderEffect(RenderEffect.createBlurEffect(30f, 30f , Shader.TileMode.MIRROR))
-        }
-    }
+    private fun blurImage() {
+        Glide.with(this).load(binding.imgBackground.drawable)
+            .apply(RequestOptions.bitmapTransform(BlurTransformation(8, 1)))
+            .into(binding.imgBackground)        }
 
     private fun setOnClickListeners() {
 

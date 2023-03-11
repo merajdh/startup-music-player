@@ -105,6 +105,11 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
 
     override fun TrendMusik(data: List<MusicRespomse>) {
 
+        Log.v("testi" , data.toString())
+
+        val adapter = HomeAdapterTrand(data, this)
+        binding.mouduleFourHome.recTrandMusic.layoutManager = GridLayoutManager (context , 1 , RecyclerView.VERTICAL , false)
+        binding.mouduleFourHome.recTrandMusic.adapter = adapter
 
     }
 
