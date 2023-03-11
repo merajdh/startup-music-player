@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
@@ -96,7 +97,7 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
     override fun RecentMusik(data: List<MusicRespomse>) {
 
         val adapter = HomeAdapterTopMusic(data, this)
-        binding.mouduleThreeHome.recNewMusic.layoutManager = GridLayoutManager (context , 1 , RecyclerView.HORIZONTAL , true)
+        binding.mouduleThreeHome.recNewMusic.layoutManager = GridLayoutManager (context , 1 , RecyclerView.VERTICAL , false)
         binding.mouduleThreeHome.recNewMusic.adapter = adapter
 
 
@@ -163,5 +164,6 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
 
         }
     }
+
 
 }

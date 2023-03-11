@@ -51,6 +51,7 @@ class UserReposirotyImpl(
         if (result.success) {
             TokenInMemory.refreshToken(username, result.access,result.refresh)
             saveToken(result.access)
+            saveRefresh(result.refresh)
             saveusername(username)
             return VALUE_SUCCESS
         } else {
@@ -71,8 +72,8 @@ class UserReposirotyImpl(
         sharedPref.edit().putString("access",newToken).apply()
     }
 
-    override fun saveRefresh(RefreshToken: String) {
-        sharedPref.edit().putString("refresh",RefreshToken).apply()
+    override fun saveRefresh(refresh: String) {
+        sharedPref.edit().putString("refresh",refresh).apply()
     }
 
     override fun getToken(): String {

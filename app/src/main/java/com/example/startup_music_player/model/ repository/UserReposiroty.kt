@@ -11,7 +11,7 @@ interface UserReposiroty {
     fun loadtoken()
 
     fun saveToken(newToken: String)
-    fun saveRefresh(RefreshToken: String)
+    fun saveRefresh(refresh: String)
     fun getToken(): String
     fun getRefresh(): String
 
