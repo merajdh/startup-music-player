@@ -26,10 +26,13 @@ interface Apiservice {
     @GET("refreshToken")
     fun refreshToken(): Call<LoginRespomse>
 
-    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4NTM3MjkwLCJpYXQiOjE2Nzg0NTA4OTAsImp0aSI6IjBmNmJhMmNjMzdlZDQzNDRhZmQ5YTU3NWY0M2VmYzAwIiwidXNlcl9pZCI6Mn0.r37hqVt80DubcyIAWUBp7DT0pKnL3-9N2nwJz9WIMG0")
+    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4NjIwNjc1LCJpYXQiOjE2Nzg1MzQyNzUsImp0aSI6ImMzMGQzODZiMmYwMzQyM2RhNTQ1Zjk4ODI5YmZhMmFiIiwidXNlcl9pZCI6M30.1v1QwVa3CcCzFPSZfupagAl17ly0UgQmALHcypER4UU")
     @GET("music/musicbycategory/")
     suspend fun MusicByCategory(): List<MusicRespomse>
 
+    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4NjIwNjc1LCJpYXQiOjE2Nzg1MzQyNzUsImp0aSI6ImMzMGQzODZiMmYwMzQyM2RhNTQ1Zjk4ODI5YmZhMmFiIiwidXNlcl9pZCI6M30.1v1QwVa3CcCzFPSZfupagAl17ly0UgQmALHcypER4UU")
+    @GET("music/recentmusic/")
+    suspend fun MusicNews(): List<MusicRespomse>
 }
 
 fun createApiService(): Apiservice {

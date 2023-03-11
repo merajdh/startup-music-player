@@ -78,7 +78,7 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
     }
 
     override fun MusicByCategory(data: List<MusicRespomse>) {
-
+        Log.v("test1",data.toString())
         val adapter = HomeAdapterHappyMusic(data, this)
         binding.mouduleOneHome.recHappyMusic.layoutManager = GridLayoutManager(context ,1, RecyclerView.HORIZONTAL, true)
         binding.mouduleOneHome.recHappyMusic.adapter = adapter
@@ -95,37 +95,16 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
 
     override fun RecentMusik(data: List<MusicRespomse>) {
 
-        val dataMusic = arrayListOf<MusicRespomse>(
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-        )
+        val adapter = HomeAdapterTopMusic(data, this)
+        binding.mouduleThreeHome.recNewMusic.layoutManager = GridLayoutManager (context , 1 , RecyclerView.HORIZONTAL , true)
+        binding.mouduleThreeHome.recNewMusic.adapter = adapter
 
-        val adapter = HomeAdapterTrand(dataMusic, this)
-        binding.mouduleFourHome.recTrandMusic.layoutManager = LinearLayoutManager(context ,RecyclerView.VERTICAL,false)
-        binding.mouduleFourHome.recTrandMusic.adapter = adapter
 
     }
 
     override fun TrendMusik(data: List<MusicRespomse>) {
 
-        val dataMusic = arrayListOf<MusicRespomse>(
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-            MusicRespomse("کی مثل من" ,"امیر تتلو", "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg" , "شاد"),
-        )
 
-         val adapter = HomeAdapterNewMusic(dataMusic, this)
-        binding.mouduleThreeHome.recNewMusic.layoutManager = LinearLayoutManager(context ,RecyclerView.VERTICAL , false)
-        binding.mouduleThreeHome.recNewMusic.adapter = adapter
     }
 
     override fun Click(data: MusicRespomse) {

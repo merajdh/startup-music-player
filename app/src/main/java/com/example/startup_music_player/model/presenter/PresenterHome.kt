@@ -13,8 +13,10 @@ class PresenterHome(
         fragmentview = view
 
        val data_MusicByCategory = apiservice.MusicByCategory()
+       val data_Musicnewes = apiservice.MusicNews()
 
         fragmentview!!.MusicByCategory(data_MusicByCategory)
+        fragmentview!!.RecentMusik(data_Musicnewes)
 
     }
 
