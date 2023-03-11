@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -120,12 +118,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:letterSpacing="0.1"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:text="امیر تتلو"
                 android:textColor="@color/white"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:tint="@color/black" />
 
@@ -136,7 +133,7 @@
                 android:layout_marginTop="3dp"
                 android:text="کی مثل من"
                 android:textColor="#B5BBC1"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -155,24 +152,24 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
-                android:layout_width="38dp"
-                android:layout_height="38dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_marginTop="3dp"
                 android:src="@drawable/ic_add_to_playlist"
                 app:tint="@color/light_gray" />
 
-            <ImageView
+            <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="28dp"
                 android:layout_height="28dp"
+                app:useMaterialThemeColors="false"
+                android:button="@drawable/like_selector"
                 android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_marginStart="70dp"
-                android:src="@drawable/ic_heart_not_selected"
-                app:tint="@color/light_gray" />
+                android:layout_marginStart="70dp" />
 
             <ImageView
-                android:layout_width="32sp"
-                android:layout_height="32sp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_marginEnd="70dp"
                 android:src="@drawable/ic_song_lyrics"

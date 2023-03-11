@@ -11,7 +11,7 @@ import com.example.startup_music_player.databinding.ItemRecyclerTrandMusicBindin
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.squareup.picasso.Picasso
 
-class HomeAdapterTrand (private val data : ArrayList<MusicRespomse>,  private val OnClick:OnClick) :RecyclerView.Adapter<HomeAdapterTrand.HomeViewHolder>() {
+class HomeAdapterTrand (private val data : List<MusicRespomse>,  private val OnClick:OnClick) :RecyclerView.Adapter<HomeAdapterTrand.HomeViewHolder>() {
     lateinit var binding:ItemRecyclerTrandMusicBinding
 
     inner class HomeViewHolder(itemView: View, ) : RecyclerView.ViewHolder(itemView){

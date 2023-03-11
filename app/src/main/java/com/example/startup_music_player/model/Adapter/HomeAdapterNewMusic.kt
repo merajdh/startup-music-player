@@ -26,6 +26,7 @@ class HomeAdapterNewMusic(private val data : ArrayList<MusicRespomse> , private 
 
             }
         }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeNewMusicViewHolder {
         binding = ItemRecyclerTopMusicHomeBinding.inflate(LayoutInflater.from(parent.context) , parent , false)
         return HomeNewMusicViewHolder(binding.root)
