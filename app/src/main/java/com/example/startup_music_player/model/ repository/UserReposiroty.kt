@@ -8,14 +8,20 @@ interface UserReposiroty {
 
     //Ofline
     fun singout()
-    fun loadtoken()
+
+    fun loadToken()
 
     fun saveToken(newToken: String)
-    fun saveRefresh(refresh: String)
-    fun getToken(): String
-    fun getRefresh(): String
+    fun getToken(): String?
 
-    fun saveusername(username: String)
-    fun getusername(): String
+    fun saveUserName(username: String)
+    fun getUserName(): String?
+
+
+
+    fun saveRefresh(refresh: String?)
+    fun getRefresh(): String?
+
+
 
 }

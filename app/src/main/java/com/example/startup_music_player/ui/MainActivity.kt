@@ -15,6 +15,7 @@ import com.example.startup_music_player.ui.features.Register.RegisterFragment
 import com.example.startup_music_player.ui.features.intro.IntroFragment
 import com.example.startup_music_player.util.NetworkChecker
 import org.koin.android.ext.android.get
+import org.koin.android.ext.koin.androidContext
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -27,9 +28,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         chekinternet() //chekinternet
         val userReposiroty: UserReposiroty = get()
-        userReposiroty.loadtoken()
+        userReposiroty.loadToken()
         transform(IntroFragment())
-        if (TokenInMemory.access != null) {
+        if (TokenInMemory.access != "") {
             Timer().schedule(3000) {
                 transform(MainFragment())
             }

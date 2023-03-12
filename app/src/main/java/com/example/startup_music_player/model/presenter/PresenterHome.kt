@@ -5,22 +5,26 @@ import com.example.startup_music_player.model.net.Apiservice
 
 class PresenterHome(
     private val apiservice: Apiservice,
-    private val  internet : Boolean
+    private val Internet :Boolean
 ):ContractHome.Presenter {
     var fragmentview : ContractHome.View? = null
 
-    override suspend fun OnAttach(view: ContractHome.View)  {
+    override suspend fun OnAttach(view: ContractHome.View) {
         fragmentview = view
 
-       val data_MusicByCategory = apiservice.MusicByCategory()
-       val data_Musicnewes = apiservice.MusicNews()
-        val data_MusicTop = apiservice.MusicTop()
-        val data_MusicTrend = apiservice.MusicTrend()
+        if (Internet){
+            val data_MusicByCategory = apiservice.MusicByCategory()
+            val data_Musicnewes = apiservice.MusicNews()
+            val data_MusicTop = apiservice.MusicTop()
+            val data_MusicTrend = apiservice.MusicTrend()
 
-        fragmentview!!.MusicByCategory(data_MusicByCategory)
-        fragmentview!!.RecentMusik(data_Musicnewes)
-        fragmentview!!.MoreLike(data_MusicTop)
-        fragmentview!!.TrendMusik(data_MusicTrend)
+            fragmentview!!.MusicByCategory(data_MusicByCategory)
+            fragmentview!!.RecentMusik(data_Musicnewes)
+            fragmentview!!.MoreLike(data_MusicTop)
+            fragmentview!!.TrendMusik(data_MusicTrend)
+        }else{
+
+        }
 
     }
 

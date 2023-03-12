@@ -1,7 +1,8 @@
 package com.example.startup_music_player.util
 
 import android.app.Application
-import android.content.Context import com.example.startup_music_player.model.net.createApiService
+import android.content.Context
+import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.repository.UserReposiroty
 import com.example.startup_music_player.model.repository.UserReposirotyImpl
 import com.example.startup_music_player.ui.features.Login.LoginViewModel
@@ -14,7 +15,8 @@ import org.koin.dsl.module
 
 class MyApp : Application() {
     companion object {
-
+        var idMusic : String = ""
+        var access : String = "TokenInMemory.access.toString()"
     }
 
     override fun onCreate() {

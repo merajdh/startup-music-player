@@ -1,13 +1,13 @@
 package com.example.startup_music_player.model.repository
 
 object TokenInMemory {
-    var username : String? =null
+    var username : String? = null
     private set
 
-    var refresh : String? =null
+    var refresh : String? = null
     private set
 
-    var access :String? =null
+    var access :String? = null
     private set
 
     fun refreshToken(Username:String? , newToken:String? , refreshToken:String?){

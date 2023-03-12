@@ -2,8 +2,12 @@ package com.example.startup_music_player.model.net
 
 import com.example.startup_music_player.model.data.LoginRespomse
 import com.example.startup_music_player.model.data.MusicRespomse
+import com.example.startup_music_player.model.repository.TokenInMemory
+import com.example.startup_music_player.util.MyApp
+import com.example.startup_music_player.util.MyApp.Companion.access
 import com.google.gson.JsonObject
 import ir.dunijet.dunibazaar.util.BASE_URL
+import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -26,20 +30,42 @@ interface Apiservice {
     @GET("refreshToken")
     fun refreshToken(): Call<LoginRespomse>
 
-    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4NjIwNjc1LCJpYXQiOjE2Nzg1MzQyNzUsImp0aSI6ImMzMGQzODZiMmYwMzQyM2RhNTQ1Zjk4ODI5YmZhMmFiIiwidXNlcl9pZCI6M30.1v1QwVa3CcCzFPSZfupagAl17ly0UgQmALHcypER4UU")
     @GET("music/musicbycategory/")
     suspend fun MusicByCategory(): List<MusicRespomse>
 
-    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4NjIwNjc1LCJpYXQiOjE2Nzg1MzQyNzUsImp0aSI6ImMzMGQzODZiMmYwMzQyM2RhNTQ1Zjk4ODI5YmZhMmFiIiwidXNlcl9pZCI6M30.1v1QwVa3CcCzFPSZfupagAl17ly0UgQmALHcypER4UU")
+
     @GET("music/recentmusic/")
     suspend fun MusicNews(): List<MusicRespomse>
+
+
+    @GET("music/musicbycategory/")
+    suspend fun MusicTop(): List<MusicRespomse>
+
+
+    @GET("music/recentmusic/")
+    suspend fun MusicTrend(): List<MusicRespomse>
 }
 
 fun createApiService(): Apiservice {
+    val okHttpClient = OkHttpClient.Builder()
+        .addInterceptor {
+
+            val oldRequest = it.request()
+            val newRequest = oldRequest.newBuilder()
+            if (TokenInMemory.access !=""){
+                newRequest.addHeader("Authorization","Bearer ${TokenInMemory.access}")
+                newRequest.method(oldRequest.method(), oldRequest.body())
+            }
+
+
+
+            return@addInterceptor it.proceed(newRequest.build())
+        }.build()
 
     val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
+        .client(okHttpClient)
         .build()
     return retrofit.create(Apiservice::class.java)
 }

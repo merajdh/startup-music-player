@@ -26,6 +26,7 @@ import com.example.startup_music_player.model.myApp.myApp
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterHome
 import com.example.startup_music_player.ui.features.Play.PlayFragment
+import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
 
 
@@ -44,7 +45,7 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
         presenter = PresenterHome(createApiService(), NetworkChecker(binding.root.context).isInternetConnected)
 
          lifecycleScope.launchWhenCreated {
-             presenter.OnAttach(this@HomeFragment)
+             presenter.OnAttach(this@HomeFragment,)
 
 
          }
@@ -114,6 +115,7 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
     }
 
     override fun Click(data: MusicRespomse) {
+        MyApp.idMusic = data.id.toString()
         val transform = parentFragmentManager.beginTransaction()
         transform.replace(R.id.FrameLayoutMain , PlayFragment())
         transform.addToBackStack(null)

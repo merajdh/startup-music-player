@@ -8,6 +8,7 @@ import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 class UserReposirotyImpl(
     private val apiservice: Apiservice,
     private val sharedPref: SharedPreferences
+
 ) : UserReposiroty {
 
 
@@ -22,7 +23,7 @@ class UserReposirotyImpl(
         if (result.success) {
             TokenInMemory.refreshToken(username, result.access,result.refresh)
             saveToken(result.access)
-            saveusername(username)
+            saveUserName(username)
             return VALUE_SUCCESS
         } else {
             return result.mesage
@@ -43,20 +44,26 @@ class UserReposirotyImpl(
     }
 
     override suspend fun Login(username: String, password: String): String {
+
         val jsonObject = JsonObject().apply {
             addProperty("email", username)
             addProperty("password", password)
         }
+
         val result = apiservice.Login(jsonObject)
         if (result.success) {
             TokenInMemory.refreshToken(username, result.access,result.refresh)
             saveToken(result.access)
+
+            saveUserName(username)
+            saveToken(result.access)
             saveRefresh(result.refresh)
-            saveusername(username)
+
             return VALUE_SUCCESS
         } else {
             return result.mesage
         }
+
     }
 
     override fun singout() {
@@ -64,31 +71,33 @@ class UserReposirotyImpl(
         sharedPref.edit().clear().apply()
     }
 
-    override fun loadtoken() {
-        TokenInMemory.refreshToken(getusername(),getToken(), getRefresh())
+    override fun loadToken() {
+        TokenInMemory.refreshToken(getUserName(), getToken(),getRefresh())
     }
 
     override fun saveToken(newToken: String) {
-        sharedPref.edit().putString("access",newToken).apply()
+        sharedPref.edit().putString("access", newToken).apply()
     }
 
-    override fun saveRefresh(refresh: String) {
-        sharedPref.edit().putString("refresh",refresh).apply()
+    override fun getToken(): String? {
+        return sharedPref.getString("access", "")
+
     }
 
-    override fun getToken(): String {
-        return sharedPref.getString("access","")!!
+    override fun saveUserName(username: String) {
+        sharedPref.edit().putString("username", username).apply()
+    }
+
+    override fun getUserName(): String? {
+        return sharedPref.getString("username", "")
+
     }
 
     override fun getRefresh(): String {
         return sharedPref.getString("refresh","")!!
     }
 
-    override fun saveusername(username: String) {
-        sharedPref.edit().putString("username",username).apply()
-    }
-
-    override fun getusername(): String {
-        return sharedPref.getString("username","")!!
+    override fun saveRefresh(refresh: String?) {
+        sharedPref.edit().putString("refresh",refresh).apply()
     }
 }
