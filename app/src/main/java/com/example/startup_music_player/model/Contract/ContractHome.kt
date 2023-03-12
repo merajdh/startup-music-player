@@ -13,5 +13,6 @@ interface ContractHome {
         fun MoreLike(data: List<MusicRespomse>)
         fun RecentMusik(data: List<MusicRespomse>)
         fun TrendMusik(data: List<MusicRespomse>)
+        fun InternationalMusic(data: List<MusicRespomse>)
     }
 }
