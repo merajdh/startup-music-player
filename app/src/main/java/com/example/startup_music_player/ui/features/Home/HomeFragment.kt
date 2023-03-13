@@ -114,6 +114,14 @@ class HomeFragment : Fragment() , ContractHome.View , OnClick{
 
     }
 
+    override fun InternationalMusic(data: List<MusicRespomse>) {
+
+        val adapter = HomeAdapterInternational(data, this)
+        binding.mouduleFourHome.recTrandMusic.layoutManager = GridLayoutManager (context , 1 , RecyclerView.VERTICAL , false)
+        binding.mouduleFourHome.recTrandMusic.adapter = adapter
+
+    }
+
     override fun Click(data: MusicRespomse) {
         MyApp.idMusic = data.id.toString()
         val transform = parentFragmentManager.beginTransaction()

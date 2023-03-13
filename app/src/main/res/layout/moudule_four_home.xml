@@ -26,31 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <LinearLayout
-            android:clickable="true"
-            android:id="@+id/btn_more"
-            android:layout_gravity="start|center_vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:focusable="true">
 
-            <ImageView
-                android:layout_marginTop="2dp"
-                android:layout_marginStart="14dp"
-                android:layout_gravity="start|center_vertical"
-                android:src="@drawable/ic_back"
-                android:layout_width="18dp"
-                android:layout_height="18dp"/>
-
-            <TextView
-                android:textSize="13sp"
-                android:layout_marginStart="6dp"
-                android:textColor="@color/Gray"
-                android:text="بیشتر ..."
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
 
     </FrameLayout>
 
@@ -61,5 +37,34 @@
         android:layout_marginBottom="6dp"
         android:layout_width="match_parent"
         tools:listitem="@layout/item_recycler_trand_music"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+        android:clickable="true"
+        android:id="@+id/btn_more"
+        android:layout_gravity="start|center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="14dp"
+            android:layout_gravity="start|center_vertical"
+            android:src="@drawable/ic_back"
+            android:layout_width="18dp"
+            android:layout_height="18dp"/>
+
+        <TextView
+            android:textSize="13sp"
+            android:layout_marginStart="6dp"
+            android:textColor="@color/Gray"
+            android:text="بیشتر ..."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
 </LinearLayout>

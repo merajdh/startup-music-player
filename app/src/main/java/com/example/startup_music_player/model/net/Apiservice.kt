@@ -44,6 +44,9 @@ interface Apiservice {
 
     @GET("music/recentmusic/")
     suspend fun MusicTrend(): List<MusicRespomse>
+
+    @GET("music/internationals/")
+    suspend fun MusicInternatioal() : List<MusicRespomse>
 }
 
 fun createApiService(): Apiservice {

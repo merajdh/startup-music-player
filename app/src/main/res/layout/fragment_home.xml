@@ -28,6 +28,8 @@
             <include layout="@layout/moudule_four_home"
                 android:id="@+id/moudule_four_home"/>
 
+        <include layout="@layout/moudule_five_home"/>
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

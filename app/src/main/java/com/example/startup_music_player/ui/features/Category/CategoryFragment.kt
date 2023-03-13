@@ -47,10 +47,6 @@ class CategoryFragment : Fragment() {
             MoreClickListener()
         }
 
-        binding.mouduleTwoCategory.btnMoreInternational.setOnClickListener {
-            myApp.ischeckd = "international"
-            MoreClickListener()
-        }
     }
 
     private fun MoreClickListener() {
