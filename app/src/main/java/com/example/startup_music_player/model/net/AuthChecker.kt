@@ -1,7 +1,9 @@
 package com.example.startup_music_player.model.net
 
-import com.example.startup_music_player.model.data.LoginRespomse
+
+import android.util.Log
 import com.example.startup_music_player.model.repository.TokenInMemory
+import com.google.gson.JsonObject
 import okhttp3.Authenticator
 import okhttp3.Request
 import okhttp3.Response
@@ -13,25 +15,17 @@ class AuthChecker : Authenticator, KoinComponent {
     private val apiservice: Apiservice by inject()
     override fun authenticate(route: Route?, response: Response): Request? {
         // is Chekt error 405
-        if (TokenInMemory.access != null && !response.request().url().pathSegments().last().equals("refreshToken", false)) {
-            val result = refreshToken()
-            if (result) {
-                return response.request()
-            }
-
+        val jsonObject = JsonObject().apply {
+            addProperty("refresh", TokenInMemory.refresh)
         }
+
+        val result = apiservice.refreshToken(jsonObject)
+        Log.v("token",result.access)
+        TokenInMemory.access = result.access
+
         return null
     }
-    private fun refreshToken(): Boolean {
-        val request: retrofit2.Response<LoginRespomse> = apiservice.refreshToken().execute()
-        if (request.body() != null) {
-            if (request.body()!!.success) {
-                return true
-            }
-        }
 
-        return false
-    }
 
 
 }

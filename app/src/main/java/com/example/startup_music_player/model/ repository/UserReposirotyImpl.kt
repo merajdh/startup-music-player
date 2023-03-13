@@ -32,7 +32,7 @@ class UserReposirotyImpl(
 
     override suspend fun Verify(Verify_Code: String): String {
         val jsonObject = JsonObject().apply {
-            addProperty("Code", Verify_Code)
+            addProperty("code", Verify_Code)
         }
 
         val result = apiservice.Verify(jsonObject)

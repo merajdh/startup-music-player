@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 
 class VerifyViewModel(private val userReposiroty: UserReposiroty): ViewModel() {
     // Input User
-    val Code = MutableLiveData("")
+    val code = MutableLiveData("")
 
     fun VerifyEmail(VerifyEvent: (String) -> Unit){
         val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
@@ -18,7 +18,7 @@ class VerifyViewModel(private val userReposiroty: UserReposiroty): ViewModel() {
 
         } // view error
         viewModelScope.launch(coroutineExceptionHandler) {
-            val result =  userReposiroty.Verify(Code.value!!) // Answer server
+            val result =  userReposiroty.Verify(code.value!!) // Answer server
             VerifyEvent(result) // Event Login to FragmentLogin
 
         }

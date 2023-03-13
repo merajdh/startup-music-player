@@ -21,14 +21,14 @@ interface Apiservice {
     @POST("accounts/login")
     suspend fun Login(@Body jsonObject: JsonObject): LoginRespomse
 
-    @POST("Register")
+    @POST("accounts/register")
     suspend fun Register(@Body jsonObject: JsonObject): LoginRespomse
 
-    @POST("Verify")
+    @POST("accounts/check")
     suspend fun Verify(@Body jsonObject: JsonObject): LoginRespomse
 
-    @GET("refreshToken")
-    fun refreshToken(): Call<LoginRespomse>
+    @POST("accounts/refresh/")
+    fun refreshToken(@Body jsonObject: JsonObject): LoginRespomse
 
     @GET("music/musicbycategory/")
     suspend fun MusicByCategory(): List<MusicRespomse>

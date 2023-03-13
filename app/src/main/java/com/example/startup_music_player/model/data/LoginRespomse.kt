@@ -6,5 +6,6 @@ data class LoginRespomse(
     val success :Boolean,
     val access : String,
     val refresh : String,
+    val code : Int,
 
 )

@@ -8,7 +8,6 @@ object TokenInMemory {
     private set
 
     var access :String? = null
-    private set
 
     fun refreshToken(Username:String? , newToken:String? , refreshToken:String?){
         this.username = Username

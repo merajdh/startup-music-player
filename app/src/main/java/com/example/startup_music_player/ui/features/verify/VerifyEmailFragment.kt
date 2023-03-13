@@ -26,7 +26,7 @@ class VerifyEmailFragment : Fragment() {
 
         binding.btnVerify.setOnClickListener{
             if (binding.EdtCode.text.isNotEmpty()){
-                viewmodel.Code.value = binding.EdtCode.text.toString()
+                viewmodel.code.value = binding.EdtCode.text.toString()
                 viewmodel.VerifyEmail {
                     if (it == VALUE_SUCCESS){
                         val dialog = SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
