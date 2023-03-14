@@ -3,22 +3,43 @@ package com.example.startup_music_player.ui.features.Category
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.startup_music_player.databinding.FragmentCategoryBinding
+import com.example.startup_music_player.model.Adapter.CategoryAdapterTypeMusic
+import com.example.startup_music_player.model.Adapter.OnClickCategory
+import com.example.startup_music_player.model.Contract.ContractCategory
+import com.example.startup_music_player.model.Contract.ContractHome
+import com.example.startup_music_player.model.data.CategoryRespomse
 import com.example.startup_music_player.model.myApp.myApp
+import com.example.startup_music_player.model.net.createApiService
+import com.example.startup_music_player.model.presenter.PresenterCategory
+import com.example.startup_music_player.model.presenter.PresenterHome
+import com.example.startup_music_player.util.NetworkChecker
 
-class CategoryFragment : Fragment() {
+class CategoryFragment : Fragment() ,  ContractCategory.View , OnClickCategory{
     lateinit var binding: FragmentCategoryBinding
+    lateinit var presenter: ContractCategory.PresenterCategory
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentCategoryBinding.inflate(layoutInflater,container,false)
         setOnClickListeners()
         MoreClickListener()
+        presenter = PresenterCategory(createApiService(), NetworkChecker(binding.root.context).isInternetConnected)
+
+        lifecycleScope.launchWhenCreated {
+            presenter.OnAttach(this@CategoryFragment,)
+
+        }
         return binding.root
     }
 
@@ -35,10 +56,6 @@ class CategoryFragment : Fragment() {
 
         //moudule Two ->
 
-        binding.mouduleOneCategory.btnMore.setOnClickListener {
-            myApp.ischeckd = "category_music"
-            MoreClickListener()
-        }
 
         //moudule One ->
 
@@ -66,6 +83,19 @@ class CategoryFragment : Fragment() {
 
 
         }
+    }
+
+    override fun TypeOfMusic(data: List<CategoryRespomse>) {
+
+        Log.v("testData" , data.toString())
+        val adapter = CategoryAdapterTypeMusic(data , this)
+
+        binding.mouduleOneCategory.recType.layoutManager = GridLayoutManager(context , 2, RecyclerView.VERTICAL , false)
+        binding.mouduleOneCategory.recType.adapter = adapter
+    }
+
+    override fun ClickCategory(data: CategoryRespomse) {
+
     }
 
 }

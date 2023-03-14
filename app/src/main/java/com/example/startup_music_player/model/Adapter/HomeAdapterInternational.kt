@@ -10,7 +10,7 @@ import com.squareup.picasso.Picasso
 
 class HomeAdapterInternational(
     private val data: List<MusicRespomse>,
-    private val OnClick: OnClick
+    private val OnClick: OnClickHome
 ) : RecyclerView.Adapter<HomeAdapterInternational.HomeInternationalMusicViewHolder>() {
     lateinit var binding: ItemRecyclerInternationalMusicCategoryBinding
 
