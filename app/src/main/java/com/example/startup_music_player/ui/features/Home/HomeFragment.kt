@@ -8,11 +8,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
@@ -30,7 +28,7 @@ import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
 
 
-class HomeFragment : Fragment() , ContractHome.View , OnClick{
+class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
     lateinit var binding: FragmentHomeBinding
     lateinit var presenter: ContractHome.Presenter
     override fun onCreateView(

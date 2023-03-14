@@ -2,12 +2,12 @@
 
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="160dp"
-    android:layout_height="160dp"
-    android:layout_margin="8dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:backgroundTint="@color/Gray"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="8dp"
+    app:cardCornerRadius="10dp"
+    android:layout_marginTop="16dp"
+    app:cardElevation="6dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
@@ -17,10 +17,10 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:foreground="#65353A43"
+            android:id="@+id/img_cover"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:foreground="#8A222222"
             android:scaleType="fitXY"
             android:src="@drawable/test2"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -30,14 +30,15 @@
 
 
         <TextView
+            android:id="@+id/txt_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="شاد"
             android:textColor="@color/light_gray"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="@+id/img_cover"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

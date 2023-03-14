@@ -1,5 +1,6 @@
 package com.example.startup_music_player.model.net
 
+import com.example.startup_music_player.model.data.CategoryRespomse
 import com.example.startup_music_player.model.data.LoginRespomse
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.repository.TokenInMemory
@@ -48,6 +49,9 @@ interface Apiservice {
 
     @GET("music/internationals/")
     suspend fun MusicInternatioal() : List<MusicRespomse>
+
+    @GET("music/category/")
+    suspend fun CategoryTypeMusic() : List<CategoryRespomse>
 }
 
 fun createApiService(): Apiservice {
