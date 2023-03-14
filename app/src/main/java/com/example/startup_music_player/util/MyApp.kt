@@ -22,6 +22,7 @@ class MyApp : Application() {
     override fun onCreate() {
         super.onCreate()
         val myModuled = module {
+
             single { androidContext().getSharedPreferences("data", Context.MODE_PRIVATE) }
             single { createApiService() }
             single<UserReposiroty> { UserReposirotyImpl(get(), get()) }

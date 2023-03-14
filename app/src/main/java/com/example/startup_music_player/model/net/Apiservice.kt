@@ -8,6 +8,7 @@ import com.example.startup_music_player.util.MyApp.Companion.access
 import com.google.gson.JsonObject
 import ir.dunijet.dunibazaar.util.BASE_URL
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -28,7 +29,7 @@ interface Apiservice {
     suspend fun Verify(@Body jsonObject: JsonObject): LoginRespomse
 
     @POST("accounts/refresh/")
-    fun refreshToken(@Body jsonObject: JsonObject): LoginRespomse
+    fun refreshToken(@Body jsonObject: JsonObject): Call<LoginRespomse>
 
     @GET("music/musicbycategory/")
     suspend fun MusicByCategory(): List<MusicRespomse>
@@ -57,13 +58,17 @@ fun createApiService(): Apiservice {
             val newRequest = oldRequest.newBuilder()
             if (TokenInMemory.access !=""){
                 newRequest.addHeader("Authorization","Bearer ${TokenInMemory.access}")
-                newRequest.method(oldRequest.method(), oldRequest.body())
+                newRequest.method(oldRequest.method, oldRequest.body)
             }
 
 
 
             return@addInterceptor it.proceed(newRequest.build())
-        }.build()
+        }
+        .addInterceptor(HttpLoggingInterceptor().apply {
+            setLevel(HttpLoggingInterceptor.Level.BODY)
+        })
+        .build()
 
     val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
