@@ -19,7 +19,7 @@ class PresenterHome(
             val data_MusicTrend = apiservice.MusicTrend()
             val data_MusicInternational = apiservice.MusicInternatioal()
 
-            fragmentview!!.MusicByCategory(data_MusicByCategory)
+            fragmentview!!.MusicByCategory(`data_MusicByCategory`)
             fragmentview!!.RecentMusik(data_Musicnewes)
             fragmentview!!.MoreLike(data_MusicTop)
             fragmentview!!.TrendMusik(data_MusicTrend)

@@ -24,6 +24,7 @@ import com.example.startup_music_player.model.myApp.myApp
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterHome
 import com.example.startup_music_player.ui.features.Play.PlayFragment
+import com.example.startup_music_player.ui.features.verify.VerifyDialogFragment
 import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
 
@@ -126,6 +127,9 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
         transform.replace(R.id.FrameLayoutMain , PlayFragment())
         transform.addToBackStack(null)
         transform.commit()
+
+        val dialog2 = VerifyDialogFragment()
+        dialog2.show(parentFragmentManager , null)
         //test interface
         Toast.makeText(context, data.title, Toast.LENGTH_SHORT).show()
     }

@@ -38,6 +38,8 @@ class UserReposirotyImpl(
             TokenInMemory.refreshToken(username, result.access,result.refresh)
             saveToken(result.access)
             saveUserName(username.toString())
+            saveRefresh(result.refresh)
+
             return VALUE_SUCCESS
         } else {
             return result.mesage

@@ -29,6 +29,7 @@ class VerifyEmailFragment : Fragment() {
                 viewmodel.code.value = binding.EdtCode.text.toString()
                 viewmodel.VerifyEmail {
                     if (it == VALUE_SUCCESS){
+
                         val dialog = SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
                         dialog.titleText = "خوش امدید"
                         dialog.contentText = "ایمیل شما با موفقیت تایید شد!"
