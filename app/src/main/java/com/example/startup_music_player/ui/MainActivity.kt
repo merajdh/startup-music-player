@@ -13,6 +13,7 @@ import com.example.startup_music_player.model.repository.UserReposiroty
 import com.example.startup_music_player.ui.features.Main.MainFragment
 import com.example.startup_music_player.ui.features.Register.RegisterFragment
 import com.example.startup_music_player.ui.features.intro.IntroFragment
+import com.example.startup_music_player.ui.features.verify.VerifyEmailFragment
 import com.example.startup_music_player.util.NetworkChecker
 import org.koin.android.ext.android.get
 import org.koin.android.ext.koin.androidContext

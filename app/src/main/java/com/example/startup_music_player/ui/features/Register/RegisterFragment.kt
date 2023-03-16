@@ -95,6 +95,8 @@ class RegisterFragment : Fragment() {
                 SnackbarError("کاراکتر نام کاربری وارد شده کمتر از کاراکتر مجاز میباشد")
             }
         }
+
+
     }
     private fun transform(fragment : Fragment){
         val transform = parentFragmentManager.beginTransaction()

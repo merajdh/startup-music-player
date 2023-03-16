@@ -2,6 +2,7 @@ package com.example.startup_music_player.model.repository
 
 import android.content.SharedPreferences
 import com.example.startup_music_player.model.net.Apiservice
+import com.example.startup_music_player.model.repository.TokenInMemory.username
 import com.google.gson.JsonObject
 import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 
@@ -14,16 +15,13 @@ class UserReposirotyImpl(
 
     override suspend fun Register(username: String, gmail: String, password: String): String {
         val jsonObject = JsonObject().apply {
-            addProperty("name", username)
-            addProperty("gmail", gmail)
+            addProperty("username", username)
+            addProperty("email", gmail)
             addProperty("password", password)
         }
 
         val result = apiservice.Register(jsonObject)
         if (result.success) {
-            TokenInMemory.refreshToken(username, result.access,result.refresh)
-            saveToken(result.access)
-            saveUserName(username)
             return VALUE_SUCCESS
         } else {
             return result.mesage
@@ -37,6 +35,9 @@ class UserReposirotyImpl(
 
         val result = apiservice.Verify(jsonObject)
         if (result.success) {
+            TokenInMemory.refreshToken(username, result.access,result.refresh)
+            saveToken(result.access)
+            saveUserName(username.toString())
             return VALUE_SUCCESS
         } else {
             return result.mesage

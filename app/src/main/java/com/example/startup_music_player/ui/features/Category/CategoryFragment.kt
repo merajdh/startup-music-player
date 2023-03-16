@@ -35,7 +35,7 @@ class CategoryFragment : Fragment() {
 
         //moudule Two ->
 
-        binding.mouduleOneCategory.btnMore.setOnClickListener {
+        binding.mouduleTwoCategory.btnMore.setOnClickListener {
             myApp.ischeckd = "category_music"
             MoreClickListener()
         }
