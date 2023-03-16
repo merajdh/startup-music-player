@@ -6,6 +6,7 @@
     android:backgroundTint="@color/light_blue"
     android:layout_margin="40dp"
     app:cardCornerRadius="30dp"
+    app:cardElevation="8dp"
     android:layoutAnimation="@anim/anim_main_layout"
     android:layout_height="wrap_content">
 

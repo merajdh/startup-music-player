@@ -25,6 +25,7 @@ import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterHome
 import com.example.startup_music_player.ui.features.Play.PlayFragment
 import com.example.startup_music_player.ui.features.verify.VerifyDialogFragment
+import com.example.startup_music_player.ui.features.verify.VerifyEmailFragment
 import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
 
@@ -124,12 +125,11 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
     override fun Click(data: MusicRespomse) {
         MyApp.idMusic = data.id.toString()
         val transform = parentFragmentManager.beginTransaction()
-        transform.replace(R.id.FrameLayoutMain , PlayFragment())
+        transform.replace(R.id.FrameLayoutMain , VerifyEmailFragment())
         transform.addToBackStack(null)
         transform.commit()
 
-        val dialog2 = VerifyDialogFragment()
-        dialog2.show(parentFragmentManager , null)
+
         //test interface
         Toast.makeText(context, data.title, Toast.LENGTH_SHORT).show()
     }
