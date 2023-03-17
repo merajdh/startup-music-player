@@ -46,16 +46,14 @@ class VerifyEmailFragment : Fragment()
                 viewmodel.VerifyEmail {
                     if (it == VALUE_SUCCESS) {
 
-                        val dialog = VerifyDialogFragment()
-                        dialog.show(parentFragmentManager, null)
+                        val dialogVerify = VerifyDialogFragment()
+                        dialogVerify.show(parentFragmentManager, null)
                         val transform = parentFragmentManager.beginTransaction()
                         transform.replace(R.id.FrameLayoutMain, MainFragment())
                         transform.commit()
                     } else {
-                        val dialog = SweetAlertDialog(context, SweetAlertDialog.ERROR_TYPE)
-                        dialog.titleText = "اوپس"
-                        dialog.contentText = "کد شما اشتباه است!"
-                        dialog.show()
+                        val dialogReject = VerifyRejectedDialogFragment()
+                        dialogReject.show(parentFragmentManager, null)
                     }
                 }
 
@@ -71,12 +69,7 @@ class VerifyEmailFragment : Fragment()
         val timer = object : CountDownTimer(TWO_MINUTES, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 val timeRemaining = millisUntilFinished / 1000
-                if (timeRemaining.toString() != "0") {
-                    binding.txtSendCode.isClickable = false
-                } else {
-                    binding.txtSendCode.isClickable = true
-
-                }
+                binding.txtSendCode.isClickable = timeRemaining.toString() == "0"
 
                 binding.txtTimer.text = "$timeRemaining"
             }

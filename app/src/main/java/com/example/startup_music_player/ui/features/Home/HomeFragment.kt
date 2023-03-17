@@ -40,8 +40,12 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
         AddsliderCod() // slider
+        binding.viewMain.visibility = View.GONE
+        binding.shimmerHome.startShimmer()
+
         setOnClickListeners()
         MoreClickListener()
+        binding.shimmerHome.startShimmer()
         presenter = PresenterHome(createApiService(), NetworkChecker(binding.root.context).isInternetConnected)
 
          lifecycleScope.launchWhenCreated {
@@ -81,6 +85,11 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
 
     override fun MusicByCategory(data: List<MusicRespomse>) {
         Log.v("test1",data.toString())
+        binding.shimmerHome.stopShimmer()
+        binding.viewMain.visibility = View.VISIBLE
+
+        binding.shimmerHome.visibility = View.GONE
+
         val adapter = HomeAdapterHappyMusic(data, this)
         binding.mouduleOneHome.recHappyMusic.layoutManager = GridLayoutManager(context ,1, RecyclerView.HORIZONTAL, true)
         binding.mouduleOneHome.recHappyMusic.adapter = adapter
@@ -89,14 +98,17 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
 
 
     override fun MoreLike(data: List<MusicRespomse>) {
-
+        binding.shimmerHome.stopShimmer()
+        binding.viewMain.visibility = View.VISIBLE
+        binding.shimmerHome.visibility = View.GONE
         val adapter = HomeAdapterTopMusic(data, this)
         binding.mouduleTwoHome.recTopMusic.layoutManager = GridLayoutManager (context , 2 , RecyclerView.HORIZONTAL , true)
         binding.mouduleTwoHome.recTopMusic.adapter = adapter
     }
 
     override fun RecentMusik(data: List<MusicRespomse>) {
-
+        binding.shimmerHome.stopShimmer()
+        binding.shimmerHome.visibility = View.GONE
         val adapter = HomeAdapterTopMusic(data, this)
         binding.mouduleThreeHome.recNewMusic.layoutManager = GridLayoutManager (context , 1 , RecyclerView.VERTICAL , false)
         binding.mouduleThreeHome.recNewMusic.adapter = adapter
@@ -107,6 +119,10 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
     override fun TrendMusik(data: List<MusicRespomse>) {
 
         Log.v("testi" , data.toString())
+        binding.shimmerHome.stopShimmer()
+        binding.shimmerHome.visibility = View.GONE
+
+        binding.viewMain.visibility = View.VISIBLE
 
         val adapter = HomeAdapterTrand(data, this)
         binding.mouduleFourHome.recTrandMusic.layoutManager = GridLayoutManager (context , 1 , RecyclerView.VERTICAL , false)
@@ -116,16 +132,20 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
 
     override fun InternationalMusic(data: List<MusicRespomse>) {
 
+        binding.viewMain.visibility = View.VISIBLE
+
+        binding.shimmerHome.stopShimmer()
+        binding.shimmerHome.visibility = View.GONE
         val adapter = HomeAdapterInternational(data, this)
-        binding.mouduleFourHome.recTrandMusic.layoutManager = GridLayoutManager (context , 1 , RecyclerView.VERTICAL , false)
-        binding.mouduleFourHome.recTrandMusic.adapter = adapter
+        binding.mouduleFiveHome.recInternational.layoutManager = GridLayoutManager (context , 1 , RecyclerView.VERTICAL , false)
+        binding.mouduleFiveHome.recInternational.adapter = adapter
 
     }
 
     override fun Click(data: MusicRespomse) {
         MyApp.idMusic = data.id.toString()
         val transform = parentFragmentManager.beginTransaction()
-        transform.replace(R.id.FrameLayoutMain , VerifyEmailFragment())
+        transform.replace(R.id.FrameLayoutMain , PlayFragment())
         transform.addToBackStack(null)
         transform.commit()
 

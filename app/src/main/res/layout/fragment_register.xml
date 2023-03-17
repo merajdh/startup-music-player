@@ -51,20 +51,21 @@
         android:layout_height="75dp">
 
         <EditText
-            android:drawablePadding="18dp"
-            android:drawableEnd="@drawable/ic_user"
-            android:textSize="15sp"
             android:id="@+id/Edt_user"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="18dp"
             android:layout_marginTop="18dp"
+            android:layout_marginEnd="30dp"
             android:layout_marginBottom="18dp"
-            android:layout_marginStart="18dp"            android:background="#252a34"
+            android:background="#252a34"
+            android:drawableEnd="@drawable/ic_user"
+            android:drawablePadding="10dp"
             android:hint="نام کاربری"
-            android:textColor="@color/white"
             android:inputType="text"
+            android:textColor="@color/white"
             android:textColorHint="#7A7C87"
+            android:textSize="15sp"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
 
@@ -83,7 +84,7 @@
         android:layout_height="75dp">
 
         <EditText
-            android:drawablePadding="18dp"
+            android:drawablePadding="10dp"
             android:drawableEnd="@drawable/ic_gmail"
             android:textSize="15sp"
             android:id="@+id/Edt_gmail"
@@ -116,22 +117,22 @@
 
 
         <EditText
-            android:elegantTextHeight="true"
-            android:drawablePadding="18dp"
-            android:drawableEnd="@drawable/ic_ic_password"
-            android:layout_marginEnd="30dp"
-            android:textSize="15sp"
             android:id="@+id/Edt_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="18dp"
             android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="18dp"
             android:background="#252a34"
-            android:inputType="text"
+            android:drawableEnd="@drawable/ic_ic_password"
+            android:drawablePadding="10dp"
+            android:elegantTextHeight="true"
             android:hint=" رمز عبور"
+            android:inputType="text"
             android:textColor="@color/white"
             android:textColorHint="#7A7C87"
+            android:textSize="15sp"
             tools:ignore="TextContrastCheck,TextFields,TouchTargetSizeCheck" />
 
 
@@ -152,21 +153,21 @@
         android:layout_height="75dp">
 
         <EditText
-            android:drawablePadding="18dp"
-            android:drawableEnd="@drawable/ic_ic_password"
-            android:layout_marginEnd="30dp"
-            android:textSize="15sp"
             android:id="@+id/Edt_passwordRepeat"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="18dp"
             android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="18dp"
             android:background="#252a34"
-            android:inputType="text"
+            android:drawableEnd="@drawable/ic_ic_password"
+            android:drawablePadding="10dp"
             android:hint="تکرار رمز عبور"
+            android:inputType="text"
             android:textColor="@color/white"
             android:textColorHint="#7A7C87"
+            android:textSize="15sp"
             tools:ignore="TextContrastCheck,TextFields,TouchTargetSizeCheck" />
 
 
@@ -175,9 +176,9 @@
 
     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
         android:id="@+id/btn_register"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="50dp"
         app:cardElevation="10dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginTop="65dp"
         android:clickable="true"
         app:cardCornerRadius="22dp"
