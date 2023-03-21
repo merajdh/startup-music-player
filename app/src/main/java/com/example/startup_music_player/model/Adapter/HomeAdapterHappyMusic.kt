@@ -14,7 +14,7 @@ class HomeAdapterHappyMusic(private val data: List<MusicRespomse> , private val 
     inner class HomeHappyMusicViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun ViewBinder(dataHome: MusicRespomse) {
             binding.txtNameMusic.text = dataHome.title
-            binding.txtNameSinger.text = dataHome.artist[0]
+            binding.txtNameSinger.text = dataHome.artist[0].toString()
             Picasso
                 .get()
                 .load(dataHome.cover)

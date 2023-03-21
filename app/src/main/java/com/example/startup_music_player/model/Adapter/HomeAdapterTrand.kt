@@ -17,7 +17,7 @@ class HomeAdapterTrand (private val data : List<MusicRespomse>,  private val OnC
         fun ViewBinder (dataHome: MusicRespomse){
 
             binding.txtNameMusic.text = dataHome.title
-            binding.txtNameSinger.text = dataHome.artist[0]
+            binding.txtNameSinger.text = dataHome.artist[0].toString()
             if (adapterPosition % 2 == 0 ){
                 binding.backRec.background = ContextCompat.getDrawable(binding.root.context , R.drawable.shape_back_rec_trand)
 

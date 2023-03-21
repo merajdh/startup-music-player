@@ -20,12 +20,14 @@ import com.example.startup_music_player.databinding.FragmentHomeBinding
 import com.example.startup_music_player.model.Adapter.*
 import com.example.startup_music_player.model.Contract.ContractHome
 import com.example.startup_music_player.model.data.MusicRespomse
+import com.example.startup_music_player.model.db.AppDatabase
 import com.example.startup_music_player.model.myApp.myApp
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterHome
 import com.example.startup_music_player.ui.features.Play.PlayFragment
 import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
+
 
 
 class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
@@ -40,11 +42,10 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
         AddsliderCod() // slider
         setOnClickListeners()
         MoreClickListener()
-        presenter = PresenterHome(createApiService(), NetworkChecker(binding.root.context).isInternetConnected)
+        presenter = PresenterHome(createApiService(), NetworkChecker(binding.root.context).isInternetConnected,AppDatabase.getDatabes(binding.root.context).MusicByCategoryDao)
 
          lifecycleScope.launchWhenCreated {
              presenter.OnAttach(this@HomeFragment,)
-
 
          }
 
@@ -121,7 +122,7 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
     }
 
     override fun Click(data: MusicRespomse) {
-        MyApp.idMusic = data.id.toString()
+        MyApp.idMusic = data.id
         val transform = parentFragmentManager.beginTransaction()
         transform.replace(R.id.FrameLayoutMain , PlayFragment())
         transform.addToBackStack(null)
