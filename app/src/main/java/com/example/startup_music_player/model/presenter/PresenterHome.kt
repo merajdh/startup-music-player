@@ -1,11 +1,13 @@
 package com.example.startup_music_player.model.presenter
 
 import com.example.startup_music_player.model.Contract.ContractHome
+import com.example.startup_music_player.model.db.MusicByCategoryDao
 import com.example.startup_music_player.model.net.Apiservice
 
 class PresenterHome(
     private val apiservice: Apiservice,
-    private val Internet :Boolean
+    private val Internet :Boolean,
+    private val MusicByCategoryDao : MusicByCategoryDao
 ):ContractHome.Presenter {
     var fragmentview : ContractHome.View? = null
 
@@ -13,13 +15,13 @@ class PresenterHome(
         fragmentview = view
 
         if (Internet){
-            val data_MusicByCategory = apiservice.MusicByCategory()
             val data_Musicnewes = apiservice.MusicNews()
             val data_MusicTop = apiservice.MusicTop()
             val data_MusicTrend = apiservice.MusicTrend()
             val data_MusicInternational = apiservice.MusicInternatioal()
-
-            fragmentview!!.MusicByCategory(data_MusicByCategory)
+            MusicByCategoryDao.insertOrUpdate(apiservice.MusicByCategory())
+            val test = MusicByCategoryDao.getAll()
+            fragmentview!!.MusicByCategory(test)
             fragmentview!!.RecentMusik(data_Musicnewes)
             fragmentview!!.MoreLike(data_MusicTop)
             fragmentview!!.TrendMusik(data_MusicTrend)

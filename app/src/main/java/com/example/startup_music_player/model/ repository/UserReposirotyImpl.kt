@@ -37,6 +37,7 @@ class UserReposirotyImpl(
         if (result.success) {
             TokenInMemory.refreshToken(username, result.access,result.refresh)
             saveToken(result.access)
+            saveRefresh(result.refresh)
             saveUserName(username.toString())
             return VALUE_SUCCESS
         } else {

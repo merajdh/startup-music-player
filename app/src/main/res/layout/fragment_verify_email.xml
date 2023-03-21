@@ -80,12 +80,13 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:text="ایمیل خود را اشتباه وارد کردید؟"
-            android:layout_marginBottom="16dp"
-            android:textSize="17sp"
-            android:textColor="@color/Gray"
+            android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="ایمیل خود را اشتباه وارد کردید؟"
+            android:textColor="@color/Gray"
+            android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

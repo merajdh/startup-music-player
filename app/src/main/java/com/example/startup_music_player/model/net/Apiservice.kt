@@ -4,8 +4,7 @@ import com.example.startup_music_player.model.data.CategoryRespomse
 import com.example.startup_music_player.model.data.LoginRespomse
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.repository.TokenInMemory
-import com.example.startup_music_player.util.MyApp
-import com.example.startup_music_player.util.MyApp.Companion.access
+
 import com.google.gson.JsonObject
 import ir.dunijet.dunibazaar.util.BASE_URL
 import okhttp3.OkHttpClient
@@ -15,8 +14,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.GET
-import retrofit2.http.Headers
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface Apiservice {
 
@@ -49,6 +48,10 @@ interface Apiservice {
 
     @GET("music/internationals/")
     suspend fun MusicInternatioal() : List<MusicRespomse>
+
+
+    @GET("music/category/detail/{id}")
+    suspend fun MusicPlay(@Path("id") id_Musik : String) : MusicRespomse
 
     @GET("music/category/")
     suspend fun CategoryTypeMusic() : List<CategoryRespomse>

@@ -65,7 +65,7 @@
             android:background="#252a34"
             android:hint="رمز عبور"
             android:inputType="text"
-            android:maxLength="12"
+            android:maxLength="16"
             android:textColor="@color/white"
             android:textColorHint="#7A7C87"
             tools:ignore="TextFields,TouchTargetSizeCheck,TextContrastCheck" />

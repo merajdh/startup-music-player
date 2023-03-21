@@ -2,6 +2,8 @@ package com.example.startup_music_player.util
 
 import android.app.Application
 import android.content.Context
+import androidx.room.Room
+import com.example.startup_music_player.model.db.AppDatabase
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.repository.UserReposiroty
 import com.example.startup_music_player.model.repository.UserReposirotyImpl
@@ -15,8 +17,7 @@ import org.koin.dsl.module
 
 class MyApp : Application() {
     companion object {
-        var idMusic : String = ""
-        var access : String = "TokenInMemory.access.toString()"
+        var idMusic: String = ""
     }
 
     override fun onCreate() {
@@ -25,6 +26,7 @@ class MyApp : Application() {
 
             single { androidContext().getSharedPreferences("data", Context.MODE_PRIVATE) }
             single { createApiService() }
+            single { Room.databaseBuilder(androidContext(), AppDatabase::class.java, "app_dataBase") }
             single<UserReposiroty> { UserReposirotyImpl(get(), get()) }
             viewModel { LoginViewModel(get()) }
             viewModel { RegisterViewModel(get()) }

@@ -5,7 +5,7 @@ import com.example.startup_music_player.model.data.MusicRespomse
 interface ContractHome {
 
     interface Presenter{
-       suspend fun OnAttach(view:View)
+       suspend fun OnAttach(view:ContractHome.View)
        fun OnDetavh()
     }
     interface View {
