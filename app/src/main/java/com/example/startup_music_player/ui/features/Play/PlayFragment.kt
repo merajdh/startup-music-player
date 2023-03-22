@@ -1,8 +1,5 @@
 package com.example.startup_music_player.ui.features.Play
 
-import android.graphics.RenderEffect
-import android.graphics.Shader
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +9,6 @@ import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.startup_music_player.databinding.FragmentPlayBinding
-import com.example.startup_music_player.model.Contract.ContractHome
 import com.example.startup_music_player.model.Contract.ContractPlayMusic
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.net.createApiService

@@ -7,14 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.startup_music_player.model.data.MusicRespomse
 
-@Database(
-    version =1,
-
-    entities = [MusicRespomse::class],
-
-    exportSchema = true,
-)
-
+@Database(version =1, entities = [MusicRespomse::class], exportSchema = true,)
 @TypeConverters(Converters::class)
 abstract class AppDatabase:RoomDatabase() {
 

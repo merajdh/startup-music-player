@@ -50,7 +50,7 @@ interface Apiservice {
     suspend fun MusicInternatioal() : List<MusicRespomse>
 
 
-    @GET("music/category/detail/{id}")
+    @GET("music/detail/{id}/")
     suspend fun MusicPlay(@Path("id") id_Musik : String) : MusicRespomse
 
     @GET("music/category/")

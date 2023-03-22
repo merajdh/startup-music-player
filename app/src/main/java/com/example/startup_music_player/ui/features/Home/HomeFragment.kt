@@ -122,7 +122,7 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
     }
 
     override fun Click(data: MusicRespomse) {
-        MyApp.idMusic = data.id
+        MyApp.idMusic = data.id.toString()
         val transform = parentFragmentManager.beginTransaction()
         transform.replace(R.id.FrameLayoutMain , PlayFragment())
         transform.addToBackStack(null)
