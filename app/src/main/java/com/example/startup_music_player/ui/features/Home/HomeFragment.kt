@@ -21,7 +21,6 @@ import com.example.startup_music_player.model.Adapter.*
 import com.example.startup_music_player.model.Contract.ContractHome
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.db.AppDatabase
-import com.example.startup_music_player.model.db.MusicByCategoryDao
 import com.example.startup_music_player.model.myApp.myApp
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterHome
@@ -33,7 +32,6 @@ import com.example.startup_music_player.util.NetworkChecker
 class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
     lateinit var binding: FragmentHomeBinding
     lateinit var presenter: ContractHome.Presenter
-    lateinit var  MusicByCategoryDao : MusicByCategoryDao
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,18 +39,18 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
         AddsliderCod() // slider
-        MusicByCategoryDao = AppDatabase.getDatabes(container!!.context).MusicByCategoryDao
         setOnClickListeners()
         MoreClickListener()
         presenter = PresenterHome(createApiService(), NetworkChecker(binding.root.context).isInternetConnected,AppDatabase.getDatabes(binding.root.context).MusicByCategoryDao)
+            AppDatabase.getDatabes(binding.root.context).MusicByCategoryDao)
 
          lifecycleScope.launchWhenCreated {
-             presenter.OnAttach(this@HomeFragment)
+             presenter.OnAttach(this@HomeFragment,)
+
+
          }
-        val data = MusicByCategoryDao.getAll()
-        val adapter = HomeAdapterTopMusic(data, this)
-        binding.mouduleThreeHome.recNewMusic.layoutManager = GridLayoutManager (context , 1 , RecyclerView.VERTICAL , false)
-        binding.mouduleThreeHome.recNewMusic.adapter = adapter
+
+
         binding.mouduleOneHome.slider.setItemClickListener(object : ItemClickListener {
             override fun onItemSelected(position: Int) {
                 when(position){
@@ -82,7 +80,6 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
     }
 
     override fun MusicByCategory(data: List<MusicRespomse>) {
-
         val adapter = HomeAdapterHappyMusic(data, this)
         binding.mouduleOneHome.recHappyMusic.layoutManager = GridLayoutManager(context ,1, RecyclerView.HORIZONTAL, true)
         binding.mouduleOneHome.recHappyMusic.adapter = adapter
@@ -108,6 +105,7 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
 
     override fun TrendMusik(data: List<MusicRespomse>) {
 
+        Log.v("testi" , data.toString())
 
         val adapter = HomeAdapterTrand(data, this)
         binding.mouduleFourHome.recTrandMusic.layoutManager = GridLayoutManager (context , 1 , RecyclerView.VERTICAL , false)

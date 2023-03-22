@@ -23,6 +23,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_new_music"
         android:layout_width="match_parent"
+        android:layoutAnimation="@anim/recycler_layout_anim"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="6dp"
