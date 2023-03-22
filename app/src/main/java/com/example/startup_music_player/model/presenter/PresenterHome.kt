@@ -15,13 +15,14 @@ class PresenterHome(
         fragmentview = view
 
         if (Internet){
+            val data_MusicByCategory = apiservice.MusicByCategory()
             val data_Musicnewes = apiservice.MusicNews()
             val data_MusicTop = apiservice.MusicTop()
             val data_MusicTrend = apiservice.MusicTrend()
             val data_MusicInternational = apiservice.MusicInternatioal()
             MusicByCategoryDao.insertOrUpdate(apiservice.MusicByCategory())
             val test = MusicByCategoryDao.getAll()
-            fragmentview!!.MusicByCategory(test)
+            fragmentview!!.MusicByCategory(data_MusicByCategory)
             fragmentview!!.RecentMusik(data_Musicnewes)
             fragmentview!!.MoreLike(data_MusicTop)
             fragmentview!!.TrendMusik(data_MusicTrend)

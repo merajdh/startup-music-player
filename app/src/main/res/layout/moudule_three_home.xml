@@ -21,7 +21,6 @@
         android:layout_height="wrap_content"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layoutAnimation="@anim/recycler_layout_anim"
         android:id="@+id/rec_new_music"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

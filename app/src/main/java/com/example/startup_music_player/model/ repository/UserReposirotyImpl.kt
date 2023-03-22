@@ -39,6 +39,8 @@ class UserReposirotyImpl(
             saveToken(result.access)
             saveRefresh(result.refresh)
             saveUserName(username.toString())
+            saveRefresh(result.refresh)
+
             return VALUE_SUCCESS
         } else {
             return result.mesage

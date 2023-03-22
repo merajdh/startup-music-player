@@ -29,7 +29,6 @@ import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
 
 
-
 class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
     lateinit var binding: FragmentHomeBinding
     lateinit var presenter: ContractHome.Presenter
@@ -43,9 +42,11 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
         setOnClickListeners()
         MoreClickListener()
         presenter = PresenterHome(createApiService(), NetworkChecker(binding.root.context).isInternetConnected,AppDatabase.getDatabes(binding.root.context).MusicByCategoryDao)
+            AppDatabase.getDatabes(binding.root.context).MusicByCategoryDao)
 
          lifecycleScope.launchWhenCreated {
              presenter.OnAttach(this@HomeFragment,)
+
 
          }
 

@@ -18,6 +18,7 @@
         android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_international"
         tools:itemCount="5"
         tools:listitem="@layout/item_recycler_international_music_category"
         android:layoutAnimation="@anim/recycler_layout_anim"

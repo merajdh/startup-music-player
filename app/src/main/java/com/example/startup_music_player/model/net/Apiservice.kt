@@ -68,8 +68,6 @@ fun createApiService(): Apiservice {
                 newRequest.method(oldRequest.method, oldRequest.body)
             }
 
-
-
             return@addInterceptor it.proceed(newRequest.build())
         }
         .addInterceptor(HttpLoggingInterceptor().apply {

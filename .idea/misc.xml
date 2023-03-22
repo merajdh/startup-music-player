@@ -215,17 +215,32 @@
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/moudule_one_home.xml" value="0.25" />
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/moudule_three_home.xml" value="0.22" />
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/moudule_two_home.xml" value="0.25" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/dialog_change_password.xml" value="0.17994451050336902" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/dialog_change_username.xml" value="0.17994451050336902" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/dialog_verify.xml" value="0.17994451050336902" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/dialog_verify_reject.xml" value="0.17994451050336902" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/diaog_logout.xml" value="0.17994451050336902" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/fragment_about.xml" value="0.17994451050336902" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/fragment_category.xml" value="0.15" />
-        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/fragment_home.xml" value="0.23210633946830267" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/fragment_contact_us.xml" value="0.17994451050336902" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/fragment_home.xml" value="0.17" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/fragment_login.xml" value="0.33" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/fragment_register.xml" value="0.33" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/fragment_verify_email.xml" value="0.25" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/item_recycler_happy_home.xml" value="0.17994451050336902" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/item_recycler_international_music_category.xml" value="0.33" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/item_recycler_musictype_category.xml" value="0.25" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/item_recycler_popularmusic.xml" value="0.17994451050336902" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/item_recycler_top_music_home.xml" value="0.17994451050336902" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/item_recycler_trand_music.xml" value="0.1" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/moudule_five_home.xml" value="0.23541666666666666" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/moudule_four_home.xml" value="0.25" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/moudule_one_category.xml" value="0.14646214745175656" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/moudule_one_home.xml" value="0.17994451050336902" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/moudule_three_home.xml" value="0.23645833333333333" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/moudule_two_category.xml" value="0.23645833333333333" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/moudule_two_home.xml" value="0.23645833333333333" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/shimmer_home.xml" value="0.25" />
       </map>
     </option>
   </component>

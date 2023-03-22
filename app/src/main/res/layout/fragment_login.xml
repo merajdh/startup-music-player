@@ -75,10 +75,11 @@
     <TextView
         android:textStyle="bold"
         android:text="رمز عبور را فراموش کردید؟"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="4dp"
         android:padding="4dp"
-        android:layout_marginStart="24dp"
         android:textSize="13sp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="40dp"
         android:textColor="@color/Gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -86,8 +87,8 @@
     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
         android:id="@+id/btn_Login"
         app:cardElevation="8dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginStart="25dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="90dp"
         android:clickable="true"
         app:cardCornerRadius="22dp"
@@ -113,9 +114,9 @@
         android:backgroundTint="@color/white"
         app:strokeColor="@color/Gray"
         app:strokeWidth="0.5dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:focusable="true">

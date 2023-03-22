@@ -5,15 +5,33 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent">
 
-<androidx.core.widget.NestedScrollView
+
+
+    <androidx.core.widget.NestedScrollView
     android:background="@color/dark_bule"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/shimmer_home"/>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <LinearLayout
+            android:id="@+id/view_main"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <include
                 android:id="@+id/moudule_one_home"
@@ -28,9 +46,13 @@
             <include layout="@layout/moudule_four_home"
                 android:id="@+id/moudule_four_home"/>
 
-        <include layout="@layout/moudule_five_home"/>
+            <include layout="@layout/moudule_five_home"
+                android:id="@+id/moudule_five_home"/>
+        </LinearLayout>
+
 
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
+
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -10,7 +10,6 @@ import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentRegisterBinding
 import com.example.startup_music_player.databinding.FragmentVerifyEmailBinding
 import com.example.startup_music_player.ui.features.Main.MainFragment
-import com.example.startup_music_player.ui.features.Register.RegisterFragment
 import com.example.startup_music_player.ui.features.Register.RegisterViewModel
 import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -25,19 +24,15 @@ class VerifyEmailFragment : Fragment() {
         binding = FragmentVerifyEmailBinding.inflate(layoutInflater,container,false)
         val viewmodel : VerifyViewModel by viewModel()
 
-        binding.back.setOnClickListener {
-
-            val transform = parentFragmentManager.beginTransaction()
-            transform.replace(R.id.FrameLayoutMain,RegisterFragment())
-            transform.commit()
-        }
         binding.btnVerify.setOnClickListener{
             if (binding.EdtCode.text.isNotEmpty()){
                 viewmodel.code.value = binding.EdtCode.text.toString()
                 viewmodel.VerifyEmail {
                     if (it == VALUE_SUCCESS){
                         val dialog = SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
-
+                        dialog.titleText = "خوش امدید"
+                        dialog.contentText = "ایمیل شما با موفقیت تایید شد!"
+                        dialog.show()
                         val transform = parentFragmentManager.beginTransaction()
                         transform.replace(R.id.FrameLayoutMain,MainFragment())
                         transform.commit()

@@ -2,6 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     app:cardCornerRadius="20dp"
+    android:layoutAnimation="@anim/anim_main_layout"
     app:strokeWidth="1dp"
     app:strokeColor="@color/light_blue"
     android:layout_gravity="center_horizontal"
