@@ -41,8 +41,9 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
         AddsliderCod() // slider
         setOnClickListeners()
         MoreClickListener()
+        binding.shimmerHome.startShimmer()
+        binding.viewMain.visibility = View.GONE
         presenter = PresenterHome(createApiService(), NetworkChecker(binding.root.context).isInternetConnected,AppDatabase.getDatabes(binding.root.context).MusicByCategoryDao)
-            AppDatabase.getDatabes(binding.root.context).MusicByCategoryDao)
 
          lifecycleScope.launchWhenCreated {
              presenter.OnAttach(this@HomeFragment,)
@@ -81,6 +82,9 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
 
     override fun MusicByCategory(data: List<MusicRespomse>) {
         Log.v("test1",data.toString())
+        binding.viewMain.visibility = View.VISIBLE
+        binding.shimmerHome.visibility = View.GONE
+
         val adapter = HomeAdapterHappyMusic(data, this)
         binding.mouduleOneHome.recHappyMusic.layoutManager = GridLayoutManager(context ,1, RecyclerView.HORIZONTAL, true)
         binding.mouduleOneHome.recHappyMusic.adapter = adapter

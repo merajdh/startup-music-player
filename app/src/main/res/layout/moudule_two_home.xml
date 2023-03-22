@@ -62,6 +62,7 @@
         </FrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:layoutAnimation="@anim/recycler_layout_anim"
             android:id="@+id/rec_top_music"
             android:layout_width="match_parent"
             tools:itemCount="2"

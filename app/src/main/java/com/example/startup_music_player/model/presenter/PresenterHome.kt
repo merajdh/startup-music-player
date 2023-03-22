@@ -1,5 +1,6 @@
 package com.example.startup_music_player.model.presenter
 
+import android.util.Log
 import com.example.startup_music_player.model.Contract.ContractHome
 import com.example.startup_music_player.model.db.MusicByCategoryDao
 import com.example.startup_music_player.model.net.Apiservice
@@ -20,13 +21,14 @@ class PresenterHome(
             val data_MusicTop = apiservice.MusicTop()
             val data_MusicTrend = apiservice.MusicTrend()
             val data_MusicInternational = apiservice.MusicInternatioal()
-            MusicByCategoryDao.insertOrUpdate(apiservice.MusicByCategory())
+            MusicByCategoryDao.insertOrUpdate(apiservice.MusicNews())
             val test = MusicByCategoryDao.getAll()
-            fragmentview!!.MusicByCategory(data_MusicByCategory)
-            fragmentview!!.RecentMusik(data_Musicnewes)
+            fragmentview!!.MusicByCategory(test)
+            fragmentview!!.RecentMusik(test)
             fragmentview!!.MoreLike(data_MusicTop)
             fragmentview!!.TrendMusik(data_MusicTrend)
             fragmentview!!.InternationalMusic(data_MusicInternational)
+            Log.v("teste" , test.toString())
         }else{
 
         }
