@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layoutAnimation="@anim/anim_fragment_layout"
+    android:layout_height="match_parent">
 
-        <ImageView
-            android:foreground="@drawable/shape_gradiant"
-            android:backgroundTintMode="src_in"
-            android:id="@+id/img_background"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/dec110"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/img_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTintMode="src_in"
+        android:foreground="@drawable/shape_gradiant"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dec110"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -93,21 +92,20 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
             <ImageView
+                android:id="@+id/img_cover"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:scaleType="fitXY"
-                android:src="@drawable/dec110" />
+                android:scaleType="fitXY" />
 
 
         </com.google.android.material.card.MaterialCardView>
 
 
         <LinearLayout
-            android:layout_marginTop="4dp"
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -127,6 +125,7 @@
                 app:tint="@color/black" />
 
             <TextView
+                android:id="@+id/txt_name_music"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
@@ -143,10 +142,10 @@
         </LinearLayout>
 
         <FrameLayout
-            android:layout_marginBottom="10dp"
             android:id="@+id/frameLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toTopOf="@+id/slider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -162,10 +161,10 @@
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="28dp"
                 android:layout_height="28dp"
-                app:useMaterialThemeColors="false"
-                android:button="@drawable/like_selector"
                 android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_marginStart="70dp" />
+                android:layout_marginStart="70dp"
+                android:button="@drawable/like_selector"
+                app:useMaterialThemeColors="false" />
 
             <ImageView
                 android:layout_width="30dp"
@@ -182,10 +181,10 @@
             android:id="@+id/slider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:value="40"
-            android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
+            android:value="40"
             android:valueFrom="0"
             android:valueTo="100"
             app:haloColor="@color/dark_bule2"
@@ -207,8 +206,8 @@
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
             android:layout_marginBottom="15dp"
+            android:padding="4dp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -235,10 +234,10 @@
         </FrameLayout>
 
         <LinearLayout
-            android:layout_marginBottom="70dp"
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
             android:gravity="center_horizontal|bottom"
             android:orientation="horizontal"
             android:padding="4dp"
@@ -271,19 +270,18 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:backgroundTint="@color/bule"
                 android:background="@drawable/shape_buttun_play"
+                android:backgroundTint="@color/bule"
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center">
 
                 <ImageView
+                    android:src="@drawable/ic_play"
                     android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_play" />
+                    android:layout_height="40dp" />
 
             </LinearLayout>
-
 
 
             <com.google.android.material.card.MaterialCardView
@@ -310,18 +308,17 @@
         </LinearLayout>
 
         <ImageView
-            android:clickable="true"
             android:id="@+id/btn_open_more"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal|bottom"
+            android:clickable="true"
+            android:focusable="true"
             android:src="@drawable/ic_up"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:tint="@color/Gray"
-            android:focusable="true" />
-
+            app:tint="@color/Gray" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
