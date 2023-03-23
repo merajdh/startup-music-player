@@ -13,9 +13,9 @@ abstract class AppDatabase:RoomDatabase() {
 
     abstract val MusicByCategoryDao : MusicByCategoryDao
     abstract val MoreLikeDao : MoreLikeDao
-    abstract val RecentMusikDao : MusicByCategoryDao
-    abstract val TrendMusikDao : MusicByCategoryDao
-    abstract val nternationalMusicDao : MusicByCategoryDao
+    abstract val RecentMusikDao : RecentMusikDao
+    abstract val TrendMusikDao : TrendMusikDao
+    abstract val internationalMusicDao : internationalMusicDao
 
 
     companion object {

@@ -59,7 +59,7 @@ interface TrendMusikDao {
 }
 
 @Dao
-interface nternationalMusicDao {
+interface internationalMusicDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertOrUpdate(Music: List<MusicRespomse>)

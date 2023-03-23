@@ -1,6 +1,7 @@
 package com.example.startup_music_player.ui.features.Play
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -57,7 +58,7 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
     }
 
     override fun PlayMusic(Music: MusicRespomse) {
-
+        Log.v("eeee2",Music.toString())
     }
 
 }
