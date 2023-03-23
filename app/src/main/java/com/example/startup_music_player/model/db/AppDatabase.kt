@@ -12,6 +12,10 @@ import com.example.startup_music_player.model.data.MusicRespomse
 abstract class AppDatabase:RoomDatabase() {
 
     abstract val MusicByCategoryDao : MusicByCategoryDao
+    abstract val MoreLikeDao : MoreLikeDao
+    abstract val RecentMusikDao : MusicByCategoryDao
+    abstract val TrendMusikDao : MusicByCategoryDao
+    abstract val nternationalMusicDao : MusicByCategoryDao
 
 
     companion object {

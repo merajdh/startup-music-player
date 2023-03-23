@@ -1,7 +1,6 @@
 package com.example.startup_music_player.ui.features.Home
 
 import android.annotation.SuppressLint
-import android.app.backup.SharedPreferencesBackupHelper
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -16,7 +15,6 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.airbnb.lottie.L
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
@@ -33,56 +31,61 @@ import com.example.startup_music_player.model.presenter.PresenterHome
 import com.example.startup_music_player.ui.features.Play.PlayFragment
 import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
-import org.koin.androidx.viewmodel.ext.android.getSharedViewModel
 
 
-class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
+class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
     lateinit var binding: FragmentHomeBinding
     lateinit var presenter: ContractHome.Presenter
     lateinit var musicByCategoryDao: MusicByCategoryDao
     lateinit var sharedPreferences: SharedPreferences
+
     @SuppressLint("CommitPrefEdits")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
-        musicByCategoryDao()
-        sharedPreferences= binding.root.context.getSharedPreferences("dataSend" , Context.MODE_PRIVATE)
-        sharedPreferences.edit().putBoolean("dataSend" , MyApp.isSend).apply()
+        binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+
+        sharedPreferences =
+            binding.root.context.getSharedPreferences("dataSend", Context.MODE_PRIVATE)
+        sharedPreferences.edit().putBoolean("dataSend", MyApp.isSend).apply()
         AddsliderCod() // slider
-        val dataSend = sharedPreferences.getBoolean("dataSend" , false)
-        when(MyApp.isSend){
-            MyApp.isSend == true ->{
+        val dataSend = sharedPreferences.getBoolean("dataSend", false)
+        when (MyApp.isSend) {
+            MyApp.isSend == true -> {
                 binding.shimmerHome.visibility = View.GONE
+            }
+            else -> {
+                binding.shimmerHome.visibility = View.VISIBLE
             }
         }
 
         setOnClickListeners()
-
-
-
         MoreClickListener()
-        presenter = PresenterHome(createApiService(), NetworkChecker(binding.root.context).isInternetConnected,AppDatabase.getDatabes(binding.root.context).MusicByCategoryDao)
+        presenter = PresenterHome(
+            createApiService(),
+            NetworkChecker(binding.root.context).isInternetConnected,
+            AppDatabase.getDatabes(binding.root.context).MusicByCategoryDao
+        )
 
-         lifecycleScope.launchWhenCreated {
-             presenter.OnAttach(this@HomeFragment,)
+        lifecycleScope.launchWhenCreated {
+            presenter.OnAttach(this@HomeFragment)
 
-         }
+        }
 
 
         binding.mouduleOneHome.slider.setItemClickListener(object : ItemClickListener {
             override fun onItemSelected(position: Int) {
-                when(position){
-                    0 ->{
-                        Log.v("test","0")
+                when (position) {
+                    0 -> {
+                        Log.v("test", "0")
                     }
-                    1 ->{
-                        Log.v("test","1")
+                    1 -> {
+                        Log.v("test", "1")
                     }
-                    2 ->{
-                        Log.v("test","3")
+                    2 -> {
+                        Log.v("test", "3")
                     }
                 }
             }
@@ -91,56 +94,105 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
         return binding.root
     }
 
-  fun AddsliderCod() {
+    fun AddsliderCod() {
         val ItemSlider = ArrayList<SlideModel>()
-        ItemSlider.add(SlideModel("https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg"   , ScaleTypes.FIT))
-        ItemSlider.add(SlideModel("https://images4.alphacoders.com/193/193108.jpg"   ,ScaleTypes.FIT))
-        ItemSlider.add(SlideModel("https://wallpaper.dog/large/17006205.jpg" , ScaleTypes.FIT))
+        ItemSlider.add(
+            SlideModel(
+                "https://images.hdqwalls.com/download/eminem-rapper-wallpaper-2560x1440.jpg",
+                ScaleTypes.FIT
+            )
+        )
+        ItemSlider.add(SlideModel("https://images4.alphacoders.com/193/193108.jpg", ScaleTypes.FIT))
+        ItemSlider.add(SlideModel("https://wallpaper.dog/large/17006205.jpg", ScaleTypes.FIT))
         binding.mouduleOneHome.slider.setImageList(ItemSlider)
 
     }
 
-    override fun MusicByCategory(data: List<MusicRespomse>) {
+
+    // set data Adapter Ofline
+    override fun MusicByCategoryOf(data: List<MusicRespomse>) {
+
+        val adapter = HomeAdapterHappyMusic(data, this)
+        binding.mouduleOneHome.recHappyMusic.layoutManager =
+            GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, true)
+        binding.mouduleOneHome.recHappyMusic.adapter = adapter
+    }
+
+    override fun MoreLikeOf(data: List<MusicRespomse>) {
+        val adapter = HomeAdapterTopMusic(data, this)
+        binding.mouduleTwoHome.recTopMusic.layoutManager =
+            GridLayoutManager(context, 2, RecyclerView.HORIZONTAL, true)
+        binding.mouduleTwoHome.recTopMusic.adapter = adapter
+    }
+
+    override fun RecentMusikOf(data: List<MusicRespomse>) {
+        val adapter = HomeAdapterTopMusic(data, this)
+        binding.mouduleThreeHome.recNewMusic.layoutManager =
+            GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
+        binding.mouduleThreeHome.recNewMusic.adapter = adapter
+    }
+
+    override fun TrendMusikOf(data: List<MusicRespomse>) {
+
+        val adapter = HomeAdapterTrand(data, this)
+        binding.mouduleFourHome.recTrandMusic.layoutManager =
+            GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
+        binding.mouduleFourHome.recTrandMusic.adapter = adapter
+    }
+
+    override fun InternationalMusicOf(data: List<MusicRespomse>) {
+        val adapter = HomeAdapterInternational(data, this)
+        binding.mouduleFourHome.recTrandMusic.layoutManager =
+            GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
+        binding.mouduleFourHome.recTrandMusic.adapter = adapter
+
+    }
+
+
+    // set data Adapter Online
+    override fun MusicByCategoryOn(data: List<MusicRespomse>) {
         binding.shimmerHome.visibility = View.GONE
 
 
         val adapter = HomeAdapterHappyMusic(data, this)
-        binding.mouduleOneHome.recHappyMusic.layoutManager = GridLayoutManager(context ,1, RecyclerView.HORIZONTAL, true)
+        binding.mouduleOneHome.recHappyMusic.layoutManager =
+            GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, true)
         binding.mouduleOneHome.recHappyMusic.adapter = adapter
 
     }
 
-
-    override fun MoreLike(data: List<MusicRespomse>) {
+    override fun MoreLikeOn(data: List<MusicRespomse>) {
 
         val adapter = HomeAdapterTopMusic(data, this)
-        binding.mouduleTwoHome.recTopMusic.layoutManager = GridLayoutManager (context , 2 , RecyclerView.HORIZONTAL , true)
+        binding.mouduleTwoHome.recTopMusic.layoutManager =
+            GridLayoutManager(context, 2, RecyclerView.HORIZONTAL, true)
         binding.mouduleTwoHome.recTopMusic.adapter = adapter
     }
 
-    override fun RecentMusik(data: List<MusicRespomse>) {
+    override fun RecentMusikOn(data: List<MusicRespomse>) {
 
         val adapter = HomeAdapterTopMusic(data, this)
-        binding.mouduleThreeHome.recNewMusic.layoutManager = GridLayoutManager (context , 1 , RecyclerView.VERTICAL , false)
+        binding.mouduleThreeHome.recNewMusic.layoutManager =
+            GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
         binding.mouduleThreeHome.recNewMusic.adapter = adapter
 
 
     }
 
-    override fun TrendMusik(data: List<MusicRespomse>) {
-
-        Log.v("testi" , data.toString())
+    override fun TrendMusikOn(data: List<MusicRespomse>) {
 
         val adapter = HomeAdapterTrand(data, this)
-        binding.mouduleFourHome.recTrandMusic.layoutManager = GridLayoutManager (context , 1 , RecyclerView.VERTICAL , false)
+        binding.mouduleFourHome.recTrandMusic.layoutManager =
+            GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
         binding.mouduleFourHome.recTrandMusic.adapter = adapter
 
     }
 
-    override fun InternationalMusic(data: List<MusicRespomse>) {
+    override fun InternationalMusicOn(data: List<MusicRespomse>) {
 
         val adapter = HomeAdapterInternational(data, this)
-        binding.mouduleFourHome.recTrandMusic.layoutManager = GridLayoutManager (context , 1 , RecyclerView.VERTICAL , false)
+        binding.mouduleFourHome.recTrandMusic.layoutManager =
+            GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
         binding.mouduleFourHome.recTrandMusic.adapter = adapter
 
     }
@@ -148,14 +200,14 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
     override fun Click(data: MusicRespomse) {
         MyApp.idMusic = data.id.toString()
         val transform = parentFragmentManager.beginTransaction()
-        transform.replace(R.id.FrameLayoutMain , PlayFragment())
+        transform.replace(R.id.FrameLayoutMain, PlayFragment())
         transform.addToBackStack(null)
         transform.commit()
         //test interface
         Toast.makeText(context, data.title, Toast.LENGTH_SHORT).show()
     }
 
-    fun setOnClickListeners(){
+    fun setOnClickListeners() {
 
         binding.mouduleOneHome.btnMore.setOnClickListener {
             myApp.ischeckd = "happy_music"
@@ -175,17 +227,17 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
         binding.swipeHome.setOnRefreshListener {
             // load data hare
 
-            Handler (Looper.getMainLooper()).postDelayed({
+            Handler(Looper.getMainLooper()).postDelayed({
                 binding.swipeHome.isRefreshing = false
 
-            },800)
+            }, 800)
         }
     }
 
-    private fun MoreClickListener(){
+    private fun MoreClickListener() {
 
 
-        when(myApp.ischeckd){
+        when (myApp.ischeckd) {
             "happy_music" -> {
                 Toast.makeText(context, "happy_music", Toast.LENGTH_SHORT).show()
             }
@@ -203,17 +255,9 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
         }
     }
 
-    private fun musicByCategoryDao(){
-
-        musicByCategoryDao =  AppDatabase.getDatabes(binding.root.context).MusicByCategoryDao
-        val data = musicByCategoryDao.getAll()
-        if (data.toString() != "[]"){
-            MyApp.isSend = true
-        }
-        val adapter = HomeAdapterTopMusic(data, this)
-        binding.mouduleThreeHome.recNewMusic.layoutManager = GridLayoutManager (context , 1 , RecyclerView.VERTICAL , false)
-        binding.mouduleThreeHome.recNewMusic.adapter = adapter
-
+    override fun onDetach() {
+        super.onDetach()
+        presenter.OnDetavh()
     }
 
 

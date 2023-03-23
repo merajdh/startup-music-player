@@ -13,22 +13,24 @@ class PresenterHome(
 
     override suspend fun OnAttach(view: ContractHome.View) {
         fragmentview = view
+        Ofline()
 
         if (Internet) {
+          // data newe musik
+            Online()
 
-
-// data newe musik
-            MusicByCategoryDao.insertOrUpdate(apiservice.MusicNews())
-            fragmentview!!.RecentMusik(MusicByCategoryDao.getAll())
-
-        } else {
-
-        }
+        } else { Ofline() }
 
     }
 
     override fun OnDetavh() {
         fragmentview = null
     }
-
+    fun Ofline(){
+        fragmentview!!.MusicByCategoryOf(MusicByCategoryDao.getAllMusicByCategory())
+    }
+    suspend fun Online(){
+        MusicByCategoryDao.insertOrUpdate(apiservice.MusicNews())
+        fragmentview!!.RecentMusikOn(MusicByCategoryDao.getAllMusicByCategory())
+    }
 }

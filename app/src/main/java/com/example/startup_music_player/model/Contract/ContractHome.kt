@@ -9,10 +9,18 @@ interface ContractHome {
        fun OnDetavh()
     }
     interface View {
-        fun MusicByCategory(data: List<MusicRespomse>)
-        fun MoreLike(data: List<MusicRespomse>)
-        fun RecentMusik(data: List<MusicRespomse>)
-        fun TrendMusik(data: List<MusicRespomse>)
-        fun InternationalMusic(data: List<MusicRespomse>)
+        //Online
+        fun MusicByCategoryOn(data: List<MusicRespomse>)
+        fun MoreLikeOn(data: List<MusicRespomse>)
+        fun RecentMusikOn(data: List<MusicRespomse>)
+        fun TrendMusikOn(data: List<MusicRespomse>)
+        fun InternationalMusicOn(data: List<MusicRespomse>)
+
+        //Ofline
+        fun MusicByCategoryOf(data: List<MusicRespomse>)
+        fun MoreLikeOf(data: List<MusicRespomse>)
+        fun RecentMusikOf(data: List<MusicRespomse>)
+        fun TrendMusikOf(data: List<MusicRespomse>)
+        fun InternationalMusicOf(data: List<MusicRespomse>)
     }
 }
