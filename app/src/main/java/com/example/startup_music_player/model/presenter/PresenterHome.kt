@@ -1,5 +1,6 @@
 package com.example.startup_music_player.model.presenter
 
+import android.util.Log
 import com.example.startup_music_player.model.Contract.ContractHome
 import com.example.startup_music_player.model.db.*
 import com.example.startup_music_player.model.net.Apiservice
@@ -23,7 +24,9 @@ class PresenterHome(
           // data newe musik
             Online()
 
-        } else { Ofline() }
+        } else {
+            Ofline()
+        }
 
     }
 

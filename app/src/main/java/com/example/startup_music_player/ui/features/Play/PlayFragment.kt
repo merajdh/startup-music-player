@@ -44,7 +44,7 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
     private fun blurImage() {
         Glide.with(this).load(binding.imgBackground.drawable)
             .apply(RequestOptions.bitmapTransform(BlurTransformation(8, 1)))
-            .into(binding.imgBackground)        }
+            .into(binding.imgBackground)}
 
     private fun setOnClickListeners() {
 

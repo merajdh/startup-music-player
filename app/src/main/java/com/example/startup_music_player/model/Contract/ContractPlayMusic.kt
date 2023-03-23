@@ -1,5 +1,6 @@
 package com.example.startup_music_player.model.Contract
 
+import com.example.startup_music_player.model.data.MusicDetail
 import com.example.startup_music_player.model.data.MusicRespomse
 
 interface ContractPlayMusic {
@@ -10,7 +11,7 @@ interface ContractPlayMusic {
     }
 
     interface View{
-        fun PlayMusic(Music : MusicRespomse)
+        fun PlayMusic(Music : MusicDetail)
 
     }
 }

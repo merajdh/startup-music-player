@@ -46,8 +46,7 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
-        sharedPreferences =
-            binding.root.context.getSharedPreferences("dataSend", Context.MODE_PRIVATE)
+        sharedPreferences = binding.root.context.getSharedPreferences("dataSend", Context.MODE_PRIVATE)
         sharedPreferences.edit().putBoolean("dataSend", MyApp.isSend).apply()
         AddsliderCod() // slider
         val dataSend = sharedPreferences.getBoolean("dataSend", false)

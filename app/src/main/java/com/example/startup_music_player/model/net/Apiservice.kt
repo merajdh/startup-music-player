@@ -2,6 +2,7 @@ package com.example.startup_music_player.model.net
 
 import com.example.startup_music_player.model.data.CategoryRespomse
 import com.example.startup_music_player.model.data.LoginRespomse
+import com.example.startup_music_player.model.data.MusicDetail
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.repository.TokenInMemory
 
@@ -51,7 +52,7 @@ interface Apiservice {
 
 
     @GET("music/detail/{id}/")
-    suspend fun MusicPlay(@Path("id") id_Musik : String) : MusicRespomse
+    suspend fun MusicPlay(@Path("id") id_Musik : String) : MusicDetail
 
     @GET("music/category/")
     suspend fun CategoryTypeMusic() : List<CategoryRespomse>
