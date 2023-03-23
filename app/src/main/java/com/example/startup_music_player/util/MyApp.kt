@@ -18,6 +18,7 @@ import org.koin.dsl.module
 class MyApp : Application() {
     companion object {
         var idMusic: String = ""
+        var isSend : Boolean = false
     }
 
     override fun onCreate() {

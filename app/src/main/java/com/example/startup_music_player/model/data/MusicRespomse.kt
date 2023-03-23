@@ -9,8 +9,7 @@ import com.google.gson.annotations.SerializedName
 data class MusicRespomse(
     @SerializedName("artist")
     val artist: ArrayList<String>,
-    @SerializedName("category")
-    val category: ArrayList<String>,
+
     @SerializedName("cover")
     val cover: String,
 
@@ -18,10 +17,8 @@ data class MusicRespomse(
     @SerializedName("id")
     val id: Int,
 
-    @SerializedName("text")
-    val text: String,
+
     @SerializedName("title")
     val title: String,
-    @SerializedName("url")
-    val url: String
+
 )

@@ -1,5 +1,9 @@
 package com.example.startup_music_player.ui.features.Home
 
+import android.annotation.SuppressLint
+import android.app.backup.SharedPreferencesBackupHelper
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -12,6 +16,7 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.L
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
@@ -21,32 +26,48 @@ import com.example.startup_music_player.model.Adapter.*
 import com.example.startup_music_player.model.Contract.ContractHome
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.db.AppDatabase
+import com.example.startup_music_player.model.db.MusicByCategoryDao
 import com.example.startup_music_player.model.myApp.myApp
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterHome
 import com.example.startup_music_player.ui.features.Play.PlayFragment
 import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
+import org.koin.androidx.viewmodel.ext.android.getSharedViewModel
 
 
 class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
     lateinit var binding: FragmentHomeBinding
     lateinit var presenter: ContractHome.Presenter
+    lateinit var musicByCategoryDao: MusicByCategoryDao
+    lateinit var sharedPreferences: SharedPreferences
+    @SuppressLint("CommitPrefEdits")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
+        musicByCategoryDao()
+        sharedPreferences= binding.root.context.getSharedPreferences("dataSend" , Context.MODE_PRIVATE)
+        sharedPreferences.edit().putBoolean("dataSend" , MyApp.isSend).apply()
         AddsliderCod() // slider
+        val dataSend = sharedPreferences.getBoolean("dataSend" , false)
+        when(MyApp.isSend){
+            MyApp.isSend == true ->{
+                binding.shimmerHome.visibility = View.GONE
+            }
+        }
+
         setOnClickListeners()
+
+
+
         MoreClickListener()
         presenter = PresenterHome(createApiService(), NetworkChecker(binding.root.context).isInternetConnected,AppDatabase.getDatabes(binding.root.context).MusicByCategoryDao)
-            AppDatabase.getDatabes(binding.root.context).MusicByCategoryDao)
 
          lifecycleScope.launchWhenCreated {
              presenter.OnAttach(this@HomeFragment,)
-
 
          }
 
@@ -80,6 +101,9 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
     }
 
     override fun MusicByCategory(data: List<MusicRespomse>) {
+        binding.shimmerHome.visibility = View.GONE
+
+
         val adapter = HomeAdapterHappyMusic(data, this)
         binding.mouduleOneHome.recHappyMusic.layoutManager = GridLayoutManager(context ,1, RecyclerView.HORIZONTAL, true)
         binding.mouduleOneHome.recHappyMusic.adapter = adapter
@@ -177,6 +201,19 @@ class HomeFragment : Fragment() , ContractHome.View , OnClickHome{
 
 
         }
+    }
+
+    private fun musicByCategoryDao(){
+
+        musicByCategoryDao =  AppDatabase.getDatabes(binding.root.context).MusicByCategoryDao
+        val data = musicByCategoryDao.getAll()
+        if (data.toString() != "[]"){
+            MyApp.isSend = true
+        }
+        val adapter = HomeAdapterTopMusic(data, this)
+        binding.mouduleThreeHome.recNewMusic.layoutManager = GridLayoutManager (context , 1 , RecyclerView.VERTICAL , false)
+        binding.mouduleThreeHome.recNewMusic.adapter = adapter
+
     }
 
 
