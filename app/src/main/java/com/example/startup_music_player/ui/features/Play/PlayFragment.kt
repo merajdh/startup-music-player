@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.startup_music_player.databinding.FragmentPlayBinding
 import com.example.startup_music_player.model.Contract.ContractPlayMusic
+import com.example.startup_music_player.model.data.MusicDetail
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterPlayMusic
@@ -57,7 +58,7 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
 
     }
 
-    override fun PlayMusic(Music: MusicRespomse) {
+    override fun PlayMusic(Music: MusicDetail) {
         Log.v("eeee2",Music.toString())
     }
 
