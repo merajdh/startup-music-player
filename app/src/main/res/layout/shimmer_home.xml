@@ -47,6 +47,36 @@
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
                 android:backgroundTint="#80858A"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="3dp"
+                android:layout_margin="6dp"
+                android:layout_width="140dp"
+                android:layout_height="140dp">
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:backgroundTint="#80858A"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="3dp"
+                android:layout_margin="6dp"
+                android:layout_width="140dp"
+                android:layout_height="140dp">
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:backgroundTint="#80858A"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="3dp"
+                android:layout_margin="6dp"
+                android:layout_width="140dp"
+                android:layout_height="140dp">
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:backgroundTint="#80858A"
             app:cardCornerRadius="6dp"
             app:cardElevation="3dp"
             android:layout_margin="6dp"

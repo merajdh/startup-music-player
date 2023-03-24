@@ -7,7 +7,8 @@ import com.example.startup_music_player.model.net.Apiservice
 
 class PresenterCategory(
     private val apiservice: Apiservice,
-    private val Internet :Boolean
+    private val Internet :Boolean,
+
 ):ContractCategory.PresenterCategory {
     var fragmentview : ContractCategory.View? = null
 
