@@ -53,6 +53,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rec_Type"
                 android:layout_marginStart="33dp"
+                android:layoutAnimation="@anim/recycler_layout_anim"
                 android:orientation="vertical"
                 tools:listitem="@layout/item_recycler_musictype_category"
                 android:layout_width="match_parent"

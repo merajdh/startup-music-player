@@ -40,6 +40,9 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
             presenter.OnAttach(this@CategoryFragment)
 
         }
+        binding.shimmerCategory.startShimmer()
+        binding.viewMain.visibility = View.GONE
+
         return binding.root
     }
 
@@ -91,6 +94,9 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
 
     override fun TypeOfMusic(data: List<CategoryRespomse>) {
 
+        binding.viewMain.visibility = View.VISIBLE
+        binding.shimmerCategory.stopShimmer()
+        binding.shimmerCategory.visibility = View.GONE
         val adapter = CategoryAdapterTypeMusic(data,this)
         binding.mouduleOneCategory.recType.layoutManager =
             GridLayoutManager(context, 2, RecyclerView.VERTICAL, false)

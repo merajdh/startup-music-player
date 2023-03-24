@@ -154,8 +154,6 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
     // set data Adapter Online
     override fun MusicByCategoryOn(data: List<MusicRespomse>) {
         binding.shimmerHome.visibility = View.GONE
-
-
         val adapter = HomeAdapterHappyMusic(data, this)
         binding.mouduleOneHome.recHappyMusic.layoutManager =
             GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, true)
