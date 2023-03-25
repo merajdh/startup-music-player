@@ -30,6 +30,9 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
         binding = FragmentPlayBinding.inflate(layoutInflater, container, false)
         blurImage()
         setOnClickListeners()
+
+        binding.viewMain.visibility = View.GONE
+        binding.shimmerPlay.startShimmer()
         presenter = PresenterPlayMusic(createApiService(), NetworkChecker(binding.root.context).isInternetConnected)
 
 
@@ -59,6 +62,21 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
     }
 
     override fun PlayMusic(Music: MusicDetail) {
+
+        Glide .with(this).load(Music.cover)
+            .into(binding.imgCover)
+
+        Log.v("123" , Music.cover)
+        Glide .with(this).load( Music.cover)
+            .apply(RequestOptions.bitmapTransform(BlurTransformation(8, 4)))
+            .into(binding.imgBackground)
+
+        binding.shimmerPlay.visibility = View.GONE
+        binding.viewMain.visibility = View.VISIBLE
+
+        binding.Pliy.text = Music.artist[0].name
+
+        binding.txtNameMusic.text = Music.title
         Log.v("eeee2",Music.toString())
     }
 
