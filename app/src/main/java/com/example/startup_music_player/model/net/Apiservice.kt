@@ -1,9 +1,6 @@
 package com.example.startup_music_player.model.net
 
-import com.example.startup_music_player.model.data.CategoryRespomse
-import com.example.startup_music_player.model.data.LoginRespomse
-import com.example.startup_music_player.model.data.MusicDetail
-import com.example.startup_music_player.model.data.MusicRespomse
+import com.example.startup_music_player.model.data.*
 import com.example.startup_music_player.model.repository.TokenInMemory
 
 import com.google.gson.JsonObject
@@ -56,6 +53,9 @@ interface Apiservice {
 
     @GET("music/category/")
     suspend fun CategoryTypeMusic() : List<CategoryRespomse>
+
+    @GET("accounts/artists/")
+    suspend fun CategoryArtist(): List<ArtistData>
 }
 
 fun createApiService(): Apiservice {

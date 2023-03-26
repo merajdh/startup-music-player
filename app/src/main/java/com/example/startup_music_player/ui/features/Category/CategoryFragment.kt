@@ -12,16 +12,15 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.startup_music_player.databinding.FragmentCategoryBinding
-import com.example.startup_music_player.model.Adapter.CategoryAdapterTypeMusic
-import com.example.startup_music_player.model.Adapter.HomeAdapterHappyMusic
-import com.example.startup_music_player.model.Adapter.OnClickCategory
-import com.example.startup_music_player.model.Adapter.OnClickHome
+import com.example.startup_music_player.model.Adapter.*
 import com.example.startup_music_player.model.Contract.ContractCategory
+import com.example.startup_music_player.model.data.ArtistData
 import com.example.startup_music_player.model.data.CategoryRespomse
 import com.example.startup_music_player.model.myApp.myApp
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterCategory
 import com.example.startup_music_player.model.presenter.PresenterPlayMusic
+import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
 
 class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
@@ -104,8 +103,24 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
 
     }
 
+    override fun Artist(data: List<ArtistData>) {
+        val adapter = CategoryAdapterArtist(data,this)
+        binding.mouduleTwoCategory.recArtist.layoutManager =
+            GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, true)
+        binding.mouduleTwoCategory.recArtist.adapter = adapter
+
+    }
+
     override fun ClickCategory(data: CategoryRespomse) {
 
+    }
+
+    override fun OnClickArtist(data: ArtistData) {
+        when(MyApp.idArtist){
+
+        }
+
+        Toast.makeText(context, MyApp.idArtist, Toast.LENGTH_SHORT).show()
     }
 
 }

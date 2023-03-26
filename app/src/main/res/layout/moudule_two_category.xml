@@ -55,6 +55,8 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_artist"
+        android:paddingBottom="8dp"
         android:layoutAnimation="@anim/recycler_layout_anim"
         tools:listitem="@layout/item_recycler_artist"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

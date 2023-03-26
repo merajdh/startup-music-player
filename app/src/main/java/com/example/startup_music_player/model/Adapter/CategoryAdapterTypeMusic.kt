@@ -15,16 +15,16 @@ class CategoryAdapterTypeMusic(private val data: List<CategoryRespomse>, private
     lateinit var binding: ItemRecyclerMusictypeCategoryBinding
 
     inner class CategoryMusicTypeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun ViewBinder(dataHome: CategoryRespomse) {
+        fun ViewBinder(dataCategory: CategoryRespomse) {
 
-            binding.txtType.text = dataHome.typeCategory
+            binding.txtType.text = dataCategory.typeCategory
 
-            Glide.with(binding.root.context).load(dataHome.cover)
+            Glide.with(binding.root.context).load(dataCategory.cover)
                 .apply(RequestOptions.bitmapTransform(BlurTransformation(2, 2)))
                 .into(binding.imgCover)
 
             itemView.setOnClickListener {
-                onClickCategory.ClickCategory(dataHome)
+                onClickCategory.ClickCategory(dataCategory)
             }
         }
     }
