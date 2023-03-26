@@ -3,6 +3,7 @@ package com.example.startup_music_player.ui.features.Category
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,15 +12,17 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentCategoryBinding
 import com.example.startup_music_player.model.Adapter.*
 import com.example.startup_music_player.model.Contract.ContractCategory
-import com.example.startup_music_player.model.data.ArtistData
+import com.example.startup_music_player.model.data.ListArtistData
+import com.example.startup_music_player.model.data.DetailArtistRespomse
 import com.example.startup_music_player.model.data.CategoryRespomse
 import com.example.startup_music_player.model.myApp.myApp
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterCategory
-import com.example.startup_music_player.model.presenter.PresenterPlayMusic
+import com.example.startup_music_player.ui.features.Artist.ArtistFragment
 import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
 
@@ -103,7 +106,7 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
 
     }
 
-    override fun Artist(data: List<ArtistData>) {
+    override fun ListArtist(data: List<ListArtistData>) {
         val adapter = CategoryAdapterArtist(data,this)
         binding.mouduleTwoCategory.recArtist.layoutManager =
             GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, true)
@@ -115,12 +118,15 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
 
     }
 
-    override fun OnClickArtist(data: ArtistData) {
-        when(MyApp.idArtist){
-
-        }
-
-        Toast.makeText(context, MyApp.idArtist, Toast.LENGTH_SHORT).show()
+    override fun OnClickArtist(data: ListArtistData) {
+        MyApp.idArtist = data.id.toString()
+        Log.v("haha" , MyApp.idArtist)
+        val transform = parentFragmentManager.beginTransaction()
+        transform.replace(R.id.FrameLayoutMain, ArtistFragment())
+        transform.addToBackStack(null)
+        transform.commit()
     }
+
+
 
 }

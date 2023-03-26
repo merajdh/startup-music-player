@@ -20,11 +20,13 @@ class PresenterCategory(
 
         if (Internet){
             val data_TypeMusicCategory = apiservice.CategoryTypeMusic()
-            val data_ArtistCategory = apiservice.CategoryArtist()
+            val data_Artist = apiservice.CategoryArtist()
+
 
 
             fragmentview!!.TypeOfMusic(data_TypeMusicCategory)
-            fragmentview!!.Artist(data_ArtistCategory)
+            fragmentview!!.ListArtist(data_Artist)
+
 
         }else{
 

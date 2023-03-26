@@ -33,6 +33,7 @@
             android:layout_height="wrap_content"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec_recent"
             android:layoutAnimation="@anim/recycler_layout_anim"
             tools:itemCount="4"
             android:paddingBottom="4dp"

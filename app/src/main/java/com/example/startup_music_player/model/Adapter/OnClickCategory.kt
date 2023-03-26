@@ -1,10 +1,11 @@
 package com.example.startup_music_player.model.Adapter
 
-import com.example.startup_music_player.model.data.ArtistData
+import com.example.startup_music_player.model.data.DetailArtistRespomse
 import com.example.startup_music_player.model.data.CategoryRespomse
+import com.example.startup_music_player.model.data.ListArtistData
 
 interface OnClickCategory {
     fun ClickCategory(data : CategoryRespomse)
-    fun OnClickArtist(data: ArtistData)
+    fun OnClickArtist(data: ListArtistData)
 
 }

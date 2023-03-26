@@ -5,15 +5,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.startup_music_player.databinding.ItemRecyclerArtistBinding
-import com.example.startup_music_player.model.data.ArtistData
+import com.example.startup_music_player.model.data.DetailArtistRespomse
+import com.example.startup_music_player.model.data.ListArtistData
 import com.example.startup_music_player.util.MyApp
 import com.squareup.picasso.Picasso
 
-class CategoryAdapterArtist(private val data: List<ArtistData>, private val onClickCategory: OnClickCategory ) : RecyclerView.Adapter<CategoryAdapterArtist.CategoryArtistViewHolder>() {
+class CategoryAdapterArtist(private val data: List<ListArtistData>, private val onClickCategory: OnClickCategory ) : RecyclerView.Adapter<CategoryAdapterArtist.CategoryArtistViewHolder>() {
     lateinit var binding: ItemRecyclerArtistBinding
 
     inner class CategoryArtistViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun ViewBinder(dataArtist: ArtistData) {
+        fun ViewBinder(dataArtist: ListArtistData) {
 
             MyApp.idArtist = dataArtist.id.toString()
             binding.artistName.text = dataArtist.ArtistName

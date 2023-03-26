@@ -2,7 +2,7 @@ package com.example.startup_music_player.model.data
 
 import com.google.gson.annotations.SerializedName
 
-data class ArtistData (
+data class ListArtistData (
     @SerializedName("name")
     val ArtistName : String,
     @SerializedName("image")

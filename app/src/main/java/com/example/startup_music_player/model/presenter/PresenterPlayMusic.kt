@@ -16,12 +16,12 @@ class PresenterPlayMusic(
         if (Internet){
             val data = apiservice.MusicPlay(MyApp.idMusic)
             view.PlayMusic(data)
+
         }
 
     }
 
     override fun OnDetavh() {
-        TODO("Not yet implemented")
     }
 
 

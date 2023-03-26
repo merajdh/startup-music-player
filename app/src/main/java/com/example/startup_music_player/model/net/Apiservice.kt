@@ -55,7 +55,13 @@ interface Apiservice {
     suspend fun CategoryTypeMusic() : List<CategoryRespomse>
 
     @GET("accounts/artists/")
-    suspend fun CategoryArtist(): List<ArtistData>
+    suspend fun CategoryArtist() : List<ListArtistData>
+
+    @GET("accounts/profile/artist/{id}")
+    suspend fun ArtistDetail(@Path("id") id_Artist : String) : DetailArtistRespomse
+
+
+
 }
 
 fun createApiService(): Apiservice {

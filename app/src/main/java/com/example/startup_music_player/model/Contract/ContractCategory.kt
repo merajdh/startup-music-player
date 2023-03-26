@@ -1,6 +1,6 @@
 package com.example.startup_music_player.model.Contract
 
-import com.example.startup_music_player.model.data.ArtistData
+import com.example.startup_music_player.model.data.ListArtistData
 import com.example.startup_music_player.model.data.CategoryRespomse
 
 interface ContractCategory {
@@ -12,7 +12,9 @@ interface ContractCategory {
     interface View {
         fun TypeOfMusic(data: List<CategoryRespomse>)
 
-        fun Artist(data: List<ArtistData>)
+        fun ListArtist(data: List<ListArtistData>)
+
+
 
     }
 }
