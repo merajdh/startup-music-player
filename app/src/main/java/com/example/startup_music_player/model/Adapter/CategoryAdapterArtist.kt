@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.startup_music_player.databinding.ItemRecyclerArtistBinding
-import com.example.startup_music_player.model.data.DetailArtistRespomse
 import com.example.startup_music_player.model.data.ListArtistData
 import com.example.startup_music_player.util.MyApp
 import com.squareup.picasso.Picasso

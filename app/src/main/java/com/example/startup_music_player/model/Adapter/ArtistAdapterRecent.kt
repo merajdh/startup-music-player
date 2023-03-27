@@ -19,7 +19,7 @@ class ArtistAdapterRecent(private val data: List<DetailArtistRespomse.RecentMusi
 
             Picasso.get().load(dataArtist.cover).into(binding.imgCover)
             binding.txtNameMusic.text = dataArtist.title
-            binding.txtNameSinger.text = dataArtist.artist.toString()
+            binding.txtNameSinger.text = dataArtist.artist.toString().replace("[" , "").replace("]", "")
 
             itemView.setOnClickListener {
                 onClickArtist.recentMusic(dataArtist)

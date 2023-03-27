@@ -20,7 +20,7 @@ class ArtistAdapterPopular(private val data: List<DetailArtistRespomse.PopularMu
 
             Picasso.get().load(dataArtist.cover).into(binding.imgCover)
             binding.txtNameMusic.text = dataArtist.title
-            binding.txtNameSinger.text = dataArtist.artist.toString()
+            binding.txtNameSinger.text = dataArtist.artist.toString().replace("[" , "").replace("]", "")
             Log.v("testt" , dataArtist.cover)
             itemView.setOnClickListener {
                 onClickArtist.popularMusic(dataArtist)

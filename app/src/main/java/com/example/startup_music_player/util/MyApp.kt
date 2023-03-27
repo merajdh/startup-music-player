@@ -20,6 +20,7 @@ class MyApp : Application() {
 
         var idMusic: String = ""
         var idArtist: String = ""
+        var idCategory: String = ""
         var isSend : Boolean = false
     }
 

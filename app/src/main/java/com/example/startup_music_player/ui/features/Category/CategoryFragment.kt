@@ -17,12 +17,12 @@ import com.example.startup_music_player.databinding.FragmentCategoryBinding
 import com.example.startup_music_player.model.Adapter.*
 import com.example.startup_music_player.model.Contract.ContractCategory
 import com.example.startup_music_player.model.data.ListArtistData
-import com.example.startup_music_player.model.data.DetailArtistRespomse
 import com.example.startup_music_player.model.data.CategoryRespomse
 import com.example.startup_music_player.model.myApp.myApp
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterCategory
 import com.example.startup_music_player.ui.features.Artist.ArtistFragment
+import com.example.startup_music_player.ui.features.MusicByCategoryDetail.MusicByCategoryFragment
 import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
 
@@ -40,8 +40,8 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
 
         lifecycleScope.launchWhenCreated {
             presenter.OnAttach(this@CategoryFragment)
-
         }
+
         binding.shimmerCategory.startShimmer()
         binding.viewMain.visibility = View.GONE
 
@@ -115,12 +115,24 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
     }
 
     override fun ClickCategory(data: CategoryRespomse) {
+        MyApp.idCategory = data.id
+        val image = data.cover
+        val type = data.typeCategory
+        val bundle = Bundle()
+        bundle.putString("img" , image)
+        bundle.putString("type" , type)
+        val fragment = MusicByCategoryFragment()
+        fragment.arguments = bundle
+        Log.v("img", data.typeCategory)
+        val transform = parentFragmentManager.beginTransaction()
+        transform.replace(R.id.FrameLayoutMain, fragment)
+        transform.addToBackStack(null)
+        transform.commit()
 
     }
 
     override fun OnClickArtist(data: ListArtistData) {
         MyApp.idArtist = data.id.toString()
-        Log.v("haha" , MyApp.idArtist)
         val transform = parentFragmentManager.beginTransaction()
         transform.replace(R.id.FrameLayoutMain, ArtistFragment())
         transform.addToBackStack(null)

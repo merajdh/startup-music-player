@@ -12,7 +12,6 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.startup_music_player.databinding.FragmentPlayBinding
 import com.example.startup_music_player.model.Contract.ContractPlayMusic
 import com.example.startup_music_player.model.data.MusicDetail
-import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterPlayMusic
 import com.example.startup_music_player.ui.features.playDetail.playDetailFragment
@@ -65,7 +64,6 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
 
         Glide .with(this).load(Music.cover)
             .into(binding.imgCover)
-
         Log.v("123" , Music.cover)
         Glide .with(this).load( Music.cover)
             .apply(RequestOptions.bitmapTransform(BlurTransformation(8, 4)))

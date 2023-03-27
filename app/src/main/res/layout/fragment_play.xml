@@ -149,6 +149,7 @@
                         android:paddingStart="20dp"
                         android:paddingEnd="20dp"
                         android:text="امیر تتلو"
+                        android:layout_marginTop="10dp"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:textStyle="bold"

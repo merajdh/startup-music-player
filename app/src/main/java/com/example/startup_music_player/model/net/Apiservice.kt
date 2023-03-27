@@ -60,6 +60,9 @@ interface Apiservice {
     @GET("accounts/profile/artist/{id}")
     suspend fun ArtistDetail(@Path("id") id_Artist : String) : DetailArtistRespomse
 
+    @GET("music/category/detail/{id}")
+    suspend fun MusicByCategory(@Path("id") id_category : String) : List<MusicByCategoryData>
+
 
 
 }
