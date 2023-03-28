@@ -3,6 +3,7 @@ package com.example.startup_music_player.ui.features.Play
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -72,11 +73,11 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
     private fun plymusic() {
         if (ispluing){
             mediaParser.pause()
-            binding.ImgPlay.setImageResource(R.drawable.ic_play)
+            binding.Pliy.setImageResource(R.drawable.ic_play)
             ispluing = false
         }else{
             mediaParser.start()
-            binding.ImgPlay.setImageResource(R.drawable.ic_pause)
+            binding.Pliy.setImageResource(R.drawable.ic_pause)
             ispluing = true
         }
     }
@@ -102,14 +103,30 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
         mediaParser = MediaPlayer.create(binding.root.context, Uri.parse(Music.url))
         mediaParser.start()
         ispluing = true
-        binding.ImgPlay.setImageResource(R.drawable.ic_pause)
+        binding.Pliy.setImageResource(R.drawable.ic_pause)
         binding.slider.valueTo= mediaParser.duration.toFloat()
         binding.taim.text = converttimemusic(mediaParser.duration.toLong())
         mediaParser.isLooping = true
+        val handler = Handler()
         timer = Timer()
-        timer.schedule(1000) {
-            binding.slider.value = mediaParser.currentPosition.toFloat()
-        }
+        timer.schedule( object : TimerTask(){
+            override fun run() {
+                handler.postDelayed(object : Runnable {
+                    override fun run() {
+                        if (!taghir) {
+                            binding.slider.value = mediaParser.currentPosition.toFloat()
+                            handler.postDelayed(this, 1000)
+                        }
+                    }
+                }, 1000)
+
+            }
+
+        },1000 , 1000)
+
+
+
+
         Glide .with(this).load(Music.cover)
             .into(binding.imgCover)
         Log.v("123" , Music.cover)
@@ -119,7 +136,7 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
         binding.shimmerPlay.visibility = View.GONE
         binding.viewMain.visibility = View.VISIBLE
 
-        binding.Pliy.text = Music.artist[0].name
+        binding.artistName.text = Music.artist[0].name
         binding.txtNameMusic.text = Music.title
         Log.v("eeee2",Music.toString())
     }

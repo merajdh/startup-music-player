@@ -25,11 +25,10 @@ class MusicByCategoryAdapter(
             binding.txtNameMusic.text = dataMusic.title
             binding.nameArtist.text = dataMusic.artist.toString().replace("[", "").replace("]", "")
             Glide.with(binding.root).load(dataMusic.cover)
-                .apply(RequestOptions.bitmapTransform(BlurTransformation(8, 2)))
                 .into(binding.imgCover)
 
             itemView.setOnClickListener {
-                onClickMusicByCategory.MusicByCategory(dataMusic)
+                onClickMusicByCategory.onClickMusicByCategory(dataMusic)
             }
 
         }

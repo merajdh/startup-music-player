@@ -37,14 +37,13 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
         binding = FragmentCategoryBinding.inflate(layoutInflater,container,false)
         setOnClickListeners()
         MoreClickListener()
+        binding.shimmerCategory.visibility = View.GONE
         presenter = PresenterCategory(createApiService(), NetworkChecker(binding.root.context).isInternetConnected,AppDatabase.getDatabes(binding.root.context).Category,AppDatabase.getDatabes(binding.root.context).Artist)
 
         lifecycleScope.launchWhenCreated {
             presenter.OnAttach(this@CategoryFragment)
         }
 
-        binding.shimmerCategory.startShimmer()
-        binding.viewMain.visibility = View.GONE
 
         return binding.root
     }
@@ -91,15 +90,11 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
                 Toast.makeText(context, "international", Toast.LENGTH_SHORT).show()
             }
 
-
         }
     }
 
     override fun TypeOfMusic(data: List<CategoryRespomse>) {
-        Log.v("123boro",data.toString())
-        binding.viewMain.visibility = View.VISIBLE
-        binding.shimmerCategory.stopShimmer()
-        binding.shimmerCategory.visibility = View.GONE
+
         val adapter = CategoryAdapterTypeMusic(data,this)
         binding.mouduleOneCategory.recType.layoutManager =
             GridLayoutManager(context, 2, RecyclerView.VERTICAL, false)

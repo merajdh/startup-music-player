@@ -4,15 +4,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
         android:startColor="?attr/colorPrimary"
-        android:centerColor="#E4151B25"
+        android:centerColor="#99151B25"
         android:endColor="@android:color/transparent"
         android:useLevel="false"
         android:type="linear"
-        android:centerX="0.35"
         android:angle="90" />
-
-
-
 
 
 </shape>

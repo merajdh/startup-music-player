@@ -4,6 +4,7 @@ import android.util.Log
 import com.example.startup_music_player.model.Contract.ContractHome
 import com.example.startup_music_player.model.db.*
 import com.example.startup_music_player.model.net.Apiservice
+import com.example.startup_music_player.util.MyApp
 
 class PresenterHome(
     private val apiservice: Apiservice,

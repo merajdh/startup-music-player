@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentMusicbycategoryDetailBinding
 import com.example.startup_music_player.model.Adapter.MusicByCategoryAdapter
@@ -25,6 +26,7 @@ import com.example.startup_music_player.ui.features.Play.PlayFragment
 import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
 import com.squareup.picasso.Picasso
+import jp.wasabeef.glide.transformations.BlurTransformation
 
 
 class MusicByCategoryFragment  : Fragment() , ContractDetailMusicByCategory.View , OnClickMusicByCategory{
@@ -36,18 +38,9 @@ class MusicByCategoryFragment  : Fragment() , ContractDetailMusicByCategory.View
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentMusicbycategoryDetailBinding.inflate(layoutInflater,container,false)
-
+        Bundledata()
         presenter = PresenterDetailMusicByCategory(createApiService(), NetworkChecker(binding.root.context).isInternetConnected)
 
-        val bundle = arguments
-        if (bundle != null) {
-            Toast.makeText(context, "test", Toast.LENGTH_SHORT).show()
-            val img = bundle.getString("img")
-            val type = bundle.getString("type")
-            Picasso.get().load(img).into(binding.imgBackground)
-            binding.txtCategory.text = type
-            Log.v("img" , img.toString())
-        }
 
         lifecycleScope.launchWhenCreated {
             presenter.OnAttach(this@MusicByCategoryFragment)
@@ -56,23 +49,25 @@ class MusicByCategoryFragment  : Fragment() , ContractDetailMusicByCategory.View
         return binding.root
     }
 
+    private fun Bundledata(){
+        val bundle = arguments
+        if (bundle != null){
+            val text = bundle.getString("type")
+            binding.txtCategory.text = text
+
+            val img = bundle.getString("img")
+            Glide.with(binding.root).load(img).into(binding.imgBackground)
+        }
+    }
+
     override fun MusicByCategory(data: List<MusicByCategoryData>) {
         Log.v("testet", data.toString())
 
-        val adapter = MusicByCategoryAdapter(data ,this)
+        val adapter = MusicByCategoryAdapter(data, this)
         binding.recMusicByCategory.layoutManager =
             GridLayoutManager(context, 1, RecyclerView.VERTICAL, true)
         binding.recMusicByCategory.adapter = adapter
 
-    }
-
-    override fun MusicByCategory(data: MusicByCategoryData) {
-
-        MyApp.idMusic = data.id.toString()
-        val transform = parentFragmentManager.beginTransaction()
-        transform.replace(R.id.FrameLayoutMain, PlayFragment())
-        transform.addToBackStack(null)
-        transform.commit()
     }
 
 
@@ -81,6 +76,15 @@ class MusicByCategoryFragment  : Fragment() , ContractDetailMusicByCategory.View
         val transform = parentFragmentManager.beginTransaction()
         transform.addToBackStack(null)
         transform.replace(R.id.FrameLayout, CategoryFragment())
+        transform.commit()
+    }
+
+    override fun onClickMusicByCategory(data: MusicByCategoryData) {
+
+        MyApp.idMusic = data.id.toString()
+        val transform = parentFragmentManager.beginTransaction()
+        transform.replace(R.id.FrameLayoutMain, PlayFragment())
+        transform.addToBackStack(null)
         transform.commit()
     }
 

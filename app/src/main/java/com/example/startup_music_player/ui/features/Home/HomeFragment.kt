@@ -1,17 +1,16 @@
 package com.example.startup_music_player.ui.features.Home
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -24,7 +23,6 @@ import com.example.startup_music_player.model.Adapter.*
 import com.example.startup_music_player.model.Contract.ContractHome
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.db.AppDatabase
-import com.example.startup_music_player.model.db.MusicByCategoryDao
 import com.example.startup_music_player.model.myApp.myApp
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterHome
@@ -46,21 +44,10 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
-        sharedPreferences = binding.root.context.getSharedPreferences("dataSend", Context.MODE_PRIVATE)
-        sharedPreferences.edit().putBoolean("dataSend", MyApp.isSend).apply()
         AddsliderCod() // slider
-        val dataSend = sharedPreferences.getBoolean("dataSend", false)
-        when (MyApp.isSend) {
-            MyApp.isSend == true -> {
-                binding.shimmerHome.visibility = View.GONE
-            }
-            else -> {
-                binding.shimmerHome.visibility = View.VISIBLE
-            }
-        }
-
         setOnClickListeners()
         MoreClickListener()
+        binding.shimmerHome.visibility = View.GONE
         presenter = PresenterHome(
             createApiService(),
             NetworkChecker(binding.root.context).isInternetConnected,
@@ -114,6 +101,7 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
     // set data Adapter Ofline
     override fun MusicByCategoryOf(data: List<MusicRespomse>) {
 
+
         val adapter = HomeAdapterHappyMusic(data, this)
         binding.mouduleOneHome.recHappyMusic.layoutManager =
             GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, true)
@@ -153,11 +141,12 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
 
     // set data Adapter Online
     override fun MusicByCategoryOn(data: List<MusicRespomse>) {
-        binding.shimmerHome.visibility = View.GONE
+
         val adapter = HomeAdapterHappyMusic(data, this)
         binding.mouduleOneHome.recHappyMusic.layoutManager =
             GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, true)
         binding.mouduleOneHome.recHappyMusic.adapter = adapter
+
 
     }
 
