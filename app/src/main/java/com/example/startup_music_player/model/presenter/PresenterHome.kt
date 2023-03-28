@@ -19,7 +19,6 @@ class PresenterHome(
     override suspend fun OnAttach(view: ContractHome.View) {
         fragmentview = view
         Ofline()
-
         if (Internet) {
           // data newe musik
             Online()

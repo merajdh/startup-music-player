@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         chekinternet() //chekinternet
         val userReposiroty: UserReposiroty = get()
         userReposiroty.loadToken()
+
         transform(IntroFragment())
         if (TokenInMemory.access != "") {
             Timer().schedule(3000) {

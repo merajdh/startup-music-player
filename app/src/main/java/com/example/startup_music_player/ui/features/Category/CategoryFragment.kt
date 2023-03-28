@@ -18,6 +18,7 @@ import com.example.startup_music_player.model.Adapter.*
 import com.example.startup_music_player.model.Contract.ContractCategory
 import com.example.startup_music_player.model.data.ListArtistData
 import com.example.startup_music_player.model.data.CategoryRespomse
+import com.example.startup_music_player.model.db.AppDatabase
 import com.example.startup_music_player.model.myApp.myApp
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterCategory
@@ -36,7 +37,7 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
         binding = FragmentCategoryBinding.inflate(layoutInflater,container,false)
         setOnClickListeners()
         MoreClickListener()
-        presenter = PresenterCategory(createApiService(), NetworkChecker(binding.root.context).isInternetConnected)
+        presenter = PresenterCategory(createApiService(), NetworkChecker(binding.root.context).isInternetConnected,AppDatabase.getDatabes(binding.root.context).Category,AppDatabase.getDatabes(binding.root.context).Artist)
 
         lifecycleScope.launchWhenCreated {
             presenter.OnAttach(this@CategoryFragment)
@@ -95,7 +96,7 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
     }
 
     override fun TypeOfMusic(data: List<CategoryRespomse>) {
-
+        Log.v("123boro",data.toString())
         binding.viewMain.visibility = View.VISIBLE
         binding.shimmerCategory.stopShimmer()
         binding.shimmerCategory.visibility = View.GONE
