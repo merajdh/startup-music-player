@@ -4,34 +4,40 @@
     android:layout_width="match_parent"
     android:background="?attr/colorPrimary"
     android:layout_height="match_parent">
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.facebook.shimmer.ShimmerFrameLayout
-            android:id="@+id/shimmer_play"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <!--        <com.facebook.shimmer.ShimmerFrameLayout-->
+        <!--            android:id="@+id/shimmer_play"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent">-->
 
-            <include layout="@layout/shimmer_play" />
+        <!--            <include layout="@layout/shimmer_play" />-->
 
 
-        </com.facebook.shimmer.ShimmerFrameLayout>
+        <!--        </com.facebook.shimmer.ShimmerFrameLayout>-->
+
 
         <FrameLayout
             android:id="@+id/view_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:orientation="vertical">
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/img_background"
@@ -47,6 +53,9 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginEnd="12dp"
+                android:layout_marginStart="12dp"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -112,7 +121,7 @@
                     android:layout_width="270dp"
                     android:layout_height="270dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     app:cardCornerRadius="35dp"
                     app:cardElevation="14dp"
                     app:cardMaxElevation="20dp"
@@ -147,10 +156,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_marginTop="10dp"
                         android:paddingStart="20dp"
                         android:paddingEnd="20dp"
                         android:text="امیر تتلو"
-                        android:layout_marginTop="10dp"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:textStyle="bold"
@@ -174,13 +183,14 @@
                 </LinearLayout>
 
                 <FrameLayout
+                    android:layout_marginTop="50dp"
                     android:id="@+id/frameLayout2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/slider"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
                     <ImageView
                         android:layout_width="36dp"
@@ -210,20 +220,21 @@
 
 
                 <com.google.android.material.slider.Slider
+                    android:layout_marginTop="10dp"
                     android:id="@+id/slider"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginBottom="5dp"
                     android:value="40"
                     android:valueFrom="0"
                     android:valueTo="100"
                     app:haloColor="@color/dark_bule2"
                     app:labelBehavior="gone"
-                    app:layout_constraintBottom_toTopOf="@+id/frameLayout"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
                     app:thumbColor="@color/light_blue"
                     app:thumbElevation="2dp"
                     app:thumbRadius="7dp"
@@ -238,18 +249,17 @@
                     android:id="@+id/frameLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
                     android:padding="4dp"
-                    app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/slider">
 
                     <TextView
                         android:id="@+id/start"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:layout_marginStart="15dp"
+                        android:layout_marginStart="30dp"
                         android:text="00:00"
                         android:textColor="@color/Gray" />
 
@@ -258,7 +268,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginEnd="30dp"
                         android:text="00:00"
                         android:textColor="@color/Gray" />
 
@@ -266,17 +276,16 @@
                 </FrameLayout>
 
                 <LinearLayout
+                    android:layout_marginTop="20dp"
                     android:id="@+id/linearLayout3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="70dp"
                     android:gravity="center_horizontal|bottom"
                     android:orientation="horizontal"
                     android:padding="4dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/frameLayout">
 
 
                     <com.google.android.material.card.MaterialCardView
@@ -340,33 +349,28 @@
                     </com.google.android.material.card.MaterialCardView>
 
 
-
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/btn_open_more"
+                    android:layout_marginTop="40dp"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal|bottom"
                     android:clickable="true"
                     android:focusable="true"
                     android:src="@drawable/ic_up"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
                     app:tint="@color/Gray" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
         </FrameLayout>
 
+
     </LinearLayout>
-
-
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

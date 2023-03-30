@@ -45,8 +45,8 @@ class PresenterHome(
         MusicByCategoryDao.insertOrUpdate(apiservice.MusicByCategory())
         MoreLikeDao.insertOrUpdate(apiservice.MusicTop())
         RecentMusikDao.insertOrUpdate(apiservice.MusicNews())
-        internationalMusicDao.insertOrUpdate(apiservice.MusicInternatioal())
         TrendMusikDao.insertOrUpdate(apiservice.MusicTrend())
+        internationalMusicDao.insertOrUpdate(apiservice.MusicInternatioal())
 
         // send data To ui
         fragmentview!!.RecentMusikOn(MusicByCategoryDao.getAllMusicByCategory())

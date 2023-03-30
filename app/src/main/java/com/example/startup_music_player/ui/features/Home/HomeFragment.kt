@@ -132,9 +132,9 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
 
     override fun InternationalMusicOf(data: List<MusicRespomse>) {
         val adapter = HomeAdapterInternational(data, this)
-        binding.mouduleFourHome.recTrandMusic.layoutManager =
+        binding.mouduleFiveHome.recInternational.layoutManager =
             GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
-        binding.mouduleFourHome.recTrandMusic.adapter = adapter
+        binding.mouduleFiveHome.recInternational.adapter = adapter
 
     }
 
@@ -179,10 +179,11 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
 
     override fun InternationalMusicOn(data: List<MusicRespomse>) {
 
+        Log.v("tstd" , data.toString())
         val adapter = HomeAdapterInternational(data, this)
-        binding.mouduleFourHome.recTrandMusic.layoutManager =
+        binding.mouduleFiveHome.recInternational.layoutManager =
             GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
-        binding.mouduleFourHome.recTrandMusic.adapter = adapter
+        binding.mouduleFiveHome.recInternational.adapter = adapter
 
     }
 
