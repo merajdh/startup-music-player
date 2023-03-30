@@ -19,7 +19,7 @@ class HomeAdapterInternational(
         fun ViewBinder(dataHome: MusicRespomse) {
 
             binding.txtNameMusic.text = dataHome.title
-            binding.txtNameSinger.text = dataHome.artist[0].toString()
+            binding.txtNameSinger.text = dataHome.artist[0]
 
             Picasso
                 .get()
