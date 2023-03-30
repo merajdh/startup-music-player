@@ -35,7 +35,7 @@
             android:textStyle="bold"
             android:layout_margin="14dp"
             android:text="موزیک های شاد"
-            android:textColor="@color/white"
+            android:textColor="?colorOnPrimary"
             android:textSize="18sp"
             android:layout_gravity="end"
             android:layout_width="wrap_content"
@@ -84,7 +84,7 @@
         android:layout_marginEnd="25dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/light_blue"
+        android:backgroundTint="#757880"
         android:layout_width="match_parent"
         android:layout_height="4dp"/>
 

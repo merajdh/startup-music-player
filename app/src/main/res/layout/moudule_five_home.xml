@@ -13,7 +13,7 @@
         android:layout_marginEnd="8dp"
         android:padding="8dp"
         android:text="موزیک خارجی"
-        android:textColor="@color/white"
+        android:textColor="?colorOnPrimary"
         android:textSize="18sp"
         android:textStyle="bold" />
 

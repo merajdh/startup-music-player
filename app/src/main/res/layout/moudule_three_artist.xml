@@ -2,12 +2,12 @@
 <androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-
+    android:background="@color/dark_bule"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
         android:orientation="vertical"
-        android:background="?attr/colorPrimary"
+        android:backgroundTint="@color/dark_bule"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

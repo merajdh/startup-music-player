@@ -37,7 +37,6 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
         binding = FragmentCategoryBinding.inflate(layoutInflater,container,false)
         setOnClickListeners()
         MoreClickListener()
-        binding.shimmerCategory.visibility = View.GONE
         presenter = PresenterCategory(createApiService(), NetworkChecker(binding.root.context).isInternetConnected,AppDatabase.getDatabes(binding.root.context).Category,AppDatabase.getDatabes(binding.root.context).Artist)
 
         lifecycleScope.launchWhenCreated {

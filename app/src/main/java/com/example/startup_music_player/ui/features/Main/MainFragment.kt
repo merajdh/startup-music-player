@@ -23,7 +23,6 @@ class MainFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentMainBinding.inflate(layoutInflater,container,false)
-        (activity as AppCompatActivity).setSupportActionBar(binding.toolbarmain) // set tolbar
         Run()
         SelectedbtnNavigeyshen()
         return binding.root

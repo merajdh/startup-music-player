@@ -2,20 +2,21 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/dark_bule"
+    android:background="?attr/colorPrimary"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:backgroundTint="@color/light_blue">
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
+            android:paddingBottom="10dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/img_profile"
@@ -33,8 +34,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:text="نام کاربری"
-                android:textColor="@color/light_gray"
-                android:textSize="18sp"/>
+                android:textColor="?colorOnPrimary"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -47,22 +48,22 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btn_change_username"
-                android:clickable="true"
-                app:cardElevation="8dp"
-                android:backgroundTint="?attr/colorSecondary"
-                android:layout_marginTop="14dp"
                 android:layout_width="130dp"
                 android:layout_height="50dp"
+                android:layout_marginTop="14dp"
+                android:backgroundTint="?attr/colorSecondary"
+                android:clickable="true"
+                android:focusable="true"
                 app:cardCornerRadius="22dp"
-                android:focusable="true">
+                app:cardElevation="8dp">
 
                 <TextView
-                    android:textColor="@color/light_gray"
-                    android:layout_gravity="center"
-                    android:textSize="12sp"
-                    android:text="تغییر نام کاربری"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="تغییر نام کاربری"
+                    android:textColor="?colorOnPrimary"
+                    android:textSize="12sp" />
 
             </com.google.android.material.card.MaterialCardView>
 

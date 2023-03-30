@@ -9,14 +9,13 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:background="@color/dark_bule"
+        android:background="?colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layoutAnimation="@anim/anim_main_layout"
         tools:context=".ui.features.Serach.SearchFragment">
 
         <FrameLayout
-            android:background="@color/dark_bule"
+            android:background="?colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="80dp">
 
@@ -25,7 +24,7 @@
                 app:cardElevation="8dp"
                 app:strokeColor="?attr/colorPrimary"
                 app:strokeWidth="1dp"
-                android:backgroundTint="@color/dark_bule2"
+                android:backgroundTint="?colorSecondaryVariant"
                 app:cardCornerRadius="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="55dp">
@@ -35,11 +34,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="16dp"
-                    android:background="@color/dark_bule2"
+                    android:background="?colorSecondaryVariant"
                     android:hint="اسم خواننده,اسم موزیک و..."
                     android:inputType="text"
                     android:maxLength="16"
-                    android:textColor="@color/white"
+                    android:textColor="?colorOnPrimary"
                     android:textColorHint="#7A7C87"
                     android:textSize="16sp"
                     tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />

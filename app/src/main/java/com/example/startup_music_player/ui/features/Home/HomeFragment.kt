@@ -47,7 +47,6 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
         AddsliderCod() // slider
         setOnClickListeners()
         MoreClickListener()
-        binding.shimmerHome.visibility = View.GONE
         presenter = PresenterHome(
             createApiService(),
             NetworkChecker(binding.root.context).isInternetConnected,

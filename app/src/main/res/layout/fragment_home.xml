@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.core.widget.NestedScrollView
-    android:background="@color/dark_bule"
+        android:background="?colorPrimary"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -15,15 +15,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <com.facebook.shimmer.ShimmerFrameLayout
-            android:id="@+id/shimmer_home"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <include layout="@layout/shimmer_home"/>
-
-        </com.facebook.shimmer.ShimmerFrameLayout>
 
         <LinearLayout
             android:id="@+id/view_main"
@@ -39,7 +30,7 @@
                 layout="@layout/moudule_two_home"/>
             <include
                 android:id="@+id/moudule_three_home"
-                layout="@layout/moudule_three_home"/>
+                layout="@layout/moudule_three_home" />
 
             <include layout="@layout/moudule_four_home"
                 android:id="@+id/moudule_four_home"/>

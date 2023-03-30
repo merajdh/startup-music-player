@@ -38,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"
-                android:textColor="@color/light_gray"
+                android:textColor="?colorOnPrimary"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|bottom"
                 android:text="نسخه ۱.۰.۰ "
-                android:textColor="#D8D8D8"
+                android:textColor="#888888"
                 android:textSize="18sp" />
 
 

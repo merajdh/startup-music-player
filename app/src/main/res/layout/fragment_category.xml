@@ -17,14 +17,14 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:layout_width="match_parent"
-                    android:id="@+id/shimmer_category"
-                    android:layout_height="match_parent">
+<!--                <com.facebook.shimmer.ShimmerFrameLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:id="@+id/shimmer_category"-->
+<!--                    android:layout_height="match_parent">-->
 
-                        <include layout="@layout/shimmer_category"/>
+<!--                        <include layout="@layout/shimmer_category"/>-->
 
-                </com.facebook.shimmer.ShimmerFrameLayout>
+<!--                </com.facebook.shimmer.ShimmerFrameLayout>-->
 
                 <LinearLayout
                     android:id="@+id/view_main"
@@ -35,7 +35,6 @@
                         <include
                             android:id="@+id/moudule_one_category"
                             layout="@layout/moudule_one_category"
-                            android:layout_marginTop="12dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
                         <include

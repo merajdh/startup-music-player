@@ -10,11 +10,11 @@ import com.example.startup_music_player.databinding.FragmentProfileBinding
 import com.example.startup_music_player.ui.features.About.AboutFragment
 import com.example.startup_music_player.ui.features.ChangeUsername.ChangeUsernameFragment
 import com.example.startup_music_player.ui.features.ContactUs.ContactUsFragment
-import com.example.startup_music_player.ui.features.Detail.DetaiMusiclFragment
 import com.example.startup_music_player.ui.features.LikedMusic.LikedMusicFragment
 import com.example.startup_music_player.ui.features.Logout.DialogLogout
 import com.example.startup_music_player.ui.features.Myplaylist.MyplaylistFragment
 import com.example.startup_music_player.ui.features.changePassword.fragmentDialog
+import java.util.*
 
 class ProfileFragment : Fragment() {
 
@@ -26,8 +26,10 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentProfileBinding.inflate(layoutInflater , container , false)
         setOnClickListeners()
+
         return binding.root
     }
+
 
     private fun transform (fragment: Fragment) {
         val transform = parentFragmentManager.beginTransaction()
@@ -35,6 +37,7 @@ class ProfileFragment : Fragment() {
         transform.replace(R.id.FrameLayoutMain, fragment)
         transform.commit()
     }
+
 
     private fun setOnClickListeners(){
         // mouduleOne ->

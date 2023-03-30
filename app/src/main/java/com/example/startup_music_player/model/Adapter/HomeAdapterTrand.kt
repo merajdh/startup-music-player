@@ -19,6 +19,7 @@ class HomeAdapterTrand (private val data : List<MusicRespomse>,  private val OnC
             binding.txtNameMusic.text = dataHome.title
             binding.txtNameSinger.text = dataHome.artist[0].toString()
             if (adapterPosition % 2 == 0 ){
+                binding.txtNumber.setTextColor(ContextCompat.getColor(binding.root.context , R.color.light_blue))
                 binding.backRec.background = ContextCompat.getDrawable(binding.root.context , R.drawable.shape_back_rec_trand)
 
             }else{

@@ -3,9 +3,7 @@ package com.example.startup_music_player.ui
 import android.content.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.ActivityMainBinding
 import com.example.startup_music_player.model.repository.TokenInMemory
@@ -13,10 +11,8 @@ import com.example.startup_music_player.model.repository.UserReposiroty
 import com.example.startup_music_player.ui.features.Main.MainFragment
 import com.example.startup_music_player.ui.features.Register.RegisterFragment
 import com.example.startup_music_player.ui.features.intro.IntroFragment
-import com.example.startup_music_player.ui.features.verify.VerifyEmailFragment
 import com.example.startup_music_player.util.NetworkChecker
 import org.koin.android.ext.android.get
-import org.koin.android.ext.koin.androidContext
 import java.util.*
 import kotlin.concurrent.schedule
 
