@@ -1,22 +1,25 @@
 package com.example.startup_music_player.ui.features.LikedMusic
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentLikedMusicBinding
+import com.example.startup_music_player.model.Contract.ContractLikeProfile
+import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.ui.Fragment.ProfileFragment
 
-lateinit var binding: FragmentLikedMusicBinding
-class LikedMusicFragment : Fragment() {
 
+class LikedMusicFragment : Fragment() , ContractLikeProfile.View {
+    lateinit var binding: FragmentLikedMusicBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentLikedMusicBinding.inflate(layoutInflater , container , false)
         setOnClickListener()
         return binding.root
@@ -34,6 +37,10 @@ class LikedMusicFragment : Fragment() {
         binding.btnBack.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
+    }
+
+    override suspend fun ShowMusicLikeUser(data: List<MusicRespomse>) {
+        Log.v("rrrrrrrrr",data.toString())
     }
 
 }
