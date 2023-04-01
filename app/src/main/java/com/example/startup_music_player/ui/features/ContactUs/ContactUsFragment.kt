@@ -4,27 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.startup_music_player.R
+import androidx.fragment.app.Fragment
 import com.example.startup_music_player.databinding.FragmentContactUsBinding
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.example.startup_music_player.model.InteFaces.OnClickConteactUs
 
-class ContactUsFragment : BottomSheetDialogFragment() {
+class ContactUsFragment : Fragment() , OnClickConteactUs {
     lateinit var binding:FragmentContactUsBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding  = FragmentContactUsBinding.inflate(layoutInflater , container , false)
-        setOnClickListeners()
+        binding = FragmentContactUsBinding.inflate(layoutInflater , container , false)
+
         return binding.root
     }
 
-    private fun setOnClickListeners(){
-        binding.btnCancel.setOnClickListener { dismiss() }
-
-        binding.btnAccept.setOnClickListener {
-
-        }
+    override fun onClick() {
+        val transform = ContactUsBottomSheet()
+        transform.isCancelable = true
+        transform.show(childFragmentManager , null)
     }
-
-    override fun getTheme() = R.style.RoundedCornersBottomSheetDialog
-
-
 }

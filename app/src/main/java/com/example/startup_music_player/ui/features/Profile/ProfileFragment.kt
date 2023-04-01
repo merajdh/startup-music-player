@@ -9,12 +9,12 @@ import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentProfileBinding
 import com.example.startup_music_player.ui.features.About.AboutFragment
 import com.example.startup_music_player.ui.features.ChangeUsername.ChangeUsernameFragment
+import com.example.startup_music_player.ui.features.ContactUs.ContactUsBottomSheet
 import com.example.startup_music_player.ui.features.ContactUs.ContactUsFragment
 import com.example.startup_music_player.ui.features.LikedMusic.LikedMusicFragment
 import com.example.startup_music_player.ui.features.Logout.DialogLogout
 import com.example.startup_music_player.ui.features.Myplaylist.MyplaylistFragment
 import com.example.startup_music_player.ui.features.changePassword.fragmentDialog
-import java.util.*
 
 class ProfileFragment : Fragment() {
 
@@ -63,9 +63,7 @@ class ProfileFragment : Fragment() {
 
         // mouduleThree ->
         binding.mouduleThree.btnComment.setOnClickListener {
-            val transform = ContactUsFragment()
-            transform.isCancelable = true
-            transform.show(childFragmentManager , null)
+            transform(ContactUsFragment())
         }
         binding.mouduleThree.btnAbout.setOnClickListener {
             transform(AboutFragment())

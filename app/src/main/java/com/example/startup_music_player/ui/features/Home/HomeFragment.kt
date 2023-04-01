@@ -21,6 +21,7 @@ import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentHomeBinding
 import com.example.startup_music_player.model.Adapter.*
 import com.example.startup_music_player.model.Contract.ContractHome
+import com.example.startup_music_player.model.InteFaces.OnClickHome
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.db.AppDatabase
 import com.example.startup_music_player.model.myApp.myApp

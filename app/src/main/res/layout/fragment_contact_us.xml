@@ -1,112 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:background="@drawable/shape_back_bottom_sheet"
-    android:orientation="vertical"
-    android:layout_gravity="bottom"
-    android:backgroundTint="?colorPrimary"
-    android:layoutAnimation="@anim/anim_main_layout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="420dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="21dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5dp"
-        android:backgroundTint="@color/Gray"
-        android:padding="8dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:text="انتقاد و پیشنهادات"
-        android:textColor="?colorOnPrimary"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:letterSpacing="0.1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"
-        android:text="هر انتقاد یا پیشنهادی دارید بنویسید ..."
-        android:textColor="@color/Gray" />
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="20dp"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="22dp"
         android:backgroundTint="@color/light_blue"
-        app:cardCornerRadius="14dp"
-        app:strokeWidth="1dp"
-        app:strokeColor="#54575E">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="16dp"
-            android:background="#252a34"
-            android:gravity="top|start"
-            android:inputType="textMultiLine"
-            android:maxLines="10"
-            android:letterSpacing="0.1"
-            android:imeOptions="actionDone"
-            android:singleLine="false"
-            android:hint="انتقاد یا پیشنهاد خود را بنویسید ..."
-            android:textColor="@color/white"
-            android:textColorHint="#7A7C87"
-            android:textSize="13sp"
-            tools:ignore="TextContrastCheck,TextFields,TouchTargetSizeCheck" />
-    </com.google.android.material.card.MaterialCardView>
-
-
-    <LinearLayout
-        android:layout_marginBottom="8dp"
-        android:weightSum="2"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_cancel"
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/light_blue"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:text="لغو"
-            android:textColor="@color/light_gray"
-            android:textSize="15sp"
-            app:cornerRadius="18dp" />
+            android:layout_gravity="end"
+            android:layout_margin="20dp"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_recycler_contact_us"
+            android:layout_height="wrap_content"/>
 
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_accept"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bule"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:text="تایید"
-            android:textColor="@color/light_gray"
-            android:textSize="15sp"
-            app:cornerRadius="18dp" />
-
-    </LinearLayout>
-
-
-
-</LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>

@@ -7,10 +7,11 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.ItemRecyclerTrandMusicBinding
+import com.example.startup_music_player.model.InteFaces.OnClickHome
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.squareup.picasso.Picasso
 
-class HomeAdapterTrand (private val data : List<MusicRespomse>,  private val OnClick:OnClickHome) :RecyclerView.Adapter<HomeAdapterTrand.HomeViewHolder>() {
+class HomeAdapterTrand (private val data : List<MusicRespomse>,  private val OnClick: OnClickHome) :RecyclerView.Adapter<HomeAdapterTrand.HomeViewHolder>() {
     lateinit var binding:ItemRecyclerTrandMusicBinding
 
     inner class HomeViewHolder(itemView: View, ) : RecyclerView.ViewHolder(itemView){

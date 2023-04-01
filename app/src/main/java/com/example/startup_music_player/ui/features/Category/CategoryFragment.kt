@@ -16,6 +16,7 @@ import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentCategoryBinding
 import com.example.startup_music_player.model.Adapter.*
 import com.example.startup_music_player.model.Contract.ContractCategory
+import com.example.startup_music_player.model.InteFaces.OnClickCategory
 import com.example.startup_music_player.model.data.ListArtistData
 import com.example.startup_music_player.model.data.CategoryRespomse
 import com.example.startup_music_player.model.db.AppDatabase
