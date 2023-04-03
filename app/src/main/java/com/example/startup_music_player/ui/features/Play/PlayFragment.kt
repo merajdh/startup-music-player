@@ -3,23 +3,20 @@ package com.example.startup_music_player.ui.features.Play
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.startup_music_player.R
-import com.example.startup_music_player.databinding.FragmentPlayBinding
 import com.example.startup_music_player.databinding.FragmentPlayTestBinding
 import com.example.startup_music_player.model.Contract.ContractPlayMusic
 import com.example.startup_music_player.model.data.MusicDetail
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterPlayMusic
-import com.example.startup_music_player.ui.features.Login.LoginViewModel
-import com.example.startup_music_player.ui.features.Main.MainFragment
 import com.example.startup_music_player.ui.features.playDetail.playDetailFragment
 import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
@@ -45,7 +42,7 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
         binding = FragmentPlayTestBinding.inflate(layoutInflater, container, false)
         blurImage()
         setOnClickListeners()
-        binding.mouduleOnePlay.LikeMusic.setOnClickListener { addLike()}
+        binding.mouduleOnePlay.LikeMusic.setOnClickListener { addLike() }
         binding.mouduleOnePlay.Pliy.setOnClickListener { plymusic() }
         presenter = PresenterPlayMusic(
             createApiService(),
@@ -57,7 +54,8 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
             taghir = fromUser
 
         }
-        binding.mouduleOnePlay.slider.addOnSliderTouchListener(object : Slider.OnSliderTouchListener {
+        binding.mouduleOnePlay.slider.addOnSliderTouchListener(object :
+            Slider.OnSliderTouchListener {
             override fun onStartTrackingTouch(slider: Slider) {
 
             }
@@ -106,6 +104,10 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
 
     override fun PlayMusic(Music: MusicDetail) {
         mediaParser = MediaPlayer.create(binding.root.context, Uri.parse(Music.url))
+        if (mediaParser.isPlaying){
+            mediaParser.stop()
+            mediaParser.release()
+        }
         mediaParser.start()
         ispluing = true
         binding.mouduleOnePlay.Pliy.setImageResource(R.drawable.ic_pause)
@@ -141,15 +143,15 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
 
     }
 
-    fun addLike(){
-        val viewmodel : LikeViewModel by viewModel()
+    fun addLike() {
+        val viewmodel: LikeViewModel by viewModel()
         viewmodel.pk.value = MyApp.idMusic
         viewmodel.LikeMusic {
 
-            if (it == VALUE_SUCCESS){
+            if (it == VALUE_SUCCESS) {
                 //Show
-            }else{
-               //
+            } else {
+                //
             }
         }
     }

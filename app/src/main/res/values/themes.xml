@@ -9,6 +9,8 @@
         <item name="colorSecondary">@color/bule</item>
         <item name="colorSecondaryVariant">@color/light_blue</item>
         <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnBackground">#6F787878</item>
+
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowLightStatusBar">true</item>

@@ -5,6 +5,6 @@
     <gradient
         android:gradientRadius="12dp"
         android:angle="180"
-        android:endColor="?attr/colorPrimary"
+        android:endColor="?attr/colorOnBackground"
         android:startColor="@color/light_blue" />
 </shape>

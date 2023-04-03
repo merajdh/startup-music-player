@@ -12,7 +12,7 @@ class PresenterPlayMusic(
 
 
     override suspend fun OnAttach(view: ContractPlayMusic.View) {
-        View = view
+         View = view
         if (Internet){
             val data = apiservice.MusicPlay(MyApp.idMusic)
             view.PlayMusic(data)

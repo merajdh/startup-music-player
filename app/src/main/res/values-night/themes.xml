@@ -9,6 +9,8 @@
         <item name="colorSecondary">@color/bule</item>
         <item name="colorSecondaryVariant">@color/light_blue</item>
         <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnBackground">#8A222222</item>
+
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/dark_bule</item>
         <!-- Customize your theme here. -->

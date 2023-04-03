@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:orientation="vertical"
-    android:layoutAnimation="@anim/anim_right_layout"
-    android:background="@color/dark_bule"
+    android:background="?attr/colorPrimary"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -21,7 +20,7 @@
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
             android:textSize="24sp"
-            android:textColor="@color/light_gray"
+            android:textColor="?attr/colorOnPrimary"
             android:text="ایجاد حساب کاربری جدید"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -209,7 +208,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="96dp"
-            android:textColor="@color/light_gray"
+            android:textColor="?attr/colorOnPrimary"
             android:text="حساب کاربری دارید ؟"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"

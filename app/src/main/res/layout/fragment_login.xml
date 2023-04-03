@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:orientation="vertical"
-    android:background="@color/dark_bule"
-    android:layoutAnimation="@anim/anim_left_layout"
+    android:background="?attr/colorPrimary"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutAnimation="@anim/anim_left_layout"
     tools:context=".ui.features.Login.LoginFragment">
 
     <com.airbnb.lottie.LottieAnimationView
@@ -90,7 +90,7 @@
         app:cardElevation="8dp"
         android:layout_marginEnd="50dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="140dp"
         android:clickable="true"
         app:cardCornerRadius="22dp"
         android:backgroundTint="@color/bule"
@@ -108,61 +108,9 @@
             android:textStyle="bold" />
 
     </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-        android:clickable="true"
-        app:cardElevation="10dp"
-        app:cardCornerRadius="22dp"
-        android:backgroundTint="@color/white"
-        app:strokeColor="@color/Gray"
-        app:strokeWidth="0.5dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:focusable="true">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:layout_marginEnd="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:src="@drawable/google"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView2"
-                    app:layout_constraintEnd_toStartOf="@+id/textView2"
-                    app:layout_constraintTop_toTopOf="@+id/textView2" />
-
-                <TextView
-                    android:layout_marginStart="15dp"
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="ورود با اکانت گوگل"
-                    android:textColor="@color/dark_bule"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.46" />
 
 
-            </LinearLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -175,7 +123,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="19dp"
             android:layout_marginEnd="96dp"
-            android:textColor="@color/white"
+            android:textColor="?attr/colorOnPrimary"
             android:text="حساب کاربری ندارید؟"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
