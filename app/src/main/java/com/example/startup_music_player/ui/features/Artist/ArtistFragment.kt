@@ -16,23 +16,18 @@ import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentArtistProfileBinding
 import com.example.startup_music_player.model.Adapter.ArtistAdapterPopular
 import com.example.startup_music_player.model.Adapter.ArtistAdapterRecent
-import com.example.startup_music_player.model.Adapter.OnClickArtist
-import com.example.startup_music_player.model.Contract.ContractCategory
+import com.example.startup_music_player.model.InteFaces.OnClickArtist
 import com.example.startup_music_player.model.Contract.ContractDetailArtist
 import com.example.startup_music_player.model.data.DetailArtistRespomse
 
 import com.example.startup_music_player.model.net.createApiService
-import com.example.startup_music_player.model.presenter.PresenterCategory
 import com.example.startup_music_player.model.presenter.PresenterDetailArtist
-import com.example.startup_music_player.ui.Fragment.ProfileFragment
 import com.example.startup_music_player.ui.features.Category.CategoryFragment
-import com.example.startup_music_player.ui.features.Home.HomeFragment
 import com.example.startup_music_player.ui.features.Play.PlayFragment
 import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
-import com.squareup.picasso.Picasso
 
-class ArtistFragment : Fragment()  , ContractDetailArtist.View , OnClickArtist{
+class ArtistFragment : Fragment()  , ContractDetailArtist.View , OnClickArtist {
 
     lateinit var binding : FragmentArtistProfileBinding
     lateinit var presenter: ContractDetailArtist.PresenterArtist

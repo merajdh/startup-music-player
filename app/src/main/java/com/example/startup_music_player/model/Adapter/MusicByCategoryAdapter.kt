@@ -5,11 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.example.startup_music_player.databinding.ItemRecyclerMusicbycategoryBinding
+import com.example.startup_music_player.model.InteFaces.OnClickMusicByCategory
 import com.example.startup_music_player.model.data.MusicByCategoryData
 import com.example.startup_music_player.util.MyApp
-import jp.wasabeef.glide.transformations.BlurTransformation
 
 class MusicByCategoryAdapter(
     private val data: List<MusicByCategoryData>,

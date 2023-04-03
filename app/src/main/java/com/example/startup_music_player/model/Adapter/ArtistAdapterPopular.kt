@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.airbnb.lottie.L
 import com.example.startup_music_player.databinding.ItemRecyclerPopularmusicBinding
+import com.example.startup_music_player.model.InteFaces.OnClickArtist
 import com.example.startup_music_player.model.data.DetailArtistRespomse
 import com.squareup.picasso.Picasso
 

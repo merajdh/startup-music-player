@@ -1,4 +1,4 @@
-package com.example.startup_music_player.model.Adapter
+package com.example.startup_music_player.model.InteFaces
 
 import com.example.startup_music_player.model.data.DetailArtistRespomse
 import com.example.startup_music_player.model.data.CategoryRespomse
