@@ -12,13 +12,10 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentRegisterBinding
-import com.example.startup_music_player.model.repository.UserReposiroty
 import com.example.startup_music_player.ui.features.Login.LoginFragment
-import com.example.startup_music_player.ui.features.Main.MainFragment
 import com.example.startup_music_player.ui.features.verify.VerifyEmailFragment
 import com.google.android.material.snackbar.Snackbar
 import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
-import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 

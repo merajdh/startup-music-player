@@ -5,9 +5,11 @@ import android.content.Context
 import androidx.room.Room
 import com.example.startup_music_player.model.db.AppDatabase
 import com.example.startup_music_player.model.net.createApiService
+import com.example.startup_music_player.model.repository.Like.LikeRepositorylmpl
 import com.example.startup_music_player.model.repository.UserReposiroty
 import com.example.startup_music_player.model.repository.UserReposirotyImpl
 import com.example.startup_music_player.ui.features.Login.LoginViewModel
+import com.example.startup_music_player.ui.features.Play.LikeViewModel
 import com.example.startup_music_player.ui.features.Register.RegisterViewModel
 import com.example.startup_music_player.ui.features.verify.VerifyViewModel
 import org.koin.android.ext.koin.androidContext
@@ -21,6 +23,8 @@ class MyApp : Application() {
         var idMusic: String = ""
         var idArtist: String = ""
         var idCategory: String = ""
+        var ischeckd: String = ""
+        var idUser: String = ""
         var isSend : Boolean = false
     }
 
@@ -32,9 +36,11 @@ class MyApp : Application() {
             single { createApiService() }
             single { Room.databaseBuilder(androidContext(), AppDatabase::class.java, "app_dataBase") }
             single<UserReposiroty> { UserReposirotyImpl(get(), get()) }
+            single<LikeRepositorylmpl> { LikeRepositorylmpl(get()) }
             viewModel { LoginViewModel(get()) }
             viewModel { RegisterViewModel(get()) }
             viewModel { VerifyViewModel(get()) }
+            viewModel { LikeViewModel(get()) }
         }
         startKoin {
             androidContext(this@MyApp)

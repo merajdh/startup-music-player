@@ -19,7 +19,6 @@ import com.example.startup_music_player.model.Contract.ContractCategory
 import com.example.startup_music_player.model.data.ListArtistData
 import com.example.startup_music_player.model.data.CategoryRespomse
 import com.example.startup_music_player.model.db.AppDatabase
-import com.example.startup_music_player.model.myApp.myApp
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterCategory
 import com.example.startup_music_player.ui.features.Artist.ArtistFragment
@@ -61,14 +60,14 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
         //moudule Two ->
 
         binding.mouduleTwoCategory.btnMore.setOnClickListener {
-            myApp.ischeckd = "category_music"
+            MyApp.ischeckd = "category_music"
             MoreClickListener()
         }
 
         //moudule One ->
 
         binding.mouduleTwoCategory.btnMore.setOnClickListener {
-            myApp.ischeckd = "artist"
+            MyApp.ischeckd = "artist"
             MoreClickListener()
         }
 
@@ -76,7 +75,7 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
 
     private fun MoreClickListener() {
 
-        when (myApp.ischeckd) {
+        when (MyApp.ischeckd) {
             "category_music" -> {
                 Toast.makeText(context, "category_music", Toast.LENGTH_SHORT).show()
             }

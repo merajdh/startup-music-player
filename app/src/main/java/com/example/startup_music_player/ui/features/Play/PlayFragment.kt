@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
@@ -17,10 +18,15 @@ import com.example.startup_music_player.model.Contract.ContractPlayMusic
 import com.example.startup_music_player.model.data.MusicDetail
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterPlayMusic
+import com.example.startup_music_player.ui.features.Login.LoginViewModel
+import com.example.startup_music_player.ui.features.Main.MainFragment
 import com.example.startup_music_player.ui.features.playDetail.playDetailFragment
+import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
 import com.google.android.material.slider.Slider
+import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 import jp.wasabeef.glide.transformations.BlurTransformation
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
 class PlayFragment : Fragment(), ContractPlayMusic.View {
@@ -39,6 +45,7 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
         binding = FragmentPlayTestBinding.inflate(layoutInflater, container, false)
         blurImage()
         setOnClickListeners()
+        binding.mouduleOnePlay.LikeMusic.setOnClickListener { addLike()}
         binding.mouduleOnePlay.Pliy.setOnClickListener { plymusic() }
         presenter = PresenterPlayMusic(
             createApiService(),
@@ -132,5 +139,18 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
         val minit = duration / (1000 * 60)
         return java.lang.String.format(Locale.US, "%02d:%02d", minit, secend)
 
+    }
+
+    fun addLike(){
+        val viewmodel : LikeViewModel by viewModel()
+        viewmodel.pk.value = MyApp.idMusic
+        viewmodel.LikeMusic {
+
+            if (it == VALUE_SUCCESS){
+                //Show
+            }else{
+               //
+            }
+        }
     }
 }

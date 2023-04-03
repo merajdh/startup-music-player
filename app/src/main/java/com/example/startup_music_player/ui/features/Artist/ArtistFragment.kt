@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
-import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
@@ -22,7 +20,7 @@ import com.example.startup_music_player.model.Adapter.OnClickArtist
 import com.example.startup_music_player.model.Contract.ContractCategory
 import com.example.startup_music_player.model.Contract.ContractDetailArtist
 import com.example.startup_music_player.model.data.DetailArtistRespomse
-import com.example.startup_music_player.model.myApp.myApp
+
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterCategory
 import com.example.startup_music_player.model.presenter.PresenterDetailArtist
@@ -63,14 +61,14 @@ class ArtistFragment : Fragment()  , ContractDetailArtist.View , OnClickArtist{
         // moudule Two ->
 
         binding.mouduleTwoArtist.btnMore.setOnClickListener {
-            myApp.ischeckd = "top_music"
+            MyApp.ischeckd = "top_music"
             MoreClickListener()
         }
 
         // moudule Three ->
 
         binding.mouduleThreeArtist.btnMore.setOnClickListener {
-            myApp.ischeckd = "new_music"
+            MyApp.ischeckd = "new_music"
             MoreClickListener()
         }
 
@@ -80,7 +78,7 @@ class ArtistFragment : Fragment()  , ContractDetailArtist.View , OnClickArtist{
     private fun MoreClickListener() {
 
 
-        when (myApp.ischeckd) {
+        when (MyApp.ischeckd) {
             "top_music" -> {
                 Toast.makeText(context, "top_music", Toast.LENGTH_SHORT).show()
             }

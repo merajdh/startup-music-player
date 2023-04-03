@@ -23,7 +23,6 @@ import com.example.startup_music_player.model.Adapter.*
 import com.example.startup_music_player.model.Contract.ContractHome
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.db.AppDatabase
-import com.example.startup_music_player.model.myApp.myApp
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterHome
 import com.example.startup_music_player.ui.features.Play.PlayFragment
@@ -199,17 +198,17 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
     fun setOnClickListeners() {
 
         binding.mouduleOneHome.btnMore.setOnClickListener {
-            myApp.ischeckd = "happy_music"
+            MyApp.ischeckd = "happy_music"
             MoreClickListener()
         }
 
         binding.mouduleTwoHome.btnMore.setOnClickListener {
-            myApp.ischeckd = "top_music"
+            MyApp.ischeckd = "top_music"
             MoreClickListener()
         }
 
         binding.mouduleThreeHome.btnMore.setOnClickListener {
-            myApp.ischeckd = "new_music"
+            MyApp.ischeckd = "new_music"
             MoreClickListener()
         }
 
@@ -226,7 +225,7 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
     private fun MoreClickListener() {
 
 
-        when (myApp.ischeckd) {
+        when (MyApp.ischeckd) {
             "happy_music" -> {
                 Toast.makeText(context, "happy_music", Toast.LENGTH_SHORT).show()
             }

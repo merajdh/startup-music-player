@@ -63,9 +63,8 @@ interface Apiservice {
     @GET("music/category/detail/{id}")
     suspend fun MusicByCategory(@Path("id") id_category : String) : List<MusicByCategoryData>
 
-
-    @GET("music/favoritemusic/")
-    suspend fun Favoritemusic() : List<MusicRespomse>
+    @GET("music/favoritemusic/{id}")
+    suspend fun Favoritemusic(@Path("id") id_User : String) : List<MusicRespomse>
 
     @POST("music/favoritemusic/add")
     suspend fun FavoritemusicAdd(@Body jsonObject: JsonObject) : LikeRespomse
