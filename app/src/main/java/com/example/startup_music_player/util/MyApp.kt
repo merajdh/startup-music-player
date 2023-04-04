@@ -22,6 +22,7 @@ class MyApp : Application() {
     companion object {
 
         var idMusic: String = ""
+        var ispluing: Boolean = false
         var idArtist: String = ""
         var idCategory: String = ""
         var ischeckd: String = ""

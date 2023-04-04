@@ -30,9 +30,8 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
 
     lateinit var binding: FragmentPlayTestBinding
     lateinit var presenter: ContractPlayMusic.Presenter
-    lateinit var mediaParser: MediaPlayer
+    lateinit var mediaplayer: MediaPlayer
     lateinit var timer: Timer
-    var ispluing = false
     var taghir: Boolean? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +39,9 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentPlayTestBinding.inflate(layoutInflater, container, false)
+        if (MyApp.ispluing){
+            mediaplayer.stop()
+        }
         blurImage()
         setOnClickListeners()
         binding.mouduleOnePlay.LikeMusic.setOnClickListener { addLike() }
@@ -61,7 +63,7 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
             }
 
             override fun onStopTrackingTouch(slider: Slider) {
-                mediaParser.seekTo(slider.value.toInt())
+                mediaplayer.seekTo(slider.value.toInt())
 
             }
         })
@@ -75,17 +77,40 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
     }
 
     private fun plymusic() {
-        if (ispluing) {
-            mediaParser.pause()
+        if (MyApp.ispluing) {
+            mediaplayer.pause()
             binding.mouduleOnePlay.Pliy.setImageResource(R.drawable.ic_play)
-            ispluing = false
+            MyApp.ispluing = false
         } else {
-            mediaParser.start()
+            mediaplayer.start()
             binding.mouduleOnePlay.Pliy.setImageResource(R.drawable.ic_pause)
-            ispluing = true
+            MyApp.ispluing = true
         }
     }
+    fun prepareMusik(data : MusicDetail){
+        mediaplayer.setDataSource(data.url)
+        mediaplayer = MediaPlayer.create(binding.root.context, Uri.parse(data.url))
+        if (mediaplayer.isPlaying){
+            mediaplayer.stop()
+            mediaplayer.release()
+        }
+        mediaplayer.start()
+        MyApp.ispluing = true
+        binding.mouduleOnePlay.Pliy.setImageResource(R.drawable.ic_pause)
+        binding.mouduleOnePlay.slider.valueTo = mediaplayer.duration.toFloat()
+        binding.mouduleOnePlay.taim.text = converttimemusic(mediaplayer.duration.toLong())
+        mediaplayer.isLooping = true
+        timer = Timer()
 
+        timer.schedule(object : TimerTask() {
+            override fun run() {
+                activity?.runOnUiThread {
+                    binding.mouduleOnePlay.slider.value = mediaplayer.currentPosition.toFloat()
+                    binding.mouduleOnePlay.slider.value.toString()
+                }
+            }
+        }, 1000, 1000)
+    }
 
     private fun blurImage() {
         Glide.with(this).load(binding.mouduleOnePlay.imgBackground.drawable)
@@ -103,35 +128,12 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
     }
 
     override fun PlayMusic(Music: MusicDetail) {
-        mediaParser = MediaPlayer.create(binding.root.context, Uri.parse(Music.url))
-        if (mediaParser.isPlaying){
-            mediaParser.stop()
-            mediaParser.release()
-        }
-        mediaParser.start()
-        ispluing = true
-        binding.mouduleOnePlay.Pliy.setImageResource(R.drawable.ic_pause)
-        binding.mouduleOnePlay.slider.valueTo = mediaParser.duration.toFloat()
-        binding.mouduleOnePlay.taim.text = converttimemusic(mediaParser.duration.toLong())
-        mediaParser.isLooping = true
-        timer = Timer()
-
-        timer.schedule(object : TimerTask() {
-            override fun run() {
-                activity?.runOnUiThread {
-                    binding.mouduleOnePlay.slider.value = mediaParser.currentPosition.toFloat()
-                    binding.mouduleOnePlay.slider.value.toString()
-                }
-            }
-        }, 1000, 1000)
-
-
+        prepareMusik(Music)
         Glide.with(this).load(Music.cover)
             .into(binding.mouduleOnePlay.imgCover)
         Glide.with(this).load(Music.cover)
             .apply(RequestOptions.bitmapTransform(BlurTransformation(8, 4)))
             .into(binding.mouduleOnePlay.imgBackground)
-
         binding.mouduleOnePlay.artistName.text = Music.artist[0].name
         binding.mouduleOnePlay.txtNameMusic.text = Music.title
     }
