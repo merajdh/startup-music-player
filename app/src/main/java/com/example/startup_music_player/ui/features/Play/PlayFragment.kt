@@ -39,9 +39,6 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentPlayTestBinding.inflate(layoutInflater, container, false)
-        if (MyApp.ispluing){
-            mediaplayer.stop()
-        }
         blurImage()
         setOnClickListeners()
         binding.mouduleOnePlay.LikeMusic.setOnClickListener { addLike() }
@@ -88,11 +85,11 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
         }
     }
     fun prepareMusik(data : MusicDetail){
-        mediaplayer.setDataSource(data.url)
         mediaplayer = MediaPlayer.create(binding.root.context, Uri.parse(data.url))
-        if (mediaplayer.isPlaying){
+        if (MyApp.ispluing){
             mediaplayer.stop()
-            mediaplayer.release()
+            mediaplayer.setDataSource(data.url)
+            mediaplayer.prepare()
         }
         mediaplayer.start()
         MyApp.ispluing = true

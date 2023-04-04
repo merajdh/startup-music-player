@@ -9,8 +9,6 @@ import androidx.fragment.app.Fragment
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentMyplaylistBinding
 import com.example.startup_music_player.ui.Fragment.ProfileFragment
-import com.example.startup_music_player.ui.features.DetailPlaylist.detailPlaylistFragment
-import com.example.startup_music_player.ui.features.PlayList.PlayListFragment
 
 @SuppressLint("StaticFieldLeak")
 lateinit var binding: FragmentMyplaylistBinding
@@ -29,34 +27,12 @@ lateinit var binding: FragmentMyplaylistBinding
                 parentFragmentManager.popBackStack()
             }
 
-            binding.item1.btnMore.setOnClickListener {
-                val transform = detailPlaylistFragment()
-                transform.isCancelable = true
-                transform.show(childFragmentManager , null)
-            }
-            binding.item2.btnMore.setOnClickListener {
-                val transform = detailPlaylistFragment()
-                transform.isCancelable = true
-                transform.show(childFragmentManager , null)
-            }
-            binding.item3.btnMore.setOnClickListener {
-                val transform = detailPlaylistFragment()
-                transform.isCancelable = true
-                transform.show(childFragmentManager , null)
+            binding.btnAddPlaylist.setOnClickListener {
+                val dialog = AddPlaylistDialog()
+                dialog.isCancelable = true
+                dialog.show(childFragmentManager , null)
             }
 
-
-            binding.item1.itemPlaylist.setOnClickListener {
-                transform(PlayListFragment())
-            }
-
-            binding.item2.itemPlaylist.setOnClickListener {
-                transform(PlayListFragment())
-            }
-
-            binding.item3.itemPlaylist.setOnClickListener {
-                transform(PlayListFragment())
-            }
         }
 
         override fun onDestroy() {

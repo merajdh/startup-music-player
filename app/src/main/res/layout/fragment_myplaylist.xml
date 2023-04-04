@@ -1,75 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layoutAnimation="@anim/anim_fragment_layout"
     android:orientation="vertical"
     android:background="?attr/colorPrimary">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:orientation="horizontal"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/btn_back"
-            android:layout_marginStart="18dp"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_back"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_marginStart="18dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/Gray" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="end"
+                android:text="پلی لیست ها"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec_myPlaylist"
+            tools:listitem="@layout/item_recycler_myplaylist"
+            android:layout_width="match_parent"
+            tools:itemCount="3"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/playlist_not_added"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_add_playlist"
+            android:layout_width="wrap_content"
+            app:cardCornerRadius="18dp"
+            android:clickable="true"
+            android:backgroundTint="@color/Gray"
+            app:cardElevation="8dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:focusable="true">
+
+            <ImageView
+                android:padding="12dp"
+                android:src="@drawable/ic_add"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:tint="?colorOnBackground" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
+            android:textSize="16sp"
+            android:letterSpacing="0.15"
+            android:textColor="@color/Gray"
+            android:layout_marginTop="20dp"
+            android:text="شما هنوز پلی لیستی اضاقه نکرده اید"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:gravity="end"
-            android:text="پلی لیست ها"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <include layout="@layout/item_recycler_myplaylist"
-        android:id="@+id/item1"
-        />
-
-
-    <View
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"
-        android:layout_width="match_parent"
-        android:layout_height="0.8dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="40dp"
-        android:background="#AD555555" />
-
-    <include layout="@layout/item_recycler_myplaylist"
-        android:id="@+id/item2"/>
-
-    <View
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"
-        android:layout_width="match_parent"
-        android:layout_height="0.8dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="40dp"
-        android:background="#AD555555" />
-
-    <include layout="@layout/item_recycler_myplaylist"
-        android:id="@+id/item3"/>
-
-</LinearLayout>
+</FrameLayout>
