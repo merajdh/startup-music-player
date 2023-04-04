@@ -1,7 +1,6 @@
 package com.example.startup_music_player.ui.features.LikedMusic
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

@@ -5,6 +5,7 @@ import android.content.Context
 import androidx.room.Room
 import com.example.startup_music_player.model.db.AppDatabase
 import com.example.startup_music_player.model.net.createApiService
+import com.example.startup_music_player.model.repository.Like.LikeRepository
 import com.example.startup_music_player.model.repository.Like.LikeRepositorylmpl
 import com.example.startup_music_player.model.repository.UserReposiroty
 import com.example.startup_music_player.model.repository.UserReposirotyImpl
@@ -36,7 +37,7 @@ class MyApp : Application() {
             single { createApiService() }
             single { Room.databaseBuilder(androidContext(), AppDatabase::class.java, "app_dataBase") }
             single<UserReposiroty> { UserReposirotyImpl(get(), get()) }
-            single<LikeRepositorylmpl> { LikeRepositorylmpl(get()) }
+            single<LikeRepository> { LikeRepositorylmpl(get())}
             viewModel { LoginViewModel(get()) }
             viewModel { RegisterViewModel(get()) }
             viewModel { VerifyViewModel(get()) }
