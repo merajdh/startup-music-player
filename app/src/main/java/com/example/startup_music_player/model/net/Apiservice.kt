@@ -68,6 +68,10 @@ interface Apiservice {
 
     @POST("music/favoritemusic/add")
     suspend fun FavoritemusicAdd(@Body jsonObject: JsonObject) : LikeRespomse
+
+    @GET("page/ticket-title")
+    suspend fun TitleTicket() : List<TitleTicket>
+
 }
 
 fun createApiService(): Apiservice {
