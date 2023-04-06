@@ -47,7 +47,6 @@ class LoginFragment : Fragment() {
 
                 if (it == VALUE_SUCCESS){
                     transform(MainFragment())
-
                 }else{
                     Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
                 }
