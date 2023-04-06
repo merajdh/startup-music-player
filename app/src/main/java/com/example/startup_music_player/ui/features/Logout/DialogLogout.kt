@@ -20,6 +20,6 @@ lateinit var binding: DiaogLogoutBinding
             return binding.root
         }
 
-        override fun getTheme() = R.style.RoundedCornersDialog
+        override fun getTheme() = R.style.RoundedCornersDialog2
 
     }

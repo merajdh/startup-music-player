@@ -2,6 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:elevation="0dp"
+    android:background="?colorPrimaryVariant"
     android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
@@ -39,7 +41,7 @@
             android:layout_marginEnd="30dp"
             android:text="نام موزیک"
             android:padding="4dp"
-            android:textColor="@color/white"
+            android:textColor="?colorOnPrimary"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/materialCardView12"
@@ -75,7 +77,8 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="20dp"
-            android:src="@drawable/ic_play" />
+            android:src="@drawable/ic_play"
+            app:tint="?colorOnPrimary" />
 
 
         <TextView

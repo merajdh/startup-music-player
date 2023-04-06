@@ -3,14 +3,14 @@
     <style name="Theme.Startupmusicplayer" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/white</item>
-        <item name="colorPrimaryVariant">@color/light_blue</item>
+        <item name="colorPrimaryVariant">#EEEEEE</item>
         <item name="colorOnPrimary">@color/dark_bule</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/bule</item>
         <item name="colorSecondaryVariant">@color/light_blue</item>
         <item name="colorOnSecondary">@color/white</item>
-        <item name="colorOnBackground">#6F787878</item>
-
+        <item name="colorOnBackground">#74BDBDBD</item>
+        <item name="dialogTheme">@color/Gray</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowLightStatusBar">true</item>
@@ -32,14 +32,14 @@
         <item name="android:textSize">24sp</item>
     </style>
 
-    <style name="RoundedCornersDialog" parent="@style/Theme.MaterialComponents.Dialog">
-        <item name="colorPrimary">@color/dark_bule</item>
+    <style name="RoundedCornersDialog" parent="@style/Theme.AppCompat.Dialog">
         <item name="dialogCornerRadius">23dp</item>
     </style>
 
-    <style name="RoundedCornersDialog2" parent="@style/Theme.MaterialComponents.Dialog.Alert">
-        <item name="dialogCornerRadius">36dp</item>
-        <item name="colorSecondary">@color/bule</item>
+    <style name="RoundedCornersDialog2" parent="android:Theme.Material.Dialog.NoActionBar.MinWidth">
+        <item name="dialogCornerRadius">22dp</item>
+        <item name="android:dialogCornerRadius" tools:ignore="NewApi">22dp</item>
+        <item name="android:background">?attr/colorPrimary</item>
     </style>
 
     <style name="RoundedCornersBottomSheetDialog" parent="@style/Theme.MaterialComponents.BottomSheetDialog">

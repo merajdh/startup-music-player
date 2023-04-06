@@ -12,7 +12,7 @@
 
 
     <com.google.android.material.card.MaterialCardView
-        android:backgroundTint="@color/light_blue"
+        android:backgroundTint="?colorPrimaryVariant"
         app:cardCornerRadius="24dp"
         app:cardElevation="4dp"
         android:layout_width="match_parent"
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:padding="1dp"
                 android:text="اسم آهنگ"
-                android:textColor="@color/light_gray"
+                android:textColor="?colorOnPrimary"
                 app:layout_constraintEnd_toStartOf="@+id/materialCardView"
                 app:layout_constraintTop_toTopOf="@+id/materialCardView" />
 
@@ -98,7 +98,7 @@
 
             <ImageView
                 android:layoutDirection="ltr"
-                app:tint="@color/white"
+                app:tint="?colorOnPrimary"
                 android:src="@drawable/ic_play"
                 android:layout_marginStart="20dp"
                 android:id="@+id/btn_play"

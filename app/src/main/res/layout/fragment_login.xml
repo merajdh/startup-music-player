@@ -7,7 +7,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutAnimation="@anim/anim_left_layout"
     tools:context=".ui.features.Login.LoginFragment">
 
     <com.airbnb.lottie.LottieAnimationView
@@ -20,9 +19,8 @@
 
     <com.google.android.material.card.MaterialCardView
         app:cardElevation="8dp"
-        app:strokeColor="?attr/colorPrimary"
-        app:strokeWidth="1dp"
-        android:backgroundTint="#252a34"
+
+        android:backgroundTint="?colorPrimaryVariant"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp"
         android:layout_marginStart="25dp"
@@ -35,11 +33,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="16dp"
-            android:background="#252a34"
+            android:background="?colorPrimaryVariant"
             android:hint="ایمیل"
             android:inputType="text"
             android:maxLength="25"
-            android:textColor="@color/white"
+            android:textColor="?colorOnPrimary"
             android:textColorHint="#7A7C87"
             android:textSize="16sp"
             tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
@@ -48,9 +46,7 @@
 
     <com.google.android.material.card.MaterialCardView
         app:cardElevation="7dp"
-        app:strokeColor="?attr/colorPrimary"
-        app:strokeWidth="1dp"
-        android:backgroundTint="#252a34"
+        android:backgroundTint="?colorPrimaryVariant"
         app:cardCornerRadius="20dp"
         android:layout_marginEnd="25dp"
         android:layout_marginStart="25dp"
@@ -63,11 +59,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="16dp"
-            android:background="#252a34"
+            android:background="?colorPrimaryVariant"
             android:hint="رمز عبور"
             android:inputType="text"
             android:maxLength="16"
-            android:textColor="@color/white"
+            android:textColor="?colorOnPrimary"
             android:textColorHint="#7A7C87"
             tools:ignore="TextFields,TouchTargetSizeCheck,TextContrastCheck" />
 

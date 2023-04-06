@@ -39,16 +39,14 @@
 
 
     <com.google.android.material.card.MaterialCardView
-        app:cardElevation="7dp"
-        app:strokeColor="?attr/colorPrimary"
-        app:strokeWidth="1dp"
-        android:backgroundTint="#252a34"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="45dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginStart="25dp"
+        android:backgroundTint="?attr/colorPrimaryVariant"
         app:cardCornerRadius="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="75dp">
+        app:cardElevation="7dp">
 
         <EditText
             android:id="@+id/Edt_user"
@@ -58,12 +56,12 @@
             android:layout_marginTop="18dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="18dp"
-            android:background="#252a34"
+            android:background="?attr/colorPrimaryVariant"
             android:drawableEnd="@drawable/ic_user"
             android:drawablePadding="10dp"
             android:hint="نام کاربری"
             android:inputType="text"
-            android:textColor="@color/white"
+            android:textColor="?colorOnPrimary"
             android:textColorHint="#7A7C87"
             android:textSize="15sp"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
@@ -72,48 +70,45 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        app:cardElevation="7dp"
-        app:strokeColor="?attr/colorPrimary"
-        app:strokeWidth="1dp"
-        android:backgroundTint="#252a34"
-        app:cardCornerRadius="20dp"
-        android:layout_marginEnd="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="14dp"
-        android:layout_width="match_parent"
-        android:layout_height="75dp">
+        android:layout_marginEnd="25dp"
+        android:backgroundTint="?attr/colorPrimaryVariant"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="7dp">
 
         <EditText
-            android:drawablePadding="10dp"
-            android:drawableEnd="@drawable/ic_gmail"
-            android:textSize="15sp"
             android:id="@+id/Edt_gmail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="18dp"
             android:layout_marginTop="18dp"
+            android:layout_marginEnd="30dp"
             android:layout_marginBottom="18dp"
-            android:layout_marginStart="18dp"            android:inputType="text"
-            android:background="#252a34"
+            android:background="?attr/colorPrimaryVariant"
+            android:drawableEnd="@drawable/ic_gmail"
+            android:drawablePadding="10dp"
             android:hint="ایمیل"
-            android:textColor="@color/white"
+            android:inputType="text"
+            android:textColor="?colorOnPrimary"
             android:textColorHint="#7A7C87"
+            android:textSize="15sp"
             tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
 
 
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        app:cardElevation="7dp"
-        app:strokeColor="?attr/colorPrimary"
-        app:strokeWidth="1dp"
-        android:backgroundTint="#252a34"
-        app:cardCornerRadius="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginStart="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="75dp">
+        android:backgroundTint="?attr/colorPrimaryVariant"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="7dp">
 
 
         <EditText
@@ -124,33 +119,29 @@
             android:layout_marginTop="18dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="18dp"
-            android:background="#252a34"
+            android:background="?attr/colorPrimaryVariant"
             android:drawableEnd="@drawable/ic_ic_password"
             android:drawablePadding="10dp"
             android:elegantTextHeight="true"
             android:hint=" رمز عبور"
             android:inputType="text"
-            android:textColor="@color/white"
+            android:textColor="?colorOnPrimary"
             android:textColorHint="#7A7C87"
             android:textSize="15sp"
             tools:ignore="TextContrastCheck,TextFields,TouchTargetSizeCheck" />
 
 
-
-
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        app:cardElevation="7dp"
-        app:strokeColor="?attr/colorPrimary"
-        app:strokeWidth="1dp"
-        android:backgroundTint="#252a34"
-        app:cardCornerRadius="20dp"
-        android:layout_marginEnd="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="14dp"
-        android:layout_width="match_parent"
-        android:layout_height="75dp">
+        android:layout_marginEnd="25dp"
+        android:backgroundTint="?attr/colorPrimaryVariant"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="7dp">
 
         <EditText
             android:id="@+id/Edt_passwordRepeat"
@@ -160,12 +151,12 @@
             android:layout_marginTop="18dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="18dp"
-            android:background="#252a34"
+            android:background="?attr/colorPrimaryVariant"
             android:drawableEnd="@drawable/ic_ic_password"
             android:drawablePadding="10dp"
             android:hint="تکرار رمز عبور"
             android:inputType="text"
-            android:textColor="@color/white"
+            android:textColor="?colorOnPrimary"
             android:textColorHint="#7A7C87"
             android:textSize="15sp"
             tools:ignore="TextContrastCheck,TextFields,TouchTargetSizeCheck" />

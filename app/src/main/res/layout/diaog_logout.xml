@@ -3,23 +3,20 @@
     android:layout_width="match_parent"
     app:cardCornerRadius="20dp"
     android:layoutAnimation="@anim/anim_main_layout"
-    app:strokeWidth="1dp"
-    app:strokeColor="@color/light_blue"
     android:layout_gravity="center_horizontal"
-    app:cardElevation="12dp"
+    app:cardElevation="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:backgroundTint="?attr/colorPrimary"
     android:layout_height="wrap_content">
 
     <LinearLayout
-
+        android:backgroundTint="?colorPrimary"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
             android:layout_marginTop="50dp"
-            android:textColor="@color/white"
+            android:textColor="?colorOnPrimary"
             android:textSize="16sp"
             android:textStyle="bold"
             android:gravity="center_horizontal"
@@ -44,10 +41,10 @@
                 android:text="خیر"
                 android:elevation="8dp"
                 android:layout_marginEnd="30dp"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 app:cornerRadius="16dp"
-                android:textColor="@color/light_gray"
-                android:backgroundTint="@color/light_blue"
+                android:textColor="?colorOnPrimary"
+                android:backgroundTint="?colorPrimaryVariant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -59,7 +56,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_gravity="end"
                 app:cornerRadius="16dp"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:backgroundTint="@color/bule"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>

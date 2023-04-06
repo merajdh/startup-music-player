@@ -188,6 +188,7 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
 
     override fun Click(data: MusicRespomse) {
         MyApp.idMusic = data.id.toString()
+        Log.v("testData" , data.toString())
         val transform = parentFragmentManager.beginTransaction()
         transform.replace(R.id.FrameLayoutMain, PlayFragment())
         transform.addToBackStack(null)

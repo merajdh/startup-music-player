@@ -37,7 +37,7 @@
             android:ellipsize="start"
             android:text="کی مثل تو"
             android:gravity="right"
-            android:textColor="@color/light_gray"
+            android:textColor="?colorOnPrimary"
             android:layout_marginEnd="6dp"
             android:textSize="14sp"
             android:textStyle="bold"

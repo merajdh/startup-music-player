@@ -16,7 +16,7 @@ class ChangeUsernameFragment : DialogFragment() {
         return binding.root
     }
 
-    override fun getTheme() = R.style.RoundedCornersDialog
+    override fun getTheme() = R.style.RoundedCornersDialog2
 
     private fun setOnClickListeners(){
         binding.btnCancel.setOnClickListener { dismiss() }

@@ -6,7 +6,7 @@
 
     <FrameLayout
         android:id="@+id/sheet"
-        android:backgroundTint="@color/light_blue"
+        android:backgroundTint="?colorPrimaryVariant"
         android:background="@drawable/shape_back_bottom_sheet"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

@@ -65,6 +65,7 @@
             android:id="@+id/rec_top_music"
             android:layout_width="match_parent"
             tools:itemCount="2"
+            android:layout_marginBottom="8dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             tools:listitem="@layout/item_recycler_popularmusic" />

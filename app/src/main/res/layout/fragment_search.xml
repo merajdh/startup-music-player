@@ -21,10 +21,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_margin="14dp"
-                app:cardElevation="8dp"
-                app:strokeColor="?attr/colorPrimary"
-                app:strokeWidth="1dp"
-                android:backgroundTint="?colorSecondaryVariant"
+                app:cardElevation="4dp"
+                android:backgroundTint="?colorPrimaryVariant"
                 app:cardCornerRadius="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="55dp">
@@ -34,7 +32,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="16dp"
-                    android:background="?colorSecondaryVariant"
+                    android:background="?colorPrimaryVariant"
                     android:hint="اسم خواننده,اسم موزیک و..."
                     android:inputType="text"
                     android:maxLength="16"
@@ -45,6 +43,8 @@
 
             </com.google.android.material.card.MaterialCardView>
         </FrameLayout>
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent">

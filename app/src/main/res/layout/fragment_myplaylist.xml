@@ -87,13 +87,13 @@
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
-            android:textSize="16sp"
-            android:letterSpacing="0.15"
-            android:textColor="@color/Gray"
-            android:layout_marginTop="20dp"
-            android:text="شما هنوز پلی لیستی اضاقه نکرده اید"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.15"
+            android:text="شما هنوز پلی لیستی اضافه نکرده اید"
+            android:textColor="@color/Gray"
+            android:textSize="16sp" />
 
     </LinearLayout>
 

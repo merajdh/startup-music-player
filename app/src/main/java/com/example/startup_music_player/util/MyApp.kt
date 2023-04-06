@@ -2,6 +2,7 @@ package com.example.startup_music_player.util
 
 import android.app.Application
 import android.content.Context
+import android.media.MediaPlayer
 import androidx.room.Room
 import com.example.startup_music_player.model.db.AppDatabase
 import com.example.startup_music_player.model.net.createApiService
@@ -20,7 +21,7 @@ import org.koin.dsl.module
 
 class MyApp : Application() {
     companion object {
-
+        var isInUse : Boolean= false
         var idMusic: String = ""
         var ispluing: Boolean = false
         var idArtist: String = ""

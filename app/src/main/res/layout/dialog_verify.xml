@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:backgroundTint="@color/light_blue"
+    android:backgroundTint="?colorPrimary"
     android:layout_margin="40dp"
     app:cardCornerRadius="30dp"
-    app:cardElevation="8dp"
     android:layoutAnimation="@anim/anim_main_layout"
+    app:cardElevation="8dp"
     android:layout_height="wrap_content">
 
 
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:text="خوش آمدید"
             android:layout_marginTop="20dp"
-            android:textColor="@color/white"
+            android:textColor="?colorOnPrimary"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +47,7 @@
             android:layout_marginTop="6dp"
             android:letterSpacing="0.1"
             android:text="ایمیل شما با موفقیت تایید شد!"
-            android:textColor="@color/light_gray"
+            android:textColor="?colorOnPrimary"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

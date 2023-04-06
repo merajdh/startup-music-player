@@ -17,7 +17,7 @@ class fragmentDialog : DialogFragment() {
         isCancelable = true
         return binding.root
     }
-    override fun getTheme() = R.style.RoundedCornersDialog
+    override fun getTheme() = R.style.RoundedCornersDialog2
 
 
 

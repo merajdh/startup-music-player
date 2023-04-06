@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <color name="dark_bule">#151B25</color>
     <color name="dark_bule2">#040A18</color>
     <color name="light_blue">#252a34</color>
+    <color name="gray_main">#FFE9E9E9</color>
     <color name="Gray">#969CA3</color>
     <color name="bule">#3a6bf6</color>
     <color name="black">#FF000000</color>
