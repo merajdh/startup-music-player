@@ -30,13 +30,17 @@ class LoginFragment : Fragment() {
         binding.txtRegister.setOnClickListener {
             transform(RegisterFragment())
         } // intent to Activity Register
-        binding.btnLogin.setOnClickListener { IschektLogin() } //intent to Activity home
+        binding.btnLogin.setOnClickListener {
+
+            IschektLogin() } //intent to Activity home
         return binding.root
     }
 
     private fun IschektLogin() {
         val viewmodel : LoginViewModel by viewModel()
         if (binding.EdtEmailLogin.text.isNotEmpty() && binding.EdtPasswordLogin.text.isNotEmpty()) {
+            binding.animLoading.visibility = View.VISIBLE
+            binding.animLoading.playAnimation()
             // Input user
             viewmodel.username.value = binding.EdtEmailLogin.text.toString()
             viewmodel.password.value = binding.EdtPasswordLogin.text.toString()
@@ -47,6 +51,8 @@ class LoginFragment : Fragment() {
 
                 if (it == VALUE_SUCCESS){
                     transform(MainFragment())
+                    binding.animLoading.visibility = View.GONE
+
                 }else{
                     Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
                 }

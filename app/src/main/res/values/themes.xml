@@ -9,7 +9,7 @@
         <item name="colorSecondary">@color/bule</item>
         <item name="colorSecondaryVariant">@color/light_blue</item>
         <item name="colorOnSecondary">@color/white</item>
-        <item name="colorOnBackground">#74BDBDBD</item>
+        <item name="colorOnBackground">#ABA3A3A3</item>
         <item name="dialogTheme">@color/Gray</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/white</item>

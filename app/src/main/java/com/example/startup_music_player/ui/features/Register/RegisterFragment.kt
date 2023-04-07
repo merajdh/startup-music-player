@@ -40,8 +40,9 @@ class RegisterFragment : Fragment() {
             if (binding.EdtPassword.text.toString() == binding.EdtPasswordRepeat.text.toString()) {
                 if (binding.EdtPassword.text.length >= 8) {
                     if (Patterns.EMAIL_ADDRESS.matcher(binding.EdtGmail.text).matches()){
-                        if (binding.EdtUser.text.length >= 8 ){
-
+                        if (binding.EdtUser.text.length >= 6 ){
+                            binding.animLoading.visibility = View.VISIBLE
+                            binding.animLoading.playAnimation()
                         // Input user
                         viewmodel.name.value = binding.EdtUser.text.toString()
                         viewmodel.email.value= binding.EdtGmail.text.toString()
@@ -52,6 +53,7 @@ class RegisterFragment : Fragment() {
                         viewmodel.signUpUser {
                             if (it == VALUE_SUCCESS){
                                 transform(VerifyEmailFragment())
+                                binding.animLoading.visibility = View.GONE
                             }else{
                                 Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
                             }
