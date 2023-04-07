@@ -11,6 +11,20 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
+        android:id="@+id/anim_loading"
+        app:lottie_loop="true"
+        android:visibility="gone"
+        android:layout_margin="60dp"
+        app:lottie_rawRes="@raw/anim_loading"
+        android:layout_gravity="center"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
         android:layout_height="200dp"/>
     <TextView
         android:layout_marginTop="16dp"
@@ -53,7 +67,7 @@
             android:layout_marginStart="18dp"
             android:background="?colorPrimaryVariant"
             android:hint="کد تایید"
-            android:textColor="@color/white"
+            android:textColor="?colorOnPrimary"
             android:inputType="text"
             android:textColorHint="#7A7C87"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />

@@ -41,15 +41,20 @@ class VerifyEmailFragment : Fragment()
 
         binding.btnVerify.setOnClickListener {
             if (binding.EdtCode.text.isNotEmpty()) {
+                binding.animLoading.visibility = View.VISIBLE
+                binding.animLoading.playAnimation()
+
                 viewmodel.code.value = binding.EdtCode.text.toString()
                 viewmodel.VerifyEmail {
                     if (it == VALUE_SUCCESS) {
+                        binding.animLoading.visibility = View.GONE
                         val dialog = VerifyDialogFragment()
                         dialog.show(parentFragmentManager, null)
                         val transform = parentFragmentManager.beginTransaction()
                         transform.replace(R.id.FrameLayoutMain, MainFragment())
                         transform.commit()
                     } else {
+                        binding.animLoading.visibility = View.GONE
                         val dialog = VerifyRejectedDialogFragment()
                         dialog.show(parentFragmentManager, null)
                     }
