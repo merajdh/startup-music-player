@@ -14,7 +14,11 @@ import com.example.startup_music_player.ui.features.ContactUs.ContactUsFragment
 import com.example.startup_music_player.ui.features.LikedMusic.LikedMusicFragment
 import com.example.startup_music_player.ui.features.Logout.DialogLogout
 import com.example.startup_music_player.ui.features.Myplaylist.MyplaylistFragment
+import com.example.startup_music_player.ui.features.Profile.ProfileViewModel
+import com.example.startup_music_player.ui.features.Register.RegisterFragment
+import com.example.startup_music_player.ui.features.Register.RegisterViewModel
 import com.example.startup_music_player.ui.features.changePassword.fragmentDialog
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProfileFragment : Fragment() {
 
@@ -22,12 +26,18 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentProfileBinding.inflate(layoutInflater , container , false)
         setOnClickListeners()
-
+        binding.mouduleThree.btnLogout.setOnClickListener {Loguot()}
         return binding.root
+    }
+
+    private fun Loguot() {
+        val viewmodel : ProfileViewModel by viewModel()
+        viewmodel.singout()
+        transform(RegisterFragment())
     }
 
 
