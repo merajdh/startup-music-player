@@ -30,7 +30,6 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
 
     lateinit var binding: FragmentPlayTestBinding
     lateinit var presenter: ContractPlayMusic.Presenter
-    lateinit var mediaplayer :MediaPlayer
     lateinit var timer: Timer
     var taghir: Boolean? = null
     override fun onCreateView(
@@ -41,7 +40,6 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
         binding = FragmentPlayTestBinding.inflate(layoutInflater, container, false)
         blurImage()
         setOnClickListeners()
-        mediaplayer = MediaPlayer()
         binding.mouduleOnePlay.LikeMusic.setOnClickListener { addLike() }
         binding.mouduleOnePlay.Pliy.setOnClickListener { plymusic() }
         presenter = PresenterPlayMusic(
@@ -61,7 +59,7 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
             }
 
             override fun onStopTrackingTouch(slider: Slider) {
-                mediaplayer.seekTo(slider.value.toInt())
+                MyApp.media?.seekTo(slider.value.toInt())
 
             }
         })
@@ -76,37 +74,34 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
 
     private fun plymusic() {
         if (MyApp.ispluing) {
-            mediaplayer.pause()
+            MyApp.media?.pause()
             binding.mouduleOnePlay.Pliy.setImageResource(R.drawable.ic_play)
             MyApp.ispluing = false
         } else {
-            mediaplayer.start()
+            MyApp.media?.start()
             binding.mouduleOnePlay.Pliy.setImageResource(R.drawable.ic_pause)
             MyApp.ispluing = true
         }
     }
     fun prepareMusik(data : MusicDetail){
-        if (MyApp.ispluing){
-            mediaplayer.apply {
-                mediaplayer.stop()
-                reset()
-                setDataSource(binding.root.context, Uri.parse(data.url))
-                prepare()
-                start()
-            }
+        if (MyApp.media != null){
+            MyApp.media?.stop()
+            MyApp.media?.release()
+            MyApp.media = null
         }
-        mediaplayer.start()
+        MyApp.media = MediaPlayer.create(context, Uri.parse(data.url))
+        MyApp.media?.start()
         MyApp.ispluing = true
         binding.mouduleOnePlay.Pliy.setImageResource(R.drawable.ic_pause)
-        binding.mouduleOnePlay.slider.valueTo = mediaplayer.duration.toFloat()
-        binding.mouduleOnePlay.taim.text = converttimemusic(mediaplayer.duration.toLong())
-        mediaplayer.isLooping = true
+        binding.mouduleOnePlay.slider.valueTo = MyApp.media?.duration!!.toFloat()
+        binding.mouduleOnePlay.taim.text = converttimemusic(MyApp.media?.duration!!.toLong())
+        MyApp.media?.isLooping = true
         timer = Timer()
 
         timer.schedule(object : TimerTask() {
             override fun run() {
                 activity?.runOnUiThread {
-                    binding.mouduleOnePlay.slider.value = mediaplayer.currentPosition.toFloat()
+                    binding.mouduleOnePlay.slider.value = MyApp.media?.currentPosition!!.toFloat()
                     binding.mouduleOnePlay.slider.value.toString()
                 }
             }

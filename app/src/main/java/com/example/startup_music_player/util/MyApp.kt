@@ -28,6 +28,7 @@ class MyApp : Application() {
         var idCategory: String = ""
         var ischeckd: String = ""
         var idUser: String = ""
+        var media : MediaPlayer? = null
         var isSend : Boolean = false
     }
 
