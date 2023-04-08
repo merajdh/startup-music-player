@@ -43,7 +43,6 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
-
         AddsliderCod() // slider
         setOnClickListeners()
         MoreClickListener()

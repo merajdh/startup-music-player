@@ -38,6 +38,9 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentPlayTestBinding.inflate(layoutInflater, container, false)
+        binding.mouduleOnePlay.viewMain.visibility = View.GONE
+        binding.mouduleTwoPlay.viewMain.visibility = View.GONE
+        binding.mouduleOnePlay.shimmerPlay.visibility = View.VISIBLE
         blurImage()
         setOnClickListeners()
         binding.mouduleOnePlay.LikeMusic.setOnClickListener { addLike() }
@@ -124,6 +127,10 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
     }
 
     override fun PlayMusic(Music: MusicDetail) {
+        binding.mouduleOnePlay.viewMain.visibility = View.VISIBLE
+        binding.mouduleTwoPlay.viewMain.visibility = View.GONE
+        binding.mouduleOnePlay.shimmerPlay.visibility = View.GONE
+
         prepareMusik(Music)
         Glide.with(this).load(Music.cover)
             .into(binding.mouduleOnePlay.imgCover)
