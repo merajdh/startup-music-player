@@ -7,10 +7,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutAnimation="@anim/anim_right_layout"
     tools:context="ui.features.Register.RegisterFragment">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:id="@+id/anim_loading"
+        app:lottie_loop="true"
+        android:visibility="gone"
+        android:layout_margin="60dp"
+        app:lottie_rawRes="@raw/anim_loading"
+        android:layout_gravity="center"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <LinearLayout
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -42,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="25dp"
         android:backgroundTint="?attr/colorPrimaryVariant"
         app:cardCornerRadius="20dp"
@@ -170,7 +185,7 @@
         android:layout_marginStart="50dp"
         app:cardElevation="10dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="80dp"
         android:clickable="true"
         app:cardCornerRadius="22dp"
         android:backgroundTint="@color/bule"

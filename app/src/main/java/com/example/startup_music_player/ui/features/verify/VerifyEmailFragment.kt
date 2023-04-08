@@ -1,54 +1,90 @@
 package com.example.startup_music_player.ui.features.verify
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.example.startup_music_player.R
-import com.example.startup_music_player.databinding.FragmentRegisterBinding
 import com.example.startup_music_player.databinding.FragmentVerifyEmailBinding
 import com.example.startup_music_player.ui.features.Main.MainFragment
-import com.example.startup_music_player.ui.features.Register.RegisterViewModel
 import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class VerifyEmailFragment : Fragment() {
+class VerifyEmailFragment : Fragment()
+{
     lateinit var binding: FragmentVerifyEmailBinding
+    var timeRemaining = 120
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentVerifyEmailBinding.inflate(layoutInflater,container,false)
-        val viewmodel : VerifyViewModel by viewModel()
+        binding = FragmentVerifyEmailBinding.inflate(layoutInflater, container, false)
+        val viewmodel: VerifyViewModel by viewModel()
 
-        binding.btnVerify.setOnClickListener{
-            if (binding.EdtCode.text.isNotEmpty()){
-                viewmodel.code.value = binding.EdtCode.text.toString()
-                viewmodel.VerifyEmail {
-                    if (it == VALUE_SUCCESS){
-                        val dialog = SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
-                        dialog.titleText = "خوش امدید"
-                        dialog.contentText = "ایمیل شما با موفقیت تایید شد!"
-                        dialog.show()
-                        val transform = parentFragmentManager.beginTransaction()
-                        transform.replace(R.id.FrameLayoutMain,MainFragment())
-                        transform.commit()
-                    }else{
-                        val dialog = SweetAlertDialog(context, SweetAlertDialog.ERROR_TYPE)
-                        dialog.titleText = "اوپس"
-                        dialog.contentText = "کد شما اشتباه است!"
-                        dialog.show()
-                    }
+        timer()
+
+        for (i in timeRemaining.toString()) {
+            binding.txtSendCode.setOnClickListener {
+                binding.txtSendCode.setTextColor(ContextCompat.getColor(binding.root.context, R.color.light_blue))
+                timer()
             }
 
-            }else{
+        }
+
+
+
+        binding.btnVerify.setOnClickListener {
+            if (binding.EdtCode.text.isNotEmpty()) {
+                binding.animLoading.visibility = View.VISIBLE
+                binding.animLoading.playAnimation()
+
+                viewmodel.code.value = binding.EdtCode.text.toString()
+                viewmodel.VerifyEmail {
+                    if (it == VALUE_SUCCESS) {
+                        binding.animLoading.visibility = View.GONE
+                        val dialog = VerifyDialogFragment()
+                        dialog.show(parentFragmentManager, null)
+                        val transform = parentFragmentManager.beginTransaction()
+                        transform.replace(R.id.FrameLayoutMain, MainFragment())
+                        transform.commit()
+                    } else {
+                        binding.animLoading.visibility = View.GONE
+                        val dialog = VerifyRejectedDialogFragment()
+                        dialog.show(parentFragmentManager, null)
+                    }
+                }
+            } else {
                 // SnakBar
             }
         }
         return binding.root
     }
 
+    private fun timer(){
+        val TWO_MINUTES: Long = 2 * 60 * 1000 // 2 minutes in milliseconds
+        val timer = object : CountDownTimer(TWO_MINUTES, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                val timeRemaining = millisUntilFinished / 1000
+                if (timeRemaining.toString() != "0") {
+                    binding.txtSendCode.isClickable = false
+                } else {
+                    binding.txtSendCode.isClickable = true
+
+                }
+
+                binding.txtTimer.text = "$timeRemaining"
+            }
+
+            override fun onFinish() {
+                binding.txtSendCode.setTextColor(ContextCompat.getColor(binding.root.context, R.color.Gray))
+            }
+        }
+        timer.start()
+    }
 }

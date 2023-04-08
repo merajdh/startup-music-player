@@ -1,33 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:orientation="vertical"
-    android:background="@color/dark_bule"
+    android:background="?colorPrimary"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutAnimation="@anim/anim_main_layout"
     tools:context=".ui.features.verify.VerifyEmailFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:id="@+id/anim_loading"
+        app:lottie_loop="true"
+        android:visibility="gone"
+        android:layout_margin="60dp"
+        app:lottie_rawRes="@raw/anim_loading"
+        android:layout_gravity="center"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
         android:layout_height="200dp"/>
     <TextView
         android:layout_marginTop="16dp"
-        android:text="لطفا کد تایید که به ایمیل شما ارسال شده است را وارد فرمایید !"
-        android:textColor="@color/white"
+        android:text="لطفا کد تایید که به  ایمیل شما ارسال شده است"
+        android:textColor="?colorOnPrimary"
         android:textSize="15sp"
+        android:gravity="center_horizontal"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:text=" را وارد فرمایید !"
+        android:layout_width="wrap_content"
+        android:textColor="?colorOnPrimary"
+        android:layout_marginTop="4dp"
+        android:textSize="15sp"
+        android:gravity="center_horizontal"
         android:layout_height="wrap_content"/>
 
     <com.google.android.material.card.MaterialCardView
         app:cardElevation="7dp"
-        app:strokeColor="?attr/colorPrimary"
-        app:strokeWidth="1dp"
-        android:backgroundTint="#252a34"
+        android:backgroundTint="?colorPrimaryVariant"
         android:layout_marginTop="45dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginStart="25dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
         app:cardCornerRadius="20dp"
         android:layout_width="match_parent"
         android:layout_height="75dp">
@@ -42,15 +65,44 @@
             android:layout_marginTop="18dp"
             android:layout_marginBottom="18dp"
             android:layout_marginStart="18dp"
-            android:background="#252a34"
+            android:background="?colorPrimaryVariant"
             android:hint="کد تایید"
-            android:textColor="@color/white"
+            android:textColor="?colorOnPrimary"
             android:inputType="text"
             android:textColorHint="#7A7C87"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
 
     </com.google.android.material.card.MaterialCardView>
+
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtTimer"
+            android:layout_marginEnd="6dp"
+            android:textSize="14sp"
+            android:textColor="?colorOnPrimary"
+            android:text="00:00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:id="@+id/txtSendCode"
+            android:layout_marginStart="6dp"
+            android:text="ارسال مجدد کد"
+            android:gravity="end"
+            android:textColor="?colorOnBackground"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
         android:layout_gravity="center"
