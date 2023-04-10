@@ -40,12 +40,20 @@
                     android:textColorHint="#7A7C87"
                     android:textSize="16sp"
                     tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+                <ImageView
+                    android:id="@+id/img_sreach"
+                    android:src="@drawable/ic_search"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"/>
 
             </com.google.android.material.card.MaterialCardView>
         </FrameLayout>
 
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcl_srech"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
