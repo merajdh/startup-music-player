@@ -30,7 +30,6 @@ class MyApp : Application() {
         var idArtist: String = ""
         var idCategory: String = ""
         var ischeckd: String = ""
-        var idUser: String = ""
         var media : MediaPlayer? = null
         var isSend : Boolean = false
     }
@@ -38,7 +37,6 @@ class MyApp : Application() {
     override fun onCreate() {
         super.onCreate()
         val myModuled = module {
-
             single { androidContext().getSharedPreferences("data", Context.MODE_PRIVATE) }
             single { createApiService() }
             single { Room.databaseBuilder(androidContext(), AppDatabase::class.java, "app_dataBase") }

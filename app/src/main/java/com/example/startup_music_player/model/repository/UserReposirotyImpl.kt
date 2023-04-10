@@ -3,6 +3,7 @@ package com.example.startup_music_player.model.repository
 import android.content.SharedPreferences
 import com.example.startup_music_player.model.net.Apiservice
 import com.example.startup_music_player.model.repository.TokenInMemory.username
+import com.example.startup_music_player.util.MyApp
 import com.google.gson.JsonObject
 import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 
@@ -22,6 +23,7 @@ class UserReposirotyImpl(
 
         val result = apiservice.Register(jsonObject)
         if (result.success) {
+            saveUserName(username)
             return VALUE_SUCCESS
         } else {
             return result.mesage
@@ -35,12 +37,11 @@ class UserReposirotyImpl(
 
         val result = apiservice.Verify(jsonObject)
         if (result.success) {
-            TokenInMemory.refreshToken(username, result.access,result.refresh)
+            TokenInMemory.refreshToken(username, result.access,result.refresh,result.user_id.toString())
             saveToken(result.access)
             saveRefresh(result.refresh)
-            saveUserName(username.toString())
-            saveRefresh(result.refresh)
 
+            saveIduser(result.user_id.toString())
             return VALUE_SUCCESS
         } else {
             return result.mesage
@@ -56,13 +57,11 @@ class UserReposirotyImpl(
 
         val result = apiservice.Login(jsonObject)
         if (result.success) {
-            TokenInMemory.refreshToken(username, result.access,result.refresh)
+            TokenInMemory.refreshToken(username, result.access,result.refresh,result.user_id.toString())
             saveToken(result.access)
-
             saveUserName(username)
-            saveToken(result.access)
             saveRefresh(result.refresh)
-
+            saveIduser(result.user_id.toString())
             return VALUE_SUCCESS
         } else {
             return result.mesage
@@ -71,12 +70,12 @@ class UserReposirotyImpl(
     }
 
     override fun singout() {
-        TokenInMemory.refreshToken(null,null,null)
+        TokenInMemory.refreshToken(null,null,null,null)
         sharedPref.edit().clear().apply()
     }
 
     override fun loadToken() {
-        TokenInMemory.refreshToken(getUserName(), getToken(),getRefresh())
+        TokenInMemory.refreshToken(getUserName(), getToken(),getRefresh(),getIduser())
     }
 
     override fun saveToken(newToken: String) {
@@ -99,6 +98,14 @@ class UserReposirotyImpl(
 
     override fun getRefresh(): String {
         return sharedPref.getString("refresh","")!!
+    }
+
+    override fun saveIduser(id: String?) {
+        sharedPref.edit().putString("user_id",id).apply()
+    }
+
+    override fun getIduser(): String? {
+        return sharedPref.getString("user_id","")!!
     }
 
     override fun saveRefresh(refresh: String?) {

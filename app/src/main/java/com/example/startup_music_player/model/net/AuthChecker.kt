@@ -40,7 +40,7 @@ class AuthChecker : Authenticator, KoinComponent {
         }).execute()
 
         response.body()?.let {
-            TokenInMemory.refreshToken(null,it.access,it.refresh)
+            TokenInMemory.refreshToken(null,it.access,it.refresh,null)
             UserReposiroty.saveToken(it.access)
             UserReposiroty.saveRefresh(it.refresh)
             return it.access

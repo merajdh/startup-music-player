@@ -7,5 +7,6 @@ data class LoginRespomse(
     val access : String,
     val refresh : String,
     val code : Int,
+    val user_id : Int,
 
 )

@@ -8,10 +8,16 @@ object TokenInMemory {
     private set
 
     var access :String? = null
+    private set
 
-    fun refreshToken(Username:String? , newToken:String? , refreshToken:String?){
+    var userid :String? = null
+        private set
+
+
+    fun refreshToken(Username:String? , newToken:String? , refreshToken:String?,userid:String?){
         this.username = Username
         this.access = newToken
         this.refresh = refreshToken
+        this.userid = userid
     }
 }

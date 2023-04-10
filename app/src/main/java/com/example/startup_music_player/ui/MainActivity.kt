@@ -3,6 +3,7 @@ package com.example.startup_music_player.ui
 import android.content.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.ActivityMainBinding
@@ -11,6 +12,7 @@ import com.example.startup_music_player.model.repository.UserReposiroty
 import com.example.startup_music_player.ui.features.Main.MainFragment
 import com.example.startup_music_player.ui.features.Register.RegisterFragment
 import com.example.startup_music_player.ui.features.intro.IntroFragment
+import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
 import org.koin.android.ext.android.get
 import java.util.*

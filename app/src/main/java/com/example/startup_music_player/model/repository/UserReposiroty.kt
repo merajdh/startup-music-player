@@ -22,6 +22,8 @@ interface UserReposiroty {
     fun saveRefresh(refresh: String?)
     fun getRefresh(): String?
 
+    fun saveIduser(id: String?)
+    fun getIduser(): String?
 
 
 }
