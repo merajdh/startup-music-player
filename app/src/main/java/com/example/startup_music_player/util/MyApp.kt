@@ -21,6 +21,9 @@ import org.koin.dsl.module
 
 class MyApp : Application() {
     companion object {
+        var img_cover : String = ""
+        var musicName : String = ""
+        var Artist_name : String = ""
         var isInUse : Boolean= false
         var idMusic: String = ""
         var ispluing: Boolean = false

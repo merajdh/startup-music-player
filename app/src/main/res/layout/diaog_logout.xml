@@ -50,6 +50,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:layout_weight="1"
+                android:id="@+id/btn_accept"
                 android:text="بله"
                 android:textColor="@color/light_gray"
                 android:elevation="10dp"

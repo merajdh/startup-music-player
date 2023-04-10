@@ -95,6 +95,7 @@
         app:cardElevation="7dp">
 
         <EditText
+            android:maxLength="40"
             android:id="@+id/Edt_gmail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

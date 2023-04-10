@@ -14,6 +14,7 @@ import com.example.startup_music_player.ui.features.ContactUs.ContactUsFragment
 import com.example.startup_music_player.ui.features.LikedMusic.LikedMusicFragment
 import com.example.startup_music_player.ui.features.Logout.DialogLogout
 import com.example.startup_music_player.ui.features.Myplaylist.MyplaylistFragment
+import com.example.startup_music_player.ui.features.Play.minimizePlayFragment
 import com.example.startup_music_player.ui.features.Profile.ProfileViewModel
 import com.example.startup_music_player.ui.features.Register.RegisterFragment
 import com.example.startup_music_player.ui.features.Register.RegisterViewModel
@@ -30,15 +31,10 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentProfileBinding.inflate(layoutInflater , container , false)
         setOnClickListeners()
-        binding.mouduleThree.btnLogout.setOnClickListener {Loguot()}
         return binding.root
     }
 
-    private fun Loguot() {
-        val viewmodel : ProfileViewModel by viewModel()
-        viewmodel.singout()
-        transform(RegisterFragment())
-    }
+
 
 
     private fun transform (fragment: Fragment) {
@@ -68,7 +64,7 @@ class ProfileFragment : Fragment() {
             transform(  MyplaylistFragment())
         }
         binding.mouduleTwo.btnLiked.setOnClickListener {
-            transform(LikedMusicFragment())
+            transform(minimizePlayFragment())
         }
 
         // mouduleThree ->

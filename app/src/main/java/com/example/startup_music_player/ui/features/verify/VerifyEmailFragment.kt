@@ -34,7 +34,6 @@ class VerifyEmailFragment : Fragment()
                 binding.txtSendCode.setTextColor(ContextCompat.getColor(binding.root.context, R.color.light_blue))
                 timer()
             }
-
         }
 
 
