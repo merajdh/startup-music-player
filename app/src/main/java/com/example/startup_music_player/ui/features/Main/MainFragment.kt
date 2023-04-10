@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
@@ -14,6 +15,7 @@ import com.example.startup_music_player.model.Adapter.ViewPagerPlayAdapter
 import com.example.startup_music_player.ui.Fragment.ProfileFragment
 import com.example.startup_music_player.ui.features.Category.CategoryFragment
 import com.example.startup_music_player.ui.features.Home.HomeFragment
+import com.example.startup_music_player.ui.features.Play.PlayFragment
 import com.example.startup_music_player.ui.features.Serach.SearchFragment
 import com.example.startup_music_player.util.MyApp
 import java.util.*
@@ -28,9 +30,10 @@ class MainFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentMainBinding.inflate(layoutInflater, container, false)
 
+        binding.viewPagerMain.visibility = View.GONE
         if (MyApp.media != null) {
-
-            var adapter = ViewPagerPlayAdapter(this)
+            binding.viewPagerMain.visibility = View.VISIBLE
+            var adapter = ViewPagerPlayAdapter(parentFragmentManager , lifecycle)
             binding.viewPagerMain.adapter = adapter
             binding.viewPagerMain.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
@@ -38,14 +41,17 @@ class MainFragment : Fragment() {
             timer.schedule(object  : TimerTask(){
                 override fun run() {
                     activity?.runOnUiThread {
+
                         if (binding.viewPagerMain.currentItem == 1) {
+                            MyApp.media?.stop()
+                            MyApp.media?.release()
+                            MyApp.media = null
+                            binding.viewPagerMain.visibility = View.GONE
                             binding.viewPagerMain.adapter = null
                         }
-
                     }
                 }
-            },2000 , 2000)
-
+            },1000 , 1000)
         }
 
         Run()

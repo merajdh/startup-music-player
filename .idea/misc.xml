@@ -221,9 +221,11 @@
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/moudule_one_home.xml" value="0.25" />
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/moudule_three_home.xml" value="0.22" />
         <entry key="..\:/prozheh/new apps/startup-music-player/startup-music-player/app/src/main/res/layout/moudule_two_home.xml" value="0.25" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable-v24/shape_button_nav.xml" value="0.2185" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/ic_back_15seconde.xml" value="0.2245" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/ic_forward_15seconde.xml" value="0.2245" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/ic_home.xml" value="0.165" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/ic_pass.xml" value="0.2185" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/ic_pause.xml" value="0.2245" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/ic_profile.xml" value="0.165" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/ic_search.xml" value="0.165" />
@@ -237,6 +239,7 @@
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/shape_gradiant_top_image.xml" value="0.236" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/shape_top_profile.xml" value="0.2315" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/bottomsheet_contact_us.xml" value="0.17994451050336902" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/dialog_add_playlist.xml" value="0.19912280701754387" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/dialog_change_password.xml" value="0.17994451050336902" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/dialog_change_username.xml" value="0.33" />

@@ -5,5 +5,5 @@
     <gradient
         android:gradientRadius="12dp"
         android:endColor="?attr/colorOnBackground"
-        android:startColor="@color/light_blue" />
+        android:startColor="#A1252A34" />
 </shape>

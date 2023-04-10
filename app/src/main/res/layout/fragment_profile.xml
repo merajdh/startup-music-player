@@ -28,13 +28,17 @@
             android:layout_height="match_parent" />
 
         <include
-            android:layout_weight="1"
             android:id="@+id/moudule_three"
             layout="@layout/moudule_three_profile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"/>
 
+        <View
+            android:background="?colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
     </LinearLayout>
 
 

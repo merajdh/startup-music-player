@@ -38,23 +38,26 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentPlayTestBinding.inflate(layoutInflater, container, false)
+
         binding.mouduleOnePlay.viewMain.visibility = View.GONE
         binding.mouduleTwoPlay.viewMain.visibility = View.GONE
         binding.mouduleOnePlay.shimmerPlay.visibility = View.VISIBLE
+
         blurImage()
         setOnClickListeners()
+
         binding.mouduleOnePlay.LikeMusic.setOnClickListener { addLike() }
         binding.mouduleOnePlay.Pliy.setOnClickListener { plymusic() }
         presenter = PresenterPlayMusic(
             createApiService(),
             NetworkChecker(binding.root.context).isInternetConnected
         )
-        binding.mouduleOnePlay.slider.addOnChangeListener { slider, value, fromUser ->
 
+        binding.mouduleOnePlay.slider.addOnChangeListener { slider, value, fromUser ->
             binding.mouduleOnePlay.start.text = converttimemusic(value.toLong())
             taghir = fromUser
-
         }
+
         binding.mouduleOnePlay.slider.addOnSliderTouchListener(object :
             Slider.OnSliderTouchListener {
             override fun onStartTrackingTouch(slider: Slider) {
@@ -72,35 +75,40 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
 
         }
         return binding.root
-
     }
 
     private fun plymusic() {
         if (MyApp.ispluing) {
-            MyApp.media?.pause()
             binding.mouduleOnePlay.Pliy.setImageResource(R.drawable.ic_play)
-            MyApp.ispluing = false
         } else {
             MyApp.media?.start()
             binding.mouduleOnePlay.Pliy.setImageResource(R.drawable.ic_pause)
             MyApp.ispluing = true
         }
     }
+
     fun prepareMusik(data : MusicDetail){
         if (MyApp.media != null){
             MyApp.media?.stop()
             MyApp.media?.release()
             MyApp.media = null
         }
-        MyApp.media = MediaPlayer.create(context, Uri.parse(data.url))
-        MyApp.media?.start()
-        MyApp.ispluing = true
-        binding.mouduleOnePlay.Pliy.setImageResource(R.drawable.ic_pause)
-        binding.mouduleOnePlay.slider.valueTo = MyApp.media?.duration!!.toFloat()
-        binding.mouduleOnePlay.taim.text = converttimemusic(MyApp.media?.duration!!.toLong())
-        MyApp.media?.isLooping = true
-        timer = Timer()
 
+        MyApp.img_cover = data.cover
+        MyApp.musicName = data.title
+        MyApp.Artist_name = data.artist[0].name
+
+            MyApp.media = MediaPlayer.create(context, Uri.parse(data.url))
+            MyApp.media?.start()
+            MyApp.ispluing = true
+
+            binding.mouduleOnePlay.Pliy.setImageResource(R.drawable.ic_pause)
+            binding.mouduleOnePlay.slider.valueTo = MyApp.media?.duration!!.toFloat()
+            binding.mouduleOnePlay.taim.text = converttimemusic(MyApp.media?.duration!!.toLong())
+
+            MyApp.media?.isLooping = true
+
+        timer = Timer()
         timer.schedule(object : TimerTask() {
             override fun run() {
                 activity?.runOnUiThread {
@@ -131,12 +139,14 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
         binding.mouduleTwoPlay.viewMain.visibility = View.GONE
         binding.mouduleOnePlay.shimmerPlay.visibility = View.GONE
 
+
         prepareMusik(Music)
         Glide.with(this).load(Music.cover)
             .into(binding.mouduleOnePlay.imgCover)
         Glide.with(this).load(Music.cover)
             .apply(RequestOptions.bitmapTransform(BlurTransformation(8, 4)))
             .into(binding.mouduleOnePlay.imgBackground)
+
         binding.mouduleOnePlay.artistName.text = Music.artist[0].name
         binding.mouduleOnePlay.txtNameMusic.text = Music.title
     }

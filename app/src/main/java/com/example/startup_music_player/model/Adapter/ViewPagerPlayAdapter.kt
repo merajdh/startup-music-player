@@ -1,13 +1,27 @@
 package com.example.startup_music_player.model.Adapter
 
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import androidx.viewpager2.widget.ViewPager2
+import androidx.viewpager2.adapter.FragmentViewHolder
+import com.example.startup_music_player.databinding.FragmentMinimizePlayBinding
 import com.example.startup_music_player.ui.features.Main.MainFragment
 import com.example.startup_music_player.ui.features.Play.minimizePlayFragment
-import com.example.startup_music_player.ui.features.playDetail.playDetailFragment
 
-class ViewPagerPlayAdapter(fragment: MainFragment)  : FragmentStateAdapter(fragment)  {
+
+class ViewPagerPlayAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle)  : FragmentStateAdapter(fragmentManager, lifecycle)   {
+
+    lateinit var binding:FragmentMinimizePlayBinding
+    override fun onBindViewHolder(
+        holder: FragmentViewHolder,
+        position: Int,
+        payloads: MutableList<Any>
+    ) {
+
+
+        super.onBindViewHolder(holder, position, payloads)
+    }
 
 
     override fun createFragment(position: Int): Fragment {

@@ -37,6 +37,12 @@
 
             <include layout="@layout/moudule_five_home"
                 android:id="@+id/moudule_five_home"/>
+
+            <View
+                android:background="?colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"/>
+
         </LinearLayout>
 
 

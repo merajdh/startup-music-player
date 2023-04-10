@@ -5,8 +5,7 @@
     <translate
         android:interpolator="@android:anim/decelerate_interpolator"
         android:fromXDelta="-100%p"
-        android:toXDelta="0"
-        />
+        android:toXDelta="0" />
 
     <alpha
         android:fromAlpha="0.5"

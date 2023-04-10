@@ -1,65 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/constraintLayout2"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
-    android:layout_gravity="bottom"
-    android:background="?colorPrimaryVariant">
-
+    app:cardCornerRadius="12dp"
+    app:strokeColor="?colorOnBackground"
+    app:strokeWidth="0.5dp"
+    android:layout_height="55dp"
+    android:background="@drawable/shape_back_rec_trand"
+    android:layout_gravity="bottom">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/materialCardView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="6dp"
             app:cardCornerRadius="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="12dp"
+
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/test2" />
+                android:id="@+id/img_cover"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="fitXY" />
 
 
         </com.google.android.material.card.MaterialCardView>
 
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/txt_music_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
             android:layout_marginEnd="36dp"
             android:text="نام موزیک"
             android:textColor="?colorOnPrimary"
             android:textSize="14sp"
             android:textStyle="bold"
+
             app:layout_constraintEnd_toStartOf="@+id/materialCardView14"
             app:layout_constraintTop_toTopOf="@+id/materialCardView14" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/txt_artist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
             android:text="نام خواننده"
-            android:textColor="@color/Gray"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView15"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+            android:textColor="?colorOnPrimary"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/materialCardView14"
+            app:layout_constraintEnd_toEndOf="@+id/txt_music_name"
+            app:layout_constraintTop_toBottomOf="@+id/txt_music_name" />
 
 
         <LinearLayout
             android:id="@+id/linearLayout4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="16dp"
             android:orientation="horizontal"
             android:padding="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -67,23 +75,27 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:id="@+id/btn_play"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_play"
-                app:tint="?colorOnPrimary" />
+                app:tint="@color/light_gray" />
 
             <ImageView
+
+                android:id="@+id/btn_skip"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="6dp"
-                android:src="@drawable/ic_skip_forward" />
+                android:src="@drawable/ic_skip_forward"
+                app:tint="@color/light_gray"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.core.widget.NestedScrollView>
+</FrameLayout>
 
 
 

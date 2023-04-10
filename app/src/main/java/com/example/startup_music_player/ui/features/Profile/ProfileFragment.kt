@@ -64,7 +64,7 @@ class ProfileFragment : Fragment() {
             transform(  MyplaylistFragment())
         }
         binding.mouduleTwo.btnLiked.setOnClickListener {
-            transform(minimizePlayFragment())
+            transform(LikedMusicFragment())
         }
 
         // mouduleThree ->

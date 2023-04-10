@@ -42,6 +42,10 @@
                             android:id="@+id/moudule_two_category"
                             layout="@layout/moudule_two_category"/>
 
+                    <View
+                        android:background="?colorPrimary"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"/>
                 </LinearLayout>
 
         </LinearLayout>
