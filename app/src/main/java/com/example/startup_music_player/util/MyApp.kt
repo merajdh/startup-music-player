@@ -26,6 +26,7 @@ class MyApp : Application() {
         var Artist_name : String = ""
         var isInUse : Boolean= false
         var idMusic: String = ""
+        var musicserch: String = ""
         var ispluing: Boolean = false
         var idArtist: String = ""
         var idCategory: String = ""

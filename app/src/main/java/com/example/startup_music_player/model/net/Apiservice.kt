@@ -10,10 +10,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface Apiservice {
 
@@ -71,6 +68,9 @@ interface Apiservice {
 
     @GET("page/ticket-title")
     suspend fun TitleTicket() : List<TitleTicket>
+
+    @GET("music/search")
+    suspend fun search(@Query("search") namemusik :String) : List<MusicRespomse>
 
 }
 
