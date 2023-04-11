@@ -26,7 +26,7 @@ class UserReposirotyImpl(
             saveUserName(username)
             return VALUE_SUCCESS
         } else {
-            return result.mesage
+            return result.message
         }
     }
 
@@ -44,7 +44,21 @@ class UserReposirotyImpl(
             saveIduser(result.user_id.toString())
             return VALUE_SUCCESS
         } else {
-            return result.mesage
+            return result.message
+        }
+    }
+
+    override suspend fun updatepassword(old_password: String, new_password: String): String {
+        val jsonObject = JsonObject().apply {
+            addProperty("old_password", old_password)
+            addProperty("new_password", old_password)
+        }
+
+        val result = apiservice.UpdatePaswoord(jsonObject)
+        if (result.success) {
+            return VALUE_SUCCESS
+        } else {
+            return result.message
         }
     }
 
@@ -64,7 +78,7 @@ class UserReposirotyImpl(
             saveIduser(result.user_id.toString())
             return VALUE_SUCCESS
         } else {
-            return result.mesage
+            return result.message
         }
 
     }

@@ -4,6 +4,7 @@ import com.example.startup_music_player.model.data.*
 import com.example.startup_music_player.model.repository.TokenInMemory
 
 import com.google.gson.JsonObject
+import com.google.gson.annotations.JsonAdapter
 import ir.dunijet.dunibazaar.util.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -71,6 +72,9 @@ interface Apiservice {
 
     @GET("music/search")
     suspend fun search(@Query("search") namemusik :String) : List<MusicRespomse>
+
+    @PUT("accounts/password/update")
+    suspend fun UpdatePaswoord(@Body body: JsonObject) : LoginRespomse
 
 }
 
