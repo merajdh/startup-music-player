@@ -79,7 +79,9 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
 
     private fun plymusic() {
         if (MyApp.ispluing) {
+            MyApp.media?.pause()
             binding.mouduleOnePlay.Pliy.setImageResource(R.drawable.ic_play)
+            MyApp.ispluing = false
         } else {
             MyApp.media?.start()
             binding.mouduleOnePlay.Pliy.setImageResource(R.drawable.ic_pause)

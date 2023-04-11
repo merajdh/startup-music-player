@@ -6,6 +6,7 @@
         android:startColor="?colorPrimary"
         android:centerColor="?colorOnBackground"
         android:endColor="@android:color/transparent"
+        android:centerX="0.3"
         android:angle="90" />
 
 

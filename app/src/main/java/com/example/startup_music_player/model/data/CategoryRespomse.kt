@@ -9,7 +9,7 @@ data class CategoryRespomse (
     @SerializedName("title")
     val typeCategory : String,
     @SerializedName("image")
-    val cover : String,
+    val image : String,
 
     @PrimaryKey
     @SerializedName("id")

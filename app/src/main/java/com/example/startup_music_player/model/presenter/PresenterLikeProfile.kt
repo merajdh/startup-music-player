@@ -10,16 +10,16 @@ class PresenterLikeProfile(
     private val apiservice: Apiservice,
     private val Internet: Boolean,
 ) : ContractLikeProfile.Presenter {
-    var View: ContractLikeProfile.View? = null
+    var fragmentView: ContractLikeProfile.View? = null
     override suspend fun OnAttach(view: ContractLikeProfile.View) {
+        fragmentView = view
         if (Internet){
-            View!!.ShowMusicLikeUser(apiservice.Favoritemusic(TokenInMemory.userid.toString()))
+            fragmentView!!.ShowMusicLikeUser(apiservice.Favoritemusic(TokenInMemory.userid.toString()))
         }
-
     }
 
     override fun OnDetavh() {
-        View = null
+        fragmentView = null
 
     }
 }

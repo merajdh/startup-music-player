@@ -111,7 +111,7 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
 
     override fun ClickCategory(data: CategoryRespomse) {
         MyApp.idCategory = data.id
-        val image = data.cover
+        val image = data.image
         val type = data.typeCategory
         val bundle = Bundle()
         bundle.putString("img" , image)
@@ -125,7 +125,6 @@ class CategoryFragment : Fragment() , ContractCategory.View , OnClickCategory {
         transform.commit()
 
     }
-
     override fun OnClickArtist(data: ListArtistData) {
         MyApp.idArtist = data.id.toString()
         val transform = parentFragmentManager.beginTransaction()

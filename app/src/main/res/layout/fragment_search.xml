@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,23 +15,29 @@
         tools:context=".ui.features.Serach.SearchFragment">
 
         <FrameLayout
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="14dp"
             android:background="?colorPrimary"
             android:layout_width="match_parent"
-            android:layout_height="80dp">
+            android:layout_height="wrap_content">
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_margin="14dp"
                 app:cardElevation="4dp"
                 android:backgroundTint="?colorPrimaryVariant"
                 app:cardCornerRadius="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="55dp">
+                android:layout_height="match_parent">
 
                 <EditText
                     android:id="@+id/Edt_search"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="16dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
                     android:background="?colorPrimaryVariant"
                     android:hint="اسم خواننده,اسم موزیک و..."
                     android:inputType="text"
@@ -41,30 +47,59 @@
                     android:textSize="16sp"
                     tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
                 <ImageView
+
+                    android:layout_gravity="center_vertical"
                     android:id="@+id/img_sreach"
                     android:src="@drawable/ic_search"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="12dp"
                     android:layout_width="25dp"
                     android:layout_height="25dp"/>
 
             </com.google.android.material.card.MaterialCardView>
         </FrameLayout>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/anim_loading"
+            android:layout_width="120dp"
+            app:lottie_loop="true"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            app:lottie_rawRes="@raw/anim_loading"
+            android:layout_height="120dp"/>
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcl_srech"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        </androidx.recyclerview.widget.RecyclerView>
-        <View
-            android:background="?colorPrimary"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/rcl_srech"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layoutAnimation="@anim/recycler_layout_anim"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="?colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rcl_srech" />
+
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
 
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</FrameLayout>
 
 

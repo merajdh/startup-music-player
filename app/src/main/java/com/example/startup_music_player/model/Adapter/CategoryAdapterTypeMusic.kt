@@ -19,7 +19,7 @@ class CategoryAdapterTypeMusic(private val data: List<CategoryRespomse>, private
 
             binding.txtType.text = dataCategory.typeCategory
 
-            Glide.with(binding.root.context).load(dataCategory.cover)
+            Glide.with(binding.root.context).load(dataCategory.image)
                 .apply(RequestOptions.bitmapTransform(BlurTransformation(2, 2)))
                 .into(binding.imgCover)
 

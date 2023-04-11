@@ -38,6 +38,12 @@ class minimizePlayFragment : Fragment() {
     private fun setOnClick(){
 
     }
+    private fun transform (fragment: Fragment) {
+        val transform = parentFragmentManager.beginTransaction()
+        transform.addToBackStack(null)
+        transform.replace(R.id.FrameLayoutMain, fragment)
+        transform.commit()
+    }
 
     private fun plymusic() {
         if (MyApp.ispluing) {

@@ -3,14 +3,18 @@ package com.example.startup_music_player.ui.features.Serach
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentSearchBinding
+import com.example.startup_music_player.model.Adapter.SearchAdapter
 import com.example.startup_music_player.model.Contract.ContractSrech
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.example.startup_music_player.model.net.createApiService
@@ -35,14 +39,15 @@ class SearchFragment : Fragment(),ContractSrech.View {
             MyApp.musicserch = binding.EdtSearch.text.toString()
             search()
         }
-        return inflater.inflate(R.layout.fragment_search, container, false)
+        return binding.root
     }
 
     private fun search() {
         // visibel anim loding >
-
-
+        binding.animLoading.visibility = View.VISIBLE
+        binding.animLoading.playAnimation()
         //serach ->
+
         lifecycleScope.launchWhenCreated {
             presenter.OnAttach(this@SearchFragment)
         }
@@ -50,20 +55,23 @@ class SearchFragment : Fragment(),ContractSrech.View {
 
     private fun setOnClickListeners() {
 
-        binding.swipeSearch.setOnRefreshListener {
-            // load data hare
-
-            Handler(Looper.getMainLooper()).postDelayed({
-                binding.swipeSearch.isRefreshing = false
-
-            }, 800)
-        }
     }
 
     override fun srech(data: List<MusicRespomse>) {
         // invisibel anim loding >
+        binding.animLoading.visibility = View.GONE
 
-        // set adapter
+            // set adapter
+        if (binding.EdtSearch.text.isNotEmpty()){
+            val adapter = SearchAdapter(data)
+            binding.rclSrech.adapter = adapter
+            binding.rclSrech.layoutManager =
+                LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        }
+
+
+
+
     }
 
 }

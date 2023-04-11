@@ -25,7 +25,7 @@ class PresenterCategory(
         fragmentview!!.ListArtist(ArtistDAo.getAllCategory())
 
         if (Internet){
-            CategoryDao.insertOrUpdate(apiservice.CategoryTypeMusic())
+           CategoryDao.insertOrUpdate(apiservice.CategoryTypeMusic())
             ArtistDAo.insertOrUpdate(apiservice.CategoryArtist())
             fragmentview!!.TypeOfMusic(CategoryDao.getAllCategory())
             fragmentview!!.ListArtist(ArtistDAo.getAllCategory())
