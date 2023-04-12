@@ -1,6 +1,8 @@
 package com.example.startup_music_player.ui.features.Register
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
@@ -20,13 +22,17 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class RegisterFragment : Fragment() {
+    lateinit var sharedPref: SharedPreferences
     lateinit var binding : FragmentRegisterBinding
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentRegisterBinding.inflate(layoutInflater,container,false)
+        sharedPref = activity!!.getSharedPreferences("data" , Context.MODE_PRIVATE)
         binding.btnRegister.setOnClickListener { IschektRegister() } //onclick_btnRegister
         binding.txtRegister.setOnClickListener {
             transform(LoginFragment())
@@ -52,6 +58,7 @@ class RegisterFragment : Fragment() {
                         // ischekt Answer server
                         viewmodel.signUpUser {
                             if (it == VALUE_SUCCESS){
+                                sharedPref.edit().putString("password" , binding.EdtPassword.text.toString()).apply()
                                 transform(VerifyEmailFragment())
 //                                binding.animLoading.visibility = View.GONE
                             }else{

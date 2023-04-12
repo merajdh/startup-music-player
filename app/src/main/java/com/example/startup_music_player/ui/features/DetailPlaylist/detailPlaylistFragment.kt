@@ -4,10 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentDetailPlaylistBinding
-import com.example.startup_music_player.ui.features.Logout.DialogLogout
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class detailPlaylistFragment : BottomSheetDialogFragment() {

@@ -2,11 +2,12 @@
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     android:layout_width="match_parent"
     android:id="@+id/swipe_home"
+    android:background="@drawable/shape_back_main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent">
 
     <androidx.core.widget.NestedScrollView
-        android:background="?colorPrimary"
+        android:background="@drawable/shape_back_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -39,8 +40,7 @@
                 android:id="@+id/moudule_five_home"/>
 
             <View
-                android:background="?colorPrimary"
-                android:layout_width="match_parent"
+                android:background="@drawable/shape_back_main"                android:layout_width="match_parent"
                 android:layout_height="80dp"/>
 
         </LinearLayout>

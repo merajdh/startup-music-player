@@ -18,13 +18,15 @@ interface UserReposiroty {
     fun saveUserName(username: String)
     fun getUserName(): String?
 
-
-
     fun saveRefresh(refresh: String?)
     fun getRefresh(): String?
 
     fun saveIduser(id: String?)
     fun getIduser(): String?
+
+
+
+
 
 
 }

@@ -3,10 +3,10 @@
     android:backgroundTint="@color/light_blue"
     app:cardCornerRadius="6dp"
     app:cardElevation="3dp"
-    android:layout_margin="6dp"
+    android:layout_margin="4dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="140dp"
-    android:layout_height="140dp"
+    android:layout_width="130dp"
+    android:layout_height="130dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,14 +39,13 @@
             android:gravity="right"
             android:textColor="?colorOnPrimary"
             android:layout_marginEnd="6dp"
-            android:textSize="14sp"
-            android:textStyle="bold"
+            android:textSize="12sp"
             app:layout_constraintBottom_toTopOf="@+id/txt_name_singer"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:layout_marginEnd="6dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="4dp"
             android:id="@+id/txt_name_singer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,7 +53,7 @@
             android:maxLength="20"
             android:text="امیر تتلو"
             android:textColor="@color/Gray"
-            android:textSize="11sp"
+            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

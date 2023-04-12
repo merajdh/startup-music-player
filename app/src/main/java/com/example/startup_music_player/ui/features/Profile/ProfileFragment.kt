@@ -1,24 +1,22 @@
 package com.example.startup_music_player.ui.Fragment
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.startup_music_player.R
+import com.example.startup_music_player.databinding.DiaogLogoutBinding
 import com.example.startup_music_player.databinding.FragmentProfileBinding
 import com.example.startup_music_player.ui.features.About.AboutFragment
 import com.example.startup_music_player.ui.features.ChangeUsername.ChangeUsernameFragment
-import com.example.startup_music_player.ui.features.ContactUs.ContactUsBottomSheet
 import com.example.startup_music_player.ui.features.ContactUs.ContactUsFragment
 import com.example.startup_music_player.ui.features.LikedMusic.LikedMusicFragment
-import com.example.startup_music_player.ui.features.Logout.DialogLogout
 import com.example.startup_music_player.ui.features.Myplaylist.MyplaylistFragment
-import com.example.startup_music_player.ui.features.Play.minimizePlayFragment
 import com.example.startup_music_player.ui.features.Profile.ProfileViewModel
 import com.example.startup_music_player.ui.features.Register.RegisterFragment
-import com.example.startup_music_player.ui.features.Register.RegisterViewModel
-import com.example.startup_music_player.ui.features.changePassword.fragmentDialog
+import com.example.startup_music_player.ui.features.changePassword.ChangePasswordFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProfileFragment : Fragment() {
@@ -56,9 +54,7 @@ class ProfileFragment : Fragment() {
         }
         // mouduleTwo ->
         binding.mouduleTwo.btnChangePassword.setOnClickListener {
-            val transform = fragmentDialog()
-            transform.isCancelable = true
-            transform.show(parentFragmentManager , null)
+            transform(ChangePasswordFragment())
         }
         binding.mouduleTwo.btnMyplaylist.setOnClickListener {
             transform(  MyplaylistFragment())
@@ -75,13 +71,23 @@ class ProfileFragment : Fragment() {
             transform(AboutFragment())
         }
         binding.mouduleThree.btnLogout.setOnClickListener {
-            val transform = DialogLogout()
-            transform.isCancelable = true
-            transform.show(childFragmentManager , null)
+            val dialog = AlertDialog.Builder(context).create()
+            val view = DiaogLogoutBinding.inflate(layoutInflater,)
+            view.btnAccept.setOnClickListener { Loguot()
+            dialog.dismiss()}
+            view.btnCancel.setOnClickListener { dialog.dismiss() }
+            dialog.setView(view.root)
+            dialog.setCancelable(true)
+            dialog.show()
+
         }
 
+    }
+    private fun Loguot() {
+        val viewmodel : ProfileViewModel by viewModel()
+        viewmodel.singout()
+        transform(RegisterFragment())
 
     }
-
 
 }

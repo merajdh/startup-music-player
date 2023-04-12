@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    app:cardCornerRadius="20dp"
-    android:layoutAnimation="@anim/anim_main_layout"
     android:layout_gravity="center_horizontal"
-    app:cardElevation="8dp"
+    style="@style/DialogCorners"
+    android:layout_margin="6dp"
+    android:elevation="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="wrap_content">
 
@@ -66,4 +66,4 @@
 
 
     </LinearLayout>
-</com.google.android.material.card.MaterialCardView>
+</LinearLayout>

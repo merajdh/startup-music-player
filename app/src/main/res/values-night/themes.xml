@@ -9,6 +9,7 @@
         <item name="colorSecondary">@color/bule</item>
         <item name="colorSecondaryVariant">@color/light_blue</item>
         <item name="colorOnSecondary">@color/white</item>
+        <item name="android:panelColorBackground">@color/light_blue</item>
         <item name="colorOnBackground">#D00A0F14</item>
 
         <!-- Status bar color. -->

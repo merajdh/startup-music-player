@@ -203,6 +203,7 @@
                     <com.google.android.material.checkbox.MaterialCheckBox
                         android:id="@+id/LikeMusic"
                         android:layout_width="28dp"
+                        
                         android:layout_height="28dp"
                         android:layout_gravity="center_vertical|center_horizontal"
                         android:layout_marginStart="70dp"

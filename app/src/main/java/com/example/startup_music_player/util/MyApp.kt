@@ -12,6 +12,7 @@ import com.example.startup_music_player.model.repository.UserReposiroty
 import com.example.startup_music_player.model.repository.UserReposirotyImpl
 import com.example.startup_music_player.ui.features.Login.LoginViewModel
 import com.example.startup_music_player.ui.features.Play.LikeViewModel
+import com.example.startup_music_player.ui.features.Profile.ProfileViewModel
 import com.example.startup_music_player.ui.features.Register.RegisterViewModel
 import com.example.startup_music_player.ui.features.verify.VerifyViewModel
 import org.koin.android.ext.koin.androidContext
@@ -47,6 +48,7 @@ class MyApp : Application() {
             viewModel { RegisterViewModel(get()) }
             viewModel { VerifyViewModel(get()) }
             viewModel { LikeViewModel(get()) }
+            viewModel { ProfileViewModel(get()) }
         }
         startKoin {
             androidContext(this@MyApp)

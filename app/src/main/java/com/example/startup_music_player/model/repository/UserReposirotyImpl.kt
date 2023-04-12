@@ -51,7 +51,7 @@ class UserReposirotyImpl(
     override suspend fun updatepassword(old_password: String, new_password: String): String {
         val jsonObject = JsonObject().apply {
             addProperty("old_password", old_password)
-            addProperty("new_password", old_password)
+            addProperty("new_password", new_password)
         }
 
         val result = apiservice.UpdatePaswoord(jsonObject)
