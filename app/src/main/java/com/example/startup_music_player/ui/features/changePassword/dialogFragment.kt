@@ -23,7 +23,7 @@ class fragmentDialog : DialogFragment() {
         binding = DialogChangePasswordBinding.inflate(layoutInflater , container , false)
         isCancelable = true
         binding.updatePassword.setOnClickListener {
-            if (binding.newePass.text == binding.repetitionpass){
+            if (binding.newePass.text == binding.repetitionpass.text){
                 update()
             }else{
                 // Show toast or dialog and ...
@@ -35,7 +35,6 @@ class fragmentDialog : DialogFragment() {
         val viewmodel : ProfileViewModel by viewModel()
         viewmodel.old_password.value = binding.OldPass.text.toString()
         viewmodel.new_password.value = binding.newePass.text.toString()
-
         viewmodel.updatePassword {
 
             if (it == VALUE_SUCCESS){

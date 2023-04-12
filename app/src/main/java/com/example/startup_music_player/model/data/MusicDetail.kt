@@ -17,7 +17,9 @@ data class MusicDetail(
     @SerializedName("title")
     val title: String,
     @SerializedName("url")
-    val url: String
+    val url: String,
+    @SerializedName("like")
+    val like: Boolean
 ) {
     data class Artist(
         @SerializedName("id")

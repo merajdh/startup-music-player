@@ -55,7 +55,7 @@ class UserReposirotyImpl(
         }
 
         val result = apiservice.UpdatePaswoord(jsonObject)
-        if (result.success) {
+        if (result.status) {
             return VALUE_SUCCESS
         } else {
             return result.message

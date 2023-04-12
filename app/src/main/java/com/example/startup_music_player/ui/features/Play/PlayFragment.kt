@@ -38,7 +38,6 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentPlayTestBinding.inflate(layoutInflater, container, false)
-
         binding.mouduleOnePlay.viewMain.visibility = View.GONE
         binding.mouduleTwoPlay.viewMain.visibility = View.GONE
         binding.mouduleOnePlay.shimmerPlay.visibility = View.VISIBLE
@@ -140,7 +139,8 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
         binding.mouduleOnePlay.viewMain.visibility = View.VISIBLE
         binding.mouduleTwoPlay.viewMain.visibility = View.GONE
         binding.mouduleOnePlay.shimmerPlay.visibility = View.GONE
-
+        if(Music.like)
+            binding.mouduleOnePlay.LikeMusic.isChecked = true
 
         prepareMusik(Music)
         Glide.with(this).load(Music.cover)
