@@ -28,22 +28,22 @@ interface Apiservice {
     fun refreshToken(@Body jsonObject: JsonObject): Call<LoginRespomse>
 
     @GET("music/musicbycategory/")
-    suspend fun MusicByCategory(): List<MusicRespomse>
+    suspend fun MusicByCategory(): List<MusicByCategoryRespomse>
 
 
     @GET("music/recentmusic/")
-    suspend fun MusicNews(): List<MusicRespomse>
+    suspend fun MusicNews(): List<MusicNewsRespomse>
 
 
-    @GET("music/musicbycategory/")
-    suspend fun MusicTop(): List<MusicRespomse>
+    @GET("music/morelike/")
+    suspend fun MusicTop(): List<MusicTopRespomse>
 
 
     @GET("music/recentmusic/")
-    suspend fun MusicTrend(): List<MusicRespomse>
+    suspend fun MusicTrend(): List<MusicTrendRespomse>
 
     @GET("music/internationals/")
-    suspend fun MusicInternatioal() : List<MusicRespomse>
+    suspend fun MusicInternatioal() : List<MusicInternatioalRespomse>
 
 
     @GET("music/detail/{id}/")

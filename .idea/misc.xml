@@ -44,6 +44,7 @@
         <entry key="..\:/Users/saman/AndroidStudioProjects/Music/startup-music-player/app/src/main/res/layout/fragment_play.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/saman/AndroidStudioProjects/Music/startup-music-player/app/src/main/res/layout/fragment_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/saman/AndroidStudioProjects/Music/startup-music-player/app/src/main/res/layout/fragment_search.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/saman/AndroidStudioProjects/Music/startup-music-player/app/src/main/res/layout/moudule_five_home.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/saman/AndroidStudioProjects/Music/startup-music-player/app/src/main/res/layout/moudule_three_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/saman/AndroidStudioProjects/Music/startup-music-player/app/src/main/res/layout/moudule_two_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Music/startup-music-player/app/src/main/res/layout/fragment_category.xml" value="0.35485485485485485" />
@@ -231,9 +232,7 @@
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/ic_pause.xml" value="0.2245" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/ic_profile.xml" value="0.165" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/ic_search.xml" value="0.165" />
-        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/like_selector.xml" value="0.2215" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/shape_back_bottom_sheet.xml" value="0.1635" />
-        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/shape_back_main.xml" value="0.2215" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/shape_back_rec_trand.xml" value="0.1635" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/shape_back_rec_trand2.xml" value="0.165" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/shape_dialog.xml" value="0.1635" />
@@ -244,9 +243,8 @@
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/drawable/shape_top_profile.xml" value="0.2315" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/dialog_add_playlist.xml" value="0.19912280701754387" />
-        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/dialog_change_password.xml" value="0.19401709401709402" />
+        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/dialog_change_password.xml" value="0.17994451050336902" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/dialog_change_username.xml" value="0.33" />
-        <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/dialog_pasword_changed.xml" value="0.19401709401709402" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/dialog_verify.xml" value="0.33" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/dialog_verify_reject.xml" value="0.33" />
         <entry key="..\:/prozheh/start up/startup-music-player/app/src/main/res/layout/diaog_logout.xml" value="0.33" />

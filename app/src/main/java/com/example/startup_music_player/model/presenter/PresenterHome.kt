@@ -49,7 +49,7 @@ class PresenterHome(
         internationalMusicDao.insertOrUpdate(apiservice.MusicInternatioal())
 
         // send data To ui
-        fragmentview!!.RecentMusikOn(MusicByCategoryDao.getAllMusicByCategory())
+        fragmentview!!.MusicByCategoryOn(MusicByCategoryDao.getAllMusicByCategory())
         fragmentview!!.MoreLikeOn(MoreLikeDao.getAllMoreLike())
         fragmentview!!.RecentMusikOn(RecentMusikDao.getAllRecentMusik())
         fragmentview!!.TrendMusikOn(TrendMusikDao.getAllTrendMusik())

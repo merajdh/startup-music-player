@@ -9,13 +9,14 @@ import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.ItemRecyclerTrandMusicBinding
 import com.example.startup_music_player.model.InteFaces.OnClickHome
 import com.example.startup_music_player.model.data.MusicRespomse
+import com.example.startup_music_player.model.data.MusicTrendRespomse
 import com.squareup.picasso.Picasso
 
-class HomeAdapterTrand (private val data : List<MusicRespomse>,  private val OnClick: OnClickHome) :RecyclerView.Adapter<HomeAdapterTrand.HomeViewHolder>() {
+class HomeAdapterTrand (private val data : List<MusicTrendRespomse>,  private val OnClick: OnClickHome) :RecyclerView.Adapter<HomeAdapterTrand.HomeViewHolder>() {
     lateinit var binding:ItemRecyclerTrandMusicBinding
 
     inner class HomeViewHolder(itemView: View, ) : RecyclerView.ViewHolder(itemView){
-        fun ViewBinder (dataHome: MusicRespomse){
+        fun ViewBinder (dataHome: MusicTrendRespomse){
 
             binding.txtNameMusic.text = dataHome.title
             binding.txtNameSinger.text = dataHome.artist[0].toString()
@@ -34,7 +35,7 @@ class HomeAdapterTrand (private val data : List<MusicRespomse>,  private val OnC
                 .into(binding.imgCover)
 
             itemView.setOnClickListener {
-                OnClick.Click(dataHome)
+                OnClick.Click_MusicTrend(dataHome)
             }
 
         }

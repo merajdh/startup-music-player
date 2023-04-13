@@ -6,14 +6,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.startup_music_player.databinding.ItemRecyclerHappyHomeBinding
 import com.example.startup_music_player.model.InteFaces.OnClickHome
+import com.example.startup_music_player.model.data.MusicByCategoryRespomse
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.squareup.picasso.Picasso
 
-class HomeAdapterHappyMusic(private val data: List<MusicRespomse>, private val OnClick: OnClickHome) : RecyclerView.Adapter<HomeAdapterHappyMusic.HomeHappyMusicViewHolder>() {
+class HomeAdapterHappyMusic(private val data: List<MusicByCategoryRespomse>, private val OnClick: OnClickHome) : RecyclerView.Adapter<HomeAdapterHappyMusic.HomeHappyMusicViewHolder>() {
     lateinit var binding: ItemRecyclerHappyHomeBinding
 
     inner class HomeHappyMusicViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun ViewBinder(dataHome: MusicRespomse) {
+        fun ViewBinder(dataHome: MusicByCategoryRespomse) {
             binding.txtNameMusic.text = dataHome.title
             binding.txtNameSinger.text = dataHome.artist[0].toString()
             Picasso
@@ -22,7 +23,7 @@ class HomeAdapterHappyMusic(private val data: List<MusicRespomse>, private val O
                 .into(binding.imgCover)
 
             itemView.setOnClickListener {
-                OnClick.Click(dataHome)
+                OnClick.Click_MusicByCategory(dataHome)
             }
         }
     }

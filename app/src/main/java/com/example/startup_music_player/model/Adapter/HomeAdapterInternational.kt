@@ -6,18 +6,19 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.startup_music_player.databinding.ItemRecyclerInternationalMusicCategoryBinding
 import com.example.startup_music_player.model.InteFaces.OnClickHome
+import com.example.startup_music_player.model.data.MusicInternatioalRespomse
 import com.example.startup_music_player.model.data.MusicRespomse
 import com.squareup.picasso.Picasso
 
 class HomeAdapterInternational(
-    private val data: List<MusicRespomse>,
+    private val data: List<MusicInternatioalRespomse>,
     private val OnClick: OnClickHome
 ) : RecyclerView.Adapter<HomeAdapterInternational.HomeInternationalMusicViewHolder>() {
     lateinit var binding: ItemRecyclerInternationalMusicCategoryBinding
 
     inner class HomeInternationalMusicViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
-        fun ViewBinder(dataHome: MusicRespomse) {
+        fun ViewBinder(dataHome: MusicInternatioalRespomse) {
 
             binding.txtNameMusic.text = dataHome.title
             binding.txtNameSinger.text = dataHome.artist[0]
@@ -28,7 +29,7 @@ class HomeAdapterInternational(
                 .into(binding.imgCover)
 
             itemView.setOnClickListener {
-                OnClick.Click(dataHome)
+                OnClick.Click_MusicInternatioal(dataHome)
             }
         }
     }

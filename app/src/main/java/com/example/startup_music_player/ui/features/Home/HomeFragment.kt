@@ -22,7 +22,7 @@ import com.example.startup_music_player.databinding.FragmentHomeBinding
 import com.example.startup_music_player.model.Adapter.*
 import com.example.startup_music_player.model.Contract.ContractHome
 import com.example.startup_music_player.model.InteFaces.OnClickHome
-import com.example.startup_music_player.model.data.MusicRespomse
+import com.example.startup_music_player.model.data.*
 import com.example.startup_music_player.model.db.AppDatabase
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresenterHome
@@ -97,7 +97,7 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
 
 
     // set data Adapter Ofline
-    override fun MusicByCategoryOf(data: List<MusicRespomse>) {
+    override fun MusicByCategoryOf(data: List<MusicByCategoryRespomse>) {
 
 
         val adapter = HomeAdapterHappyMusic(data, this)
@@ -106,21 +106,21 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
         binding.mouduleOneHome.recHappyMusic.adapter = adapter
     }
 
-    override fun MoreLikeOf(data: List<MusicRespomse>) {
+    override fun MoreLikeOf(data: List<MusicTopRespomse>) {
         val adapter = HomeAdapterTopMusic(data, this)
         binding.mouduleTwoHome.recTopMusic.layoutManager =
             GridLayoutManager(context, 2, RecyclerView.HORIZONTAL, true)
         binding.mouduleTwoHome.recTopMusic.adapter = adapter
     }
 
-    override fun RecentMusikOf(data: List<MusicRespomse>) {
-        val adapter = HomeAdapterTopMusic(data, this)
+    override fun RecentMusikOf(data: List<MusicNewsRespomse>) {
+        val adapter = HomeAdapterNewMusic(data, this)
         binding.mouduleThreeHome.recNewMusic.layoutManager =
             GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
         binding.mouduleThreeHome.recNewMusic.adapter = adapter
     }
 
-    override fun TrendMusikOf(data: List<MusicRespomse>) {
+    override fun TrendMusikOf(data: List<MusicTrendRespomse>) {
 
         val adapter = HomeAdapterTrand(data, this)
         binding.mouduleFourHome.recTrandMusic.layoutManager =
@@ -128,7 +128,7 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
         binding.mouduleFourHome.recTrandMusic.adapter = adapter
     }
 
-    override fun InternationalMusicOf(data: List<MusicRespomse>) {
+    override fun InternationalMusicOf(data: List<MusicInternatioalRespomse>) {
         val adapter = HomeAdapterInternational(data, this)
         binding.mouduleFiveHome.recInternational.layoutManager =
             GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
@@ -138,7 +138,7 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
 
 
     // set data Adapter Online
-    override fun MusicByCategoryOn(data: List<MusicRespomse>) {
+    override fun MusicByCategoryOn(data: List<MusicByCategoryRespomse>) {
 
         val adapter = HomeAdapterHappyMusic(data, this)
         binding.mouduleOneHome.recHappyMusic.layoutManager =
@@ -148,7 +148,7 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
 
     }
 
-    override fun MoreLikeOn(data: List<MusicRespomse>) {
+    override fun MoreLikeOn(data: List<MusicTopRespomse>) {
 
         val adapter = HomeAdapterTopMusic(data, this)
         binding.mouduleTwoHome.recTopMusic.layoutManager =
@@ -156,9 +156,9 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
         binding.mouduleTwoHome.recTopMusic.adapter = adapter
     }
 
-    override fun RecentMusikOn(data: List<MusicRespomse>) {
+    override fun RecentMusikOn(data: List<MusicNewsRespomse>) {
 
-        val adapter = HomeAdapterTopMusic(data, this)
+        val adapter = HomeAdapterNewMusic(data, this)
         binding.mouduleThreeHome.recNewMusic.layoutManager =
             GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
         binding.mouduleThreeHome.recNewMusic.adapter = adapter
@@ -166,7 +166,7 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
 
     }
 
-    override fun TrendMusikOn(data: List<MusicRespomse>) {
+    override fun TrendMusikOn(data: List<MusicTrendRespomse>) {
 
         val adapter = HomeAdapterTrand(data, this)
         binding.mouduleFourHome.recTrandMusic.layoutManager =
@@ -175,7 +175,7 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
 
     }
 
-    override fun InternationalMusicOn(data: List<MusicRespomse>) {
+    override fun InternationalMusicOn(data: List<MusicInternatioalRespomse>) {
 
         Log.v("tstd" , data.toString())
         val adapter = HomeAdapterInternational(data, this)
@@ -185,15 +185,40 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
 
     }
 
-    override fun Click(data: MusicRespomse) {
+    override fun Click_MusicByCategory(data: MusicByCategoryRespomse) {
         MyApp.idMusic = data.id.toString()
-        Log.v("testData" , data.toString())
         val transform = parentFragmentManager.beginTransaction()
         transform.replace(R.id.FrameLayoutMain, PlayFragment())
         transform.addToBackStack(null)
         transform.commit()
-        //test interface
-        Toast.makeText(context, data.title, Toast.LENGTH_SHORT).show()
+    }
+    override fun Click_MusicTop(data: MusicTopRespomse) {
+        MyApp.idMusic = data.id.toString()
+        val transform = parentFragmentManager.beginTransaction()
+        transform.replace(R.id.FrameLayoutMain, PlayFragment())
+        transform.addToBackStack(null)
+        transform.commit()
+    }
+    override fun Click_MusicNews(data: MusicNewsRespomse) {
+        MyApp.idMusic = data.id.toString()
+        val transform = parentFragmentManager.beginTransaction()
+        transform.replace(R.id.FrameLayoutMain, PlayFragment())
+        transform.addToBackStack(null)
+        transform.commit()
+    }
+    override fun Click_MusicTrend(data: MusicTrendRespomse) {
+        MyApp.idMusic = data.id.toString()
+        val transform = parentFragmentManager.beginTransaction()
+        transform.replace(R.id.FrameLayoutMain, PlayFragment())
+        transform.addToBackStack(null)
+        transform.commit()
+    }
+    override fun Click_MusicInternatioal(data: MusicInternatioalRespomse) {
+        MyApp.idMusic = data.id.toString()
+        val transform = parentFragmentManager.beginTransaction()
+        transform.replace(R.id.FrameLayoutMain, PlayFragment())
+        transform.addToBackStack(null)
+        transform.commit()
     }
 
     fun setOnClickListeners() {
