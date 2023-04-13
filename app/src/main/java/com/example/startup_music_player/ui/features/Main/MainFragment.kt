@@ -33,7 +33,7 @@ class MainFragment : Fragment() {
         binding.viewPagerMain.visibility = View.GONE
         if (MyApp.media != null) {
             binding.viewPagerMain.visibility = View.VISIBLE
-            var adapter = ViewPagerPlayAdapter(parentFragmentManager , lifecycle)
+            var adapter = ViewPagerPlayAdapter(this)
             binding.viewPagerMain.adapter = adapter
             binding.viewPagerMain.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
@@ -41,7 +41,6 @@ class MainFragment : Fragment() {
             timer.schedule(object  : TimerTask(){
                 override fun run() {
                     activity?.runOnUiThread {
-
                         if (binding.viewPagerMain.currentItem == 1) {
                             MyApp.media?.stop()
                             MyApp.media?.release()

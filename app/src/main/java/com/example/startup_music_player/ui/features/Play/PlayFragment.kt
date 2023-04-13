@@ -95,9 +95,9 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
             MyApp.media = null
         }
 
-        MyApp.img_cover = data.cover
-        MyApp.musicName = data.title
-        MyApp.Artist_name = data.artist[0].name
+        MyApp?.img_cover = data.cover
+        MyApp?.musicName = data.title
+        MyApp?.Artist_name = data.artist[0].name
 
             MyApp.media = MediaPlayer.create(context, Uri.parse(data.url))
             MyApp.media?.start()

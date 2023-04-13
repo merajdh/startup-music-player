@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.startup_music_player.databinding.ItemRecyclerRecentmusicBinding
 import com.example.startup_music_player.databinding.ItemRecyclerTopMusicHomeBinding
 import com.example.startup_music_player.model.InteFaces.OnClickHome
 import com.example.startup_music_player.model.data.MusicNewsRespomse
@@ -11,7 +12,7 @@ import com.example.startup_music_player.model.data.MusicRespomse
 import com.squareup.picasso.Picasso
 
 class HomeAdapterNewMusic(private val data : List<MusicNewsRespomse>, private val OnClick: OnClickHome) :RecyclerView.Adapter<HomeAdapterNewMusic.HomeNewMusicViewHolder>() {
-    lateinit var binding:ItemRecyclerTopMusicHomeBinding
+    lateinit var binding:ItemRecyclerRecentmusicBinding
 
         inner class HomeNewMusicViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
             fun ViewBinder (dataHome: MusicNewsRespomse){
@@ -30,7 +31,7 @@ class HomeAdapterNewMusic(private val data : List<MusicNewsRespomse>, private va
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeNewMusicViewHolder {
-        binding = ItemRecyclerTopMusicHomeBinding.inflate(LayoutInflater.from(parent.context) , parent , false)
+        binding = ItemRecyclerRecentmusicBinding.inflate(LayoutInflater.from(parent.context) , parent , false)
         return HomeNewMusicViewHolder(binding.root)
     }
 

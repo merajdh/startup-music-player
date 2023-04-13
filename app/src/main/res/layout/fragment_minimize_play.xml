@@ -8,91 +8,107 @@
     app:strokeColor="?colorOnBackground"
     app:strokeWidth="0.5dp"
     android:layout_height="55dp"
-    android:background="@drawable/shape_back_rec_trand"
     android:layout_gravity="bottom">
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/materialCardView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginEnd="12dp"
+        <View
+            android:layout_marginEnd="10sp"
+            android:visibility="invisible"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="@drawable/shape_back_rec_trand"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginEnd="12dp"
 
 
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/img_cover"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:scaleType="fitXY" />
-
-
-        </com.google.android.material.card.MaterialCardView>
+                <ImageView
+                    android:id="@+id/img_cover"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitXY" />
 
 
-        <TextView
-            android:id="@+id/txt_music_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="36dp"
-            android:text="نام موزیک"
-            android:textColor="?colorOnPrimary"
-            android:textSize="14sp"
-            android:textStyle="bold"
-
-            app:layout_constraintEnd_toStartOf="@+id/materialCardView14"
-            app:layout_constraintTop_toTopOf="@+id/materialCardView14" />
-
-        <TextView
-            android:id="@+id/txt_artist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="نام خواننده"
-            android:textColor="?colorOnPrimary"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="@+id/materialCardView14"
-            app:layout_constraintEnd_toEndOf="@+id/txt_music_name"
-            app:layout_constraintTop_toBottomOf="@+id/txt_music_name" />
+            </com.google.android.material.card.MaterialCardView>
 
 
-        <LinearLayout
-            android:id="@+id/linearLayout4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:orientation="horizontal"
-            android:padding="4dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/txt_music_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="36dp"
+                android:text="نام موزیک"
+                android:textColor="?colorOnPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
 
-            <ImageView
-                android:id="@+id/btn_play"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/ic_play"
-                app:tint="@color/light_gray" />
+                app:layout_constraintEnd_toStartOf="@+id/materialCardView14"
+                app:layout_constraintTop_toTopOf="@+id/materialCardView14" />
 
-            <ImageView
+            <TextView
+                android:id="@+id/txt_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="نام خواننده"
+                android:textColor="?colorOnPrimary"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/materialCardView14"
+                app:layout_constraintEnd_toEndOf="@+id/txt_music_name"
+                app:layout_constraintTop_toBottomOf="@+id/txt_music_name" />
 
-                android:id="@+id/btn_skip"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="6dp"
-                android:src="@drawable/ic_skip_forward"
-                app:tint="@color/light_gray"/>
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="horizontal"
+                android:padding="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/btn_play"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_play"
+                    app:tint="@color/light_gray" />
+
+                <ImageView
+
+                    android:id="@+id/btn_skip"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="6dp"
+                    android:src="@drawable/ic_skip_forward"
+                    app:tint="@color/light_gray"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
 
 
 </FrameLayout>

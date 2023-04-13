@@ -116,7 +116,7 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
     override fun RecentMusikOf(data: List<MusicNewsRespomse>) {
         val adapter = HomeAdapterNewMusic(data, this)
         binding.mouduleThreeHome.recNewMusic.layoutManager =
-            GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
+            GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, true)
         binding.mouduleThreeHome.recNewMusic.adapter = adapter
     }
 
@@ -160,7 +160,7 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
 
         val adapter = HomeAdapterNewMusic(data, this)
         binding.mouduleThreeHome.recNewMusic.layoutManager =
-            GridLayoutManager(context, 1, RecyclerView.VERTICAL, false)
+            GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, true)
         binding.mouduleThreeHome.recNewMusic.adapter = adapter
 
 

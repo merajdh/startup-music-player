@@ -10,7 +10,7 @@ import com.example.startup_music_player.ui.features.Main.MainFragment
 import com.example.startup_music_player.ui.features.Play.minimizePlayFragment
 
 
-class ViewPagerPlayAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle)  : FragmentStateAdapter(fragmentManager, lifecycle)   {
+class ViewPagerPlayAdapter(fragment: Fragment)  : FragmentStateAdapter(fragment)   {
 
     lateinit var binding:FragmentMinimizePlayBinding
     override fun onBindViewHolder(
