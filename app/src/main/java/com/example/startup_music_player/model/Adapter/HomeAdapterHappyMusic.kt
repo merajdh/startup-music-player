@@ -11,9 +11,9 @@ import com.example.startup_music_player.model.data.MusicRespomse
 import com.squareup.picasso.Picasso
 
 class HomeAdapterHappyMusic(private val data: List<MusicByCategoryRespomse>, private val OnClick: OnClickHome) : RecyclerView.Adapter<HomeAdapterHappyMusic.HomeHappyMusicViewHolder>() {
-    lateinit var binding: ItemRecyclerHappyHomeBinding
 
-    inner class HomeHappyMusicViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class HomeHappyMusicViewHolder(private var binding: ItemRecyclerHappyHomeBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun ViewBinder(dataHome: MusicByCategoryRespomse) {
             binding.txtNameMusic.text = dataHome.title
             binding.txtNameSinger.text = dataHome.artist[0].toString()
@@ -29,8 +29,8 @@ class HomeAdapterHappyMusic(private val data: List<MusicByCategoryRespomse>, pri
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeHappyMusicViewHolder {
-        binding = ItemRecyclerHappyHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return HomeHappyMusicViewHolder(binding.root)
+        var binding = ItemRecyclerHappyHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return HomeHappyMusicViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: HomeHappyMusicViewHolder, position: Int) {

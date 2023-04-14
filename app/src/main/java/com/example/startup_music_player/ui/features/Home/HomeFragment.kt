@@ -107,7 +107,7 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
     }
 
     override fun MoreLikeOf(data: List<MusicTopRespomse>) {
-        val adapter = HomeAdapterTopMusic(data, this)
+        val adapter = HomeAdapterTopMusic( data , this)
         binding.mouduleTwoHome.recTopMusic.layoutManager =
             GridLayoutManager(context, 2, RecyclerView.HORIZONTAL, true)
         binding.mouduleTwoHome.recTopMusic.adapter = adapter

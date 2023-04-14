@@ -11,9 +11,8 @@ import com.example.startup_music_player.util.MyApp
 import com.squareup.picasso.Picasso
 
 class CategoryAdapterArtist(private val data: List<ListArtistData>, private val onClickCategory: OnClickCategory) : RecyclerView.Adapter<CategoryAdapterArtist.CategoryArtistViewHolder>() {
-    lateinit var binding: ItemRecyclerArtistBinding
 
-    inner class CategoryArtistViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class CategoryArtistViewHolder(private var binding: ItemRecyclerArtistBinding) : RecyclerView.ViewHolder(binding.root) {
         fun ViewBinder(dataArtist: ListArtistData) {
 
             MyApp.idArtist = dataArtist.id.toString()
@@ -26,8 +25,8 @@ class CategoryAdapterArtist(private val data: List<ListArtistData>, private val 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryArtistViewHolder {
-        binding = ItemRecyclerArtistBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return CategoryArtistViewHolder(binding.root)
+        var binding = ItemRecyclerArtistBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return CategoryArtistViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: CategoryArtistViewHolder, position: Int) {

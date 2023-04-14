@@ -13,9 +13,9 @@ import com.squareup.picasso.Picasso
 
 class ArtistAdapterPopular(private val data: List<DetailArtistRespomse.PopularMusic> , private val onClickArtist: OnClickArtist) :
     RecyclerView.Adapter<ArtistAdapterPopular.ArtistPopularViewHolder>() {
-    lateinit var binding: ItemRecyclerPopularmusicBinding
 
-    inner class ArtistPopularViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ArtistPopularViewHolder(private var binding: ItemRecyclerPopularmusicBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun ViewBinder(dataArtist: DetailArtistRespomse.PopularMusic) {
 
             Picasso.get().load(dataArtist.cover).into(binding.imgCover)
@@ -30,12 +30,12 @@ class ArtistAdapterPopular(private val data: List<DetailArtistRespomse.PopularMu
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArtistPopularViewHolder {
-        binding = ItemRecyclerPopularmusicBinding.inflate(
+        var binding = ItemRecyclerPopularmusicBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
-        return ArtistPopularViewHolder(binding.root)
+        return ArtistPopularViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ArtistPopularViewHolder, position: Int) {

@@ -14,10 +14,10 @@ class MusicByCategoryAdapter(
     private val data: List<MusicByCategoryData>,
     private val onClickMusicByCategory: OnClickMusicByCategory
 ) : RecyclerView.Adapter<MusicByCategoryAdapter.MusicByCategoryViewHolder>() {
-    lateinit var binding: ItemRecyclerMusicbycategoryBinding
 
 
-    inner class MusicByCategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class MusicByCategoryViewHolder(private var binding: ItemRecyclerMusicbycategoryBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun ViewBinder(dataMusic: MusicByCategoryData) {
 
             MyApp.idArtist = dataMusic.id.toString()
@@ -34,12 +34,12 @@ class MusicByCategoryAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusicByCategoryViewHolder {
-        binding = ItemRecyclerMusicbycategoryBinding.inflate(
+        var binding = ItemRecyclerMusicbycategoryBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
-        return MusicByCategoryViewHolder(binding.root)
+        return MusicByCategoryViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: MusicByCategoryViewHolder, position: Int) {

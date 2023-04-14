@@ -7,17 +7,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.startup_music_player.databinding.ItemRecyclerInternationalMusicCategoryBinding
 import com.example.startup_music_player.model.InteFaces.OnClickHome
 import com.example.startup_music_player.model.data.MusicInternatioalRespomse
-import com.example.startup_music_player.model.data.MusicRespomse
 import com.squareup.picasso.Picasso
 
 class HomeAdapterInternational(
     private val data: List<MusicInternatioalRespomse>,
     private val OnClick: OnClickHome
 ) : RecyclerView.Adapter<HomeAdapterInternational.HomeInternationalMusicViewHolder>() {
-    lateinit var binding: ItemRecyclerInternationalMusicCategoryBinding
 
-    inner class HomeInternationalMusicViewHolder(itemView: View) :
-        RecyclerView.ViewHolder(itemView) {
+    inner class HomeInternationalMusicViewHolder(private var binding: ItemRecyclerInternationalMusicCategoryBinding
+    ) :
+        RecyclerView.ViewHolder(binding.root) {
         fun ViewBinder(dataHome: MusicInternatioalRespomse) {
 
             binding.txtNameMusic.text = dataHome.title
@@ -38,12 +37,12 @@ class HomeAdapterInternational(
         parent: ViewGroup,
         viewType: Int
     ): HomeInternationalMusicViewHolder {
-        binding = ItemRecyclerInternationalMusicCategoryBinding.inflate(
+        var binding = ItemRecyclerInternationalMusicCategoryBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
-        return HomeInternationalMusicViewHolder(binding.root)
+        return HomeInternationalMusicViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: HomeInternationalMusicViewHolder, position: Int) {

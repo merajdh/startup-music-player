@@ -10,9 +10,9 @@ import com.example.startup_music_player.model.data.MusicRespomse
 import com.squareup.picasso.Picasso
 
 class LikedMusicAdapter(private val data: List<MusicRespomse>) : RecyclerView.Adapter<LikedMusicAdapter.LikedMusicHolder>() {
-    lateinit var binding: ItemRecyclerMusicbycategoryBinding
 
-    inner class LikedMusicHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class LikedMusicHolder(private var binding: ItemRecyclerMusicbycategoryBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun ViewBinder(data : MusicRespomse) {
             binding.txtNameMusic.text = data.title
             binding.nameArtist.text = data.artist[0]
@@ -21,8 +21,8 @@ class LikedMusicAdapter(private val data: List<MusicRespomse>) : RecyclerView.Ad
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LikedMusicHolder {
-        binding = ItemRecyclerMusicbycategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return LikedMusicHolder(binding.root)
+        var binding = ItemRecyclerMusicbycategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return LikedMusicHolder(binding)
     }
 
     override fun onBindViewHolder(holder: LikedMusicHolder, position: Int) {

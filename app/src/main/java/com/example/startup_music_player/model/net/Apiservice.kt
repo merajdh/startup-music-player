@@ -39,7 +39,7 @@ interface Apiservice {
     suspend fun MusicTop(): List<MusicTopRespomse>
 
 
-    @GET("music/recentmusic/")
+    @GET("music/trendmusic/")
     suspend fun MusicTrend(): List<MusicTrendRespomse>
 
     @GET("music/internationals/")
@@ -88,7 +88,6 @@ fun createApiService(): Apiservice {
                 newRequest.addHeader("Authorization","Bearer ${TokenInMemory.access}")
                 newRequest.method(oldRequest.method, oldRequest.body)
             }
-
             return@addInterceptor it.proceed(newRequest.build())
         }
         .addInterceptor(HttpLoggingInterceptor().apply {

@@ -14,10 +14,9 @@ class ContactUsCategory(
     private val onClickConteactUs: OnClickConteactUs
 ) :
     RecyclerView.Adapter<ContactUsCategory.ContactUsCategoryViewHolder>() {
-    lateinit var binding: ItemRecyclerContactUsBinding
 
 
-    inner class ContactUsCategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ContactUsCategoryViewHolder(private var binding: ItemRecyclerContactUsBinding) : RecyclerView.ViewHolder(binding.root) {
         fun ViewBinder(data: MusicRespomse) {
 
             itemView.setOnClickListener {
@@ -28,10 +27,10 @@ class ContactUsCategory(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactUsCategoryViewHolder {
-        binding = ItemRecyclerContactUsBinding.inflate(
+        var binding = ItemRecyclerContactUsBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
-        return ContactUsCategoryViewHolder(binding.root)
+        return ContactUsCategoryViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ContactUsCategoryViewHolder, position: Int) {

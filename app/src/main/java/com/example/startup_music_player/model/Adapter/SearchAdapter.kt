@@ -11,9 +11,9 @@ import com.example.startup_music_player.model.data.MusicRespomse
 import com.squareup.picasso.Picasso
 
 class SearchAdapter(private val data: List<MusicRespomse>) : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
-    lateinit var binding: ItemRecyclerTopMusicHomeBinding
 
-    inner class SearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class SearchViewHolder(private var binding: ItemRecyclerTopMusicHomeBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun ViewBinder(data : MusicRespomse) {
             binding.txtNameMusic.text = data.title
             binding.txtNameSinger.text = data.artist[0]
@@ -22,8 +22,8 @@ class SearchAdapter(private val data: List<MusicRespomse>) : RecyclerView.Adapte
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
-        binding = ItemRecyclerTopMusicHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return SearchViewHolder(binding.root)
+        var binding = ItemRecyclerTopMusicHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return SearchViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
