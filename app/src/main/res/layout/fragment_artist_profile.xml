@@ -3,12 +3,12 @@
 <androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@color/dark_bule"
+    android:background="?colorPrimary"
     android:id="@+id/parent"
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:background="@color/dark_bule"
+        android:background="?colorPrimary"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -23,7 +23,10 @@
             android:id="@+id/moudule_three_artist"
             layout="@layout/moudule_three_artist" />
 
-
+        <View
+            android:background="?colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
 
 
     </LinearLayout>

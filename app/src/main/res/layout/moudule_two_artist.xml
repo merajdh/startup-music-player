@@ -3,17 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/dark_bule"
+    android:background="?colorPrimary"
     android:layout_height="wrap_content">
     <LinearLayout
         android:orientation="vertical"
-        android:background="@color/dark_bule"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
             android:text="پرطرفدار ترین ها"
-            android:textColor="@color/white"
+            android:textColor="?colorOnPrimary"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_gravity="end"

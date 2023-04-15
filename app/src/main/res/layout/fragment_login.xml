@@ -88,7 +88,6 @@
                 android:layout_marginTop="16dp"                android:background="?colorPrimaryVariant"
                 android:hint="رمز عبور"
                 android:inputType="text"
-                android:maxLength="16"
                 android:textColor="?colorOnPrimary"
                 android:textColorHint="#7A7C87"
                 tools:ignore="TextFields,TouchTargetSizeCheck,TextContrastCheck" />

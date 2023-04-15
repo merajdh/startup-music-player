@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/dark_bule">
+    android:background="?colorPrimary">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
                 app:cardCornerRadius="0dp">
 
                 <ImageView
-                    android:foreground="@drawable/shape_gradiant_top_image"
+                    android:foreground="@drawable/shape_gradiant_image"
                     android:id="@+id/Img_Artist"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -55,7 +55,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:text="نام خواننده"
-                android:textColor="@color/white"
+                android:textColor="?colorOnPrimary"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
 

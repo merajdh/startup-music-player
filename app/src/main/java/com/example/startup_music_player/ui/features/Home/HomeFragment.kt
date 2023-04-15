@@ -97,9 +97,8 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
 
 
     // set data Adapter Ofline
+    @SuppressLint("SetTextI18n")
     override fun MusicByCategoryOf(data: List<MusicByCategoryRespomse>) {
-
-
         val adapter = HomeAdapterHappyMusic(data, this)
         binding.mouduleOneHome.recHappyMusic.layoutManager =
             GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, true)
@@ -138,8 +137,11 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
 
 
     // set data Adapter Online
+    @SuppressLint("SetTextI18n")
     override fun MusicByCategoryOn(data: List<MusicByCategoryRespomse>) {
+        Log.v("datas" , data[0].category_name)
 
+        binding.mouduleOneHome.txtMusicByCategory.text = binding.mouduleOneHome.txtMusicByCategory.text.toString()  + data[0].category_name
         val adapter = HomeAdapterHappyMusic(data, this)
         binding.mouduleOneHome.recHappyMusic.layoutManager =
             GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, true)
@@ -149,7 +151,6 @@ class HomeFragment : Fragment(), ContractHome.View, OnClickHome {
     }
 
     override fun MoreLikeOn(data: List<MusicTopRespomse>) {
-
         val adapter = HomeAdapterTopMusic(data, this)
         binding.mouduleTwoHome.recTopMusic.layoutManager =
             GridLayoutManager(context, 2, RecyclerView.HORIZONTAL, true)

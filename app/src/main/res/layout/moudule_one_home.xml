@@ -32,9 +32,10 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/txt_musicByCategory"
             android:textStyle="bold"
             android:layout_margin="14dp"
-            android:text="موزیک های شاد"
+            android:text="موزیک های "
             android:textColor="?colorOnPrimary"
             android:textSize="18sp"
             android:layout_gravity="end"

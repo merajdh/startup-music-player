@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.util.Patterns
 import androidx.fragment.app.Fragment
@@ -47,7 +48,7 @@ class RegisterFragment : Fragment() {
                 if (binding.EdtPassword.text.length >= 8) {
                     if (Patterns.EMAIL_ADDRESS.matcher(binding.EdtGmail.text).matches()){
                         if (binding.EdtUser.text.length >= 4 ){
-//                            binding.animLoading.visibility = View.VISIBLE
+                            binding.animLoading.visibility = View.VISIBLE
                             binding.animLoading.playAnimation()
                         // Input user
                         viewmodel.name.value = binding.EdtUser.text.toString()
@@ -60,12 +61,14 @@ class RegisterFragment : Fragment() {
                             if (it == VALUE_SUCCESS){
                                 sharedPref.edit().putString("password" , binding.EdtPassword.text.toString()).apply()
                                 transform(VerifyEmailFragment())
-//                                binding.animLoading.visibility = View.GONE
+                                val r = Runnable {
+                                    binding.animLoading.visibility = View.GONE
+                                }
+                                Handler().postDelayed(r , 1000)
                             }else{
                                 Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
                             }
                         }
-
 
                     }else{
                             if (binding.EdtUser.text.length <= 5){

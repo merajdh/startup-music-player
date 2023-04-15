@@ -32,6 +32,9 @@ data class MusicByCategoryRespomse(
     @SerializedName("title")
     val title: String,
 
+    @SerializedName("category_name")
+    val category_name: String,
+
 )
 //-------------------------------------------
 @Entity("MusicNews_table")

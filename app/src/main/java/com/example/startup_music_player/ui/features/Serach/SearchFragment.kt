@@ -35,6 +35,17 @@ class SearchFragment : Fragment(),ContractSrech.View {
         // Inflate the layout for this fragment
         binding = FragmentSearchBinding.inflate(layoutInflater, container, false)
         setOnClickListeners()
+        EnterPresed()
+
+        presenter = PresenterSrech(createApiService(),NetworkChecker(binding.root.context).isInternetConnected)
+        binding.imgSreach.setOnClickListener {
+            MyApp.musicserch = binding.EdtSearch.text.toString()
+            search()
+        }
+        return binding.root
+    }
+
+    private fun EnterPresed() {
         binding.EdtSearch.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
             // Check if the key event was a key-up event and if it was the spacebar
             if (keyCode == KeyEvent.KEYCODE_ENTER) {
@@ -45,12 +56,6 @@ class SearchFragment : Fragment(),ContractSrech.View {
             }
             return@OnKeyListener false
         })
-        presenter = PresenterSrech(createApiService(),NetworkChecker(binding.root.context).isInternetConnected)
-        binding.imgSreach.setOnClickListener {
-            MyApp.musicserch = binding.EdtSearch.text.toString()
-            search()
-        }
-        return binding.root
     }
 
     private fun search() {

@@ -128,11 +128,6 @@ class PlayFragment : Fragment(), ContractPlayMusic.View {
 
     private fun setOnClickListeners() {
 
-        binding.mouduleOnePlay.btnOpenMore.setOnClickListener {
-            val transform = playDetailFragment()
-            transform.isCancelable = true
-            transform.show(parentFragmentManager, null)
-        }
     }
 
     override fun PlayMusic(Music: MusicDetail) {

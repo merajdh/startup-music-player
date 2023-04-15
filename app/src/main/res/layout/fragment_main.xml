@@ -64,7 +64,7 @@
                     android:id="@+id/view_pager_main"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginEnd="4dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_gravity="bottom"
                     android:layout_marginBottom="6dp"
                     app:layout_constraintBottom_toTopOf="@+id/butennavigetion"
