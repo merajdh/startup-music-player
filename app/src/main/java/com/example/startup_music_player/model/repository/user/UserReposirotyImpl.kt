@@ -1,9 +1,9 @@
-package com.example.startup_music_player.model.repository
+package com.example.startup_music_player.model.repository.user
 
 import android.content.SharedPreferences
 import com.example.startup_music_player.model.net.Apiservice
+import com.example.startup_music_player.model.repository.TokenInMemory
 import com.example.startup_music_player.model.repository.TokenInMemory.username
-import com.example.startup_music_player.util.MyApp
 import com.google.gson.JsonObject
 import ir.dunijet.dunibazaar.util.VALUE_SUCCESS
 
@@ -37,7 +37,12 @@ class UserReposirotyImpl(
 
         val result = apiservice.Verify(jsonObject)
         if (result.success) {
-            TokenInMemory.refreshToken(username, result.access,result.refresh,result.user_id.toString())
+            TokenInMemory.refreshToken(
+                username,
+                result.access,
+                result.refresh,
+                result.user_id.toString()
+            )
             saveToken(result.access)
             saveRefresh(result.refresh)
 
@@ -71,7 +76,12 @@ class UserReposirotyImpl(
 
         val result = apiservice.Login(jsonObject)
         if (result.success) {
-            TokenInMemory.refreshToken(username, result.access,result.refresh,result.user_id.toString())
+            TokenInMemory.refreshToken(
+                username,
+                result.access,
+                result.refresh,
+                result.user_id.toString()
+            )
             saveToken(result.access)
             saveUserName(username)
             saveRefresh(result.refresh)
@@ -84,12 +94,12 @@ class UserReposirotyImpl(
     }
 
     override fun singout() {
-        TokenInMemory.refreshToken(null,null,null,null)
+        TokenInMemory.refreshToken(null, null, null, null)
         sharedPref.edit().clear().apply()
     }
 
     override fun loadToken() {
-        TokenInMemory.refreshToken(getUserName(), getToken(),getRefresh(),getIduser())
+        TokenInMemory.refreshToken(getUserName(), getToken(), getRefresh(), getIduser())
     }
 
     override fun saveToken(newToken: String) {

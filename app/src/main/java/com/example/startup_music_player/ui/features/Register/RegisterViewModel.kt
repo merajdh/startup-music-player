@@ -1,15 +1,12 @@
 package com.example.startup_music_player.ui.features.Register
 
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.startup_music_player.model.repository.UserReposiroty
+import com.example.startup_music_player.model.repository.user.UserReposiroty
 import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlin.math.log
 
 class RegisterViewModel(private val userReposiroty: UserReposiroty) : ViewModel() {
     // Input User

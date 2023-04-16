@@ -8,8 +8,10 @@ import com.example.startup_music_player.model.db.AppDatabase
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.repository.Like.LikeRepository
 import com.example.startup_music_player.model.repository.Like.LikeRepositorylmpl
-import com.example.startup_music_player.model.repository.UserReposiroty
-import com.example.startup_music_player.model.repository.UserReposirotyImpl
+import com.example.startup_music_player.model.repository.ticket.ticketrepository
+import com.example.startup_music_player.model.repository.ticket.ticketrepositoryimpl
+import com.example.startup_music_player.model.repository.user.UserReposiroty
+import com.example.startup_music_player.model.repository.user.UserReposirotyImpl
 import com.example.startup_music_player.ui.features.Login.LoginViewModel
 import com.example.startup_music_player.ui.features.Play.LikeViewModel
 import com.example.startup_music_player.ui.features.Profile.ProfileViewModel
@@ -27,6 +29,7 @@ class MyApp : Application() {
         var Artist_name : String = ""
         var isInUse : Boolean= false
         var idMusic: String = ""
+        var idTicket: String = ""
         var musicserch: String = ""
         var ispluing: Boolean = false
         var idArtist: String = ""
@@ -44,6 +47,7 @@ class MyApp : Application() {
             single { Room.databaseBuilder(androidContext(), AppDatabase::class.java, "app_dataBase") }
             single<UserReposiroty> { UserReposirotyImpl(get(), get()) }
             single<LikeRepository> { LikeRepositorylmpl(get())}
+            single<ticketrepository> { ticketrepositoryimpl(get())}
             viewModel { LoginViewModel(get()) }
             viewModel { RegisterViewModel(get()) }
             viewModel { VerifyViewModel(get()) }

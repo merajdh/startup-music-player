@@ -19,6 +19,7 @@ import com.example.startup_music_player.model.InteFaces.OnClickTicketTitle
 import com.example.startup_music_player.model.data.TitleTicket
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresnterTitleTicket
+import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
 
 class ContactUsFragment : Fragment() , OnClickTicketTitle  , ContractTitleTicket.View{
@@ -52,6 +53,7 @@ class ContactUsFragment : Fragment() , OnClickTicketTitle  , ContractTitleTicket
     }
 
     override fun onClickTicketTitle(data: TitleTicket) {
+        MyApp.idTicket = data.id.toString()
         transform(ContactUsDetailFragment())
         Log.v("itemClicked" , data.title)
 

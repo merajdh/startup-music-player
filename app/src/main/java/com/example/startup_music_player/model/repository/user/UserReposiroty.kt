@@ -1,4 +1,4 @@
-package com.example.startup_music_player.model.repository
+package com.example.startup_music_player.model.repository.user
 
 interface UserReposiroty {
     //Online
