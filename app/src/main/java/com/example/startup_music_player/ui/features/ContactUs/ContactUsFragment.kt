@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.startup_music_player.R
 import com.example.startup_music_player.databinding.FragmentContactUsBinding
 import com.example.startup_music_player.model.Adapter.TicketTitleAdapter
 import com.example.startup_music_player.model.Contract.ContractTitleTicket
@@ -43,8 +44,15 @@ class ContactUsFragment : Fragment() , OnClickTicketTitle  , ContractTitleTicket
         binding.recTitleTicket.adapter = adapter
     }
 
-    override fun onClickTicketTitle(data: TitleTicket) {
+    private fun transform (fragment: Fragment) {
+        val transform = parentFragmentManager.beginTransaction()
+        transform.addToBackStack(null)
+        transform.replace(R.id.FrameLayoutMain, fragment)
+        transform.commit()
+    }
 
+    override fun onClickTicketTitle(data: TitleTicket) {
+        transform(ContactUsDetailFragment())
         Log.v("itemClicked" , data.title)
 
     }

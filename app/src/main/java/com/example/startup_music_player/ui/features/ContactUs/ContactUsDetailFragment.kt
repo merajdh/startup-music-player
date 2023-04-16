@@ -5,14 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.startup_music_player.R
-import com.example.startup_music_player.databinding.BottomsheetContactUsBinding
-import com.example.startup_music_player.databinding.FragmentContactUsBinding
+import com.example.startup_music_player.databinding.FragmentContactUsDetailBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class ContactUsBottomSheet : BottomSheetDialogFragment() {
-    lateinit var binding:BottomsheetContactUsBinding
+class ContactUsDetailFragment : BottomSheetDialogFragment() {
+    lateinit var binding:FragmentContactUsDetailBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding  = BottomsheetContactUsBinding.inflate(layoutInflater , container , false)
+        binding  = FragmentContactUsDetailBinding.inflate(layoutInflater , container , false)
         setOnClickListeners()
         return binding.root
     }

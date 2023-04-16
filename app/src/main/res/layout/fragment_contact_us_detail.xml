@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:background="@drawable/shape_back_bottom_sheet"
+    android:background="?colorPrimary"
     android:orientation="vertical"
-    android:layout_gravity="bottom"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="420dp"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -22,16 +21,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="120dp"
         android:text="انتقاد و پیشنهادات"
-        android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textColor="?colorOnPrimary"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
         android:letterSpacing="0.1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="14sp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
         android:text="هر انتقاد یا پیشنهادی دارید بنویسید ..."
@@ -40,19 +40,23 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="20dp"
-        android:backgroundTint="@color/light_blue"
-        app:cardCornerRadius="14dp"
-        app:strokeWidth="1dp"
-        app:strokeColor="#54575E">
+        android:layout_height="300dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="?colorPrimaryVariant"
+        app:cardCornerRadius="20dp">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="16dp"
-            android:background="#252a34"
+            android:background="?colorPrimaryVariant"
             android:gravity="top|start"
+            android:paddingEnd="6dp"
+            android:paddingTop="2dp"
+            android:paddingStart="6dp"
             android:inputType="textMultiLine"
             android:maxLines="10"
             android:letterSpacing="0.1"
@@ -67,7 +71,7 @@
 
 
     <LinearLayout
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="60dp"
         android:weightSum="2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -76,15 +80,15 @@
             android:id="@+id/btn_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="60dp"
             android:layout_marginEnd="40dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/light_blue"
+            android:backgroundTint="?colorPrimaryVariant"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:text="لغو"
-            android:textColor="@color/light_gray"
-            android:textSize="15sp"
+            android:textColor="?colorOnPrimary"
+            android:textSize="18sp"
             app:cornerRadius="18dp" />
 
 
@@ -93,14 +97,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="60dp"
             android:layout_weight="1"
             android:backgroundTint="@color/bule"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:text="تایید"
             android:textColor="@color/light_gray"
-            android:textSize="15sp"
+            android:textSize="18sp"
             app:cornerRadius="18dp" />
 
     </LinearLayout>

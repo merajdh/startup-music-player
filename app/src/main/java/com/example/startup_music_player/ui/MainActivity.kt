@@ -74,8 +74,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Run every time
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onStop() {
+        super.onStop()
         MusicByCategoryDao.deletAllMusicByCategory()
         MoreLikeDao.deletAllMusicTop()
         RecentMusikDao.deletAllMusicNews()
