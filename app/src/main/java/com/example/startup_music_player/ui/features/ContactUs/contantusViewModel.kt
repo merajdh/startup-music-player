@@ -9,9 +9,9 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 
 class contantusViewModel(private val ticketrepository: ticketrepository):ViewModel() {
-    val ditail = MutableLiveData("")
-    val username = MutableLiveData("")
-    val id = MutableLiveData("")
+    val title = MutableLiveData("")
+    val user = MutableLiveData("")
+    val body = MutableLiveData("")
 
 
     fun sendTicket(TicketEvent: (String) -> Unit) {
@@ -19,7 +19,7 @@ class contantusViewModel(private val ticketrepository: ticketrepository):ViewMod
             Log.v("error", "Error -> " + throwable.message)
         }
         viewModelScope.launch(coroutineExceptionHandler) {
-            val result = ticketrepository.SendTicket(ditail.value!!,username.value!!,id.value!!)
+            val result = ticketrepository.SendTicket(body.value!! , user.value!! , title.value!!)
             TicketEvent(result)
 
         }

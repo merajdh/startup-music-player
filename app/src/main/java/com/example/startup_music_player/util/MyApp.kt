@@ -12,6 +12,7 @@ import com.example.startup_music_player.model.repository.ticket.ticketrepository
 import com.example.startup_music_player.model.repository.ticket.ticketrepositoryimpl
 import com.example.startup_music_player.model.repository.user.UserReposiroty
 import com.example.startup_music_player.model.repository.user.UserReposirotyImpl
+import com.example.startup_music_player.ui.features.ContactUs.contantusViewModel
 import com.example.startup_music_player.ui.features.Login.LoginViewModel
 import com.example.startup_music_player.ui.features.Play.LikeViewModel
 import com.example.startup_music_player.ui.features.Profile.ProfileViewModel
@@ -53,6 +54,7 @@ class MyApp : Application() {
             viewModel { VerifyViewModel(get()) }
             viewModel { LikeViewModel(get()) }
             viewModel { ProfileViewModel(get()) }
+            viewModel {contantusViewModel(get()) }
         }
         startKoin {
             androidContext(this@MyApp)

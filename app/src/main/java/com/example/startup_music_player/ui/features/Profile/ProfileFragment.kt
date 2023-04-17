@@ -72,7 +72,7 @@ class ProfileFragment : Fragment() {
         }
         binding.mouduleThree.btnLogout.setOnClickListener {
             val dialog = AlertDialog.Builder(context).create()
-            val view = DiaogLogoutBinding.inflate(layoutInflater,)
+            val view = DiaogLogoutBinding.inflate(layoutInflater)
             view.btnAccept.setOnClickListener { Loguot()
             dialog.dismiss()}
             view.btnCancel.setOnClickListener { dialog.dismiss() }

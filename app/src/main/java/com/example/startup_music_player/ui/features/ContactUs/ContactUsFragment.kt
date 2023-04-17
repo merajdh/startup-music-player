@@ -19,6 +19,7 @@ import com.example.startup_music_player.model.InteFaces.OnClickTicketTitle
 import com.example.startup_music_player.model.data.TitleTicket
 import com.example.startup_music_player.model.net.createApiService
 import com.example.startup_music_player.model.presenter.PresnterTitleTicket
+import com.example.startup_music_player.ui.Fragment.ProfileFragment
 import com.example.startup_music_player.util.MyApp
 import com.example.startup_music_player.util.NetworkChecker
 
@@ -58,4 +59,12 @@ class ContactUsFragment : Fragment() , OnClickTicketTitle  , ContractTitleTicket
         Log.v("itemClicked" , data.title)
 
     }
+    override fun onDestroy() {
+        super.onDestroy()
+        val transform = parentFragmentManager.beginTransaction()
+        transform.addToBackStack(null)
+        transform.replace(R.id.FrameLayout, ProfileFragment())
+        transform.commit()
+    }
+
 }

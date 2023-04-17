@@ -12,7 +12,7 @@ class ticketrepositoryimpl(
         val jsonObject = JsonObject().apply {
             addProperty("body",Ticket)
             addProperty("user",Username)
-            addProperty("pk",IdTicket)
+            addProperty("title",IdTicket)
         }
         val result = apiservice.SendTicket(jsonObject)
         if (result.success){

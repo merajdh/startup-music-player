@@ -70,7 +70,7 @@ interface Apiservice {
     @GET("page/ticket-title")
     suspend fun TitleTicket() : List<TitleTicket>
 
-    @POST("")
+    @POST("page/ticket")
     suspend fun SendTicket(@Body body: JsonObject) : LoginRespomse
 
     @GET("music/search")

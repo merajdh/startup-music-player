@@ -41,7 +41,7 @@ class LoginFragment : Fragment() {
         val viewmodel : LoginViewModel by viewModel()
         if (binding.EdtEmailLogin.text.isNotEmpty() && binding.EdtPasswordLogin.text.isNotEmpty()) {
             if (Patterns.EMAIL_ADDRESS.matcher(binding.EdtEmailLogin.text).matches()){
-//                binding.animLoading.visibility = View.VISIBLE
+                binding.animLoading.visibility = View.VISIBLE
                 binding.animLoading.playAnimation()
                 // Input user
                 viewmodel.username.value = binding.EdtEmailLogin.text.toString()
@@ -53,7 +53,7 @@ class LoginFragment : Fragment() {
 
                     if (it == VALUE_SUCCESS){
                         transform(MainFragment())
-//                        binding.animLoading.visibility = View.GONE
+                       binding.animLoading.visibility = View.GONE
 
                     }else{
                         Toast.makeText(context, it, Toast.LENGTH_SHORT).show()

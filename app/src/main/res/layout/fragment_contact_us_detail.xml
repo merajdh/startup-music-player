@@ -44,7 +44,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="?colorPrimaryVariant"
         app:cardCornerRadius="20dp">
 
@@ -64,52 +64,35 @@
             android:paddingTop="2dp"
             android:paddingEnd="6dp"
             android:singleLine="false"
-            android:textColor="@color/white"
+            android:textColor="?colorOnPrimary"
             android:textColorHint="#7A7C87"
             android:textSize="13sp"
             tools:ignore="TextContrastCheck,TextFields,TouchTargetSizeCheck" />
     </com.google.android.material.card.MaterialCardView>
 
-
-    <LinearLayout
-        android:layout_marginTop="60dp"
-        android:weightSum="2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="40dp"
-            android:layout_weight="1"
-            android:backgroundTint="?colorPrimaryVariant"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:text="لغو"
-            android:textColor="?colorOnPrimary"
-            android:textSize="18sp"
-            app:cornerRadius="18dp" />
-
-
-        <com.google.android.material.button.MaterialButton
+        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
             android:id="@+id/btn_accept"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="60dp"
-            android:layout_weight="1"
+            app:cardElevation="8dp"
+            android:layout_marginEnd="90dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="60dp"
+            android:clickable="true"
+            app:cardCornerRadius="22dp"
             android:backgroundTint="@color/bule"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:text="تایید"
-            android:textColor="@color/light_gray"
-            android:textSize="18sp"
-            app:cornerRadius="18dp" />
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:focusable="true">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="ورود"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
+        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
 
 </LinearLayout>
